@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Bashir Rased
+Text Domain: bashirrased
+Version: 1.0.0
+Requires at least: 5.3
+Tested up to: 5.8
+Requires PHP: 5.6
+Description: This theme is onepage portfolio theme.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Author: Bashir Rased
+Author URI: http://bashir-rased.com/
+Theme URI: https://github.com/BashirRased/wp-theme-bashirrased
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+.wp-caption{
+    opacity: 1;
+}
+.wp-caption-text{
+    opacity: 1;
+}
+.sticky{
+    opacity: 1;
+}
+.gallery-caption{
+    opacity: 1;
+}
+.bypostauthor{
+    opacity: 1;
+}
+.alignright{
+    opacity: 1;
+}
+.alignleft{
+    opacity: 1;
+}
+.aligncenter{
+    opacity: 1;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Skip Link --------------------------------- */
+.skip-link {
+	left: -9999rem;
+	top: 2.5rem;
+	z-index: 999999999;
+	text-decoration: underline;
+}
+
+.skip-link:focus {
+	display: block;
+	left: 6px;
+	top: 7px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	z-index: 100000;
+	right: auto;
+}
+/* ends */

@@ -1,0 +1,164 @@
+/*
+Theme Name: Bashir Rased
+Text Domain: bashirrased
+Version: 1.0.0
+Requires at least: 5.3
+Tested up to: 5.8
+Requires PHP: 5.6
+Description: This theme is onepage portfolio theme.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Author: Bashir Rased
+Author URI: http://bashir-rased.com/
+Theme URI: https://github.com/BashirRased/wp-theme-bashirrased
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+@media all and (min-width: 993px) {
+	.bashir-rased-desktop-menu nav ul li:focus-within ul,
+	.bashir-rased-desktop-menu nav ul li:hover ul {
+		left: 0;
+	}
+
+	.bashir-rased-desktop-menu nav ul ul li:focus-within > ul,
+	.bashir-rased-desktop-menu nav ul ul li:hover > ul {
+		top: 0;
+		left: -100%;
+	}
+
+	.bashir-rased-desktop-menu button {
+		display: none;
+	}
+}
+
+@media all and (max-width: 992px) {
+	.bashir-rased-header-fixed {
+		position: static;
+	}
+	.float-right {
+		float: none !important;
+	}
+	.bashir-rased-header-top-left,
+	.bashir-rased-header-top-right,
+	.bashir-rased-footer-text-left p,
+	.bashir-rased-footer-text-right p {
+		text-align: center;
+	}
+	.bashir-rased-content-area-right{
+		display: none;
+	}
+	.bashir-rased-header-content .col-lg-6 {
+		height: 100%;
+	}
+	.bashir-rased-about-me-content,
+	.bashir-rased-resume-certification-area,
+	.bashir-rased-contact-me-sub-title {
+		margin-top: 50px;
+	}
+	.bashir-rased-mobile-menu {
+		display: block;
+	}
+	.bashir-rased-mobile-menu-icons {
+		color: #ffffff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 25px;
+		margin: 25px 0;
+		border-radius: 5px;
+		cursor: pointer;
+		float: right;
+	}
+	.bashir-rased-desktop-menu {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-color: #007bff;
+	}
+	.bashir-rased-desktop-menu-close {
+		display: none;
+		transition: all 0.3s ease-in-out;
+	}
+	.bashir-rased-desktop-menu nav ul li {
+		border-bottom: none;
+	}	
+	.bashir-rased-desktop-menu nav ul li,
+	.bashir-rased-desktop-menu nav ul li ul li {
+		padding: 0;
+	}
+	.bashir-rased-desktop-menu nav ul li a {
+		color: #ffffff;
+		border-bottom: 1px solid #ffffff;
+		padding: 20px;
+	}
+	.bashir-rased-desktop-menu nav ul li ul li {
+		border-bottom: none;
+	}
+	.bashir-rased-desktop-menu nav ul li:hover > a {
+		color: #ffffff;
+	}
+	.bashir-rased-desktop-menu nav ul li ul, .bashir-rased-desktop-menu nav ul li ul {
+		position: static;
+	}
+	.bashir-rased-desktop-menu li {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	.bashir-rased-desktop-menu i {
+		display: none;
+	}
+	.bashir-rased-desktop-menu button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 67px;
+		height: 100%;
+		background-color: #ffffff;
+		color: #007bff;
+		border: none;
+		font-size: 30px;
+		cursor: pointer;
+	}
+	.bashir-rased-dropdown-menu,
+	.bashir-rased-multi-dropdown-menu {
+		display: none;
+	}
+	.bashir-rased-dropdown-menu-open {
+		display: block;
+		transition: all 0.3s ease-in-out;
+	}
+	.bashir-rased-desktop-menu nav ul li ul li {
+		border-right: none;
+	}
+	.bashir-rased-desktop-menu nav ul li ul {
+		background-color: #007bff;
+	}
+}
+@media all and (max-width: 576px) {
+	.bashir-rased-header-social-icons li {
+		margin: 5px 16px;
+	}
+	.bashir-rased-scroll-to-top-area {
+		bottom: 100px;
+	}
+}
+@media all and (max-width: 400px) {
+	.bashir-rased-mobile-menu-icons {
+		margin: 50px 0;
+	}
+	.bashir-rased-header-type-effect h1 {
+		font-size: 30px;
+	}
+	.bashir-rased-contact-massage-name input, .bashir-rased-contact-massage-email input, .bashir-rased-contact-massage-subject input, .bashir-rased-contact-massage-box-area textarea {
+		font-size: 13px;
+	}
+}

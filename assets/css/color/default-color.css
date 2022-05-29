@@ -1,0 +1,303 @@
+/*
+Theme Name: Bashir Rased
+Text Domain: bashirrased
+Version: 1.0.0
+Requires at least: 5.3
+Tested up to: 5.8
+Requires PHP: 5.6
+Description: This theme is onepage portfolio theme.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Author: Bashir Rased
+Author URI: http://bashir-rased.com/
+Theme URI: https://github.com/BashirRased/wp-theme-bashirrased
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+/*=============================
+Table of CSS Content Start Here
+===============================
+	01. Default CSS
+	02. Font Awesome Icon Edit
+	03. Common Classes
+	04. Preloader CSS
+	05. Hire Me Modal CSS
+	06. Section Title
+	07.	Header Area
+		7.1. Header Top Area
+		7.2. Header Menu Area
+		7.3. Header Menu Toggle Area
+		7.4. Header Content Area		
+	08. About Me Section
+	09. Hire Me Section
+	10. My Skills Section
+	11. My Resume Section
+	12. Services Section
+	13. Portfolio Section
+	14. Subscribe Me Section
+	15. Contact Me Section
+	16. Footer Area
+	17. Scroll to Top Area
+	18. Responsive Design CSS
+=============================
+Table of CSS Content End Here
+===========================*/
+
+/*===============================
+03. Common Classes CSS Start Here
+===============================*/
+.bashir-rased-theme-color {
+	color: #007bff;
+}
+.bashir-rased-contact-me-btn a,
+.bashir-rased-download-cv-btn a,
+.bashir-rased-hire-me-btn button {
+	background: #007bff;
+}
+.bashir-rased-error-massage {
+	color: #007bff;
+}
+/*===============================
+03. Common Classes CSS End Here
+===============================*/
+
+/*==============================
+05. Hire Me Modal CSS Start Here
+==============================*/
+.modal-header .close {
+	background: #007bff;
+}
+.modal-body input,
+.modal-body select,
+.modal-body textarea {
+	border: 1px solid #007bff;
+}
+#job-request {
+	background: #007bff;
+}
+/*============================
+05. Hire Me Modal CSS End Here
+============================*/
+
+/*==============================
+06. Section Title CSS Start Here
+==============================*/
+.bashir-rased-section-title h2:after{
+	background: #007bff;
+}
+/*============================
+06. Section Title CSS End Here
+============================*/
+
+/*============================
+07.	Header Area CSS Start Here
+============================*/
+
+/* 7.1. Header Top Area Start Here */
+.bashir-rased-header-top {
+	background: #007bff;
+}
+/* 7.1. Header Top Area End Here */
+
+/* 7.2. Header Menu Area Start Here */
+.bashir-rased-header-logo h1 a,
+.bashir-rased-header-logo h1 a:hover {
+	color: #007bff;
+}
+.bashir-rased-header-active-menu {
+	color: #007bff !important;
+}
+/* 7.2. Header Menu Area End Here */
+
+/* 7.3. Header Menu Toggle Area End Here */
+.bashir-rased-desktop-menu-toggle li {
+	background: #007bff;
+}
+/* 7.3. Header Menu Toggle Area Start Here */
+
+/* 7.4. Header Content Area Start Here */
+.bashir-rased-type-effect-skills {
+	border-right: 2px solid #007bff;
+	color: #007bff;
+}
+/* 7.4. Header Content Area End Here */
+
+/*==========================
+07.	Header Area CSS End Here
+==========================*/
+
+/*=================================
+08. About Me Section CSS Start Here
+=================================*/
+.bashir-rased-about-me-section-img {
+	border: 1px solid #007bff;
+}
+.bashir-rased-about-me-separator {
+	background: #007bff;
+}
+.bashir-rased-about-me-info-title {
+	color: #007bff;
+}
+/*===============================
+08. About Me Section CSS End Here
+===============================*/
+
+/*==================================
+10. My Skills Section CSS Start Here
+==================================*/
+.bashir-rased-skills-title h3:after {
+	background: #007bff;
+}
+.bashir-rased-skills-bar-animation {
+	background: #007bff;
+}
+.bashir-rased-skills-bar-icons-area {
+	color: #007bff;
+}
+/*================================
+10. My Skills Section CSS End Here
+================================*/
+
+/*==================================
+11. My Resume Section CSS Start Here
+==================================*/
+.bashir-rased-resume-sub-title h3:after {
+	background: #007bff;
+}
+.bashir-rased-resume-single-item {
+	border: 1px solid #007bff;
+}
+.bashir-rased-resume-single-item:hover {
+	background: #007bff;
+}
+/*================================
+11. My Resume Section CSS End Here
+================================*/
+
+/*=================================
+12. Services Section CSS Start Here
+=================================*/
+.bashir-rased-services-single-item {
+	border: 1px solid #007bff;
+}
+.bashir-rased-services-single-item:hover {
+	background: #007bff;
+}
+.bashir-rased-services-hover-icons i {
+	color: #007bff;
+}
+.bashir-rased-services-icons i {
+	border: 1px solid #007bff;
+	color: #007bff;
+}
+/*===============================
+12. Services Section CSS End Here
+===============================*/
+
+/*==================================
+13. Portfolio Section CSS Start Here
+==================================*/
+.bashir-rased-portfolio-btn-area li {
+	border: 1px solid #007bff;
+	color: #007bff;
+}
+.bashir-rased-portfolio-active {
+	background: #007bff;
+}
+.bashir-rased-portfolio-signle-item-area {
+	border: 1px solid #007bff;
+}
+.bashir-rased-portfolio-signle-item-hover-area {
+	background: #007bff;
+}
+/*================================
+13. Portfolio Section CSS End Here
+================================*/
+
+/*=====================================
+14. Subscribe Me Section CSS Start Here
+=====================================*/
+.bashir-rased-subscribe-text-box {
+	border: 1px solid #007bff;
+}
+.bashir-rased-subscribe-submit-btn {
+	border: 1px solid #007bff;
+	background: #007bff;
+}
+/*===================================
+14. Subscribe Me Section CSS End Here
+===================================*/
+
+/*===================================
+15. Contact Me Section CSS Start Here
+===================================*/
+.bashir-rased-contact-me-sub-title h3:after {
+	background: #007bff;
+}
+.bashir-rased-contact-massage-name input,
+.bashir-rased-contact-massage-email input,
+.bashir-rased-contact-massage-subject input,
+.bashir-rased-contact-massage-box-area textarea {
+	border: 1px solid #007bff;
+}
+.bashir-rased-contact-massage-name-icon,
+.bashir-rased-contact-massage-email-icon,
+.bashir-rased-contact-massage-subject-icon,
+.bashir-rased-contact-massage-box-icon {
+	background: #007bff;
+}
+.bashir-rased-contact-massage-submit button {
+	border: 1px solid #007bff;
+	background: #007bff;
+}
+.bashir-rased-contact-info-highlight {
+	color: #007bff;
+}
+.bashir-rased-contact-info-social-icons  li span:before {
+	border: 1px solid #007bff;
+	color: #007bff;	
+}
+/*=================================
+15. Contact Me Section CSS End Here
+=================================*/
+
+/*====================================
+16. Footer Area Section CSS Start Here
+====================================*/
+#bashir-rased-footer a,
+#bashir-rased-footer a:hover {
+	color: #007bff;
+}
+/*==================================
+16. Footer Area Section CSS End Here
+==================================*/
+
+/*===================================
+17. Scroll to Top Area CSS Start Here
+===================================*/
+.bashir-rased-scroll-to-top-area {
+	background: #007bff;
+}
+/*=================================
+17. Scroll to Top Area CSS End Here
+=================================*/
+
+/*==================================
+18. Responsive Design CSS Start Here
+==================================*/
+@media all and (max-width: 992px) {
+	.bashir-rased-mobile-menu-icons {
+		border: 1px solid #007bff;
+		background: #007bff;
+	}
+}
+/*================================
+18. Responsive Design CSS End Here
+================================*/
