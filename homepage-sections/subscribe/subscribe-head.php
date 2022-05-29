@@ -6,20 +6,31 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-subscribe-header-title']) && !empty($bashir_rased_data['bashir-rased-subscribe-header-title'])){
-printf(
-	/* translators: %s: Name of subscribe header */
-	__( '%s', 'bashir-rased' ),
-	$bashir_rased_data['bashir-rased-subscribe-header-title']
-);
+if($bashir_rased_data):
+
+$bashir_rased_subscribe_header_title = $bashir_rased_data['bashir-rased-subscribe-header-title'];
+
+
+if(isset($bashir_rased_subscribe_header_title) && !empty($bashir_rased_subscribe_header_title)){
+	printf(
+		/* translators: %s: Name of subscribe header */
+		'%s',
+		esc_html($bashir_rased_subscribe_header_title, 'bashir-rased')
+	);
 }
 
 else{
     esc_html_e('subscribe to get newsletter','bashir-rased');
 }
+
+else:
+	esc_html_e('subscribe to get newsletter','bashir-rased');
+
+endif;
+
 ?>

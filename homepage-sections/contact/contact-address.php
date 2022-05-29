@@ -6,20 +6,30 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-address']) && !empty($bashir_rased_data['bashir-rased-address'])){
+if($bashir_rased_data):
+
+$bashir_rased_address = $bashir_rased_data['bashir-rased-address'];
+
+if(isset($bashir_rased_address) && !empty($bashir_rased_address)){
 	printf(
 		/* translators: %s: contact sectio address */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-address']
+		'%s',
+		esc_html($bashir_rased_address,'bashir-rased')
 	);
 }
 
 else{
     esc_html_e('Dhaka, Bangladesh.','bashir-rased');
 }
+
+else:
+    esc_html_e('Dhaka, Bangladesh.','bashir-rased');
+
+endif;
+
 ?>

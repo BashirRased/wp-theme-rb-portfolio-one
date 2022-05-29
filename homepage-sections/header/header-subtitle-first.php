@@ -6,20 +6,30 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-header-subtitle-first'])){
+if($bashir_rased_data):
+
+$bashir_rased_header_subtitle_first = $bashir_rased_data['bashir-rased-header-subtitle-first'];
+
+if(isset($bashir_rased_header_subtitle_first) && !empty($bashir_rased_header_subtitle_first)){
     printf(
 		/* translators: %s: Name of header subtitle first */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-header-subtitle-first']
+		'%s',
+		esc_html($bashir_rased_header_subtitle_first,'bashir-rased')
 	);
 }
 
 else {
     esc_html_e('Hi! I\'m','bashir-rased');
 }
+
+else :
+    esc_html_e('Hi! I\'m','bashir-rased');
+
+endif;
+
 ?>

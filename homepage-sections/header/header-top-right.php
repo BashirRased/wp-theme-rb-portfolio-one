@@ -6,16 +6,22 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-email-address-1']) && !empty($bashir_rased_data['bashir-rased-email-address-1'])){
+if($bashir_rased_data) :
+
+$bashir_rased_email_1 = $bashir_rased_data['bashir-rased-email-address-1'];
+
+$bashir_rased_email_2 = $bashir_rased_data['bashir-rased-email-address-2'];
+
+if(isset($bashir_rased_email_1) && !empty($bashir_rased_email_1)){
     printf(
 		/* translators: %s: contact email 01 */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-email-address-1']
+		'%s',
+		esc_html($bashir_rased_email_1,'bashir-rased')
 	);
 }
 
@@ -23,18 +29,32 @@ else {
     esc_html_e('info@bashir-rased.com','bashir-rased');
 }
 
-if(isset($bashir_rased_data['bashir-rased-email-address-2']) && !empty($bashir_rased_data['bashir-rased-email-address-2'])){
+if(isset($bashir_rased_email_2) && !empty($bashir_rased_email_2)){
     printf(
-		/* translators: %s: contact email 02 */
-		__(', %s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-email-address-2']
+		/* translators:
+		%1$s: ,
+		%2$s: contact email 02
+		*/
+		'%1$s %2$s',
+		esc_html(',','bashir-rased'),
+		esc_html($bashir_rased_email_2,'bashir-rased')
 	);
 }
 
-elseif (isset($bashir_rased_data['bashir-rased-email-address-2']) && empty($bashir_rased_data['bashir-rased-email-address-2'])) {
+elseif(empty($bashir_rased_email_1) && isset($bashir_rased_email_2) && !empty($bashir_rased_email_2)){
+    printf(
+		/* translators: %s: contact email 02 */
+		'%s',
+		esc_html($bashir_rased_email_2,'bashir-rased')
+	);
 }
 
 else {
     esc_html_e(', bashir.rased@gmail.com','bashir-rased');
-}                            
+}
+
+else : 
+	esc_html_e('info@bashir-rased.com, bashir.rased@gmail.com','bashir-rased');
+
+endif;
 ?>

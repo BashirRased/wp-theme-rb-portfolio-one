@@ -6,20 +6,29 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-get-in-touch-title']) && !empty($bashir_rased_data['bashir-rased-get-in-touch-title'])){
+if($bashir_rased_data):
+
+$bashir_rased_get_in_touch_title = $bashir_rased_data['bashir-rased-get-in-touch-title'];
+
+if(isset($bashir_rased_get_in_touch_title) && !empty($bashir_rased_get_in_touch_title)){
 	printf(
 		/* translators: %s: contact me section get in touch title */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-get-in-touch-title']
+		'%s',
+		esc_html($bashir_rased_get_in_touch_title,'bashir-rased')
 	);
 }
 
 else{
     esc_html_e('get in touch','bashir-rased');
 }
+
+else:
+	esc_html_e('get in touch','bashir-rased');
+
+endif;
 ?>

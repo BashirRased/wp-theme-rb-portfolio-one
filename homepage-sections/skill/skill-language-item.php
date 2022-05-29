@@ -6,14 +6,16 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if ($bashir_rased_data):
 
 $bashir_rased_language_skills = $bashir_rased_data['bashir-rased-language-skill-item'];
 
-if ($bashir_rased_language_skills) :
+if (isset($bashir_rased_language_skills) && !empty($bashir_rased_language_skills)) :
 
 foreach ($bashir_rased_language_skills as $bashir_rased_language_skill) :
 
@@ -31,17 +33,22 @@ $bashir_rased_language_skill_value_5 = $bashir_rased_language_skill['bashir-rase
 ?>
 
 <div class="col-lg-3">
+
+    <?php if(isset($bashir_rased_language_skill_text) && !empty($bashir_rased_language_skill_text)): ?>
     <div class="bashir-rased-skills-bar-title-area">
         <h5>
             <?php
 			printf(
 				/* translators: %s: Name of language skill bar text */
-				__('%s','bashir-rased'),
-				$bashir_rased_language_skill_text
+				'%s',
+				esc_html($bashir_rased_language_skill_text,'bashir-rased')
 			);
 			?>
         </h5>
     </div>
+    <?php endif; ?>
+
+    <?php if(isset($bashir_rased_language_skill_value_1) && !empty($bashir_rased_language_skill_value_1) && isset($bashir_rased_language_skill_value_2) && !empty($bashir_rased_language_skill_value_2) && isset($bashir_rased_language_skill_value_3) && !empty($bashir_rased_language_skill_value_3) && isset($bashir_rased_language_skill_value_4) && !empty($bashir_rased_language_skill_value_4) && isset($bashir_rased_language_skill_value_5) && !empty($bashir_rased_language_skill_value_5)): ?>
     <div class="bashir-rased-skills-bar-icons-area">
         <i class="
         <?php
@@ -72,11 +79,17 @@ $bashir_rased_language_skill_value_5 = $bashir_rased_language_skill['bashir-rase
         echo esc_attr($bashir_rased_language_skill_value_5);
 		?>
         "></i>
-    </div>								
+    </div>
+    <?php endif; ?>
+
 </div>
 
 <?php 
 endforeach;
+
+else: get_template_part('homepage-sections/skill/skill-language-item','else');
+
+endif;
 
 else: get_template_part('homepage-sections/skill/skill-language-item','else');
 

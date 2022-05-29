@@ -6,50 +6,70 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if($bashir_rased_data) :
 
 $bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
     
-if ($bashir_rased_design_skills) :
+if (isset($bashir_rased_design_skills) && !empty($bashir_rased_design_skills)) :
 
 foreach ($bashir_rased_design_skills as $bashir_rased_design_skill) :
+
+$bashir_rased_design_skill_text = $bashir_rased_design_skill['bashir-rased-design-skill-text'];
+
+$bashir_rased_design_skill_value = $bashir_rased_design_skill['bashir-rased-design-skill-value'];
 ?>
 
 <div class="bashir-rased-skills-bar-text-area">
+
+	<?php if(isset($bashir_rased_design_skill_text) && !empty($bashir_rased_design_skill_text)): ?>
     <div class="bashir-rased-skills-text-left float-start">
         <?php
-		printf(
-			/* translators: %s: Name of design skill bar text */
-			__('%s','bashir-rased'),
-			$bashir_rased_design_skill['bashir-rased-design-skill-text']
-		);
+			printf(
+				/* translators: %s: Name of design skill bar text */
+				'%s',
+				esc_html($bashir_rased_design_skill_text,'bashir-rased')
+			);
 		?>
 		
     </div>
+	<?php endif; ?>
+
+	<?php if(isset($bashir_rased_design_skill_value) && !empty($bashir_rased_design_skill_value)): ?>
     <div class="bashir-rased-skills-text-right float-end">
         <?php
-		printf(
-			/* translators:
-			%1$s: Name of design skill bar value
-			%2$s: %
-			*/
-			__( '%1$s%2$s', 'bashir-rased' ),
-			$bashir_rased_design_skill['bashir-rased-design-skill-value'],
-			'%'
-		);
+			printf(
+				/* translators:
+				%1$s: Name of design skill bar value
+				%2$s: %
+				*/
+				'%1$s%2$s',
+				esc_html($bashir_rased_design_skill_value, 'bashir-rased'),
+				esc_html('%', 'bashir-rased')
+			);
 		?>
     </div>
+	<?php endif; ?>
+
 </div>
-<div class="bashir-rased-skills-bar" data-percent = "<?php echo esc_attr($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
+
+<?php if(isset($bashir_rased_design_skill_value) && !empty($bashir_rased_design_skill_value)): ?>
+<div class="bashir-rased-skills-bar" data-percent = "<?php echo esc_attr($bashir_rased_design_skill_value).'%'; ?>
 ">
     <div class="bashir-rased-skills-bar-animation"></div>
 </div>
+<?php endif; ?>
 
 <?php 
 endforeach;
+
+else: get_template_part('homepage-sections/skill/skill-design-item','else');
+
+endif;
 
 else: get_template_part('homepage-sections/skill/skill-design-item','else');
 

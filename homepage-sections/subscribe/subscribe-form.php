@@ -6,11 +6,9 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
 
-if ( shortcode_exists('[mc4wp_form id="25"]')) {
-    echo do_shortcode('[mc4wp_form id="25"]');
-}
+// Add Your Newsletter Form Shortcode Here
 
 ?>

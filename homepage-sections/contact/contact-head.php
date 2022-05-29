@@ -6,15 +6,22 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
-if(isset($bashir_rased_data['bashir-rased-contact-header-title-black']) && !empty($bashir_rased_data['bashir-rased-contact-header-title-black'])){
+global $bashir_rased_data;
+
+if($bashir_rased_data):
+
+$bashir_rased_contact_header_title_black = $bashir_rased_data['bashir-rased-contact-header-title-black'];
+
+$bashir_rased_contact_header_title_theme_color = $bashir_rased_data['bashir-rased-contact-header-title-theme-color'];
+
+if(isset($bashir_rased_contact_header_title_black) && !empty($bashir_rased_contact_header_title_black)){
     printf(
 		/* translators: %s: contact me section head theme color */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-contact-header-title-black']
+		'%s',
+		esc_html($bashir_rased_contact_header_title_black,'bashir-rased')
 	);
 }
 
@@ -26,11 +33,11 @@ else{
 <span class="bashir-rased-theme-color">
 <?php
 
-if(isset($bashir_rased_data['bashir-rased-contact-header-title-theme-color']) && !empty($bashir_rased_data['bashir-rased-contact-header-title-theme-color'])){
+if(isset($bashir_rased_contact_header_title_theme_color) && !empty($bashir_rased_contact_header_title_theme_color)){
     printf(
 		/* translators: %s: contact me section head theme color */
-		__(' %s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-contact-header-title-theme-color']
+		'%s',
+		esc_html($bashir_rased_contact_header_title_theme_color,'bashir-rased')
 	);
 }
 
@@ -39,3 +46,13 @@ else{
 }
 ?>
 </span>
+
+<?php else:
+
+	esc_html_e('contact','bashir-rased'); ?>
+
+	<span class="bashir-rased-theme-color">
+		<?php esc_html_e('me','bashir-rased'); ?>
+	</span>
+
+<?php endif; ?>

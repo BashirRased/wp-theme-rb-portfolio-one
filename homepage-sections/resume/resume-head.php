@@ -6,20 +6,28 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
+
+global $bashir_rased_data;
+
+if($bashir_rased_data):
+
+$bashir_rased_resume_header_title_theme_color = $bashir_rased_data['bashir-rased-resume-header-title-theme-color'];
+
+$bashir_rased_resume_header_title_black = $bashir_rased_data['bashir-rased-resume-header-title-black'];
 
 ?>
 
 <span class="bashir-rased-theme-color">
 <?php
-$bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(isset($bashir_rased_data['bashir-rased-resume-header-title-theme-color']) && !empty($bashir_rased_data['bashir-rased-resume-header-title-theme-color'])){
+
+if(isset($bashir_rased_resume_header_title_theme_color) && !empty($bashir_rased_resume_header_title_theme_color)){
     printf(
 	/* translators: %s: Name of resume head theme color title */
-	__('%s','bashir-rased'),
-	$bashir_rased_data['bashir-rased-resume-header-title-theme-color']
+	'%s',
+	esc_html($bashir_rased_resume_header_title_theme_color,'bashir-rased')
 	);
 }
 
@@ -30,15 +38,24 @@ else{
 </span>
 
 <?php
-if(isset($bashir_rased_data['bashir-rased-resume-header-title-black']) && !empty($bashir_rased_data['bashir-rased-resume-header-title-black'])){
+if(isset($bashir_rased_resume_header_title_black) && !empty($bashir_rased_resume_header_title_black)){
     printf(
 	/* translators: %s: Name of resume head title */
-	__(' %s','bashir-rased'),
-	$bashir_rased_data['bashir-rased-resume-header-title-black']
+	' %s',
+	esc_html($bashir_rased_resume_header_title_black,'bashir-rased')
 	);
 }
 
 else{
     esc_html_e('resume','bashir-rased');
 }
-?>
+
+else: ?>
+	<span class="bashir-rased-theme-color">
+		<?php esc_html_e('my','bashir-rased'); ?>
+	</span>
+
+<?php
+	esc_html_e(' resume','bashir-rased');
+
+endif;

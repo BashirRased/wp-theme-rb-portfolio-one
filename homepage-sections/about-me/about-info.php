@@ -6,14 +6,16 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if($bashir_rased_data) :
 
 $bashir_rased_about_infos = $bashir_rased_data['bashir-rased-about-info'];
 
-if($bashir_rased_about_infos):
+if(isset($bashir_rased_about_infos) && !empty($bashir_rased_about_infos)) :
 
 foreach ($bashir_rased_about_infos as $bashir_rased_about_info) :
 
@@ -54,7 +56,9 @@ $bashir_rased_about_info_text = $bashir_rased_about_info['bashir-rased-about-inf
 </li>
 
 <?php 
-endforeach;
+	endforeach;
+else: get_template_part('homepage-sections/about-me/about-info','else');
+endif;
 else: get_template_part('homepage-sections/about-me/about-info','else');
 endif;
 ?>

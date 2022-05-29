@@ -6,27 +6,36 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if ($bashir_rased_data) :
 
 $bashir_rased_certifications = $bashir_rased_data['bashir-rased-certification-item'];
     
-if ($bashir_rased_certifications) :
+if (isset($bashir_rased_certifications) && !empty($bashir_rased_certifications)) :
 
 foreach ($bashir_rased_certifications as $bashir_rased_certification) :
+
+$bashir_rased_certification_title = $bashir_rased_certification['bashir-rased-certification-title'];
+
+$bashir_rased_certification_by = $bashir_rased_certification['bashir-rased-certification-by'];
+
+$bashir_rased_certification_desc = $bashir_rased_certification['bashir-rased-certification-desc'];
+
 ?>
 
 <div class="bashir-rased-resume-single-item">
     <div class="bashir-rased-resume-single-item-title">
         <h5>
             <?php
-            if(isset($bashir_rased_certification['bashir-rased-certification-title']) && !empty($bashir_rased_certification['bashir-rased-certification-title'])){
+            if(isset($bashir_rased_certification_title) && !empty($bashir_rased_certification_title)){
                 printf(
 				/* translators: %s: Name of certificate title */
-				__('%s','bashir-rased'),
-				$bashir_rased_certification['bashir-rased-certification-title']
+				'%s',
+				esc_html($bashir_rased_certification_title,'bashir-rased')
 				);
             }
             else{
@@ -37,11 +46,11 @@ foreach ($bashir_rased_certifications as $bashir_rased_certification) :
     </div>
     <div class="bashir-rased-resume-single-item-details">
         <?php
-        if(isset($bashir_rased_certification['bashir-rased-certification-by']) && !empty($bashir_rased_certification['bashir-rased-certification-by'])){
+        if(isset($bashir_rased_certification_by) && !empty($bashir_rased_certification_by)){
             printf(
 			/* translators: %s: Name of certificate by */
-			__('%s','bashir-rased'),
-			$bashir_rased_certification['bashir-rased-certification-by']
+			'%s',
+			esc_html($bashir_rased_certification_by,'bashir-rased')
 			);
         }        
         else{
@@ -52,11 +61,11 @@ foreach ($bashir_rased_certifications as $bashir_rased_certification) :
     <div class="bashir-rased-resume-single-item-description">
         <p>
             <?php
-            if(isset($bashir_rased_certification['bashir-rased-certification-desc']) && !empty($bashir_rased_certification['bashir-rased-certification-desc'])){
+            if(isset($bashir_rased_certification_desc) && !empty($bashir_rased_certification_desc)){
                 printf(
 				/* translators: %s: Name of certificate description */
-				__('%s','bashir-rased'),
-				$bashir_rased_certification['bashir-rased-certification-desc']
+				'%s',
+				esc_html($bashir_rased_certification_desc,'bashir-rased')
 				);
             }
             else{
@@ -69,9 +78,13 @@ foreach ($bashir_rased_certifications as $bashir_rased_certification) :
 
 <?php
     endforeach;
-    else : 
-?>
 
-<?php get_template_part('homepage-sections/resume/resume-certificate-item','else'); ?>
+else : 
+get_template_part('homepage-sections/resume/resume-certificate-item','else'); 
 
-<?php endif; ?>
+endif;
+
+else : 
+    get_template_part('homepage-sections/resume/resume-certificate-item','else'); 
+        
+endif;

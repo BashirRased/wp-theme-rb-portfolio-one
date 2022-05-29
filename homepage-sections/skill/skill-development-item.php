@@ -6,28 +6,39 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if ($bashir_rased_data):
 
 $bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
 
-if ($bashir_rased_development_skills) :
+if (isset($bashir_rased_development_skills) && !empty($bashir_rased_development_skills)) :
 
 foreach ($bashir_rased_development_skills as $bashir_rased_development_skill) :
+
+$bashir_rased_development_skill_text = $bashir_rased_development_skill['bashir-rased-development-skill-text'];
+
+$bashir_rased_development_skill_value = $bashir_rased_development_skill['bashir-rased-development-skill-value'];
 ?>
 
 <div class="bashir-rased-skills-bar-text-area">
+
+	<?php if (isset($bashir_rased_development_skill_text) && !empty($bashir_rased_development_skill_text)): ?>
     <div class="bashir-rased-skills-text-left float-start">
-        <?php
-		printf(
-			/* translators: %s: Name of development skill bar text */
-			__('%s','bashir-rased'),
-			$bashir_rased_development_skill['bashir-rased-development-skill-text']
-		);
+        <?php		
+			printf(
+				/* translators: %s: Name of development skill bar text */
+				'%s',
+				esc_html($bashir_rased_development_skill_text,'bashir-rased')
+			);				
 		?>
     </div>
+	<?php endif; ?>
+
+	<?php if (isset($bashir_rased_development_skill_value) && !empty($bashir_rased_development_skill_value)): ?>
     <div class="bashir-rased-skills-text-right float-end">
         <?php
 		printf(
@@ -35,20 +46,29 @@ foreach ($bashir_rased_development_skills as $bashir_rased_development_skill) :
 			%1$s: Name of development skill bar value
 			%2$s: %
 			*/
-			__('%1$s%2$s','bashir-rased'),
-			$bashir_rased_development_skill['bashir-rased-development-skill-value'],
-			'%'
+			'%1$s%2$s',
+			esc_html($bashir_rased_development_skill_value,'bashir-rased'),
+			esc_html('%','bashir-rased'),
 		);
 		?>
     </div>
+	<?php endif; ?>
+
 </div>
-<div class="bashir-rased-skills-bar" data-percent = "<?php echo wp_kses_post($bashir_rased_development_skill['bashir-rased-development-skill-value']).'%'; ?>
+
+<?php if (isset($bashir_rased_development_skill_value) && !empty($bashir_rased_development_skill_value)): ?>
+<div class="bashir-rased-skills-bar" data-percent = "<?php echo esc_attr($bashir_rased_development_skill_value).'%'; ?>
 ">
     <div class="bashir-rased-skills-bar-animation"></div>
 </div>
+<?php endif; ?>
 
 <?php 
 endforeach;
+
+else: get_template_part('homepage-sections/skill/skill-development-item','else');
+
+endif;
 
 else: get_template_part('homepage-sections/skill/skill-development-item','else');
 

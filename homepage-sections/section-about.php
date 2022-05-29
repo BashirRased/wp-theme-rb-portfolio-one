@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
 
 ?>
@@ -34,30 +34,19 @@
             
             <!--===== About Me Left Area Strat Here =====-->
             <div class="col-lg-5">
-                
-                <!-- About Me Image Area Start Here -->
-                <div class="bashir-rased-about-me-section-img">
-                    <?php get_template_part('homepage-sections/about-me/about-left','img'); ?>
-                </div>
-                <!-- About Me Image Area End Here -->
-                
-                <!-- About Me Button Area Start Here -->
-                <div class="bashir-rased-about-me-btns">
-                    <?php get_template_part('homepage-sections/about-me/about','buttons'); ?>
-                </div>
-                <!-- About Me Button Area End Here -->
+
+                <?php
+                get_template_part('homepage-sections/about-me/about-left','img');
+                get_template_part('homepage-sections/about-me/about','buttons');
+                ?>
                 
             </div>
             <!--===== About Me Left Area End Here =====-->
             
             <!--===== About Me Right Area Strat Here =====-->
             <div class="col-lg-7">
-                
-                <!-- About Me Content Area Start Here -->
-                <div class="bashir-rased-about-me-content">
-                    <?php get_template_part('homepage-sections/about-me/about','desc'); ?>
-                </div>
-                <!-- About Me Content Area End Here -->
+
+                <?php get_template_part('homepage-sections/about-me/about','desc'); ?>
 
                 <!-- About Me Separator Area Start Here -->
                 <div class="bashir-rased-about-me-separator"></div>

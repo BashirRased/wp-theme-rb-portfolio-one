@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
 
 if ( ! function_exists('bashir_rased_theme_setup') ) {
@@ -15,7 +15,7 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Bashir Rased 1.1.0
+	 * @since Bashir Rased 1.1.1
 	 *
 	 * @return void
 	 */
@@ -131,3 +131,12 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
 	}
 }
 add_action( 'after_setup_theme', 'bashir_rased_theme_setup');
+
+// Codestar Framework
+function bashir_rased_cutom_variable() {
+	if (class_exists('CSF_Setup')) {
+		global $bashir_rased_data;
+		$bashir_rased_data = get_option('bashir_rased_theme_option');
+	}
+}
+add_action( 'after_setup_theme', 'bashir_rased_cutom_variable' );

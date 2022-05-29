@@ -4,13 +4,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
 function bashir_rased_required_plugins() {
 
 	$plugins = array(
 
+		// Use this plugin for Theme Opitons
 		array(
 			'name'      => __('Codestar Framework', 'bashir-rased'),
 			'slug'      => 'codestar-framework',
@@ -18,53 +19,39 @@ function bashir_rased_required_plugins() {
 			'source'      => 'https://github.com/Codestar/codestar-framework/archive/refs/heads/master.zip'
 		),
 
+		// Use this plugin for Contact Form
 		array(
 			'name'      => __('Contact Form 7', 'bashir-rased'),
 			'slug'      => 'contact-form-7',
 			'required'  => true,
 		),
 
+		// Use this plugin for Custom Post
 		array(
 			'name'      => __('Custom Post Type UI','bashir-rased'),
 			'slug'      => 'custom-post-type-ui',
 			'required'  => true,
 		),
 
-		array(
+		// Use this plugin for Post Meta
+		array( 
 			'name'      => __('CMB2','bashir-rased'),
 			'slug'      => 'cmb2',
 			'required'  => true,
 		),
 
+		// Use this plugin for Social Media Links
 		array(
 			'name'      => __('RB Site Social Links','bashir-rased'),
 			'slug'      => 'rb-site-social-links',
 			'required'  => true,
 		),
 
+		// Use this plugin for Newsletter
 		array(
-			'name'      => __('MC4WP: Mailchimp for WordPress','bashir-rased'),
-			'slug'      => 'mailchimp-for-wp',
+			'name'      => __('MailPoet – emails and newsletters in WordPress','bashir-rased'),
+			'slug'      => 'mailpoet',
 			'required'  => true,
-		),
-
-		array(
-			'name'      => __('Theme Check','bashir-rased'),
-			'slug'      => 'theme-check',
-			'required'  => false,
-		),
-
-		array(
-			'name'      => __('Envato Theme Check','bashir-rased'),
-			'slug'      => 'envato-theme-check',
-			'required'  => false,
-			'source'      => 'https://github.com/envato/envato-theme-check/archive/refs/heads/master.zip'
-		),
-
-		array(
-			'name'      => __('FakerPress','bashir-rased'),
-			'slug'      => 'fakerpress',
-			'required'  => false
 		)
 
 	);

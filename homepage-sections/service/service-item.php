@@ -6,16 +6,24 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
+
+if ($bashir_rased_data) :
 
 $bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
 
-if ($bashir_rased_services) :
+if (isset($bashir_rased_services) && !empty ($bashir_rased_services)) :
 
 foreach ($bashir_rased_services as $bashir_rased_service) :
+
+$bashir_rased_service_item_icon = $bashir_rased_service['bashir-rased-service-item-icon'];
+
+$bashir_rased_service_item_title = $bashir_rased_service['bashir-rased-service-item-title'];
+
+$bashir_rased_service_item_desc = $bashir_rased_service['bashir-rased-service-item-desc'];
 ?>
 
 <!-- 01. Single Services Item Area Start Here -->
@@ -26,11 +34,11 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
         <div class="bashir-rased-services-single-area-hover">
             <div class="bashir-rased-services-hover-icons">
                 <i class="<?php
-                    if(isset($bashir_rased_service['bashir-rased-service-item-icon']) && !empty($bashir_rased_service['bashir-rased-service-item-icon'])){
-                        echo esc_attr($bashir_rased_service['bashir-rased-service-item-icon']);
+                    if(isset($bashir_rased_service_item_icon) && !empty($bashir_rased_service_item_icon)){
+                        echo esc_attr($bashir_rased_service_item_icon);
                     }
                     else{
-                        echo 'fas fa-handshake';
+                        echo esc_attr('fas fa-handshake');
                     }
                     ?>">
                 </i>
@@ -38,11 +46,11 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
             <div class="bashir-rased-services-hover-title">
                 <h4>
                     <?php
-                    if(isset($bashir_rased_service['bashir-rased-service-item-title']) && !empty($bashir_rased_service['bashir-rased-service-item-title'])){
+                    if(isset($bashir_rased_service_item_title) && !empty($bashir_rased_service_item_title)){
                         printf(
 						/* translators: %s: Name of service item title */
-						__('%s','bashir-rased'),
-						$bashir_rased_service['bashir-rased-service-item-title']
+						'%s',
+						esc_html($bashir_rased_service_item_title,'bashir-rased')
 						);
                     }
                     else{
@@ -54,11 +62,11 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
             <div class="bashir-rased-services-hover-details">
                 <p>
                     <?php
-                    if(isset($bashir_rased_service['bashir-rased-service-item-desc']) && !empty($bashir_rased_service['bashir-rased-service-item-desc'])){
+                    if(isset($bashir_rased_service_item_desc) && !empty($bashir_rased_service_item_desc)){
                         printf(
 						/* translators: %s: Name of service item description */
-						__('%s','bashir-rased'),
-						$bashir_rased_service['bashir-rased-service-item-desc']
+						'%s',
+						esc_html($bashir_rased_service_item_desc,'bashir-rased')
 						);
                     }
                     else{
@@ -74,11 +82,11 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
         <div class="bashir-rased-services-single-area">
             <div class="bashir-rased-services-icons">
             <i class="<?php
-                if(isset($bashir_rased_service['bashir-rased-service-item-icon']) && !empty($bashir_rased_service['bashir-rased-service-item-icon'])){
-                    echo esc_attr($bashir_rased_service['bashir-rased-service-item-icon']);
+                if(isset($bashir_rased_service_item_icon) && !empty($bashir_rased_service_item_icon)){
+                    echo esc_attr($bashir_rased_service_item_icon);
                 }
                 else{
-                    echo 'fas fa-handshake';
+                    echo esc_attr('fas fa-handshake');
                 }
                 ?>">
             </i>
@@ -86,11 +94,11 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
             <div class="bashir-rased-services-title">
                 <h4>
                     <?php
-                    if(isset($bashir_rased_service['bashir-rased-service-item-title']) && !empty($bashir_rased_service['bashir-rased-service-item-title'])){
+                    if(isset($bashir_rased_service_item_title) && !empty($bashir_rased_service_item_title)){
                         printf(
 						/* translators: %s: Name of service item title */
-						__('%s','bashir-rased'),
-						$bashir_rased_service['bashir-rased-service-item-title']
+						'%s',
+						esc_html($bashir_rased_service_item_title,'bashir-rased')
 						);
                     }
                     else{
@@ -108,6 +116,10 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
 
 <?php
     endforeach;
+
+    else : get_template_part('homepage-sections/service/service-item','else');
+
+    endif;
 
     else : get_template_part('homepage-sections/service/service-item','else');
     

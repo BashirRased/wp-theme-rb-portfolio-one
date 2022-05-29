@@ -6,20 +6,29 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.0
+ * @since Bashir Rased 1.1.1
  */
  
-$bashir_rased_data = get_option('bashir_rased_theme_option');
+global $bashir_rased_data;
 
-if(isset($bashir_rased_data['bashir-rased-development-skills-title']) && !empty($bashir_rased_data['bashir-rased-development-skills-title'])){
+if ($bashir_rased_data) :
+
+$bashir_rased_development_skills_title = $bashir_rased_data['bashir-rased-development-skills-title'];
+
+if(isset($bashir_rased_development_skills_title) && !empty($bashir_rased_development_skills_title)){
     printf(
 		/* translators: %s: Name of development skill title */
-		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-development-skills-title']
+		'%s',
+		esc_html($bashir_rased_development_skills_title,'bashir-rased')
 	);
 }
 
 else{
     esc_html_e('my development skills:','bashir-rased');
 }
+
+else:
+	esc_html_e('my development skills:','bashir-rased');
+
+endif;
 ?>
