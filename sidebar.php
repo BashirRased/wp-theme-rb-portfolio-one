@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.2
+ * @since Bashir Rased 1.0.3
  */
 
 dynamic_sidebar('bashir-rased-sidebar-right');

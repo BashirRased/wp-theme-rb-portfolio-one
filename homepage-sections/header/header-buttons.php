@@ -1,6 +1,10 @@
 <?php
 $bashir_rased_data = get_option('bashir_rased_theme_option');
+
+if(is_array($bashir_rased_data)) {
     $bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
+}
+    
     if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
     foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
 ?>

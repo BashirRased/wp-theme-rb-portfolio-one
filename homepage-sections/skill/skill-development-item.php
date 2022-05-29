@@ -1,6 +1,10 @@
 <?php
     $bashir_rased_data = get_option('bashir_rased_theme_option');
-    $bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
+
+    if(is_array($bashir_rased_data)) {
+        $bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
+    }    
+
     if (isset($bashir_rased_development_skills) && !empty($bashir_rased_development_skills)) :
     foreach ($bashir_rased_development_skills as $bashir_rased_development_skill) :
 ?>

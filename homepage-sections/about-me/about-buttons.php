@@ -1,6 +1,10 @@
 <?php
 $bashir_rased_data = get_option('bashir_rased_theme_option');
+
+if(is_array($bashir_rased_data)) {
     $bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
+}
+    
     if (isset($bashir_rased_about_me_btns) && !empty($bashir_rased_about_me_btns)) :
     foreach ($bashir_rased_about_me_btns as $bashir_rased_about_me_btn) :
 ?>

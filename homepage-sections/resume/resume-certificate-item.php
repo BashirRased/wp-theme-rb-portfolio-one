@@ -1,6 +1,10 @@
 <?php
     $bashir_rased_data = get_option('bashir_rased_theme_option');
-    $bashir_rased_certifications = $bashir_rased_data['bashir-rased-certification-item'];
+
+    if(is_array($bashir_rased_data)) {
+        $bashir_rased_certifications = $bashir_rased_data['bashir-rased-certification-item'];
+    } 
+    
     if (isset($bashir_rased_certifications) && !empty($bashir_rased_certifications)) :
     foreach ($bashir_rased_certifications as $bashir_rased_certification) :
 ?>

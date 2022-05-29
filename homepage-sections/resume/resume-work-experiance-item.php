@@ -1,6 +1,11 @@
 <?php
     $bashir_rased_data = get_option('bashir_rased_theme_option');
-    $bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
+
+    if(is_array($bashir_rased_data)) {
+        $bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
+    } 
+
+    
     if (isset($bashir_rased_work_experiances) && !empty($bashir_rased_work_experiances)) :
     foreach ($bashir_rased_work_experiances as $bashir_rased_work_experiance) :
 ?>
