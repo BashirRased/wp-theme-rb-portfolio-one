@@ -1,9 +1,9 @@
 === Bashir Rased ===
 Contributors: bashirrased
-Requires at least: 5.3
-Tested up to: 5.8
+Requires at least: 5.9
+Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,11 +22,11 @@ Bashir Rased WordPress Theme, 2020-2021 WordPress.org
 Bashir Rased is distributed under the terms of the GNU GPL.
 
 == Resources ==
-* bootstrap-4.0.0.min.css © 2011-2018 Twitter, Inc., MIT, https://getbootstrap.com/
+* bootstrap-5.1.3.min.css © 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors), MIT, https://getbootstrap.com/
 
-* bootstrap-4.0.0.min.js © 2011-2018 Twitter, Inc., MIT, https://getbootstrap.com/
+* bootstrap-5.1.3.min.js © 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors), MIT, https://getbootstrap.com/
 
-* popper-1.12.9.min.js © Federico Zivolo 2017, MIT, http://opensource.org/licenses/MIT
+* popper-2.10.2.min.js © Federico Zivolo 2017, MIT, http://opensource.org/licenses/MIT
 
 * font-awesome-5.10.2.min.css @fontawesome, MIT, https://fontawesome.com
 

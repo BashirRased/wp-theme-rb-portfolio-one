@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 /*

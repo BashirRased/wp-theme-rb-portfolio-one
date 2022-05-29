@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 ?>
@@ -12,7 +12,7 @@
 <!--================================== 
 ===== Hire Me Section Strat Here =====
 ===================================-->
-<section id="bashir-rased-hire-me">
+<section id="bashir-rased-hire-me" class="bashir-rased-hire-me">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

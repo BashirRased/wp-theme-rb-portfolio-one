@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 ?>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="bashir-rased-footer-text-right float-right">
+                <div class="bashir-rased-footer-text-right float-end">
                     <p>
                         <?php esc_html_e('Powered By ','bashir-rased'); ?>
                         <a href="<?php echo esc_url('http://bashir-rased.com/'); ?>">

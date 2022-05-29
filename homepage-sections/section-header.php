@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 ?>
@@ -64,7 +64,7 @@
             <!-- Header Content Left Area End Here -->
             
             <!-- Header Content Right Area Start Here -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 position-relative">
                 <div class="bashir-rased-content-area-right">
                     <?php get_template_part('homepage-sections/header/header-right','img'); ?>
                 </div>

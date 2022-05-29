@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
  
 $bashir_rased_portfolio_post = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
@@ -21,7 +21,7 @@ while($bashir_rased_portfolio_post->have_posts()) : $bashir_rased_portfolio_post
     $bashir_rased_taxs = get_the_terms(get_the_ID(),'portfolio_tag');
     
     if (!empty($bashir_rased_taxs)) :
-        foreach($bashir_rased_taxs as $bashir_rased_tax) :
+    foreach ($bashir_rased_taxs as $bashir_rased_tax) :
         $bashir_rased_slug = $bashir_rased_tax->slug;
         
         echo " ".wp_kses_post($bashir_rased_slug); 

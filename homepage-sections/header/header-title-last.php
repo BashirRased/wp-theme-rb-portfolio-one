@@ -6,17 +6,17 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-$bashir_rased_designations = $bashir_rased_data['bashir-rased-header-title-last'];
+$bashir_rased_designations = $bashir_rased_data['bashir-rased-header-title-last'] ? $bashir_rased_data['bashir-rased-header-title-last'] : "";
 
 if (isset($bashir_rased_designations) && !empty($bashir_rased_designations)) :
 
 $bashir_rased_count = 0;
-	foreach ($bashir_rased_designations as $bashir_rased_designation):
+foreach ($bashir_rased_designations as $bashir_rased_designation):
 		$bashir_rased_count++;
 	if ($bashir_rased_count === 1) {
 		$bashir_rased_count = "";

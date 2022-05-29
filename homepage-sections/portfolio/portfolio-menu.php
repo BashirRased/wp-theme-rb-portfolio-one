@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 ?>
@@ -21,7 +21,7 @@ $bashir_rased_tags = get_terms(array(
 ));
 
 if(!empty($bashir_rased_tags)):
-foreach($bashir_rased_tags as $bashir_rased_tag): ?>
+foreach ($bashir_rased_tags as $bashir_rased_tag): ?>
 
 <li data-filter="<?php echo ".".$bashir_rased_tag->slug; ?>">
     <?php

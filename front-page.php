@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir-rased
- * @since Bashir Rased 1.0.4
+ * @since Bashir Rased 1.0.5
  */
 
 get_header();

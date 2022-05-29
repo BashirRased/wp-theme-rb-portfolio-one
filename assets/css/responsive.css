@@ -1,9 +1,9 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.0.4
-Requires at least: 5.3
-Tested up to: 5.8
+Version: 1.0.5
+Requires at least: 5.9
+Tested up to: 5.9
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
 Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
