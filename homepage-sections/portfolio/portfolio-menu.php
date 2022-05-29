@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.6
+ * @since Bashir Rased 1.0.7
  */
 
 ?>
@@ -21,14 +21,18 @@ $bashir_rased_tags = get_terms(array(
 ));
 
 if(!empty($bashir_rased_tags)):
-foreach ($bashir_rased_tags as $bashir_rased_tag): ?>
+foreach ($bashir_rased_tags as $bashir_rased_tag):   
 
-<li data-filter="<?php echo ".".$bashir_rased_tag->slug; ?>">
+$bashir_rased_tag_link = $bashir_rased_tag->slug;
+$bashir_rased_tag_name = $bashir_rased_tag->name;
+?>
+
+<li data-filter="<?php echo esc_attr(".".wp_kses_post($bashir_rased_tag_link));?>">
     <?php
 	printf(
 		/* translators: %s: portfolio menu list */
 		__('%s','bashir-rased'),
-		$bashir_rased_tag->name
+		$bashir_rased_tag_name
 	);
     ?>
 </li>

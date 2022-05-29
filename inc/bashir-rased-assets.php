@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.6
+ * @since Bashir Rased 1.0.7
  */
  
 // Bashir Rased With File Directory
@@ -62,23 +62,23 @@ function bashir_rased_browser_config_assets(){
 add_action('wp_enqueue_scripts','bashir_rased_browser_config_assets');
 
 function bashir_rased_theme_custom_assets(){
-    // Theme Style CSS v1.0.6
-    wp_enqueue_style('bashir-rased-style',BASHIR_RASED_CSS.'style.css','','1.0.6','all');
+    // Theme Style CSS v1.0.7
+    wp_enqueue_style('bashir-rased-style',BASHIR_RASED_CSS.'style.css','','1.0.7','all');
 
-    // Theme Responsive CSS v1.0.6
-    wp_enqueue_style('bashir-rased-responsive',BASHIR_RASED_CSS.'responsive.css','','1.0.6','all');
+    // Theme Responsive CSS v1.0.7
+    wp_enqueue_style('bashir-rased-responsive',BASHIR_RASED_CSS.'responsive.css','','1.0.7','all');
 
-    // Theme Color CSS v1.0.6
-    wp_enqueue_style('bashir-rased-color',BASHIR_RASED_CSS.'color/default-color.css','','1.0.6','all');
+    // Theme Color CSS v1.0.7
+    wp_enqueue_style('bashir-rased-color',BASHIR_RASED_CSS.'color/default-color.css','','1.0.7','all');
 
-    // Theme Preloader CSS v1.0.6
-    wp_enqueue_style('bashir-rased-preloader',BASHIR_RASED_CSS.'preloader.css','','1.0.6','all');
+    // Theme Preloader CSS v1.0.7
+    wp_enqueue_style('bashir-rased-preloader',BASHIR_RASED_CSS.'preloader.css','','1.0.7','all');
 
-    // Theme Type JS v1.0.6
-    wp_enqueue_script('bashir-rased-type-js',BASHIR_RASED_JS.'type.js','','1.0.6',true);
+    // Theme Type JS v1.0.7
+    wp_enqueue_script('bashir-rased-type-js',BASHIR_RASED_JS.'type.js','','1.0.7',true);
 
-    // Theme Custom JS v1.0.6
-    wp_enqueue_script('bashir-rased-custom-js',BASHIR_RASED_JS.'custom.js',array('jquery'),'1.0.6',true);
+    // Theme Custom JS v1.0.7
+    wp_enqueue_script('bashir-rased-custom-js',BASHIR_RASED_JS.'custom.js',array('jquery'),'1.0.7',true);
 }
 add_action('wp_enqueue_scripts','bashir_rased_theme_custom_assets');
 

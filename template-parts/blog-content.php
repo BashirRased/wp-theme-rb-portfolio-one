@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.6
+ * @since Bashir Rased 1.0.7
  */
 
 if(is_active_sidebar('bashir-rased-sidebar-right')){

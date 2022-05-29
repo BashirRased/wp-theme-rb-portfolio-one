@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.6
+ * @since Bashir Rased 1.0.7
  */
  
 $bashir_rased_portfolio_post = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));

@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.6
+ * @since Bashir Rased 1.0.7
  */
 
 if ( shortcode_exists('[mc4wp_form id="25"]')) {
