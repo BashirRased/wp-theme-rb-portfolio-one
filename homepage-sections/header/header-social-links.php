@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.8
+ * @since Bashir Rased 1.0.9
  */
  
 if(get_option('rb_facebook_link')):

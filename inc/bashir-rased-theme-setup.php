@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.8
+ * @since Bashir Rased 1.0.9
  */
 
 if ( ! function_exists('bashir_rased_theme_setup') ) {
@@ -15,7 +15,7 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Bashir Rased 1.0.8
+	 * @since Bashir Rased 1.0.9
 	 *
 	 * @return void
 	 */

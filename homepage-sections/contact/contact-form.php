@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.8
+ * @since Bashir Rased 1.0.9
  */
 
 if ( shortcode_exists('[contact-form-7 id="19" title="Contact form 1"]')) {

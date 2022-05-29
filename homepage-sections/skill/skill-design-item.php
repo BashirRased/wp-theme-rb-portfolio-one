@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.8
+ * @since Bashir Rased 1.0.9
  */
  
     $bashir_rased_data = get_option('bashir_rased_theme_option');
