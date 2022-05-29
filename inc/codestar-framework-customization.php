@@ -95,47 +95,6 @@ if( class_exists( 'CSF' ) ) {
     *********** Basic Information Section Ends ***********
     *****************************************************/
 
-    /********************************************
-    ************ Homepage Section Start *********
-    ********************************************/
-    CSF::createSection( $prefix, array(
-      'id'  => 'bashir-rased-homepage-section',
-      'title'  => __('Homepage Options','bashir-rased'),
-      )
-    );
-
-    // Homepage Section Select Subsection
-    CSF::createSection( $prefix, array(
-      'parent'  => 'bashir-rased-homepage-section',
-      'title'  => __('Section Select','bashir-rased'),
-      'fields' => array(
-  
-        // Section Sort
-        array(
-          'id'           => 'bashir-rased-homepage-section-control',
-          'type'         => 'sorter',
-          'title'        => 'Sorter',
-          'default'      => array(
-            'enabled'    => array(
-              'header' => 'Header Section',
-              'about' => 'About Me Section',
-              'hire-me' => 'Hire Me Section',
-              'skills' => 'Skills Section',
-              'resume' => 'Resume Section',
-              'services' => 'Services Section',
-              'portfolio' => 'Portfolio Section',
-              'subscribe' => 'Subscribe Section',
-              'contact' => 'Contact Section',
-            )
-          ),
-        ),
-  
-      )
-    ) );
-    /********************************************
-    *********** Homepage Section Ends ***********
-    ********************************************/
-
     /*****************************************************
     ************** Homepage Header Section Start *********
     *****************************************************/

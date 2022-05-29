@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage bashirrased
- * @since Bashir Rased 1.0.0
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.1
  */
 
 // Theme Setup

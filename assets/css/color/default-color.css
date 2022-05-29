@@ -1,7 +1,7 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashirrased
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 5.3
 Tested up to: 5.8
 Requires PHP: 5.6
@@ -124,7 +124,6 @@ Table of CSS Content End Here
 
 /* 7.4. Header Content Area Start Here */
 .bashir-rased-type-effect-skills {
-	border-right: 2px solid #007bff;
 	color: #007bff;
 }
 /* 7.4. Header Content Area End Here */
