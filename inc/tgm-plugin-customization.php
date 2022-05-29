@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
  
 function bashir_rased_required_plugins() {
@@ -23,20 +23,6 @@ function bashir_rased_required_plugins() {
 		array(
 			'name'      => __('Contact Form 7', 'bashir-rased'),
 			'slug'      => 'contact-form-7',
-			'required'  => true,
-		),
-
-		// Use this plugin for Custom Post
-		array(
-			'name'      => __('Custom Post Type UI','bashir-rased'),
-			'slug'      => 'custom-post-type-ui',
-			'required'  => true,
-		),
-
-		// Use this plugin for Post Meta
-		array( 
-			'name'      => __('CMB2','bashir-rased'),
-			'slug'      => 'cmb2',
 			'required'  => true,
 		),
 

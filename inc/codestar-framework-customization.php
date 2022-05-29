@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
 
 // Control core classes for avoid errors
@@ -896,45 +896,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
     /*****************************************************
     ********** Homepage My Services Section Ends *********
-    *****************************************************/
-
-    /*****************************************************
-    ********* Homepage My Portfolio Section Start ********
-    *****************************************************/
-    CSF::createSection( $prefix, array(
-      'id'  => 'bashir-rased-portfolio-section',
-      'title'  => __('Homepage My Portfolio','bashir-rased'),
-      )
-    );
-
-    // Homepage My Portfolio Header Title Subsection
-    CSF::createSection( $prefix, array(
-      'parent'  => 'bashir-rased-portfolio-section',
-      'title'  => __('My Portfolio Header Title','bashir-rased'),
-      'fields' => array(        
-
-        // Header Title Theme Color
-        array(
-          'id'    => 'bashir-rased-portfolio-header-title-theme-color',
-          'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('My','bashir-rased')
-        ),
-        
-        // Header Title Black Color
-        array(
-          'id'    => 'bashir-rased-portfolio-header-title-black',
-          'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('Portfolio','bashir-rased')
-        )
-
-      )
-
-    ) );
-    /*****************************************************
-    ********* Homepage My Portfolio Section Ends *********
-    *****************************************************/
+    *****************************************************/   
 
     /*****************************************************
     ********** Homepage Subscribe Section Start **********

@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
 
 ?>

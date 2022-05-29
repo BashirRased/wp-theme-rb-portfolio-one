@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
 
 // Add Your Contact Form 7 Shortcode Here

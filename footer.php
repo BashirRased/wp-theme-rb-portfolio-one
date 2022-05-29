@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
 
 ?>
@@ -23,7 +23,7 @@
                 <div class="bashir-rased-footer-text-left">
                     <p>
                         <?php esc_html_e('Copyright © By ','bashir-rased'); ?>
-                        <a href="<?php echo esc_url('http://bashir-rased.com/'); ?>">
+                        <a href="<?php echo esc_url('https://profiles.wordpress.org/bashirrased2017/'); ?>">
                             <?php esc_html_e('Bashir Rased','bashir-rased'); ?>
                         </a>
                         <?php esc_html_e(' 2021 | All Rights Reserved.','bashir-rased'); ?>
@@ -34,7 +34,7 @@
                 <div class="bashir-rased-footer-text-right float-end">
                     <p>
                         <?php esc_html_e('Powered By ','bashir-rased'); ?>
-                        <a href="<?php echo esc_url('http://bashir-rased.com/'); ?>">
+                        <a href="<?php echo esc_url('https://profiles.wordpress.org/bashirrased2017/'); ?>">
                             <?php esc_html_e('Bashir Rased.','bashir-rased'); ?>
                         </a>
                     </p>

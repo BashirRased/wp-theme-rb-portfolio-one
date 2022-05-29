@@ -1,14 +1,14 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.1.1
+Version: 1.1.2
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
 Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
 Author: Bashir Rased
-Author URI: http://bashir-rased.com/
+Author URI: https://profiles.wordpress.org/bashirrased2017/
 Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

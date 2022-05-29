@@ -1,10 +1,12 @@
 <?php
 /**
- * The template for displaying front page
+ * Template Name: Portfolio Home Page
+ * 
+ * The template for displaying portfolio home page
  *
  * @package WordPress
  * @subpackage bashir-rased
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  */
 
 get_header();

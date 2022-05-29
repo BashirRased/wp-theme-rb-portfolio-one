@@ -5,7 +5,7 @@
  * This does not enqueue the script because it is tiny and because it is only for IE11,
  * thus it does not warrant having an entire dedicated blocking script being loaded.
  *
- * @since Bashir Rased 1.1.1
+ * @since Bashir Rased 1.1.2
  *
  * @link https://git.io/vWdr2
  */
