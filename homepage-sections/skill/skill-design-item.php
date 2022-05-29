@@ -6,17 +6,16 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
-    $bashir_rased_data = get_option('bashir_rased_theme_option');
+$bashir_rased_data = get_option('bashir_rased_theme_option');
 
-    if(is_array($bashir_rased_data['bashir-rased-design-skill-item']) || is_object($bashir_rased_data['bashir-rased-design-skill-item'])){
-		$bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
-	}
+$bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
     
-    if (isset($bashir_rased_design_skills) && !empty($bashir_rased_design_skills)) :
-    foreach ($bashir_rased_design_skills as $bashir_rased_design_skill) :
+if ($bashir_rased_design_skills) :
+
+foreach ($bashir_rased_design_skills as $bashir_rased_design_skill) :
 ?>
 
 <div class="bashir-rased-skills-bar-text-area">
@@ -44,7 +43,7 @@
 		?>
     </div>
 </div>
-<div class="bashir-rased-skills-bar" data-percent = "<?php echo wp_kses_post($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
+<div class="bashir-rased-skills-bar" data-percent = "<?php echo esc_attr($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
 ">
     <div class="bashir-rased-skills-bar-animation"></div>
 </div>

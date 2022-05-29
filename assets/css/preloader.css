@@ -1,7 +1,7 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.0.9
+Version: 1.1.0
 Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.6

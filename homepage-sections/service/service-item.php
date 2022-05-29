@@ -6,16 +6,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data['bashir-rased-service-item']) || is_object($bashir_rased_data['bashir-rased-service-item'])){
-	$bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
-}
+$bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
 
-if (isset($bashir_rased_services) && !empty($bashir_rased_services)) :
+if ($bashir_rased_services) :
 
 foreach ($bashir_rased_services as $bashir_rased_service) :
 ?>
@@ -29,7 +27,7 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
             <div class="bashir-rased-services-hover-icons">
                 <i class="<?php
                     if(isset($bashir_rased_service['bashir-rased-service-item-icon']) && !empty($bashir_rased_service['bashir-rased-service-item-icon'])){
-                        echo wp_kses_post($bashir_rased_service['bashir-rased-service-item-icon']);
+                        echo esc_attr($bashir_rased_service['bashir-rased-service-item-icon']);
                     }
                     else{
                         echo 'fas fa-handshake';
@@ -77,7 +75,7 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
             <div class="bashir-rased-services-icons">
             <i class="<?php
                 if(isset($bashir_rased_service['bashir-rased-service-item-icon']) && !empty($bashir_rased_service['bashir-rased-service-item-icon'])){
-                    echo wp_kses_post($bashir_rased_service['bashir-rased-service-item-icon']);
+                    echo esc_attr($bashir_rased_service['bashir-rased-service-item-icon']);
                 }
                 else{
                     echo 'fas fa-handshake';

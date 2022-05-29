@@ -7,7 +7,7 @@
  *
  * Learn more: https://git.io/vWdr2
  *
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );

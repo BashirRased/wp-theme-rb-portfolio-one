@@ -6,16 +6,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data['bashir-rased-header-btn-group']) || is_object($bashir_rased_data['bashir-rased-header-btn-group'])){
-	$bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
-}
+$bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
     
-if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
+if ($bashir_rased_header_btns) :
 
 foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
 ?>
@@ -23,7 +21,7 @@ foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
 <div class="bashir-rased-btn">
     <a href="<?php
     if(isset($bashir_rased_header_btn['bashir-rased-header-btn-link']['url']) && !empty($bashir_rased_header_btn['bashir-rased-header-btn-link']['url'])){
-        echo wp_kses_post($bashir_rased_header_btn['bashir-rased-header-btn-link']['url']);
+        echo esc_url($bashir_rased_header_btn['bashir-rased-header-btn-link']['url']);
     }
     
     else {
@@ -31,7 +29,7 @@ foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
     }
     ?>" target="<?php
     if(isset($bashir_rased_header_btn['bashir-rased-header-btn-link']['target']) && !empty($bashir_rased_header_btn['bashir-rased-header-btn-link']['target'])){
-        echo wp_kses_post($bashir_rased_header_btn['bashir-rased-header-btn-link']['target']);
+        echo esc_attr($bashir_rased_header_btn['bashir-rased-header-btn-link']['target']);
     }
     
     else {

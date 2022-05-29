@@ -6,16 +6,18 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(isset($bashir_rased_data['bashir-rased-about-desc']) && !empty($bashir_rased_data['bashir-rased-about-desc'])):
+$bashir_rased_about_desc = $bashir_rased_data['bashir-rased-about-desc'];
+
+if(isset($bashir_rased_about_desc) && !empty($bashir_rased_about_desc)):
     printf(
 		/* translators: %s: Name of about me description */
 		__('%s','bashir-rased'),
-		$bashir_rased_data['bashir-rased-about-desc']
+		$bashir_rased_about_desc
 	);
 
 else: ?>

@@ -6,57 +6,58 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data['bashir-rased-about-btns']) || is_object($bashir_rased_data['bashir-rased-about-btns'])){
-	$bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
-}
-    
-if (isset($bashir_rased_about_me_btns) && !empty($bashir_rased_about_me_btns)) :
-    
+$bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
+
+if($bashir_rased_about_me_btns):
+
 foreach ($bashir_rased_about_me_btns as $bashir_rased_about_me_btn) :
+
+$bashir_rased_about_me_btn_url = $bashir_rased_about_me_btn['bashir-rased-about-btn-link']['url'];
+
+$bashir_rased_about_me_btn_target = $bashir_rased_about_me_btn['bashir-rased-about-btn-link']['target'];
+
+$bashir_rased_about_me_btn_txt = $bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text'];
+
+if(isset($bashir_rased_about_me_btn_txt) && !empty($bashir_rased_about_me_btn_txt)):
 ?>
 
 <div class="bashir-rased-btn">
     <a href="<?php
-    if(isset($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['url']) && !empty($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['url'])){
-        echo wp_kses_post($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['url']);
+    if(isset($bashir_rased_about_me_btn_url) && !empty($bashir_rased_about_me_btn_url)){
+        echo esc_url($bashir_rased_about_me_btn_url);
     }
     
     else {
         echo esc_attr('#');
     }
     ?>" target="<?php
-    if(isset($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['target']) && !empty($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['target'])){
-        echo wp_kses_post($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['target']);
+    if(isset($bashir_rased_about_me_btn_target) && !empty($bashir_rased_about_me_btn_target)){
+        echo esc_attr($bashir_rased_about_me_btn_target);
     }
     
     else {
         echo esc_attr('_self');
     }
     ?>">
-        <?php
-        if(isset($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text']) && !empty($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text'])){
-            printf(
-				/* translators: %s: Name of about me button text */
-				__('%s','bashir-rased'),
-				$bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text']
-			);
-        }
-        
-        else {
-            esc_html_e('Download CV','bashir-rased');
-        }
+        <?php        
+        printf(
+            /* translators: %s: Name of about me button text */
+            __('%s','bashir-rased'),
+            $bashir_rased_about_me_btn_txt
+        );
         ?>
     </a>
 </div>
 
 <?php
+    endif;
     endforeach;
-    else : 
+    else:
 ?>
 
 <div class="bashir-rased-btn">
@@ -70,4 +71,6 @@ foreach ($bashir_rased_about_me_btns as $bashir_rased_about_me_btn) :
     </a>
 </div>
 
-<?php endif; ?>
+<?php
+    endif;
+?>

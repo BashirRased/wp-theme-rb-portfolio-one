@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
 
 ?>
@@ -29,7 +29,13 @@ $bashir_rased_tag_link = $bashir_rased_tag->slug;
 $bashir_rased_tag_name = $bashir_rased_tag->name;
 ?>
 
-<li data-filter="<?php echo esc_attr(".".wp_kses_post($bashir_rased_tag_link));?>">
+<li data-filter="<?php
+printf(
+	/* translators: %s: Name of portfolio tag Link */
+	esc_attr('.%s'),
+	$bashir_rased_tag_link
+);
+?>">
     <?php
 	printf(
 		/* translators: %s: portfolio menu list */

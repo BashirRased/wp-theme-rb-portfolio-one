@@ -6,16 +6,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.9
+ * @since Bashir Rased 1.1.0
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data['bashir-rased-development-skill-item']) || is_object($bashir_rased_data['bashir-rased-development-skill-item'])){
-	$bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
-}
+$bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
 
-if (isset($bashir_rased_development_skills) && !empty($bashir_rased_development_skills)) :
+if ($bashir_rased_development_skills) :
 
 foreach ($bashir_rased_development_skills as $bashir_rased_development_skill) :
 ?>
