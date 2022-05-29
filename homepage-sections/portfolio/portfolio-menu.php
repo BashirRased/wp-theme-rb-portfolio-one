@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.7
+ * @since Bashir Rased 1.0.8
  */
 
 ?>
@@ -20,7 +20,7 @@ $bashir_rased_tags = get_terms(array(
     'taxonomy'    => 'portfolio_tag'
 ));
 
-if(!empty($bashir_rased_tags)):
+if(is_array($bashir_rased_tags) || is_object($bashir_rased_tags)):
 foreach ($bashir_rased_tags as $bashir_rased_tag):   
 
 $bashir_rased_tag_link = $bashir_rased_tag->slug;

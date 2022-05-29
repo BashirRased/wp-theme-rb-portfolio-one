@@ -6,12 +6,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.7
+ * @since Bashir Rased 1.0.8
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-$bashir_rased_services = isset($bashir_rased_data['bashir-rased-service-item']);
+if(is_array($bashir_rased_data['bashir-rased-service-item']) || is_object($bashir_rased_data['bashir-rased-service-item'])){
+	$bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
+}
 
 if (isset($bashir_rased_services) && !empty($bashir_rased_services)) :
 
@@ -41,7 +43,7 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
                     if(isset($bashir_rased_service['bashir-rased-service-item-title']) && !empty($bashir_rased_service['bashir-rased-service-item-title'])){
                         printf(
 						/* translators: %s: Name of service item title */
-						__('s%','bashir-rased'),
+						__('%s','bashir-rased'),
 						$bashir_rased_service['bashir-rased-service-item-title']
 						);
                     }
@@ -57,7 +59,7 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
                     if(isset($bashir_rased_service['bashir-rased-service-item-desc']) && !empty($bashir_rased_service['bashir-rased-service-item-desc'])){
                         printf(
 						/* translators: %s: Name of service item description */
-						__('s%','bashir-rased'),
+						__('%s','bashir-rased'),
 						$bashir_rased_service['bashir-rased-service-item-desc']
 						);
                     }
@@ -89,7 +91,7 @@ foreach ($bashir_rased_services as $bashir_rased_service) :
                     if(isset($bashir_rased_service['bashir-rased-service-item-title']) && !empty($bashir_rased_service['bashir-rased-service-item-title'])){
                         printf(
 						/* translators: %s: Name of service item title */
-						__('s%','bashir-rased'),
+						__('%s','bashir-rased'),
 						$bashir_rased_service['bashir-rased-service-item-title']
 						);
                     }

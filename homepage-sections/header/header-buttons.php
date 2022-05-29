@@ -6,12 +6,14 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.7
+ * @since Bashir Rased 1.0.8
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-$bashir_rased_header_btns = isset($bashir_rased_data['bashir-rased-header-btn-group']);
+if(is_array($bashir_rased_data['bashir-rased-header-btn-group']) || is_object($bashir_rased_data['bashir-rased-header-btn-group'])){
+	$bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
+}
     
 if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
 
