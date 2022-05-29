@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.5
+ * @since Bashir Rased 1.0.6
  */
 
 function bashir_rased_metaboxes() {

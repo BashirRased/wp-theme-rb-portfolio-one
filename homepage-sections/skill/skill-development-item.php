@@ -6,12 +6,12 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.5
+ * @since Bashir Rased 1.0.6
  */
  
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-$bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'] ? $bashir_rased_data['bashir-rased-development-skill-item'] : "";
+$bashir_rased_development_skills = isset($bashir_rased_data['bashir-rased-development-skill-item']);
 
 if (isset($bashir_rased_development_skills) && !empty($bashir_rased_development_skills)) :
 
