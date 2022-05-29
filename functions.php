@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.1
+ * @since Bashir Rased 1.0.2
  */
 
 // Theme Setup
@@ -22,11 +22,6 @@ if(file_exists(dirname(__FILE__).'/inc/bashir-rased-assets.php')) {
 // Theme Widgets
 if(file_exists(dirname(__FILE__).'/inc/bashir-rased-widgets.php')) {
 	require_once(dirname(__FILE__).'/inc/bashir-rased-widgets.php');
-}
-
-// Theme Block Style
-if(file_exists(dirname(__FILE__).'/inc/bashir-rased-block-style.php')) {
-	require_once(dirname(__FILE__).'/inc/bashir-rased-block-style.php');
 }
 
 // TGM Plugin Activation

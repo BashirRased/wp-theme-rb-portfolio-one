@@ -8,7 +8,7 @@ if ( ! function_exists('bashirrased_theme_setup') ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Bashir Rased 1.0.1
+	 * @since Bashir Rased 1.0.2
 	 *
 	 * @return void
 	 */
