@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for codestar framework theme options.
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
 
 // Control core classes for avoid errors
 if( class_exists( 'CSF' ) ) {
@@ -10,7 +17,7 @@ if( class_exists( 'CSF' ) ) {
     //
     // Create options
     CSF::createOptions( $prefix, array(
-      'menu_title' => 'Bashir Rased Theme Options',
+      'menu_title' => __('Bashir Rased Theme Options','bashir-rased'),
       'menu_slug'  => 'bashir_rased_theme_option_menu',
       'framework_title' => __('Bashir Rased Theme Options','bashir-rased'),
       'footer_credit' => __('Bashir Rased','bashir-rased')
@@ -36,7 +43,7 @@ if( class_exists( 'CSF' ) ) {
           'id'    => 'bashir-rased-phone-number-1',
           'type'  => 'number',
           'title' => __('Phone Number 1','bashir-rased'),
-          'default'     => 1934109870
+          'default'     => __('1934109870','bashir-rased')
         ),
         
         // Phone Number 2
@@ -44,7 +51,7 @@ if( class_exists( 'CSF' ) ) {
             'id'    => 'bashir-rased-phone-number-2',
             'type'  => 'number',
             'title' => __('Phone Number 2','bashir-rased'),
-            'default'     => 1841109870
+            'default'     => __('1841109870','bashir-rased')
         )
   
       )
@@ -514,7 +521,8 @@ if( class_exists( 'CSF' ) ) {
               'bashir-rased'),
               'subtitle' => __('% Value',
               'bashir-rased'),
-              'default' => 85
+              'default' => __('85',
+              'bashir-rased')
             ),
           )
         )
@@ -566,7 +574,8 @@ if( class_exists( 'CSF' ) ) {
               'bashir-rased'),
               'subtitle' => __('% Value',
               'bashir-rased'),
-              'default' => 65
+              'default' => __('65',
+              'bashir-rased')
             ),
           )
         )

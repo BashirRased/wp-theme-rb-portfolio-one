@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying frontpage About Me Section
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <!--=================================== 
 ===== About Me Section Strat Here =====
 ====================================-->

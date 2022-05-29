@@ -1,8 +1,22 @@
 <?php
+/**
+ * The template for displaying frontpage about me section
+ *
+ * Part of about me section description
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
 if(isset($bashir_rased_data['bashir-rased-about-desc']) && !empty($bashir_rased_data['bashir-rased-about-desc'])):
-    echo wp_kses_post($bashir_rased_data['bashir-rased-about-desc']);
+    printf(
+		/* translators: %s: Name of about me description */
+		__('%s','bashir-rased'),
+		$bashir_rased_data['bashir-rased-about-desc']
+	);
 
 else: ?>
 <p>

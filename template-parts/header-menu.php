@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying website header menu
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <!--===== Header Menu Area Strat Here =====-->
 <div class="bashir-rased-header-menu-area">
     <div class="container">

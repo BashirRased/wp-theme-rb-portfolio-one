@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.3
+ * @since Bashir Rased 1.0.4
  */
 
 get_header();
@@ -14,7 +14,7 @@ get_template_part('template-parts/header-menu');
 get_template_part('template-parts/preloader');
 ?>
 
-<div id="bashir-rased-content">
+<div id="bashir-rased-page-content">
     <div class="container">
         <div class="row">
 

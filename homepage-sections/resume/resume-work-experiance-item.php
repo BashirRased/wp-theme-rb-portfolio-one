@@ -1,13 +1,21 @@
 <?php
-    $bashir_rased_data = get_option('bashir_rased_theme_option');
+/**
+ * The template for displaying frontpage resume section
+ *
+ * Part of resume section work experiance subsection item
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+$bashir_rased_data = get_option('bashir_rased_theme_option');
 
-    if(is_array($bashir_rased_data)) {
-        $bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
-    } 
-
+$bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
     
-    if (isset($bashir_rased_work_experiances) && !empty($bashir_rased_work_experiances)) :
-    foreach ($bashir_rased_work_experiances as $bashir_rased_work_experiance) :
+if (isset($bashir_rased_work_experiances) && !empty($bashir_rased_work_experiances)) :
+
+foreach ($bashir_rased_work_experiances as $bashir_rased_work_experiance) :
 ?>
 
 <!-- 01. My Resume Work Experience Single Item Start Here -->
@@ -16,7 +24,11 @@
         <h5>
             <?php
             if(isset($bashir_rased_work_experiance['bashir-rased-work-experiance-title']) && !empty($bashir_rased_work_experiance['bashir-rased-work-experiance-title'])){
-                echo wp_kses_post($bashir_rased_work_experiance['bashir-rased-work-experiance-title']);
+               printf(
+				/* translators: %s: Name of work experiance title */
+				__('%s','bashir-rased'),
+				$bashir_rased_work_experiance['bashir-rased-work-experiance-title']
+				);
             }
             else{
                 esc_html_e('Add Company Name','bashir-rased');
@@ -27,7 +39,11 @@
     <div class="bashir-rased-resume-single-item-details">
         <?php
         if(isset($bashir_rased_work_experiance['bashir-rased-work-experiance-duration']) && !empty($bashir_rased_work_experiance['bashir-rased-work-experiance-duration'])){
-            echo wp_kses_post($bashir_rased_work_experiance['bashir-rased-work-experiance-duration']);
+            printf(
+			/* translators: %s: Name of work experiance duration */
+			__('%s','bashir-rased'),
+			$bashir_rased_work_experiance['bashir-rased-work-experiance-duration']
+			);
         }
         else{
             esc_html_e('Add Work Duration','bashir-rased');
@@ -38,7 +54,11 @@
         <p>
             <?php
             if(isset($bashir_rased_work_experiance['bashir-rased-work-experiance-desc']) && !empty($bashir_rased_work_experiance['bashir-rased-work-experiance-desc'])){
-                echo wp_kses_post($bashir_rased_work_experiance['bashir-rased-work-experiance-desc']);
+                printf(
+				/* translators: %s: Name of work experiance description */
+				__('%s','bashir-rased'),
+				$bashir_rased_work_experiance['bashir-rased-work-experiance-desc']
+				);
             }
             else{
                 esc_html_e('Add Work Description','bashir-rased');

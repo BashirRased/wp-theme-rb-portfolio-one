@@ -1,12 +1,21 @@
 <?php
+/**
+ * The template for displaying frontpage header section
+ *
+ * Part of header section buttons
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data)) {
-    $bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
-}
+$bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
     
-    if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
-    foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
+if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
+
+foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
 ?>
 
 <div class="bashir-rased-btn">
@@ -29,7 +38,11 @@ if(is_array($bashir_rased_data)) {
     ?>">
         <?php
         if(isset($bashir_rased_header_btn['bashir-rased-header-btn-link']['text']) && !empty($bashir_rased_header_btn['bashir-rased-header-btn-link']['text'])){
-            echo wp_kses_post($bashir_rased_header_btn['bashir-rased-header-btn-link']['text']);
+            printf(
+				/* translators: %s: Name of header buttons link text */
+				__('%s','bashir-rased'),
+				$bashir_rased_header_btn['bashir-rased-header-btn-link']['text']
+			);
         }
         
         else {

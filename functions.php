@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.3
+ * @since Bashir Rased 1.0.4
  */
 
 // Theme Setup
@@ -22,6 +22,11 @@ if(file_exists(dirname(__FILE__).'/inc/bashir-rased-assets.php')) {
 // Theme Widgets
 if(file_exists(dirname(__FILE__).'/inc/bashir-rased-widgets.php')) {
 	require_once(dirname(__FILE__).'/inc/bashir-rased-widgets.php');
+}
+
+// Skip Focus Link
+if(file_exists(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php')) {
+	require_once(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php');
 }
 
 // TGM Plugin Activation

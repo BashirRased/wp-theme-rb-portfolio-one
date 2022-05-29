@@ -1,9 +1,17 @@
 <?php
+/**
+ * The template for displaying frontpage skill section
+ *
+ * Part of skill section design subsection item
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
     $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-    if(is_array($bashir_rased_data)) {
-        $bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
-    }
+    $bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
 
     
     if (isset($bashir_rased_design_skills) && !empty($bashir_rased_design_skills)) :
@@ -12,13 +20,30 @@
 
 <div class="bashir-rased-skills-bar-text-area">
     <div class="bashir-rased-skills-text-left float-left">
-        <?php echo wp_kses_post($bashir_rased_design_skill['bashir-rased-design-skill-text']); ?>
+        <?php
+		printf(
+			/* translators: %s: Name of design skill bar text */
+			__('%s','bashir-rased'),
+			$bashir_rased_design_skill['bashir-rased-design-skill-text']
+		);
+		?>
+		
     </div>
     <div class="bashir-rased-skills-text-right float-right">
-        <?php echo wp_kses_post($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
+        <?php
+		printf(
+			/* translators:
+			%1$s: Name of design skill bar value
+			%2$s: %
+			*/
+			__( '%1$s%2$s', 'bashir-rased' ),
+			$bashir_rased_design_skill['bashir-rased-design-skill-value'],
+			'%'
+		);
+		?>
     </div>
 </div>
-<div class="bashir-rased-skills-bar" data-percent="<?php echo wp_kses_post($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
+<div class="bashir-rased-skills-bar" data-percent = "<?php echo wp_kses_post($bashir_rased_design_skill['bashir-rased-design-skill-value']).'%'; ?>
 ">
     <div class="bashir-rased-skills-bar-animation"></div>
 </div>

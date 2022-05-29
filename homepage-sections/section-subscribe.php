@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying frontpage Subscribe Section
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <!--======================================= 
 ===== Subscribe Me Section Strat Here =====
 ========================================-->

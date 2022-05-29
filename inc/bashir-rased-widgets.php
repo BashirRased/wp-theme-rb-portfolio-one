@@ -1,7 +1,14 @@
 <?php 
-
+/**
+ * The template for sidebar function.
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 // widget register
-function bashirrased_widget_area(){
+function bashir_rased_widget_area(){
 	register_sidebar(array(
 		'name' 			=> __('Right Sidebar', 'bashir-rased'),
 		'description' 	=> __('Add your widgets in right sidebar', 'bashir-rased'),
@@ -16,4 +23,4 @@ function bashirrased_widget_area(){
 	)); 
     
 }
-add_action('widgets_init', 'bashirrased_widget_area');
+add_action('widgets_init', 'bashir_rased_widget_area');

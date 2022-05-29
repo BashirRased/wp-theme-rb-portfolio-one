@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying general post loop content
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <div class="bashir-rased-post-content">
     <?php
     if(is_single()){

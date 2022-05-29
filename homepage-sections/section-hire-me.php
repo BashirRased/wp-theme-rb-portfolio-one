@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying frontpage Hire Me Section
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <!--================================== 
 ===== Hire Me Section Strat Here =====
 ===================================-->

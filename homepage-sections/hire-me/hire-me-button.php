@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage hire me section
+ *
+ * Part of hire me section buttons
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+ ?>
+ 
 <a href="<?php
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
@@ -21,7 +34,11 @@ else {
 ?>">
     <?php
     if(isset($bashir_rased_data['bashir-rased-hire-btn-link']['text']) && !empty($bashir_rased_data['bashir-rased-hire-btn-link']['text'])){
-        echo wp_kses_post($bashir_rased_data['bashir-rased-hire-btn-link']['text']);
+        printf(
+			/* translators: %s: Name of hire me button text */
+			__('%s','bashir-rased'),
+			$bashir_rased_data['bashir-rased-hire-btn-link']['text']
+		);
     }
     
     else {

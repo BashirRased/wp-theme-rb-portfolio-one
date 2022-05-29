@@ -1,4 +1,14 @@
-<?php 
+<?php
+/**
+ * The template for displaying frontpage portfolio section
+ *
+ * Part of portfolio section item
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 $bashir_rased_portfolio_post = new WP_Query(array('post_type'=>'portfolio','posts_per_page'=>-1));
 if($bashir_rased_portfolio_post->have_posts()) : 
 while($bashir_rased_portfolio_post->have_posts()) : $bashir_rased_portfolio_post->the_post();
@@ -14,8 +24,9 @@ while($bashir_rased_portfolio_post->have_posts()) : $bashir_rased_portfolio_post
         foreach($bashir_rased_taxs as $bashir_rased_tax) :
         $bashir_rased_slug = $bashir_rased_tax->slug;
         
-        echo " ".$bashir_rased_slug; 
-    endforeach; endif;
+        echo " ".wp_kses_post($bashir_rased_slug); 
+    endforeach;
+	endif;
 ?>
 ">
     <div class="bashir-rased-portfolio-signle-item-area">
@@ -41,10 +52,13 @@ while($bashir_rased_portfolio_post->have_posts()) : $bashir_rased_portfolio_post
             <div class="bashir-rased-portfolio-signle-sub-category">
                 <?php
                 // Grab the metadata from the database
-                $bashir_rased_portfolio_subtitle = get_post_meta( get_the_ID(), 'bashirrased_portfolio_subtitle_meta', true );
+                $bashir_rased_portfolio_subtitle = get_post_meta( get_the_ID(), 'bashir_rased_portfolio_subtitle_meta', true );
 
-                // Echo the metadata
-                echo esc_html( $bashir_rased_portfolio_subtitle );
+                printf(
+				/* translators: %s: Name of portfolio category */
+				__('%s','bashir-rased'),
+				$bashir_rased_portfolio_subtitle
+				);
                 ?>
             </div>
         </div>

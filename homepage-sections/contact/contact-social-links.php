@@ -1,4 +1,15 @@
-<?php if(get_option('rb_facebook_link')): ?>
+<?php
+/**
+ * The template for displaying frontpage contact me section
+ *
+ * Part of contact me section social links
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+if(get_option('rb_facebook_link')): ?>
 <li class="bashir-rased-facebook-link">
     <a href="<?php echo esc_url(get_option('rb_facebook_link')); ?>" target="_blank"><span></span></a>
 </li>

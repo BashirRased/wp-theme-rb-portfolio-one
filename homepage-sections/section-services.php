@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying frontpage My Services Section
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <!--====================================== 
 ===== My Services Section Strat Here =====
 =======================================-->

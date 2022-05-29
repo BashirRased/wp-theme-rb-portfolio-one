@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage header section
+ *
+ * Part of header section image
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+?>
+ 
 <img src="<?php
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 

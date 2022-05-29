@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage service section
+ *
+ * Part of service section item else
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+ ?>
+ 
 <!-- 01. Single Services Item Area Start Here -->
 <div class="col-lg-4">
     <div class="bashir-rased-services-single-item">

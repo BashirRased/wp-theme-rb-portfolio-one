@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying single post.
+ * The template for displaying all single post content.
  *
  * @package WordPress
  * @subpackage bashir_rased
- * @since Bashir Rased 1.0.3
+ * @since Bashir Rased 1.0.4
  */
 
 if(is_active_sidebar('bashir-rased-sidebar-right')){
@@ -16,7 +16,7 @@ else {
 
 ?>
 
-<div class="<?php echo wp_kses_post($bashir_rased_content_class); ?>" id="bashir-rased-page-content">
+<div class="<?php echo esc_attr(wp_kses_post($bashir_rased_content_class)); ?>" id="bashir-rased-page-content">
 
     <div class="bashir-rased-single-post-area">       
     <?php 

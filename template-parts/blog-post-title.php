@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying general post loop title
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <div class="bashir-rased-post-title">
     <?php if(is_single()): ?>
         <h2>

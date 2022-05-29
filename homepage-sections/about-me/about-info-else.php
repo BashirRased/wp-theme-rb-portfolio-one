@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage about me section
+ *
+ * Part of about me section info else
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+ ?>
+ 
 <li>
     <span class="bashir-rased-about-me-info-title">
         <?php esc_html_e('Name','bashir-rased'); ?> 

@@ -1,6 +1,13 @@
 <?php
+/**
+ * The template for after theme setup function.
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
 
-if ( ! function_exists('bashirrased_theme_setup') ) {
+if ( ! function_exists('bashir_rased_theme_setup') ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -8,11 +15,11 @@ if ( ! function_exists('bashirrased_theme_setup') ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Bashir Rased 1.0.3
+	 * @since Bashir Rased 1.0.4
 	 *
 	 * @return void
 	 */
-    function bashirrased_theme_setup() {        
+    function bashir_rased_theme_setup() {        
         /*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -60,7 +67,7 @@ if ( ! function_exists('bashirrased_theme_setup') ) {
         register_nav_menu('header_menu', __('Header Menu','bashir-rased'));
 
 		// Set content-width.
-        $GLOBALS['content_width'] = apply_filters( 'bashirrased_content_width', 730 );
+        $GLOBALS['content_width'] = apply_filters( 'bashir_rased_content_width', 730 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -123,4 +130,4 @@ if ( ! function_exists('bashirrased_theme_setup') ) {
 
 	}
 }
-add_action( 'after_setup_theme', 'bashirrased_theme_setup');
+add_action( 'after_setup_theme', 'bashir_rased_theme_setup');

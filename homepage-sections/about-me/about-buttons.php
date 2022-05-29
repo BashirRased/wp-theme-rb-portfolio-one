@@ -1,12 +1,21 @@
 <?php
+/**
+ * The template for displaying frontpage about me section
+ *
+ * Part of about me section buttons
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 
-if(is_array($bashir_rased_data)) {
-    $bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
-}
+$bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
     
-    if (isset($bashir_rased_about_me_btns) && !empty($bashir_rased_about_me_btns)) :
-    foreach ($bashir_rased_about_me_btns as $bashir_rased_about_me_btn) :
+if (isset($bashir_rased_about_me_btns) && !empty($bashir_rased_about_me_btns)) :
+    
+foreach ($bashir_rased_about_me_btns as $bashir_rased_about_me_btn) :
 ?>
 
 <div class="bashir-rased-btn">
@@ -29,7 +38,11 @@ if(is_array($bashir_rased_data)) {
     ?>">
         <?php
         if(isset($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text']) && !empty($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text'])){
-            echo wp_kses_post($bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text']);
+            printf(
+				/* translators: %s: Name of about me button text */
+				__('%s','bashir-rased'),
+				$bashir_rased_about_me_btn['bashir-rased-about-btn-link']['text']
+			);
         }
         
         else {

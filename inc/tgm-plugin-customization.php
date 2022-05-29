@@ -1,61 +1,68 @@
 <?php
-
-function bashirrased_required_plugins() {
+/**
+ * The template for tgm all required & recommander plugin list.
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+function bashir_rased_required_plugins() {
 
 	$plugins = array(
 
 		array(
-			'name'      => 'Codestar Framework',
+			'name'      => __('Codestar Framework', 'bashir-rased'),
 			'slug'      => 'codestar-framework',
 			'required'  => true,
 			'source'      => 'https://github.com/Codestar/codestar-framework/archive/refs/heads/master.zip'
 		),
 
 		array(
-			'name'      => 'Contact Form 7',
+			'name'      => __('Contact Form 7', 'bashir-rased'),
 			'slug'      => 'contact-form-7',
 			'required'  => true,
 		),
 
 		array(
-			'name'      => 'Custom Post Type UI',
+			'name'      => __('Custom Post Type UI','bashir-rased'),
 			'slug'      => 'custom-post-type-ui',
 			'required'  => true,
 		),
 
 		array(
-			'name'      => 'CMB2',
+			'name'      => __('CMB2','bashir-rased'),
 			'slug'      => 'cmb2',
 			'required'  => true,
 		),
 
 		array(
-			'name'      => 'RB Site Social Links',
+			'name'      => __('RB Site Social Links','bashir-rased'),
 			'slug'      => 'rb-site-social-links',
 			'required'  => true,
 		),
 
 		array(
-			'name'      => 'MC4WP: Mailchimp for WordPress',
+			'name'      => __('MC4WP: Mailchimp for WordPress','bashir-rased'),
 			'slug'      => 'mailchimp-for-wp',
 			'required'  => true,
 		),
 
 		array(
-			'name'      => 'Theme Check',
+			'name'      => __('Theme Check','bashir-rased'),
 			'slug'      => 'theme-check',
 			'required'  => false,
 		),
 
 		array(
-			'name'      => 'Envato Theme Check',
+			'name'      => __('Envato Theme Check','bashir-rased'),
 			'slug'      => 'envato-theme-check',
 			'required'  => false,
 			'source'      => 'https://github.com/envato/envato-theme-check/archive/refs/heads/master.zip'
 		),
 
 		array(
-			'name'      => 'FakerPress',
+			'name'      => __('FakerPress','bashir-rased'),
 			'slug'      => 'fakerpress',
 			'required'  => false
 		)
@@ -78,4 +85,4 @@ function bashirrased_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-add_action('tgmpa_register','bashirrased_required_plugins');
+add_action('tgmpa_register','bashir_rased_required_plugins');

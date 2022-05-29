@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for displaying frontpage resume section
+ *
+ * Part of resume section work experiance subsection item else
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+?>
+
 <!-- 01. My Resume Work Experience Single Item Start Here -->
 <div class="bashir-rased-resume-single-item">
     <div class="bashir-rased-resume-single-item-title">

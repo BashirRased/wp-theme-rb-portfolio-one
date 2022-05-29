@@ -1,7 +1,21 @@
 <?php
+/**
+ * The template for displaying frontpage contact me section
+ *
+ * Part of contact me section head
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
 $bashir_rased_data = get_option('bashir_rased_theme_option');
 if(isset($bashir_rased_data['bashir-rased-contact-header-title-black']) && !empty($bashir_rased_data['bashir-rased-contact-header-title-black'])){
-    echo wp_kses_post($bashir_rased_data['bashir-rased-contact-header-title-black']);
+    printf(
+		/* translators: %s: contact me section head theme color */
+		__('%s','bashir-rased'),
+		$bashir_rased_data['bashir-rased-contact-header-title-black']
+	);
 }
 
 else{
@@ -13,7 +27,11 @@ else{
 <?php
 
 if(isset($bashir_rased_data['bashir-rased-contact-header-title-theme-color']) && !empty($bashir_rased_data['bashir-rased-contact-header-title-theme-color'])){
-    echo ' '.wp_kses_post($bashir_rased_data['bashir-rased-contact-header-title-theme-color']);
+    printf(
+		/* translators: %s: contact me section head theme color */
+		__(' %s','bashir-rased'),
+		$bashir_rased_data['bashir-rased-contact-header-title-theme-color']
+	);
 }
 
 else{

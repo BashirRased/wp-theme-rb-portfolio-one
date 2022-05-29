@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage skill section
+ *
+ * Part of skill section design subsection item else
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+ 
+?>
+
 <!-- 01. Abode Illustrator Skills Area Start Here -->
 <div class="bashir-rased-skills-bar-text-area">
     <div class="bashir-rased-skills-text-left float-left">

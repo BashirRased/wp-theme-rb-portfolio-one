@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying general post loop post meta
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <div class="bashir-rased-post-meta">
 
     <div class="bashir-rased-post-meta-author">

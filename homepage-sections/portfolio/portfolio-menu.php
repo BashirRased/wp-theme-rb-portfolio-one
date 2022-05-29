@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template for displaying frontpage portfolio section
+ *
+ * Part of portfolio section menu
+ *
+ * @package WordPress
+ * @subpackage bashir_rased
+ * @since Bashir Rased 1.0.4
+ */
+
+?>
+
 <li class="bashir-rased-portfolio-active" data-filter="*">
     <?php esc_html_e('all','bashir-rased'); ?>
 </li>
@@ -11,12 +24,17 @@ if(!empty($bashir_rased_tags)):
 foreach($bashir_rased_tags as $bashir_rased_tag): ?>
 
 <li data-filter="<?php echo ".".$bashir_rased_tag->slug; ?>">
-    <?php echo wp_kses_post($bashir_rased_tag->name); ?>  
+    <?php
+	printf(
+		/* translators: %s: portfolio menu list */
+		__('%s','bashir-rased'),
+		$bashir_rased_tag->name
+	);
+    ?>
 </li>
 
 <?php
 endforeach;
-elseif (empty($bashir_rased_tags)):
 else: ?>
 
 <li data-filter=".graphic-design">
