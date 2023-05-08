@@ -5,8 +5,8 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
 get_header();

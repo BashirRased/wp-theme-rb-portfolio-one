@@ -1,7 +1,7 @@
 /*
 Theme Name: RB Portfolio One
 Text Domain: rb-portfolio-one
-Version: 1.1.5
+Version: 1.1.6
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -678,6 +678,11 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 .header-breadcrumbs-description {
     color: var(--white-color);
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-breadcrumbs-description p {
+    margin-bottom: 0;
 }
 /*==================================================
 ===== 02. Header Breadcrumbs Area CSS End Here =====

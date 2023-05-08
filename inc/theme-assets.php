@@ -3,8 +3,8 @@
  * The template for loading all css & js files.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
  
 // Bashir Rased With File Directory

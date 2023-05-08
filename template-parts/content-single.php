@@ -3,8 +3,8 @@
  * The template for displaying all single post content.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
  $rbpo_page_sidebar = function_exists( 'get_field' ) ? get_field( 'main_sidebar' ) : 'no_sidebar ';
@@ -47,16 +47,16 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class( "general-post" ); ?>>
 
+    <?php 
+        if ( true == get_theme_mod( 'rbpo_single_post_thumbnail_switch', 'on' ) ) {
+            do_action( 'rbpo_post_thumbnail' );
+        }
+    ?>
+
     <div class="post-content">
-        <?php
-            if ( true == get_theme_mod( 'rbpo_single_post_meta_switch', 'on' ) ) {
-        ?>
-
-            <div class="post-meta">
-                <?php do_action( 'rbpo_post_meta' ); ?>
-            </div>
-
-        <?php } ?>
+        <div class="post-meta">
+            <?php do_action( 'rbpo_post_meta' ); ?>
+        </div>
 
         <h1 class="post-title">
             <?php the_title(); ?>

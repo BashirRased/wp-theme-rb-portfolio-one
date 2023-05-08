@@ -9,29 +9,19 @@
  * @link https://kirki.org/docs/arguments/active_callback/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
+/*********************************
+***** Breadcrumbs Start Here *****
+*********************************/
 // rbpo_breadcrumbs
-new \Kirki\Panel(
+new \Kirki\Section(
 	'rbpo_breadcrumbs',
 	[
-		'title'       => esc_html__( 'Breadcrumbs', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
-		'priority'    => 10,
-	]
-);
-
-/***************************************
-***** Breadcrumb Switch Start Here *****
-***************************************/
-// rbpo_breadcrumbs_switch
-new \Kirki\Section(
-	'rbpo_breadcrumbs_switch',
-	[
 		'title'       => esc_html__( 'Breadcrumbs On/Off', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_breadcrumbs',
+		'panel'       => 'rbpo_customizer',
 		'priority'    => 160,
 	]
 );
@@ -41,7 +31,7 @@ new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'    => 'rbpo_breadcrumbs_switch',
 		'label'       => esc_html__( 'Breadcrumbs On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_breadcrumbs_switch',
+		'section'     => 'rbpo_breadcrumbs',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -50,12 +40,19 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-get_template_part( 'customizer/section/breadcrumbs/blog-page' );
-get_template_part( 'customizer/section/breadcrumbs/single-page' );
-get_template_part( 'customizer/section/breadcrumbs/single-post' );
-get_template_part( 'customizer/section/breadcrumbs/author' );
-get_template_part( 'customizer/section/breadcrumbs/search' );
-get_template_part( 'customizer/section/breadcrumbs/404' );
-get_template_part( 'customizer/section/breadcrumbs/archive' );
-get_template_part( 'customizer/section/breadcrumbs/category' );
-get_template_part( 'customizer/section/breadcrumbs/tag' );
+// rbpo_breadcrumbs_color
+new \Kirki\Field\Color(
+	[
+		'settings'    => 'rbpo_breadcrumbs_color',
+		'label'       => __( 'Blog Page Background', 'rb-portfolio-one' ),
+		'section'     => 'rbpo_breadcrumbs',
+		'default'     => '#007bff',
+        'active_callback'  => [
+            [
+                'setting'  => 'rbpo_breadcrumbs_switch',
+                'operator' => '===',
+                'value'    => true,
+            ],
+        ]
+	]
+);

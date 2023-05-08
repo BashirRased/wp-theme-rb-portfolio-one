@@ -5,8 +5,8 @@
  * @link https://kirki.org/docs/controls/typography/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
 // rbpo_typography
@@ -232,38 +232,6 @@ new \Kirki\Field\Typography(
         'output'      => [
 			[
 				'element' => 'h6',
-			],
-		]
-	]
-);
-
-// rbpo_header_menu_text
-new \Kirki\Field\Typography(
-	[
-		'settings'    => 'rbpo_header_menu_text',
-		'label'       => __( 'Header Menu Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
-        'choices' => [
-            'fonts' => [
-                'google'   => [ 'popularity', 50 ],
-                'standard' => [ 'serif', 'sans-serif' ],
-            ],
-        ],
-		'default'     => [
-			'font-family'     => 'Roboto',
-			'font-weight'     => '400',
-            'font-style'      => 'regular',
-			'color'           => '#000000',
-			'font-size'       => '18px',
-			'line-height'     => '1.5',
-			'letter-spacing'  => '0',
-			'text-transform'  => 'capitalize',
-			'text-decoration' => 'none',
-			'text-align'      => 'left',
-		],
-        'output'      => [
-			[
-				'element' => '.rb-portfolio-one-desktop-menu nav ul li a',
 			],
 		]
 	]

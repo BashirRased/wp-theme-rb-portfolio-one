@@ -1,33 +1,4 @@
 <?php
-/**
- * Fix skip link focus in IE11.
- *
- * This does not enqueue the script because it is tiny and because it is only for IE11,
- * thus it does not warrant having an entire dedicated blocking script being loaded.
- *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
- *
- * @link https://git.io/vWdr2
- */
-function rbpo_skip_link() {
-
-	// If SCRIPT_DEBUG is defined and true, print the unminified file.
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		echo '<script>';
-		include get_template_directory() . '/assets/js/skip-link-focus-fix.js';
-		echo '</script>';
-	}
-
-	// The following is minified via `npx terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
-	?>
-	<script>
-	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
-	</script>
-	<?php
-}
-add_action( 'wp_print_footer_scripts', 'rbpo_skip_link' );
 
 /**************************************************
 ***** Post Thumbnail Display Permission Check *****
@@ -36,7 +7,7 @@ function rbpo_can_show_post_thumbnail() {
 	/**
 	 * Filters whether post thumbnail can be displayed.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
 	 */
@@ -56,7 +27,7 @@ if ( !function_exists( 'rbpo_custom_post_thumbnail' ) ) {
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -74,12 +45,12 @@ if ( !function_exists( 'rbpo_custom_post_thumbnail' ) ) {
 
 			<?php 
 			if ( is_singular( 'attachment') ) :
-			if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
-				<figcaption class="wp-caption-text">
-					<?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() )); ?>
-				</figcaption>
-			<?php
-			endif;
+				if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+					<figcaption class="wp-caption-text">
+						<?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() )); ?>
+					</figcaption>
+				<?php
+				endif;
 			endif;
 			?>
 
@@ -97,7 +68,7 @@ if ( ! function_exists( 'rbpo_category_meta' ) ) {
     /**
 	 * Current post categories.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -117,7 +88,7 @@ if ( ! function_exists( 'rbpo_author_meta' ) ) {
     /**
 	 * Current post author.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -138,7 +109,7 @@ if ( ! function_exists( 'rbpo_date_meta' ) ) {
     /**
 	 * Current post date.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -168,7 +139,7 @@ if ( ! function_exists( 'rbpo_comments_meta' ) ) {
     /**
 	 * Current post comments.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -193,11 +164,12 @@ if ( ! function_exists( 'rbpo_tag_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current tags.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
 	function rbpo_tag_meta() {
+
 		if ( has_tag() ) {
 			$tags_list = get_the_tag_list( '', ', ' );
 			if ( $tags_list ) {
@@ -205,12 +177,12 @@ if ( ! function_exists( 'rbpo_tag_meta' ) ) {
 					/* translators: %s: List of tags. */
 					'<span class="tags-link"><i class="fa-solid fa-tags"></i>' . esc_html__( '%s', 'rb-portfolio-one' ) . '</span>',
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
-				);
+				);				
 			}
 		}
 	}
+	add_action( 'rbpo_post_meta', 'rbpo_tag_meta' );
 }
-add_action( 'rbpo_post_meta', 'rbpo_tag_meta' );
 
 /*********************************
 ***** Post Edit Meta Display *****
@@ -219,7 +191,7 @@ if ( ! function_exists( 'rbpo_edit_meta' ) ) {
     /**
 	 * Current post edit.
 	 *
-	 * @since RB Portfolio One 1.1.5
+	 * @since RB Portfolio One 1.1.6
 	 *
 	 * @return void
 	 */
@@ -241,8 +213,10 @@ if ( ! function_exists( 'rbpo_edit_meta' ) ) {
 ***********************************/
 if( !function_exists( 'rbpo_custom_read_btn' ) ) {
 
-	function rbpo_custom_read_btn() {	
-		if ( !empty ( get_the_content() ) ){
+	function rbpo_custom_read_btn() {
+		$rbpo_read_more_btn = get_theme_mod( 'rbpo_read_more_btn_switch' );
+
+		if ( !empty ( get_the_content() ) && true == $rbpo_read_more_btn ){
 			printf(
 				/* translators:
 				%1$s: Slug of current post.
@@ -341,3 +315,12 @@ if (! function_exists( 'rbpo_focus_fix' ) ){
     }
     add_action('wp_print_footer_scripts', 'rbpo_focus_fix');
 }
+
+// post excerpt words setup
+if ( !function_exists('rbpo_custom_excerpt_length') ) {
+    function rbpo_custom_excerpt_length( $rbpo_length ) {
+		$rbpo_length = get_theme_mod( 'rbpo_excerpt_word', 30 );
+        return $rbpo_length;
+    }
+}
+add_filter( 'excerpt_length', 'rbpo_custom_excerpt_length', 999 );

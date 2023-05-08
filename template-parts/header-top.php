@@ -1,14 +1,14 @@
 <?php
 /**
- * The template for displaying frontpage header top
+ * The template for displaying header top
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
 $rbpo_phone_1 = get_theme_mod( 'rbpo_phone_1', __( '123 456 789', 'rb-portfolio-one' ) );
-$rbpo_phone_2 = get_theme_mod( 'rbpo_phone_2', __( '123 456 789', 'rb-portfolio-one' ) );
+$rbpo_phone_2 = get_theme_mod( 'rbpo_phone_2', __( '123 456 780', 'rb-portfolio-one' ) );
 $rbpo_email_1 = get_theme_mod( 'rbpo_email_1', __( 'email1@domain.extension', 'rb-portfolio-one' ) );
 $rbpo_email_2 = get_theme_mod( 'rbpo_email_2', __( 'email2@domain.extension', 'rb-portfolio-one' ) );
 

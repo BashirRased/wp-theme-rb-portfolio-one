@@ -7,8 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
 ?>
@@ -23,7 +23,7 @@
                 <div class="copyright-text">
                     <p>
                         <?php $rbpo_copyright_text = get_theme_mod( 'rbpo_copyright_text' );
-                        echo esc_html( $rbpo_copyright_text ); ?>
+                        echo wp_kses_post( $rbpo_copyright_text ); ?>
                     </p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="powerby-text float-end">
                     <p>
                     <?php $rbpo_powerby_text = get_theme_mod( 'rbpo_poweredby_text' );
-                    echo esc_html( $rbpo_powerby_text );
+                    echo wp_kses_post( $rbpo_powerby_text );
                     ?>
                     </p>
                 </div>

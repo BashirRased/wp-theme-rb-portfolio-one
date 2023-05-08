@@ -9,8 +9,8 @@
  * @link https://kirki.org/docs/arguments/active_callback/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.5
- * @since RB Portfolio One 1.1.5
+ * @version RB Portfolio One 1.1.6
+ * @since RB Portfolio One 1.1.6
  */
 
 // rbpo_footer
