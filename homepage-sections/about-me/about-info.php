@@ -4,18 +4,19 @@
  *
  * Part of about me section info
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data) :
+if ($bashir_rased_data) {
+	$bashir_rased_about_infos = $bashir_rased_data['bashir-rased-about-info'];
+}
 
-$bashir_rased_about_infos = $bashir_rased_data['bashir-rased-about-info'];
-
-if(isset($bashir_rased_about_infos) && !empty($bashir_rased_about_infos)) :
+if(!empty($bashir_rased_about_infos)) :
 
 foreach ($bashir_rased_about_infos as $bashir_rased_about_info) :
 
@@ -57,8 +58,5 @@ $bashir_rased_about_info_text = $bashir_rased_about_info['bashir-rased-about-inf
 
 <?php 
 	endforeach;
-else: get_template_part('homepage-sections/about-me/about-info','else');
-endif;
-else: get_template_part('homepage-sections/about-me/about-info','else');
 endif;
 ?>

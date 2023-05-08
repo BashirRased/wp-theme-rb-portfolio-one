@@ -2,9 +2,10 @@
 /**
  * The template for codestar framework theme options.
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 // Control core classes for avoid errors
@@ -12,11 +13,11 @@ if( class_exists( 'CSF' ) ) {
 
     //
     // Set a unique slug-like ID
-    $prefix = 'bashir_rased_theme_option';
+    $bashir_rased_data = 'bashir_rased_theme_option';
   
     //
     // Create options
-    CSF::createOptions( $prefix, array(
+    CSF::createOptions( $bashir_rased_data, array(
       'menu_title' => __('Bashir Rased Theme Options','bashir-rased'),
       'menu_slug'  => 'bashir_rased_theme_option_menu',
       'framework_title' => __('Bashir Rased Theme Options','bashir-rased'),
@@ -26,14 +27,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ************ Basic Information Section Start *********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-basic-info',
       'title'  => __('Basic Information','bashir-rased'),
       )
     );
   
     // Phone Number Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-basic-info',
       'title'  => __('Phone Numbers','bashir-rased'),
       'fields' => array(
@@ -42,23 +43,21 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-phone-number-1',
           'type'  => 'number',
-          'title' => __('Phone Number 1','bashir-rased'),
-          'default'     => __('1934109870','bashir-rased')
+          'title' => __('Phone Number 1','bashir-rased')
         ),
         
         // Phone Number 2
         array(
             'id'    => 'bashir-rased-phone-number-2',
             'type'  => 'number',
-            'title' => __('Phone Number 2','bashir-rased'),
-            'default'     => __('1841109870','bashir-rased')
+            'title' => __('Phone Number 2','bashir-rased')
         )
   
       )
     ) );
 
     // E-mail Address Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-basic-info',
       'title'  => __('E-mail Address','bashir-rased'),
       'fields' => array(
@@ -67,23 +66,21 @@ if( class_exists( 'CSF' ) ) {
         array(
             'id'    => 'bashir-rased-email-address-1',
             'type'  => 'text',
-            'title' => __('E-mail Address 1','bashir-rased'),
-            'default'     =>__('info@bashir-rased.com','bashir-rased')
+            'title' => __('E-mail Address 1','bashir-rased')
         ),
           
         // E-mail Address 2
         array(
             'id'    => 'bashir-rased-email-address-2',
             'type'  => 'text',
-            'title' => __('E-mail Address 2','bashir-rased'),
-            'default'     => __('bashir.rased@gmail.com','bashir-rased')
+            'title' => __('E-mail Address 2','bashir-rased')
         )
   
       )
     ) );
 
     // Your Address Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-basic-info',
       'title'  => __('Your Address','bashir-rased'),
       'fields' => array(
@@ -92,8 +89,7 @@ if( class_exists( 'CSF' ) ) {
         array(
             'id'    => 'bashir-rased-address',
             'type'  => 'text',
-            'title' => __('Your Address','bashir-rased'),
-            'default'     =>__('Dhaka, Bangladesh.','bashir-rased')
+            'title' => __('Your Address','bashir-rased')
         )
   
       )
@@ -105,14 +101,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ************** Homepage Header Section Start *********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-header-section',
       'title'  => __('Homepage Header','bashir-rased'),
       )
     );
 
     // Homepage Header Subtitle Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-header-section',
       'title'  => __('Header Subtitle','bashir-rased'),
       'fields' => array(
@@ -121,31 +117,28 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-header-subtitle-first',
           'type'  => 'text',
-          'title' => __('Subtitle First Part','bashir-rased'),
-          'default'     => __("Hi! I'm",'bashir-rased')
+          'title' => __('Subtitle First Part','bashir-rased')
         ),
 
         // Subtitle Your Name Add
         array(
           'id'    => 'bashir-rased-header-subtitle-name',
           'type'  => 'text',
-          'title' => __('Subtitle Your Name Add','bashir-rased'),
-          'default'     => __('Bashir Rased','bashir-rased')
+          'title' => __('Subtitle Your Name Add','bashir-rased')
         ),
         
         // Subtitle Last Part
         array(
             'id'    => 'bashir-rased-header-subtitle-last',
             'type'  => 'text',
-            'title' => __('Subtitle Last Part','bashir-rased'),
-            'default'     => __('Welcome, to my portfolio website.','bashir-rased')
+            'title' => __('Subtitle Last Part','bashir-rased')
         )
   
       )
     ) );
 
     // Homepage Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-header-section',
       'title'  => __('Header Title','bashir-rased'),
       'fields' => array(
@@ -154,8 +147,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-header-title-first',
           'type'  => 'text',
-          'title' => __('Title First Part','bashir-rased'),
-          'default'     => __("I'm a",'bashir-rased')
+          'title' => __('Title First Part','bashir-rased')
         ),
 
         // Title Last Part
@@ -168,8 +160,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-header-title-last-option',
               'type'  => 'text',
-              'title' => __('Title Last Part Option','bashir-rased'),
-              'default'     => __('Designer','bashir-rased')
+              'title' => __('Title Last Part Option','bashir-rased')
             )        
           )
         )
@@ -178,7 +169,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Header Button Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-header-section',
       'title'  => __('Header Buttons','bashir-rased'),
       'fields' => array(
@@ -192,12 +183,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-header-btn-link',
               'type'  => 'link',
-              'title' => __('Header Button Link','bashir-rased'),             
-              'default'  => array(
-                'url'    => '#',
-                'target' => '_self',
-                'text'   => __('Contact Me','bashir-rased')
-              )
+              'title' => __('Header Button Link','bashir-rased')
             ),
           )
         )
@@ -206,7 +192,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Header Image Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-header-section',
       'title'  => __('Header Image','bashir-rased'),
       'fields' => array(
@@ -217,9 +203,7 @@ if( class_exists( 'CSF' ) ) {
           'type'  => 'media',
           'library' => 'image',
           'preview' => false,
-          'title' => __('Header Image Add','bashir-rased'),
-          'default'     => array(
-            'url' => get_template_directory_uri().'/assets/img/Bashir-Rased-01.png')
+          'title' => __('Header Image Add','bashir-rased')
           )
         )
 
@@ -231,14 +215,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ************ Homepage About Me Section Start *********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-about-section',
       'title'  => __('Homepage About Me','bashir-rased'),
       )
     );
 
     // Homepage About Me Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-about-section',
       'title'  => __('About Me Header Title','bashir-rased'),
       'fields' => array(
@@ -247,16 +231,14 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-about-header-title-black',
           'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('About','bashir-rased')
+          'title' => __('Header Title Black Color','bashir-rased')
         ),
 
         // Header Title Theme Color
         array(
           'id'    => 'bashir-rased-about-header-title-theme-color',
           'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('Me','bashir-rased')
+          'title' => __('Header Title Theme Color','bashir-rased')
         )
 
       )
@@ -264,7 +246,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage About Me Image Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-about-section',
       'title'  => __('About Me Image','bashir-rased'),
       'fields' => array(
@@ -275,16 +257,14 @@ if( class_exists( 'CSF' ) ) {
           'type'  => 'media',
           'library' => 'image',
           'preview' => false,
-          'title' => __('About Me Section Image Add','bashir-rased'),
-          'default'     => array(
-            'url' => get_template_directory_uri().'/assets/img/Bashir-Rased-02.jpg')
+          'title' => __('About Me Section Image Add','bashir-rased')
           )
         )
 
     ) );
 
     // Homepage About Me Buttons Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-about-section',
       'title'  => __('About Me Buttons','bashir-rased'),
       'fields' => array(
@@ -298,12 +278,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-about-btn-link',
               'type'  => 'link',
-              'title' => __('About Me Section Button Link','bashir-rased'),
-              'default'  => array(
-                'url'    => '#',
-                'target' => '_self',
-                'text'   => __('Download CV','bashir-rased')
-              )
+              'title' => __('About Me Section Button Link','bashir-rased')
             )
           )
         )
@@ -313,7 +288,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage About Me Description Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-about-section',
       'title'  => __('About Me Description','bashir-rased'),
       'fields' => array(
@@ -329,7 +304,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage About Me Info Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-about-section',
       'title'  => __('About Me Info','bashir-rased'),
       'fields' => array(
@@ -343,14 +318,12 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-about-info-strong-text',
               'type'  => 'text',
-              'title' => __('About Me Section Button Text','bashir-rased'),
-              'default' => __('Name','bashir-rased')
+              'title' => __('About Me Section Button Text','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-about-info-text',
               'type'  => 'text',
-              'title' => __('About Me Section Button Text','bashir-rased'),
-              'default' => __('Bashir Rased','bashir-rased')
+              'title' => __('About Me Section Button Text','bashir-rased')
             )
           )
         )
@@ -365,14 +338,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ************ Homepage Hire Me Section Start **********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-hire-section',
       'title'  => __('Homepage Hire Me','bashir-rased'),
       )
     );
 
     // Homepage Hire Me Background Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-hire-section',
       'title'  => __('Hire Me Background','bashir-rased'),
       'fields' => array(
@@ -383,17 +356,7 @@ if( class_exists( 'CSF' ) ) {
           'type'  => 'background',
           'background_image_preview' => false,
           'output' => '#bashir-rased-hire-me',
-          'title' => __('Hire Me Background Add','bashir-rased'),
-          'default'     => array(
-            'background-color' => '#222',
-            'background-image' => array(
-              'url' => get_template_directory_uri().'/assets/img/hire-me-bg.jpg'
-            ),
-            'background-position' => 'center center',
-            'background-repeat' => 'no-repeat',
-            'background-attachment' => 'scroll',
-            'background-size' => 'cover',
-          )
+          'title' => __('Hire Me Background Add','bashir-rased')
         )
 
       )
@@ -401,7 +364,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Hire Me Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-hire-section',
       'title'  => __('Hire Me Header Title','bashir-rased'),
       'fields' => array(
@@ -410,8 +373,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-hire-header-title',
           'type'  => 'text',
-          'title' => __('Hire Me Header Title Add','bashir-rased'),
-          'default' => __('I Am available for your next project...','bashir-rased')
+          'title' => __('Hire Me Header Title Add','bashir-rased')
         )
 
       )
@@ -419,7 +381,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Hire Me Buttons Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-hire-section',
       'title'  => __('Hire Me Buttons','bashir-rased'),
       'fields' => array(
@@ -428,12 +390,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-hire-btn-link',
           'type'  => 'link',
-          'title' => __('Hire Me Section Button Link','bashir-rased'),
-            'default'  => array(
-            'url'    => '#',
-            'target' => '_self',
-            'text'   => __('Hire Me','bashir-rased')
-          )
+          'title' => __('Hire Me Section Button Link','bashir-rased')
         )
 
       )
@@ -446,14 +403,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ********** Homepage My Skills Section Start **********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-skill-section',
       'title'  => __('Homepage My Skills','bashir-rased'),
       )
     );
 
     // Homepage My Skills Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Skills Header Title','bashir-rased'),
       'fields' => array(        
@@ -462,16 +419,14 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-skill-header-title-theme-color',
           'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('My','bashir-rased')
+          'title' => __('Header Title Theme Color','bashir-rased')
         ),
         
         // Header Title Black Color
         array(
           'id'    => 'bashir-rased-skill-header-title-black',
           'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('Skills','bashir-rased')
+          'title' => __('Header Title Black Color','bashir-rased')
         )
 
       )
@@ -479,7 +434,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Design Skills Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Design Skills Title','bashir-rased'),
       'fields' => array(        
@@ -488,8 +443,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-design-skills-title',
           'type'  => 'text',
-          'title' => __('Design Skills Title Add','bashir-rased'),
-          'default' => __('My Design Skills:','bashir-rased')
+          'title' => __('Design Skills Title Add','bashir-rased')
         )
 
       )
@@ -497,7 +451,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Design Skill Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Design Skill Items','bashir-rased'),
       'fields' => array(        
@@ -511,8 +465,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-design-skill-text',
               'type'  => 'text',
-              'title' => __('Design Skill Text','bashir-rased'),
-              'default' => __('Abode Illustrator','bashir-rased')
+              'title' => __('Design Skill Text','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-design-skill-value',
@@ -520,8 +473,6 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Design Skill Value',
               'bashir-rased'),
               'subtitle' => __('% Value',
-              'bashir-rased'),
-              'default' => __('85',
               'bashir-rased')
             ),
           )
@@ -532,7 +483,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Development Skills Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Development Skills Title','bashir-rased'),
       'fields' => array(        
@@ -541,8 +492,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-development-skills-title',
           'type'  => 'text',
-          'title' => __('Development Skills Title Add','bashir-rased'),
-          'default' => __('My Development Skills:','bashir-rased')
+          'title' => __('Development Skills Title Add','bashir-rased')
         )
 
       )
@@ -550,7 +500,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Development Skill Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Development Skill Items','bashir-rased'),
       'fields' => array(        
@@ -564,8 +514,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-development-skill-text',
               'type'  => 'text',
-              'title' => __('Development Skill Text','bashir-rased'),
-              'default' => __('PHP','bashir-rased')
+              'title' => __('Development Skill Text','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-development-skill-value',
@@ -573,8 +522,6 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Development Skill Value',
               'bashir-rased'),
               'subtitle' => __('% Value',
-              'bashir-rased'),
-              'default' => __('65',
               'bashir-rased')
             ),
           )
@@ -585,7 +532,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Language Skills Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Language Skills Title','bashir-rased'),
       'fields' => array(        
@@ -594,8 +541,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-language-skills-title',
           'type'  => 'text',
-          'title' => __('Language Skills Title Add','bashir-rased'),
-          'default' => __('My Language Skills:','bashir-rased')
+          'title' => __('Language Skills Title Add','bashir-rased')
         )
 
       )
@@ -603,7 +549,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Language Skill Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-skill-section',
       'title'  => __('My Language Skill Items','bashir-rased'),
       'fields' => array(        
@@ -617,8 +563,7 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-language-skill-text',
               'type'  => 'text',
-              'title' => __('Language Skill Text','bashir-rased'),
-              'default' => __('English','bashir-rased')
+              'title' => __('Language Skill Text','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-language-skill-value-1',
@@ -626,8 +571,7 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Language Skill Value 01',
               'bashir-rased'),
               'placeholder'  => __('Select an option',
-              'bashir-rased'),
-              'default' => 'far fa-star'
+              'bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-language-skill-value-2',
@@ -635,8 +579,7 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Language Skill Value 02',
               'bashir-rased'),
               'placeholder'  => __('Select an option',
-              'bashir-rased'),
-              'default' => 'far fa-star'
+              'bashir-rased')
             ),            
             array(
               'id'    => 'bashir-rased-language-skill-value-3',
@@ -644,8 +587,7 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Language Skill Value 03',
               'bashir-rased'),
               'placeholder'  => __('Select an option',
-              'bashir-rased'),
-              'default' => 'far fa-star'
+              'bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-language-skill-value-4',
@@ -653,8 +595,7 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Language Skill Value 04',
               'bashir-rased'),
               'placeholder'  => __('Select an option',
-              'bashir-rased'),
-              'default' => 'far fa-star'
+              'bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-language-skill-value-5',
@@ -662,8 +603,7 @@ if( class_exists( 'CSF' ) ) {
               'title' => __('Language Skill Value 05',
               'bashir-rased'),
               'placeholder'  => __('Select an option',
-              'bashir-rased'),
-              'default' => 'far fa-star'
+              'bashir-rased')
             ),
           )
         )
@@ -678,14 +618,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ********** Homepage My Resume Section Start **********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-resume-section',
       'title'  => __('Homepage My Resume','bashir-rased'),
       )
     );
 
     // Homepage My Resume Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-resume-section',
       'title'  => __('My Resume Header Title','bashir-rased'),
       'fields' => array(        
@@ -694,16 +634,14 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-resume-header-title-theme-color',
           'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('My','bashir-rased')
+          'title' => __('Header Title Theme Color','bashir-rased')
         ),
         
         // Header Title Black Color
         array(
           'id'    => 'bashir-rased-resume-header-title-black',
           'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('Resume','bashir-rased')
+          'title' => __('Header Title Black Color','bashir-rased')
         )
 
       )
@@ -711,7 +649,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Work Experiance Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-resume-section',
       'title'  => __('My Work Experiance Title','bashir-rased'),
       'fields' => array(        
@@ -720,8 +658,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-work-experiance-title',
           'type'  => 'text',
-          'title' => __('My Work Experiance Title Add','bashir-rased'),
-          'default' => __('My Work Experiance','bashir-rased')
+          'title' => __('My Work Experiance Title Add','bashir-rased')
         )
 
       )
@@ -729,7 +666,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Work Experiance Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-resume-section',
       'title'  => __('My Work Experiance Items','bashir-rased'),
       'fields' => array(        
@@ -743,20 +680,17 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-work-experiance-title',
               'type'  => 'text',
-              'title' => __('Work Experiance Item Title','bashir-rased'),
-              'default' => __('TD Packaging & Printing Ind.','bashir-rased')
+              'title' => __('Work Experiance Item Title','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-work-experiance-duration',
               'type'  => 'text',
-              'title' => __('Work Experiance Item Duration','bashir-rased'),
-              'default' => __('February 2018 - At Present','bashir-rased')
+              'title' => __('Work Experiance Item Duration','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-work-experiance-desc',
               'type'  => 'textarea',
-              'title' => __('Work Experiance Item Description','bashir-rased'),
-              'default' => __('I joined to TD Packaging & Printing Ind. in professional computer graphic design sector of printing items design. I am still working at this establishment.','bashir-rased')
+              'title' => __('Work Experiance Item Description','bashir-rased')
             )
           )
         )
@@ -766,7 +700,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Certification Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-resume-section',
       'title'  => __('Certification Title','bashir-rased'),
       'fields' => array(        
@@ -775,8 +709,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-certification-title',
           'type'  => 'text',
-          'title' => __('Certification Title Add','bashir-rased'),
-          'default' => __('Certification','bashir-rased')
+          'title' => __('Certification Title Add','bashir-rased')
         )
 
       )
@@ -784,7 +717,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Certification Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-resume-section',
       'title'  => __('Certification Items','bashir-rased'),
       'fields' => array(        
@@ -798,20 +731,17 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-certification-title',
               'type'  => 'text',
-              'title' => __('Certification Item Title','bashir-rased'),
-              'default' => __('Android Application And Game Development','bashir-rased')
+              'title' => __('Certification Item Title','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-certification-by',
               'type'  => 'text',
-              'title' => __('Certification Item By','bashir-rased'),
-              'default' => __('Tainer By Rahat (May 2019 - August 2019)','bashir-rased')
+              'title' => __('Certification Item By','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-certification-desc',
               'type'  => 'textarea',
-              'title' => __('Certification Item Description','bashir-rased'),
-              'default' => __("What I've learned in this course is - Java Programming, Audroid Studio, Unity Hub and Etc.",'bashir-rased')
+              'title' => __('Certification Item Description','bashir-rased')
             )
           )
         )
@@ -826,14 +756,14 @@ if( class_exists( 'CSF' ) ) {
     /*****************************************************
     ********** Homepage My Services Section Start ********
     *****************************************************/
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-service-section',
       'title'  => __('Homepage My Services','bashir-rased'),
       )
     );
 
     // Homepage My Services Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-service-section',
       'title'  => __('My Services Header Title','bashir-rased'),
       'fields' => array(        
@@ -842,16 +772,14 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-service-header-title-theme-color',
           'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('My','bashir-rased')
+          'title' => __('Header Title Theme Color','bashir-rased')
         ),
         
         // Header Title Black Color
         array(
           'id'    => 'bashir-rased-service-header-title-black',
           'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('Services','bashir-rased')
+          'title' => __('Header Title Black Color','bashir-rased')
         )
 
       )
@@ -859,7 +787,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage My Services Items Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-service-section',
       'title'  => __('My Services Items','bashir-rased'),
       'fields' => array(        
@@ -873,20 +801,17 @@ if( class_exists( 'CSF' ) ) {
             array(
               'id'    => 'bashir-rased-service-item-title',
               'type'  => 'text',
-              'title' => __('My Services Item Title','bashir-rased'),
-              'default' => __('Graphics Design','bashir-rased')
+              'title' => __('My Services Item Title','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-service-item-icon',
               'type'  => 'icon',
-              'title' => __('My Services Item Icon','bashir-rased'),
-              'default' => 'fas fa-palette'
+              'title' => __('My Services Item Icon','bashir-rased')
             ),
             array(
               'id'    => 'bashir-rased-service-item-desc',
               'type'  => 'textarea',
-              'title' => __('My Services Item Description','bashir-rased'),
-              'default' => __("I have 5 years professional experiance in Graphic Design. I'm export of Abode Illustrator and Abode PhotoShop. I can do PSD Web Template, Clipping Path, Vector Design and Typograpy.",'bashir-rased')
+              'title' => __('My Services Item Description','bashir-rased')
             )
           )
         )
@@ -902,14 +827,14 @@ if( class_exists( 'CSF' ) ) {
     ********** Homepage Subscribe Section Start **********
     *****************************************************/
     // Homepage Subscribe Section
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-subscribe-section',
       'title'  => __('Homepage Subscribe','bashir-rased'),
       )
     );
 
     // Homepage Subscribe Background Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-subscribe-section',
       'title'  => __('Subscribe Background','bashir-rased'),
       'fields' => array(
@@ -920,17 +845,7 @@ if( class_exists( 'CSF' ) ) {
           'type'  => 'background',
           'background_image_preview' => false,
           'output' => '#bashir-rased-subscribe',
-          'title' => __('Subscribe Background Add','bashir-rased'),
-          'default'     => array(
-            'background-color' => '#222',
-            'background-image' => array(
-              'url' => get_template_directory_uri().'/assets/img/subscribe-bg.jpg'
-            ),
-            'background-position' => 'center center',
-            'background-repeat' => 'no-repeat',
-            'background-attachment' => 'scroll',
-            'background-size' => 'cover',
-          )
+          'title' => __('Subscribe Background Add','bashir-rased')
         )
 
       )
@@ -938,7 +853,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Subscribe Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-subscribe-section',
       'title'  => __('Subscribe Header Title','bashir-rased'),
       'fields' => array(
@@ -947,8 +862,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-subscribe-header-title',
           'type'  => 'text',
-          'title' => __('Subscribe Header Title Add','bashir-rased'),
-          'default' => __('Subscribe to get Newsletter','bashir-rased')
+          'title' => __('Subscribe Header Title Add','bashir-rased')
         )
 
       )
@@ -962,14 +876,14 @@ if( class_exists( 'CSF' ) ) {
     *********** Homepage Contact Me Section Start ********
     *****************************************************/
     // Homepage Contact Me Section
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'id'  => 'bashir-rased-contact-section',
       'title'  => __('Homepage Contact Me','bashir-rased')
       )
     );
 
     // Homepage Contact Me Header Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-contact-section',
       'title'  => __('Contact Me Header Title','bashir-rased'),
       'fields' => array(
@@ -978,16 +892,14 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-contact-header-title-black',
           'type'  => 'text',
-          'title' => __('Header Title Black Color','bashir-rased'),
-          'default' => __('Contact','bashir-rased')
+          'title' => __('Header Title Black Color','bashir-rased')
         ),
 
         // Header Title Theme Color
         array(
           'id'    => 'bashir-rased-contact-header-title-theme-color',
           'type'  => 'text',
-          'title' => __('Header Title Theme Color','bashir-rased'),
-          'default' => __('Me','bashir-rased')
+          'title' => __('Header Title Theme Color','bashir-rased')
         )
 
       )
@@ -995,7 +907,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Massage Me Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-contact-section',
       'title'  => __('Massage Me Title','bashir-rased'),
       'fields' => array(        
@@ -1004,8 +916,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-massage-title',
           'type'  => 'text',
-          'title' => __('Massage Me Title Add','bashir-rased'),
-          'default' => __('massage me','bashir-rased')
+          'title' => __('Massage Me Title Add','bashir-rased')
         )
 
       )
@@ -1013,7 +924,7 @@ if( class_exists( 'CSF' ) ) {
     ) );
 
     // Homepage Get in Touch Title Subsection
-    CSF::createSection( $prefix, array(
+    CSF::createSection( $bashir_rased_data, array(
       'parent'  => 'bashir-rased-contact-section',
       'title'  => __('Get in Touch Title','bashir-rased'),
       'fields' => array(        
@@ -1022,8 +933,7 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'    => 'bashir-rased-get-in-touch-title',
           'type'  => 'text',
-          'title' => __('Get in Touch Title Add','bashir-rased'),
-          'default' => __('Get in Touch','bashir-rased')
+          'title' => __('Get in Touch Title Add','bashir-rased')
         )
 
       )

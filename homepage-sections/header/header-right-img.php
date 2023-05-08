@@ -4,32 +4,22 @@
  *
  * Part of header section image
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data):
+if ($bashir_rased_data) {
+    $bashir_rased_header_img = $bashir_rased_data['bashir-rased-header-img'];
+}
 
-$bashir_rased_header_img = $bashir_rased_data['bashir-rased-header-img']['url'];
- 
+if(!empty($bashir_rased_header_img)): 
 ?>
  
-<img src="<?php
-
-if(isset($bashir_rased_header_img) && !empty($bashir_rased_header_img)){
-    echo esc_url($bashir_rased_header_img);
-}
-
-else{
-    echo esc_url(get_template_directory_uri().'/assets/img/Bashir-Rased-01.png');
-}
-?>" alt="<?php echo esc_attr('Bashir Rased', 'bashir-rased'); ?>" />
-
-<?php else: ?>
-
-<img src="<?php echo esc_url(get_template_directory_uri().'/assets/img/Bashir-Rased-01.png'); ?>" alt="<?php echo esc_attr('Bashir Rased', 'bashir-rased'); ?>" />
+<img src="<?php echo esc_url($bashir_rased_header_img['url']);
+?>" />
 
 <?php endif; ?>

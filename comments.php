@@ -7,11 +7,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
-
+ 
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password,

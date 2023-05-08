@@ -2,9 +2,10 @@
 /**
  * The template for displaying website header menu
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>
@@ -27,7 +28,9 @@
 
                 <!-- Header Mobile Menu Area Strat Here -->
                 <div class="bashir-rased-mobile-menu">
-                    <button class="bashir-rased-mobile-menu-icons"><i class="fas fa-bars"></i></button>
+                    <button class="bashir-rased-mobile-menu-icons">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
                 </div>
                 <!-- Header Mobile Menu Area End Here -->
                 

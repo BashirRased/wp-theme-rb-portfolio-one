@@ -1,53 +1,73 @@
 === Bashir Rased ===
+
 Contributors: bashirrased
-Requires at least: 5.9
-Tested up to: 5.9
+Requires at least: 5.3
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Installation ==
+
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in RB Blog One in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Description ==
+
 This is a freelaner portfolio website theme.
 Tags: one-column, blog, custom-logo, custom-menu, featured-images, right-sidebar, portfolio
 
 == Copyright ==
-Bashir Rased WordPress Theme, 2020-2021 WordPress.org
+
+Bashir Rased WordPress Theme, (C) 2022 Bashir Rased.
 Bashir Rased is distributed under the terms of the GNU GPL.
 
 == Resources ==
-* bootstrap-5.1.3.min.css © 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors), MIT, https://getbootstrap.com/
 
-* bootstrap-5.1.3.min.js © 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors), MIT, https://getbootstrap.com/
+= Font Awesome Free 6.2.0 =
+  - Author: @fontawesome
+  - License: (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+  - License URL: https://fontawesome.com/license/free
+  - Source: https://fontawesome.com
+  - Copyright 2022 Fonticons, Inc.
 
-* popper-2.10.2.min.js © Federico Zivolo 2017, MIT, http://opensource.org/licenses/MIT
+= Bootstrap v5.2.0 =
+  - License: MIT
+  - License URL: https://github.com/twbs/bootstrap/blob/main/LICENSE
+  - Source: https://getbootstrap.com/
+  - Copyright 2011-2022 The Bootstrap Authors.
+  - Copyright 2011-2022 Twitter, Inc.
 
-* font-awesome-5.10.2.min.css @fontawesome, MIT, https://fontawesome.com
+= @popperjs/core v2.11.5 =
+    - License: MIT
 
-* normalize-8.0.1.min.css, MIT, github.com/necolas/normalize.css
+= HTML5 Shiv 3.7.3 =
+  - @afarkas @jdalton @jon_neal @rem
+  - License: MIT/GPL2
 
-* modernizr-2.8.3.min.js Custom Build, MIT, http://modernizr.com/download/
+= Respond.js v1.4.2 =
+  - min/max-width media query polyfilll
+  - License: MIT
+  - License URL: https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
 
-* respond-1.4.2.min.js © 2013 Scott Jehl, MIT, https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
+= normalize.css v8.0.1 =
+  - License: MIT
+  - Source: github.com/necolas/normalize.css
 
-* html5shiv-printshiv-3.7.3.min.js, CC0
+= Modernizr 2.8.3 (Custom Build) =
+  - License: MIT & BSD
+  - Source: http://modernizr.com/download/
 
-* jquery.nicescroll-3.5.4.min.js InuYaksa, MIT, http://areaaperta.com/nicescroll
+= TGM Plugin Activation =
+  [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/TGMPA/TGM-Plugin-Activation/develop/LICENSE.md)
+	[![Build Status](https://travis-ci.org/TGMPA/TGM-Plugin-Activation.svg?branch=develop)](https://travis-ci.org/TGMPA/TGM-Plugin-Activation)
+	[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TGMPA/TGM-Plugin-Activation/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/TGMPA/TGM-Plugin-Activation/?branch=develop)
 
-* isotope.pkgd-3.0.6.min.js © 2010-2018 Metafizzy, CC0, https://isotope.metafizzy.co
-
-* jquery.fancybox-3.5.7.min.css © 2019 fancyApps, CC0, http://fancyapps.com/fancybox/
-
-* jquery.fancybox-3.5.7.min.js © 2019 fancyApps, CC0, http://fancyapps.com/fancybox/
-
-* screenshot.png © Bashir Rased, CC0
-
-* hire-me-bg.jpg © olia danilevich, CC0, https://www.pexels.com/photo/man-sitting-in-front-of-three-computers-4974915/
-
-* subscribe-bg.jpg © Andrea Piacquadio, CC0, https://www.pexels.com/photo/photo-of-man-holding-a-book-927022/
+== Images == 
+Image for theme screenshot, Credit Bashir Rased
+Source:  Self Created
+License:  Creative Commons Zero (CC0) license.
+License Url: http://www.gnu.org/licenses/gpl.html

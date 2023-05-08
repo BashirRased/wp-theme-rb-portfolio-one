@@ -4,18 +4,19 @@
  *
  * Part of skill section design subsection item
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data) :
-
-$bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
+if ($bashir_rased_data) {
+	$bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
+}
     
-if (isset($bashir_rased_design_skills) && !empty($bashir_rased_design_skills)) :
+if (!empty($bashir_rased_design_skills)) :
 
 foreach ($bashir_rased_design_skills as $bashir_rased_design_skill) :
 
@@ -57,7 +58,7 @@ $bashir_rased_design_skill_value = $bashir_rased_design_skill['bashir-rased-desi
 
 </div>
 
-<?php if(isset($bashir_rased_design_skill_value) && !empty($bashir_rased_design_skill_value)): ?>
+<?php if(!empty($bashir_rased_design_skill_value)): ?>
 <div class="bashir-rased-skills-bar" data-percent = "<?php echo esc_attr($bashir_rased_design_skill_value).'%'; ?>
 ">
     <div class="bashir-rased-skills-bar-animation"></div>
@@ -66,12 +67,6 @@ $bashir_rased_design_skill_value = $bashir_rased_design_skill['bashir-rased-desi
 
 <?php 
 endforeach;
-
-else: get_template_part('homepage-sections/skill/skill-design-item','else');
-
-endif;
-
-else: get_template_part('homepage-sections/skill/skill-design-item','else');
 
 endif;
 

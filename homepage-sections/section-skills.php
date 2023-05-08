@@ -2,10 +2,35 @@
 /**
  * The template for displaying frontpage My Skills Section
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
+
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
+
+if ($bashir_rased_data) {
+    $bashir_rased_skill_header_title_theme_color = $bashir_rased_data['bashir-rased-skill-header-title-theme-color'];
+
+    $bashir_rased_skill_header_title_black = $bashir_rased_data['bashir-rased-skill-header-title-black'];
+    
+    $bashir_rased_design_skills_title = $bashir_rased_data['bashir-rased-design-skills-title'];
+    
+    $bashir_rased_design_skills = $bashir_rased_data['bashir-rased-design-skill-item'];
+    
+    $bashir_rased_development_skills_title = $bashir_rased_data['bashir-rased-development-skills-title'];
+    
+    $bashir_rased_development_skills = $bashir_rased_data['bashir-rased-development-skill-item'];
+    
+    $bashir_rased_language_skills_title = $bashir_rased_data['bashir-rased-language-skills-title'];
+    
+    $bashir_rased_language_skills = $bashir_rased_data['bashir-rased-language-skill-item'];
+}
+
+if ( empty($bashir_rased_skill_header_title_theme_color) && empty($bashir_rased_skill_header_title_black) && empty($bashir_rased_design_skills_title) && empty($bashir_rased_design_skills ) && empty($bashir_rased_development_skills_title) && empty($bashir_rased_development_skills) && empty($bashir_rased_language_skills_title) && empty($bashir_rased_language_skills) ) :
+
+else:
 
 ?>
 
@@ -103,3 +128,5 @@
 <!--================================== 
 ===== My Skills Section End Here =====
 ===================================-->
+
+<?php endif; ?>

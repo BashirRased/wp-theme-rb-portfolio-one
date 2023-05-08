@@ -4,32 +4,24 @@
  *
  * Part of header section subtitle first part
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data):
+if ($bashir_rased_data) {
+	$bashir_rased_header_subtitle_first = $bashir_rased_data['bashir-rased-header-subtitle-first'];
+}
 
-$bashir_rased_header_subtitle_first = $bashir_rased_data['bashir-rased-header-subtitle-first'];
-
-if(isset($bashir_rased_header_subtitle_first) && !empty($bashir_rased_header_subtitle_first)){
+if(!empty($bashir_rased_header_subtitle_first)):
     printf(
 		/* translators: %s: Name of header subtitle first */
 		'%s',
 		esc_html($bashir_rased_header_subtitle_first,'bashir-rased')
 	);
-}
-
-else {
-    esc_html_e('Hi! I\'m','bashir-rased');
-}
-
-else :
-    esc_html_e('Hi! I\'m','bashir-rased');
-
 endif;
 
 ?>

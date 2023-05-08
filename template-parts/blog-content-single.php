@@ -2,9 +2,10 @@
 /**
  * The template for displaying all single post content.
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 if(is_active_sidebar('bashir-rased-sidebar-right')){
@@ -16,7 +17,7 @@ else {
 
 ?>
 
-<div class="<?php echo esc_attr(wp_kses_post($bashir_rased_content_class)); ?>" id="bashir-rased-page-content">
+<main id="primary" class="<?php echo esc_attr($bashir_rased_content_class); ?>" role="main">
 
     <div class="bashir-rased-single-post-area">       
     <?php 
@@ -47,4 +48,4 @@ else {
     <?php endwhile; endif; ?>
     </div>
 
-</div>
+</main>

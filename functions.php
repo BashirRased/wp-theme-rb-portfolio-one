@@ -4,9 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 // Theme Setup
@@ -27,6 +28,11 @@ if(file_exists(dirname(__FILE__).'/inc/bashir-rased-widgets.php')) {
 // Skip Focus Link
 if(file_exists(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php')) {
 	require_once(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php');
+}
+
+// Breadcrumbs
+if(file_exists(dirname(__FILE__).'/inc/breadcrumbs.php')) {
+	require_once(dirname(__FILE__).'/inc/breadcrumbs.php');
 }
 
 // TGM Plugin Activation

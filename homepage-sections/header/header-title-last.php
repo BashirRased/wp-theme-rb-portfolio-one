@@ -4,18 +4,19 @@
  *
  * Part of header section title last
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
- 
-global $bashir_rased_data;
 
-if($bashir_rased_data) :
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-$bashir_rased_designations = $bashir_rased_data['bashir-rased-header-title-last'];
+if ($bashir_rased_data) {
+	$bashir_rased_designations = $bashir_rased_data['bashir-rased-header-title-last'];
+}
 
-if (isset($bashir_rased_designations) && !empty($bashir_rased_designations)) :
+if (!empty($bashir_rased_designations)) :
 
 $bashir_rased_count = 0;
 foreach ($bashir_rased_designations as $bashir_rased_designation):
@@ -29,7 +30,7 @@ foreach ($bashir_rased_designations as $bashir_rased_designation):
 	
 $bashir_rased_header_title_last_option = $bashir_rased_designation['bashir-rased-header-title-last-option'];
 
-if (isset($bashir_rased_header_title_last_option) && !empty($bashir_rased_header_title_last_option)) :
+if (!empty($bashir_rased_header_title_last_option)) :
 ?>
 
     <span class="bashir-rased-type-effect-skills">
@@ -46,24 +47,10 @@ if (isset($bashir_rased_header_title_last_option) && !empty($bashir_rased_header
         ?>		 
     </span>
 
-<?php else: ?>
-<span class="bashir-rased-type-effect-skills">
-    <?php esc_html_e('Designer, Developer, Freelancer','bashir-rased'); ?>
-</span>
-
 <?php
 	endif;
     endforeach;
-	else:
 ?>
-<span class="bashir-rased-type-effect-skills">
-    <?php esc_html_e('Designer, Developer, Freelancer','bashir-rased'); ?>
-</span>
-<?php endif; ?>
 
-<?php else: ?>
-<span class="bashir-rased-type-effect-skills">
-    <?php esc_html_e('Designer, Developer, Freelancer','bashir-rased'); ?>
-</span>
 <?php endif; ?>
 

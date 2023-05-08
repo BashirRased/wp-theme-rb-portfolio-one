@@ -2,10 +2,25 @@
 /**
  * The template for displaying frontpage My Services Section
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
+
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
+
+if ($bashir_rased_data) {
+    $bashir_rased_service_header_title_theme_color = $bashir_rased_data['bashir-rased-service-header-title-theme-color'];
+
+    $bashir_rased_service_header_title_black = $bashir_rased_data['bashir-rased-service-header-title-black'];
+    
+    $bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
+}
+
+if ( empty($bashir_rased_service_header_title_theme_color) && empty($bashir_rased_service_header_title_black) && empty($bashir_rased_services) ) :
+
+else:
 
 ?>
 
@@ -14,6 +29,7 @@
 =======================================-->
 <section id="bashir-rased-my-services" class="bashir-rased-scroll-menu">
 
+    <?php if ( !empty($bashir_rased_service_header_title_theme_color) || !empty($bashir_rased_service_header_title_black) ) : ?>
     <!--===== My Services Section Title Strat Here =====-->
     <div class="container">
         <div class="row">
@@ -27,10 +43,11 @@
         </div><!-- row end -->
     </div><!-- container end -->
     <!--===== My Services Section Title End Here =====-->
+    <?php endif; ?>
     
     <!--===== My Services Area Start Here =====-->
-    <div class="container h-100">
-        <div class="row h-100">
+    <div class="container">
+        <div class="row">
             <?php get_template_part('homepage-sections/service/service','item'); ?>            
         </div><!-- row end -->
     </div><!-- container end -->
@@ -40,3 +57,5 @@
 <!--==================================== 
 ===== My Services Section End Here =====
 =====================================-->
+
+<?php endif; ?>

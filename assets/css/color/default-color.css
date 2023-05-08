@@ -1,12 +1,12 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.1.2
-Requires at least: 5.9
-Tested up to: 5.9
+Version: 1.1.3
+Requires at least: 5.3
+Tested up to: 6.0
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Author: Bashir Rased
 Author URI: https://profiles.wordpress.org/bashirrased2017/
 Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
@@ -108,7 +108,8 @@ Table of CSS Content End Here
 
 /* 7.2. Header Menu Area Start Here */
 .bashir-rased-header-logo h1 a,
-.bashir-rased-header-logo h1 a:hover {
+.bashir-rased-header-logo h1 a:hover,
+.bashir-rased-header-logo h1 a:focus {
 	color: #007bff;
 }
 .bashir-rased-header-active-menu {
@@ -173,7 +174,8 @@ Table of CSS Content End Here
 .bashir-rased-resume-single-item {
 	border: 1px solid #007bff;
 }
-.bashir-rased-resume-single-item:hover {
+.bashir-rased-resume-single-item:hover,
+.bashir-rased-resume-single-item:focus {
 	background: #007bff;
 }
 /*================================
@@ -186,7 +188,8 @@ Table of CSS Content End Here
 .bashir-rased-services-single-item {
 	border: 1px solid #007bff;
 }
-.bashir-rased-services-single-item:hover {
+.bashir-rased-services-single-item:hover,
+.bashir-rased-services-single-item:focus {
 	background: #007bff;
 }
 .bashir-rased-services-hover-icons i {
@@ -271,7 +274,8 @@ Table of CSS Content End Here
 16. Footer Area Section CSS Start Here
 ====================================*/
 #bashir-rased-footer a,
-#bashir-rased-footer a:hover {
+#bashir-rased-footer a:hover,
+#bashir-rased-footer a:focus {
 	color: #007bff;
 }
 /*==================================
@@ -294,7 +298,10 @@ Table of CSS Content End Here
 @media all and (max-width: 992px) {
 	.bashir-rased-mobile-menu-icons {
 		border: 1px solid #007bff;
-		background: #007bff;
+		background-color: #007bff;
+	}
+	.bashir-rased-mobile-menu-icons:focus {
+		color: #007bff;
 	}
 }
 /*================================

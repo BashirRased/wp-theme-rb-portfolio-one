@@ -6,9 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>
@@ -24,3 +25,4 @@
 <a class="skip-link screen-reader-text" href="#bashir-rased-page-content">
     <?php esc_html_e('Skip to content', 'bashir-rased'); ?>
 </a>
+

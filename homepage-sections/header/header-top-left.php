@@ -4,62 +4,115 @@
  *
  * Part of header top section left
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
- 
-global $bashir_rased_data;
 
-if($bashir_rased_data) :
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-$bashir_rased_phone_1 = $bashir_rased_data['bashir-rased-phone-number-1'];
-
-$bashir_rased_phone_2 = $bashir_rased_data['bashir-rased-phone-number-2'];
-
-if(isset($bashir_rased_phone_1) && !empty($bashir_rased_phone_1)){
-	printf(
-		/* translators:
-		%1$s: +88
-		%2$s: phone number 1
-		*/
-		'%1$s %2$s',
-		esc_html('+88','bashir-rased'),
-		esc_html($bashir_rased_phone_1,'bashir-rased')
-	);    
+if ($bashir_rased_data) {
+	$bashir_rased_phone_1 = $bashir_rased_data['bashir-rased-phone-number-1'];
+	
+	$bashir_rased_phone_2 = $bashir_rased_data['bashir-rased-phone-number-2'];
 }
 
-else {
-    esc_html_e('+88 01934 109870','bashir-rased');
-}
+if(!empty($bashir_rased_phone_1) && empty($bashir_rased_phone_2)): ?>
 
-if(isset($bashir_rased_phone_2) && !empty($bashir_rased_phone_2)){
-	printf(
-		/* translators:
-		%1$s: , +88
-		%2$s: phone number 2
-		*/
-		'%1$s %2$s',
-		esc_html(', +88','bashir-rased'),
-		esc_html($bashir_rased_phone_2,'bashir-rased')
-	); 
-}
+<!--===== Header Top Area Strat Here =====-->
+<div class="bashir-rased-header-top">
+	<div class="container">
+		<div class="row">
 
-elseif(empty($bashir_rased_phone_1) && isset($bashir_rased_phone_2) && !empty($bashir_rased_phone_2)){
-	printf(
-		/* translators: %s: phone number 2 */
-		'%s',
-		esc_html($bashir_rased_phone_2,'bashir-rased')
-	); 
-}
+			<!-- Header Top Left Area Strat Here -->
+			<div class="col-lg-12">
+				<div class="bashir-rased-header-top-left">
+					<span><i class="fa-solid fa-phone"></i></span>
+					<span>
+						<?php
+						printf(
+							/* translators:
+							%s: phone number 1
+							*/
+							'%s',
+							esc_html($bashir_rased_phone_1,'bashir-rased')
+						);
+						?>
+					</span>
+				</div>
+			</div>
+			<!-- Header Top Left Area End Here -->
+			
+		</div><!-- row end -->
+	</div><!-- container end -->
+</div>
+<!--===== Header Top Area End Here =====-->
 
-else {
-    esc_html_e(', +88 01841 109870','bashir-rased');
-}
+<?php elseif( empty($bashir_rased_phone_1) && !empty($bashir_rased_phone_2) ): ?>
 
-else :
-	esc_html_e('+88 01934 109870, +88 01841 109870','bashir-rased');
+<!--===== Header Top Area Strat Here =====-->
+<div class="bashir-rased-header-top">
+	<div class="container">
+		<div class="row">
 
-endif;
+			<!-- Header Top Left Area Strat Here -->
+			<div class="col-lg-12">
+				<div class="bashir-rased-header-top-left">
+					<span><i class="fa-solid fa-phone"></i></span>
+					<span>
+						<?php
+						printf(
+							/* translators:
+							%s: phone number 2
+							*/
+							'%s',
+							esc_html($bashir_rased_phone_2,'bashir-rased')
+						);
+						?>
+					</span>
+				</div>
+			</div>
+			<!-- Header Top Left Area End Here -->
+			
+		</div><!-- row end -->
+	</div><!-- container end -->
+</div>
+<!--===== Header Top Area End Here =====-->
 
-?>
+<?php elseif( !empty($bashir_rased_phone_1) && !empty($bashir_rased_phone_2) ): ?>
+
+<!--===== Header Top Area Strat Here =====-->
+<div class="bashir-rased-header-top">
+	<div class="container">
+		<div class="row">
+
+			<!-- Header Top Left Area Strat Here -->
+			<div class="col-lg-12">
+				<div class="bashir-rased-header-top-left">
+					<span><i class="fa-solid fa-phone"></i></span>
+					<span>
+						<?php
+						printf(
+							/* translators:
+							%1$s: phone number 1
+							%2$s: , 
+							%$3s: phone number 2
+							*/
+							'%1$s %2$s %3$s',
+							esc_html($bashir_rased_phone_1,'bashir-rased'),
+							esc_html(', ','bashir-rased'),
+							esc_html($bashir_rased_phone_2,'bashir-rased')
+						);
+						?>
+					</span>
+				</div>
+			</div>
+			<!-- Header Top Left Area End Here -->
+			
+		</div><!-- row end -->
+	</div><!-- container end -->
+</div>
+<!--===== Header Top Area End Here =====-->
+
+<?php endif; ?>

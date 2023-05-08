@@ -2,9 +2,10 @@
 /**
  * The template for after theme setup function.
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 if ( ! function_exists('bashir_rased_theme_setup') ) {
@@ -15,7 +16,7 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Bashir Rased 1.1.2
+	 * @since Bashir Rased 1.1.3
 	 *
 	 * @return void
 	 */
@@ -67,7 +68,7 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
         register_nav_menu('header_menu', __('Header Menu','bashir-rased'));
 
 		// Set content-width.
-        $GLOBALS['content_width'] = apply_filters( 'bashir_rased_content_width', 730 );
+        $GLOBALS['content_width'] = apply_filters( 'bashir_rased_content_width', 1076 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -115,9 +116,6 @@ if ( ! function_exists('bashir_rased_theme_setup') ) {
 
 		// Add support for full and wide align images.
 		add_theme_support('align-wide');
-
-		// Enqueue editor styles.
-		add_editor_style('./assets/css/style-editor.css');
 
         // Custom background color.		
 		$bashir_rased_custom_bg = array(

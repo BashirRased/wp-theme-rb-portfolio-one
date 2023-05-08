@@ -4,31 +4,25 @@
  *
  * Part of hire me section title
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data):
-
-$bashir_rased_hire_header_title = $bashir_rased_data['bashir-rased-hire-header-title'];
-
-if(isset($bashir_rased_hire_header_title) && !empty($bashir_rased_hire_header_title)){
-	printf(
-		/* translators: %s: Name of hire me title */
-		'%s',
-		esc_html($bashir_rased_hire_header_title,'bashir-rased')
-	);
+if ($bashir_rased_data) {
+	$bashir_rased_hire_header_title = $bashir_rased_data['bashir-rased-hire-header-title'];
 }
 
-else{
-    esc_html_e('I am available for your next project...','bashir-rased');
-}
+if(!empty($bashir_rased_hire_header_title)):
 
-else:
-	esc_html_e('I am available for your next project...','bashir-rased');
+printf(
+	/* translators: %s: Name of hire me title */
+	'%s',
+	esc_html($bashir_rased_hire_header_title,'bashir-rased')
+);
 
 endif;
 ?>

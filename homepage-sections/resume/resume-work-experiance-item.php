@@ -4,18 +4,19 @@
  *
  * Part of resume section work experiance subsection item
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if ($bashir_rased_data):
-
-$bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
+if ($bashir_rased_data) {
+    $bashir_rased_work_experiances = $bashir_rased_data['bashir-rased-work-experiance-item'];
+}
     
-if (isset($bashir_rased_work_experiances) && !empty($bashir_rased_work_experiances)) :
+if (!empty($bashir_rased_work_experiances)) :
 
 foreach ($bashir_rased_work_experiances as $bashir_rased_work_experiance) :
 
@@ -38,9 +39,6 @@ $bashir_rased_work_experiance_desc = $bashir_rased_work_experiance['bashir-rased
 				esc_html($bashir_rased_work_experiance_title,'bashir-rased')
 				);
             }
-            else{
-                esc_html_e('Add Company Name','bashir-rased');
-            }
             ?>
         </h5>
     </div>
@@ -52,9 +50,6 @@ $bashir_rased_work_experiance_desc = $bashir_rased_work_experiance['bashir-rased
 			'%s',
 			esc_html($bashir_rased_work_experiance_duration,'bashir-rased')
 			);
-        }
-        else{
-            esc_html_e('Add Work Duration','bashir-rased');
         }
         ?>
     </div>
@@ -68,9 +63,6 @@ $bashir_rased_work_experiance_desc = $bashir_rased_work_experiance['bashir-rased
 				esc_html($bashir_rased_work_experiance_desc,'bashir-rased')
 				);
             }
-            else{
-                esc_html_e('Add Work Description','bashir-rased');
-            }
             ?>
         </p>
     </div>
@@ -79,13 +71,6 @@ $bashir_rased_work_experiance_desc = $bashir_rased_work_experiance['bashir-rased
 
 <?php
     endforeach;
-else :
-get_template_part('homepage-sections/resume/resume-work-experiance-item','else');
 
-endif;
-
-else :
-    get_template_part('homepage-sections/resume/resume-work-experiance-item','else');
-    
 endif;
     

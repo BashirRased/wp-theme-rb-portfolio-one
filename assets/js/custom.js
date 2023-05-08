@@ -1,12 +1,12 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.1.2
-Requires at least: 5.9
-Tested up to: 5.9
+Version: 1.1.3
+Requires at least: 5.3
+Tested up to: 6.0
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Author: Bashir Rased
 Author URI: https://profiles.wordpress.org/bashirrased2017/
 Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
@@ -36,14 +36,9 @@ Table of JS Content Start Here
 		3.3 Click Menu Going Smoothly
 		3.4 Header Fixed Menu
 	04. Skillbar Scroll Effect
-	05. Portfolio Section Effect
-		5.1 Isotope Masonry
-		5.2 Isotope Filtering
-		5.3 Active Filter Menu Highlight
-		5.4 FancyApps 3 Plugin Active
-	06. Scroll To Top Button
-		6.1 Scroll To Top Button Hide and Show
-		6.2 Scroll To Top Button Click Effect
+	05. Scroll To Top Button
+		5.1 Scroll To Top Button Hide and Show
+		5.2 Scroll To Top Button Click Effect
 ============================
 Table of JS Content End Here
 ==========================*/
@@ -65,51 +60,41 @@ Table of JS Content End Here
 
 	$(document).ready(function(){
 		
-		/*==================================
-		02. Nice Scrollbar jQuery Start Here
-		==================================*/
-		$("body").niceScroll({
-			cursorwidth:8,
-			cursorcolor:'#007bff',
-			cursorborder: "none",
-			cursorborderradius:15,
-			zindex: 9999,
-			autohidemode: false,
-			cursorminheight:200,
-		});
-		/*================================
-		02. Nice Scrollbar jQuery End Here
-		================================*/
-		
 		/*===============================
 		03. Header Menu jQuery Start Here
 		===============================*/
 			
 			/*===== 3.1 Mobile Menu Start Here =====*/
 
-				$(".sub-menu .sub-menu").addClass("bashir-rased-multi-dropdown-menu");
-				$(".bashir-rased-multi-dropdown-menu").removeClass("sub-menu");
+			$(".sub-menu .sub-menu").addClass("bashir-rased-multi-dropdown-menu");
+			$(".bashir-rased-multi-dropdown-menu").removeClass("sub-menu");
 
-				$(".sub-menu").addClass("bashir-rased-dropdown-menu");
-				$(".bashir-rased-dropdown-menu").removeClass("sub-menu");
+			$(".bashir-rased-desktop-menu .children .children").addClass("bashir-rased-multi-dropdown-menu");
+			$(".bashir-rased-multi-dropdown-menu").removeClass("children");
 
-				$(".bashir-rased-dropdown-menu").siblings("a").append('<i class="fas fa-chevron-down"></i>');
+			$(".sub-menu").addClass("bashir-rased-dropdown-menu");
+			$(".bashir-rased-dropdown-menu").removeClass("sub-menu");
 
-        		$(".bashir-rased-multi-dropdown-menu").siblings("a").prepend('<i class="fas fa-chevron-left"></i>');
+			$(".bashir-rased-desktop-menu .children").addClass("bashir-rased-dropdown-menu");
+			$(".bashir-rased-dropdown-menu").removeClass("children");
 
-				$(".menu-item-has-children").children("a").append('<button><span class="fas fa-chevron-down"></span></button>');
+			$(".bashir-rased-dropdown-menu").siblings("a").append('<i class="fa-solid fa-chevron-down"></i>');
 
-				$('.menu-item-has-children button').on("click", function (event) {
-					event.preventDefault();
-					$(this).parent("a").siblings("ul").toggleClass('bashir-rased-dropdown-menu-open');
-				});
+			$(".bashir-rased-multi-dropdown-menu").siblings("a").prepend('<i class="fa-solid fa-chevron-left"></i>');
+
+			$(".menu-item-has-children, .bashir-rased-desktop-menu  .page_item_has_children").children("a").append('<button><span class="fa-solid fa-chevron-down"></span></button>');
+
+			$('.menu-item-has-children button, .page_item_has_children button').on("click", function (event) {
+				event.preventDefault();
+				$(this).parent("a").siblings("ul").toggleClass('bashir-rased-dropdown-menu-open');
+			});
 			
-				/* 3.1.1 Mobile Menu Toggle */
-				$('.bashir-rased-mobile-menu-icons').on("click", function (event) {
-					event.preventDefault();
-					$('.bashir-rased-desktop-menu').toggleClass('bashir-rased-desktop-menu-close');
-				});
-				/* End */
+			/* 3.1.1 Mobile Menu Toggle */
+			$('.bashir-rased-mobile-menu-icons').on("click", function (event) {
+				event.preventDefault();
+				$('.bashir-rased-desktop-menu').toggleClass('bashir-rased-desktop-menu-close');
+			});
+			/* End */
 
 			/*===== 3.1 Mobile Menu End Here =====*/
 			
@@ -171,62 +156,11 @@ Table of JS Content End Here
 		04. Skillbar Scroll Effect jQuery End Here
 		========================================*/
 		
-		/*============================================
-		05. Portfolio Section Effect jQuery Start Here
-		============================================*/
-		
-		/*===== 5.1 Isotope Masonry Start Here =====*/
-		var jQuerygrid = $('.bashir-rased-portfolio').isotope({
-		  itemSelector: '.bashir-rased-portfolio-item',
-		  percentPosition: true,
-		  masonry: {
-			// use outer width of grid-sizer for columnWidth
-			columnWidth: 1
-		  }
-		});
-		/*===== 5.1 Isotope Masonry End Here =====*/
-		
-		/*===== 5.2 Isotope Filtering Start Here =====*/
-		$('.bashir-rased-portfolio-btn-area ul').on( 'click', 'li', function() {
-		  var filterValue = $(this).attr('data-filter');
-		  jQuerygrid.isotope({ filter: filterValue });
-		});
-		/*===== 5.2 Isotope Filtering End Here =====*/
-		
-		/*===== 5.3 Active Filter Menu Highlight Start Here =====*/
-		$('.bashir-rased-portfolio-btn-area li').on('click', function(event){
-			$(this).siblings('.bashir-rased-portfolio-active').removeClass('bashir-rased-portfolio-active');
-			$(this).addClass('bashir-rased-portfolio-active');
-			event.preventDefault();
-		});
-		/*===== 5.3 Active Filter Menu Highlight End Here =====*/
-		
-		/*===== 5.4 FancyApps 3 Plugin Active Start Here =====*/
-		$('[data-fancybox]').fancybox({
-			  protect: true,
-			  buttons : [
-				'zoom',
-				'thumbs',
-				'close'
-			  ],
-			  slideShow: {
-				autoStart: true,
-				speed: 1200
-			 },
-			 transitionEffect: "tube",
-			 transitionDuration: 1500,
-		});
-		/*===== 5.4 FancyApps 3 Plugin Active End Here =====*/
-		
-		/*==========================================
-		05. Portfolio Section Effect jQuery End Here
-		==========================================*/
-		
 		/*========================================
-		06. Scroll To Top Button jQuery Start Here
+		05. Scroll To Top Button jQuery Start Here
 		========================================*/
 		
-		/*===== 6.1 Scroll To Top Button Hide and Show Start Here =====*/
+		/*===== 5.1 Scroll To Top Button Hide and Show Start Here =====*/
 		$(window).scroll(function(){		  
 		  var RBScroll = $(window).scrollTop();		  
 		  if( RBScroll > 100 ){
@@ -235,17 +169,17 @@ Table of JS Content End Here
 			  $(".bashir-rased-scroll-to-top-area").fadeOut();
 		  }
 		});
-		/*===== 6.1 Scroll To Top Button Hide and Show End Here =====*/
+		/*===== 5.1 Scroll To Top Button Hide and Show End Here =====*/
 		
-		/*===== 6.2 Scroll To Top Button Click Effect Start Here =====*/
+		/*===== 5.2 Scroll To Top Button Click Effect Start Here =====*/
 		$(".bashir-rased-scroll-to-top-area").on('click', function(){
-			$("html, body").animate({'scrollTop' : 0}, 500);
+			$("html, body").animate({'scrollTop' : 0}, 300);
 			return false;
 		});
-		/*===== 6.2 Scroll To Top Button Click Effect End Here =====*/
+		/*===== 5.2 Scroll To Top Button Click Effect End Here =====*/
 		
 		/*======================================
-		06. Scroll To Top Button jQuery End Here
+		05. Scroll To Top Button jQuery End Here
 		======================================*/
 		
 	});

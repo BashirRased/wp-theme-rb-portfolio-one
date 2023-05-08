@@ -1,12 +1,12 @@
 /*
 Theme Name: Bashir Rased
 Text Domain: bashir-rased
-Version: 1.1.2
-Requires at least: 5.9
-Tested up to: 5.9
+Version: 1.1.3
+Requires at least: 5.3
+Tested up to: 6.0
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Author: Bashir Rased
 Author URI: https://profiles.wordpress.org/bashirrased2017/
 Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
@@ -85,22 +85,15 @@ h6 {
 }
 a {
 	text-decoration: none;
+	display: inline-block;
 }
-a:hover {
+a:hover,
+a:focus {
 	color: #007bff;
 	text-decoration: 1px solid underline;
 }
-a:focus {
-	color: #007bff;
-	text-decoration: 1px dotted underline;
-}
-ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
 img {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 }
 p {
@@ -121,23 +114,14 @@ input[type="submit"] {
 	background-color: transparent;
 	cursor: pointer;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
 	color: #ffffff;
 	background-color: #007bff;
 }
 /*======================
 01.	Default CSS End Here
 ======================*/
-
-/*=======================================
-02. Font Awesome Icon Edit CSS Start Here
-=======================================*/
-.fa-phone {
-	transform: rotate(90deg);
-}
-/*=====================================
-02. Font Awesome Icon Edit CSS End Here
-=====================================*/
 
 /*===============================
 03. Common Classes CSS Start Here
@@ -154,7 +138,8 @@ input[type="submit"]:hover {
 	cursor: pointer;
 	display: block;
 }
-.bashir-rased-btn a:hover {
+.bashir-rased-btn a:hover,
+.bashir-rased-btn a:focus {
 	color: #ffffff;
 	background-color: #007bff;
 }
@@ -166,9 +151,6 @@ input[type="submit"]:hover {
 }
 .bashir-rased-error-massage {
 	text-transform: capitalize;
-}
-section.bashir-rased-scroll-menu {
-	min-height: 100vh;
 }
 /*===============================
 03. Common Classes CSS End Here
@@ -288,19 +270,25 @@ section {
 .bashir-rased-desktop-menu {
 	float: right;
 }
+.bashir-rased-desktop-menu nav ul {
+	padding: 0;
+	margin: 0;
+}
 .bashir-rased-desktop-menu nav ul li {
 	float: left;
 	padding: 40px 10px;
 	text-transform: capitalize;
 	font-size: 18px;
 	position: relative;
+	list-style: none;
 }
 .bashir-rased-desktop-menu nav ul li a {
 	display: block;
 	color: #333333;
 	position: relative;
 }
-.bashir-rased-desktop-menu nav ul li:hover > a {
+.bashir-rased-desktop-menu nav ul li:hover > a,
+.bashir-rased-desktop-menu nav ul li > a:focus {
 	color: #007bff;
 }
 .bashir-rased-desktop-menu i {
@@ -322,8 +310,6 @@ section {
 	z-index: 99999;
 	background-color: #ccc;
 }
-
-
 
 .bashir-rased-desktop-menu nav ul li ul li {
 	float: none;
@@ -347,10 +333,10 @@ section {
 /* 7.4. Header Content Area Start Here */
 .bashir-rased-header-area {
 	background-color: #f0f0f0;
-	position: relative;
 }
 .bashir-rased-content-area-left {
-	padding: 100px 0;
+	vertical-align: middle;
+	display: table-cell;
 }
 .bashir-rased-header-title {
 	text-transform: capitalize;
@@ -383,23 +369,28 @@ section {
 	transition: .5s;
 	color: #ffffff;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(5) {
+.bashir-rased-header-social-icons li:hover span:nth-child(5),
+.bashir-rased-header-social-icons li:focus span:nth-child(5) {
 	transform: translate(40px,-40px);
 	opacity: 1;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(4) {
+.bashir-rased-header-social-icons li:hover span:nth-child(4),
+.bashir-rased-header-social-icons li:focus span:nth-child(4) {
 	transform: translate(30px,-30px);
 	opacity: .8;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(3) {
+.bashir-rased-header-social-icons li:hover span:nth-child(3),
+.bashir-rased-header-social-icons li:focus span:nth-child(3) {
 	transform: translate(20px,-20px);
 	opacity: .6;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(2) {
+.bashir-rased-header-social-icons li:hover span:nth-child(2),
+.bashir-rased-header-social-icons li:focus span:nth-child(2) {
 	transform: translate(10px,-10px);
 	opacity: .4;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(1) {
+.bashir-rased-header-social-icons li:hover span:nth-child(1),
+.bashir-rased-header-social-icons li:focus span:nth-child(1) {
 	transform: translate(0,0);
 	opacity: .2;
 }
@@ -443,7 +434,7 @@ section {
 	background:#00aff0;
 }
 .bashir-rased-content-area-right {
-	position: absolute;
+	position: relative;
 	right: 0;
 	bottom: 0;
 }
@@ -491,10 +482,6 @@ section {
 	color: #ffffff;
 	text-align: center;
 	text-transform: capitalize;
-	background-image: url('../img/hire-me-bg.jpg');
-	background-attachment: scroll;
-	background-position: center;
-	background-repeat: no-repeat;
 	position: relative;
 	z-index: 9;
 }
@@ -584,7 +571,8 @@ section {
 	transition: 1s;
 	margin-bottom: 20px;
 }
-.bashir-rased-resume-single-item:hover {
+.bashir-rased-resume-single-item:hover,
+.bashir-rased-resume-single-item:focus {
 	color: #ffffff;
 }
 .bashir-rased-resume-single-item-details {
@@ -612,10 +600,12 @@ section {
 	transition: 1s;
 	min-height: 400px;
 }
-.bashir-rased-services-single-item:hover .bashir-rased-services-single-area-hover {
+.bashir-rased-services-single-item:hover .bashir-rased-services-single-area-hover,
+.bashir-rased-services-single-item:focus .bashir-rased-services-single-area-hover {
 	display: block;
 }
-.bashir-rased-services-single-item:hover .bashir-rased-services-single-area {
+.bashir-rased-services-single-item:hover .bashir-rased-services-single-area,
+.bashir-rased-services-single-item:focus .bashir-rased-services-single-area {
 	display: none;
 }
 .bashir-rased-services-single-area-hover {
@@ -684,7 +674,8 @@ section {
 	position: relative;
 	margin-bottom: 20px;
 }
-.bashir-rased-portfolio-signle-item-area:hover .bashir-rased-portfolio-signle-item-hover-area {
+.bashir-rased-portfolio-signle-item-area:hover .bashir-rased-portfolio-signle-item-hover-area,
+.bashir-rased-portfolio-signle-item-area:focus .bashir-rased-portfolio-signle-item-hover-area {
 	display: block;
 }
 .bashir-rased-portfolio-signle-item-hover-area {
@@ -716,11 +707,6 @@ section {
 	color: #ffffff;
 	text-align: center;
 	text-transform: capitalize;
-	background-image: url('../img/subscribe-bg.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: scroll;
-	background-size: cover;
 	position: relative;
 	z-index: 1;
 }
@@ -823,7 +809,8 @@ section {
 	transform-origin: top;
 	transition: transform 0.5s;
 }
-.bashir-rased-contact-info-social-icons  li:hover span:before {
+.bashir-rased-contact-info-social-icons  li:hover span:before,
+.bashir-rased-contact-info-social-icons  li:focus span:before {
 	transform: rotateX(90deg) translateY(-50%);
 }
 .bashir-rased-contact-info-social-icons  li span:after {
@@ -831,7 +818,8 @@ section {
 	transition: transform 0.5s;
 	transform: rotateX(90deg) translateY(50%);
 }
-.bashir-rased-contact-info-social-icons  li:hover span:after {
+.bashir-rased-contact-info-social-icons  li:hover span:after,
+.bashir-rased-contact-info-social-icons  li:focus span:after {
 	transform: rotateX(0deg) translateY(0);
 }
 .bashir-rased-contact-info-social-icons  li.bashir-rased-facebook-link a span:before,
@@ -969,6 +957,12 @@ section {
 	color: #ffffff;
 	font-size: 25px;
 	cursor: pointer;
+	border: 1px solid #fff;
+}
+.bashir-rased-scroll-to-top-area:focus {
+	border: 1px solid #007bff;
+	color: #007bff;
+	background-color: #fff;
 }
 .bashir-rased-scroll-to-top-area i {
 	display: flex;
@@ -1020,7 +1014,8 @@ section {
 	cursor: pointer;
 }
 
-.form-submit .submit:hover {
+.form-submit .submit:hover,
+.form-submit .submit:focus {
 	background-color: #007bff;
 	color: #fff;
 }
@@ -1057,7 +1052,7 @@ section {
 	margin: 0 2px;
 }
 
-.post-page-numbers:hover, .post-page-numbers.current {
+.post-page-numbers:hover, .post-page-numbers:focus, .post-page-numbers.current {
 	background-color: #007bff;
 	color: #ffffff;
 }
@@ -1076,7 +1071,8 @@ section {
 }
 
 .page-numbers.current,
-.page-numbers:hover {
+.page-numbers:hover,
+.page-numbers:focus {
 	background-color: #007bff;
 	color: #ffffff;
 }
@@ -1093,7 +1089,6 @@ section {
 
 .bashir-rased-single-post-comment-form {
 	margin-bottom: 20px;
-	padding: 20px;
 	background-color: #eee;
 }
 
@@ -1117,10 +1112,15 @@ section {
 	padding: 5px;
 }
 
-.comment-body,
 .comment-respond {
 	margin-bottom: 20px;
 	padding: 20px;
+	background-color: #eee;
+}
+
+.comment-body {
+	margin-bottom: 20px;
+	padding: 20px;	
 	background-color: #eee;
 }
 
@@ -1135,7 +1135,8 @@ section {
 	padding: 5px 15px;
 }
 
-.comment-reply-link:hover {
+.comment-reply-link:hover,
+.comment-reply-link:focus {
 	background-color: #007bff;
 	color: #ffffff;
 }
@@ -1148,7 +1149,8 @@ section {
     padding: 5px 15px;
 }
 
-#cancel-comment-reply-link:hover {
+#cancel-comment-reply-link:hover,
+#cancel-comment-reply-link:focus {
 	background-color: #007bff;
 	color: #ffffff;
 }
@@ -1161,6 +1163,9 @@ section {
 }
 
 /* Post Meta */
+.bashir-rased-blog-area {
+	margin-top: 30px;
+}
 .bashir-rased-post-item {
 	margin-bottom: 20px;
 }
@@ -1195,7 +1200,8 @@ section {
 	color: #007bff;
 }
 
-.tag-cloud-link:hover {
+.tag-cloud-link:hover,
+.tag-cloud-link:focus {
 	background-color: #007bff;
 	color: #ffffff;
 }
@@ -1242,4 +1248,305 @@ section {
 	padding: 5px 0;
 	border-top: 1px solid #007bff;
 	border-bottom: 1px solid #007bff;
+}
+
+/** 404 Page */
+.error-404-page {
+	margin-top: 30px;
+}
+
+.error-404-page-content {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #eee;
+	text-align: center;
+}
+
+.error-page-header-title {
+	font-size: 250px;
+	color: #007bff;
+	margin: 0;
+	word-break: break-all;
+}
+
+.error-page-header-subtitle {
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+.error-btn {
+	border: 1px solid #007bff;
+	color: #007bff;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.error-btn:hover,
+.error-btn:focus {
+	background-color: #007bff;
+	color: #fff;
+}
+
+/** search page */
+.page-title {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #eee;
+}
+
+.search-page-header-title span,
+.archive-page-header-title span {
+	color: #007bff;
+}
+
+/** breadcrumbs area */
+.header-breadcrumbs-area {
+	position: relative;
+	z-index: 2;
+}
+
+.header-breadcrumbs-area::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.header-breadcrumbs {
+	position: relative;
+	color: #fff;
+	text-align: center;
+	z-index: 5;
+}
+
+.header-breadcrumbs-nav ul li {
+	display: inline-block;
+	margin: 5px;
+}
+
+/** Unit Test CSS */
+.bashir-rased-post-content {
+	overflow: hidden;
+}
+
+.wp-block-button {
+	margin-bottom: 20px;
+}
+
+.blocks-gallery-caption {
+	margin-bottom: 20px;
+}
+
+blockquote,
+blockquote.wp-block-quote {
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	border-color: #007bff;
+}
+
+blockquote.wp-block-quote.is-style-large {
+	padding: 15px;
+}
+
+blockquote.wp-block-quote.has-text-align-right {
+	padding: 20px 25px 20px 10px;
+	border-color: #007bff;
+}
+
+.wp-block-pullquote {
+	background-color: #fff;
+	padding: 60px 20px;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	overflow: hidden;
+}
+
+.wp-block-quote cite,
+.wp-block-pullquote cite {
+	color: #007bff;
+	float: right;
+}
+
+.wp-block-file a.wp-block-file__button {
+	background-color: transparent;
+	border: 1px solid #007bff;
+	color: #007bff;
+	transition: all 0.3s ease-in-out;
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.wp-block-archives-dropdown select,
+.bashir-rased-post-content select.postform {
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px;
+}
+
+.wp-block-calendar {
+	margin: 20px 0;
+}
+
+.wp-block-latest-comments {
+	padding: 0;
+}
+
+.wp-block-search {
+	margin-bottom: 20px;
+}
+
+.wp-block-rss__item {
+	margin-bottom: 20px;
+}
+
+.sticky .bashir-rased-single-post {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.sticky .bashir-rased-single-post a {
+	color: #fff;
+}
+
+.sticky .bashir-rased-post-meta {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+body{
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	min-height: 1000px;
+}
+
+.format-chat .bashir-rased-post-content p {
+	background-color: #007bff;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 20px;
+}
+
+.format-chat .bashir-rased-post-content p:nth-child(even){
+	background-color: #007bff;
+	color: #fff;
+	text-align: right;
+}
+
+.format-chat .bashir-rased-post-content p:nth-child(odd){
+	background-color: #fff;
+	color: #007bff;
+	text-align: left;
+}
+
+iframe {
+	max-width: 100%;
+	margin: 10px 0;
+}
+
+.gallery-columns-2,
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9,
+.gallery-columns-10,
+.gallery-columns-11,
+.gallery-columns-12 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+	padding: 15px;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33.33%;
+	padding: 15px;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+	padding: 15px;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+	padding: 15px;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.66%;
+	padding: 15px;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.28%;
+	padding: 15px;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+	padding: 15px;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.11%;
+	padding: 15px;
+}
+
+.gallery-columns-10 .gallery-item {
+	width: 10%;
+	padding: 15px;
+}
+
+.gallery-columns-11 .gallery-item {
+	width: 9.09%;
+	padding: 15px;
+}
+
+.gallery-columns-12 .gallery-item {
+	width: 8.33%;
+	padding: 15px;
+}
+
+.bashir-rased-single-post-comment-list li {
+	list-style: none;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+th,td {
+	border: 1px solid #007bff;
+	padding: 5px;
+}
+
+dl {
+	padding-left: 16px;
+}
+
+.header-breadcrumbs-title {
+	text-transform: capitalize;
+}
+
+blockquote {
+	border-left: .25em solid;
+	overflow: hidden;
+}
+
+blockquote cite {
+	float: right;
 }

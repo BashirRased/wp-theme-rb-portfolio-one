@@ -2,9 +2,10 @@
 /**
  * The template for displaying general post loop post meta
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>
@@ -12,7 +13,7 @@
 <div class="bashir-rased-post-meta">
 
     <div class="bashir-rased-post-meta-author">
-        <i class="fas fa-user"></i>
+        <i class="fa-solid fa-user"></i>
         <?php
             printf(
                 /* translators: %s: Author name. */
@@ -23,7 +24,7 @@
     </div>
 
     <div class="bashir-rased-post-meta-time">
-        <i class="fas fa-clock"></i>
+        <i class="fa-solid fa-clock"></i>
         <?php $bashir_rased_archive_year  = get_the_time('Y'); $bashir_rased_archive_month = get_the_time('m'); 
         $bashir_rased_archive_day = get_the_time('d'); ?>       
         <a href="<?php echo esc_url(get_day_link( $bashir_rased_archive_year, $bashir_rased_archive_month, $bashir_rased_archive_day)); ?>">
@@ -32,7 +33,7 @@
     </div>
 
     <div class="bashir-rased-post-meta-comments-count">
-        <i class="fas fa-comments"></i>
+        <i class="fa-solid fa-comments"></i>
         <?php
             comments_popup_link(
                 __('No Comments','bashir-rased'),
@@ -51,7 +52,7 @@
         if ($bashir_rased_categories_list) {
             printf(
                 /* translators: %s: List of categories. */
-                '<div class="bashir-rased-post-meta-category"><i class="fas fa-folder-open"></i> '.esc_html__('%s', 'bashir-rased').'</div>',
+                '<div class="bashir-rased-post-meta-category"><i class="fa-solid fa-folder-open"></i> '.esc_html__('%s', 'bashir-rased').'</div>',
                 $bashir_rased_categories_list // phpcs:ignore WordPress.Security.EscapeOutput
             );
         }
@@ -65,7 +66,7 @@
         if ($tags_list) {
             printf(
                 /* translators: %s: List of tags. */
-                '<div class="bashir-rased-post-meta-tag"><i class="fas fa-tags"></i> '.esc_html__('  %s', 'bashir-rased').'</div>',
+                '<div class="bashir-rased-post-meta-tag"><i class="fa-solid fa-tags"></i> '.esc_html__('  %s', 'bashir-rased').'</div>',
                 $tags_list // phpcs:ignore WordPress.Security.EscapeOutput
             );
         }
@@ -73,7 +74,7 @@
     ?>
 
     <div class="bashir-rased-post-meta-post-edit">
-        <i class="fas fa-edit"></i> 
+        <i class="fa-solid fa-file-pen"></i>
         <?php edit_post_link(__('Edit','bashir-rased')); ?>
     </div>
 

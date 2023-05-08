@@ -4,32 +4,22 @@
  *
  * Part of header section title first
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data):
+if ($bashir_rased_data) {
+	$bashir_rased_header_title_first = $bashir_rased_data['bashir-rased-header-title-first'];
+}
 
-$bashir_rased_header_title_first = $bashir_rased_data['bashir-rased-header-title-first'];
-
-if(isset($bashir_rased_header_title_first) && !empty($bashir_rased_header_title_first)){
+if(!empty($bashir_rased_header_title_first)){
     printf(
 		/* translators: %s: Name of header title first */
 		'%s ',
 		esc_html($bashir_rased_header_title_first,'bashir-rased')
 	);
 }
-
-else {
-esc_html_e('I\'m a ','bashir-rased');
-}
-
-else :
-	esc_html_e('I\'m a ','bashir-rased');
-
-endif;
-
-?>

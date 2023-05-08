@@ -4,18 +4,17 @@
  *
  * Part of service section item
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if ($bashir_rased_data) :
-
-$bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
-
-if (isset($bashir_rased_services) && !empty ($bashir_rased_services)) :
+if ($bashir_rased_data) {
+    $bashir_rased_services = $bashir_rased_data['bashir-rased-service-item'];
+}
 
 foreach ($bashir_rased_services as $bashir_rased_service) :
 
@@ -24,6 +23,8 @@ $bashir_rased_service_item_icon = $bashir_rased_service['bashir-rased-service-it
 $bashir_rased_service_item_title = $bashir_rased_service['bashir-rased-service-item-title'];
 
 $bashir_rased_service_item_desc = $bashir_rased_service['bashir-rased-service-item-desc'];
+
+if (!empty ($bashir_rased_service_item_icon) || !empty ($bashir_rased_service_item_title) || !empty ($bashir_rased_service_item_desc)) :
 ?>
 
 <!-- 01. Single Services Item Area Start Here -->
@@ -32,81 +33,72 @@ $bashir_rased_service_item_desc = $bashir_rased_service['bashir-rased-service-it
     
         <!-- Single Services Hover Area Start Here -->
         <div class="bashir-rased-services-single-area-hover">
+
+            <?php if(!empty($bashir_rased_service_item_icon)): ?>
             <div class="bashir-rased-services-hover-icons">
-                <i class="<?php
-                    if(isset($bashir_rased_service_item_icon) && !empty($bashir_rased_service_item_icon)){
-                        echo esc_attr($bashir_rased_service_item_icon);
-                    }
-                    else{
-                        echo esc_attr('fas fa-handshake');
-                    }
-                    ?>">
+                <i class="<?php echo esc_attr($bashir_rased_service_item_icon); ?>">
                 </i>
             </div>
+            <?php endif; ?>
+
+            <?php if(!empty($bashir_rased_service_item_title)): ?>
             <div class="bashir-rased-services-hover-title">
                 <h4>
                     <?php
-                    if(isset($bashir_rased_service_item_title) && !empty($bashir_rased_service_item_title)){
+                    
                         printf(
 						/* translators: %s: Name of service item title */
 						'%s',
 						esc_html($bashir_rased_service_item_title,'bashir-rased')
 						);
-                    }
-                    else{
-                        esc_html_e('Add Service Title','bashir-rased');
-                    }
+                    
                     ?>
                 </h4>
             </div>
+            <?php endif; ?>
+
+            <?php if(!empty($bashir_rased_service_item_desc)): ?>
             <div class="bashir-rased-services-hover-details">
                 <p>
                     <?php
-                    if(isset($bashir_rased_service_item_desc) && !empty($bashir_rased_service_item_desc)){
                         printf(
 						/* translators: %s: Name of service item description */
 						'%s',
 						esc_html($bashir_rased_service_item_desc,'bashir-rased')
 						);
-                    }
-                    else{
-                        esc_html_e('Add Service Description','bashir-rased');
-                    }
                     ?>
                 </p>
             </div>
+            <?php endif; ?>
+
         </div>
         <!-- Single Services Hover Area End Here -->
     
         <!-- Single Services Area Start Here -->
         <div class="bashir-rased-services-single-area">
+
+            <?php if(!empty($bashir_rased_service_item_icon)): ?>
             <div class="bashir-rased-services-icons">
-            <i class="<?php
-                if(isset($bashir_rased_service_item_icon) && !empty($bashir_rased_service_item_icon)){
-                    echo esc_attr($bashir_rased_service_item_icon);
-                }
-                else{
-                    echo esc_attr('fas fa-handshake');
-                }
-                ?>">
-            </i>
+                <i class="<?php echo esc_attr($bashir_rased_service_item_icon); ?>">
+                </i>
             </div>
+            <?php endif; ?>
+
+            <?php if(!empty($bashir_rased_service_item_title)): ?>
             <div class="bashir-rased-services-title">
                 <h4>
                     <?php
-                    if(isset($bashir_rased_service_item_title) && !empty($bashir_rased_service_item_title)){
                         printf(
 						/* translators: %s: Name of service item title */
 						'%s',
 						esc_html($bashir_rased_service_item_title,'bashir-rased')
 						);
-                    }
-                    else{
-                        esc_html_e('Add Service Item Title','bashir-rased');
-                    }
+                        
                     ?>
                 </h4>
             </div>
+            <?php endif; ?>
+            
         </div>
         <!-- Single Services Area End Here -->
         
@@ -115,13 +107,5 @@ $bashir_rased_service_item_desc = $bashir_rased_service['bashir-rased-service-it
 <!-- 01. Single Services Item Area End Here -->
 
 <?php
-    endforeach;
-
-    else : get_template_part('homepage-sections/service/service-item','else');
-
-    endif;
-
-    else : get_template_part('homepage-sections/service/service-item','else');
-    
-    endif;
-?>
+endif;
+endforeach;

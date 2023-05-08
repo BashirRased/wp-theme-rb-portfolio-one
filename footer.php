@@ -6,9 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>
@@ -26,7 +27,7 @@
                         <a href="<?php echo esc_url('https://profiles.wordpress.org/bashirrased2017/'); ?>">
                             <?php esc_html_e('Bashir Rased','bashir-rased'); ?>
                         </a>
-                        <?php esc_html_e(' 2021 | All Rights Reserved.','bashir-rased'); ?>
+                        <?php esc_html_e(' 2022 | All Rights Reserved.','bashir-rased'); ?>
                     </p>
                 </div>
             </div>
@@ -50,14 +51,14 @@
 <!--===================================== 
 ===== Scroll to Top Area Strat Here =====
 ======================================-->
-<div class="bashir-rased-scroll-to-top-area">
-    <i class="fas fa-angle-up"></i>
-</div>
+<button class="bashir-rased-scroll-to-top-area">
+    <i class="fa-solid fa-angles-up"></i>
+</button>
 <!--=================================== 
 ===== Scroll to Top Area End Here =====
 ====================================-->
 
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 </body>
 
 </html>

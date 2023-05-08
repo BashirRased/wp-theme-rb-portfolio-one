@@ -4,18 +4,19 @@
  *
  * Part of skill section language subsection item
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if ($bashir_rased_data):
+if ($bashir_rased_data) {
+    $bashir_rased_language_skills = $bashir_rased_data['bashir-rased-language-skill-item'];
+}
 
-$bashir_rased_language_skills = $bashir_rased_data['bashir-rased-language-skill-item'];
-
-if (isset($bashir_rased_language_skills) && !empty($bashir_rased_language_skills)) :
+if (!empty($bashir_rased_language_skills)) :
 
 foreach ($bashir_rased_language_skills as $bashir_rased_language_skill) :
 
@@ -34,7 +35,7 @@ $bashir_rased_language_skill_value_5 = $bashir_rased_language_skill['bashir-rase
 
 <div class="col-lg-3">
 
-    <?php if(isset($bashir_rased_language_skill_text) && !empty($bashir_rased_language_skill_text)): ?>
+    <?php if(!empty($bashir_rased_language_skill_text)): ?>
     <div class="bashir-rased-skills-bar-title-area">
         <h5>
             <?php
@@ -48,7 +49,7 @@ $bashir_rased_language_skill_value_5 = $bashir_rased_language_skill['bashir-rase
     </div>
     <?php endif; ?>
 
-    <?php if(isset($bashir_rased_language_skill_value_1) && !empty($bashir_rased_language_skill_value_1) && isset($bashir_rased_language_skill_value_2) && !empty($bashir_rased_language_skill_value_2) && isset($bashir_rased_language_skill_value_3) && !empty($bashir_rased_language_skill_value_3) && isset($bashir_rased_language_skill_value_4) && !empty($bashir_rased_language_skill_value_4) && isset($bashir_rased_language_skill_value_5) && !empty($bashir_rased_language_skill_value_5)): ?>
+    <?php if(!empty($bashir_rased_language_skill_value_1) && !empty($bashir_rased_language_skill_value_2) && !empty($bashir_rased_language_skill_value_3) && !empty($bashir_rased_language_skill_value_4) && !empty($bashir_rased_language_skill_value_5)): ?>
     <div class="bashir-rased-skills-bar-icons-area">
         <i class="
         <?php
@@ -86,12 +87,6 @@ $bashir_rased_language_skill_value_5 = $bashir_rased_language_skill['bashir-rase
 
 <?php 
 endforeach;
-
-else: get_template_part('homepage-sections/skill/skill-language-item','else');
-
-endif;
-
-else: get_template_part('homepage-sections/skill/skill-language-item','else');
 
 endif;
 

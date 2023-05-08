@@ -2,10 +2,21 @@
 /**
  * The template for displaying frontpage Subscribe Section
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
+
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
+
+if ($bashir_rased_data) {
+    $bashir_rased_subscribe_header_title = $bashir_rased_data['bashir-rased-subscribe-header-title'];
+}
+
+if ( empty($bashir_rased_subscribe_header_title) ) :
+
+else:
 
 ?>
 
@@ -33,3 +44,5 @@
 <!--===================================== 
 ===== Subscribe Me Section End Here =====
 ======================================-->
+
+<?php endif; ?>

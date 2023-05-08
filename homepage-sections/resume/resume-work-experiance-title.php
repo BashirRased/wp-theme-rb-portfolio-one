@@ -4,16 +4,17 @@
  *
  * Part of resume section work experiance subsection title
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data) :
-
-$bashir_rased_work_experiance_title = $bashir_rased_data['bashir-rased-work-experiance-title'];
+if ($bashir_rased_data) {
+	$bashir_rased_work_experiance_title = $bashir_rased_data['bashir-rased-work-experiance-title'];
+}
 
 if(isset($bashir_rased_work_experiance_title) && !empty($bashir_rased_work_experiance_title)){
 	printf(
@@ -22,13 +23,4 @@ if(isset($bashir_rased_work_experiance_title) && !empty($bashir_rased_work_exper
 	esc_html($bashir_rased_work_experiance_title,'bashir-rased')
 	);
 }
-
-else{
-    esc_html_e('My Work Experiance','bashir-rased');
-}
-
-else : 
-	esc_html_e('My Work Experiance','bashir-rased');
-
-endif;
 ?>

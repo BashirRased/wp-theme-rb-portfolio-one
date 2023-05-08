@@ -4,62 +4,31 @@
  *
  * Part of hire me section buttons
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if($bashir_rased_data):
+if ($bashir_rased_data) {
+	$bashir_rased_hire_btn_link = $bashir_rased_data['bashir-rased-hire-btn-link'];
+}
 
-$bashir_rased_hire_btn_link = $bashir_rased_data['bashir-rased-hire-btn-link']['url'];
-
-$bashir_rased_hire_btn_target = $bashir_rased_data['bashir-rased-hire-btn-link']['target'];
-
-$bashir_rased_hire_btn_text = $bashir_rased_data['bashir-rased-hire-btn-link']['text'];
+if(!empty($bashir_rased_hire_btn_link)):
  
 ?>
  
-<a href="<?php
-
-if(isset($bashir_rased_hire_btn_link) && !empty($bashir_rased_hire_btn_link)){
-    echo esc_url($bashir_rased_hire_btn_link);
-}
-
-else {
-    echo esc_url('#');
-}
-
-?>" target="<?php
-
-if(isset($bashir_rased_hire_btn_target) && !empty($bashir_rased_hire_btn_target)){
-    echo esc_attr($bashir_rased_hire_btn_target);
-}
-
-else {
-    echo esc_attr('_self');
-}
+<a href="<?php echo esc_url($bashir_rased_hire_btn_link['url']); ?>" target="<?php echo esc_attr($bashir_rased_hire_btn_link['target']); 
 ?>">
-    <?php
-    if(isset($bashir_rased_hire_btn_text) && !empty($bashir_rased_hire_btn_text)){
+    <?php 
         printf(
 			/* translators: %s: Name of hire me button text */
 			'%s',
-			esc_html($bashir_rased_hire_btn_text,'bashir-rased')
+			esc_html($bashir_rased_hire_btn_link['text'],'bashir-rased')
 		);
-    }
-    
-    else {
-        esc_html_e('Hire Me','bashir-rased');
-    }
     ?>
 </a>
-
-<?php else: ?>
-
-    <a href="<?php echo esc_url('#'); ?>" target="_self">
-        <?php esc_html_e('Hire Me','bashir-rased'); ?>
-    </a>
 
 <?php endif; ?>

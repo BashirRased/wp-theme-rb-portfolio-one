@@ -4,107 +4,47 @@
  *
  * Part of header section buttons
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if ($bashir_rased_data) :
-
-$bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
-    
-if (isset($bashir_rased_header_btns) && !empty($bashir_rased_header_btns)) :
+if ($bashir_rased_data) {
+    $bashir_rased_header_btns = $bashir_rased_data['bashir-rased-header-btn-group'];
+}
 
 foreach ($bashir_rased_header_btns as $bashir_rased_header_btn) :
 
-$bashir_rased_header_btn_link = $bashir_rased_header_btn['bashir-rased-header-btn-link']['url'];
+$bashir_rased_header_btn_link = $bashir_rased_header_btn['bashir-rased-header-btn-link'];
 
-$bashir_rased_header_btn_target = $bashir_rased_header_btn['bashir-rased-header-btn-link']['target'];
-
-$bashir_rased_header_btn_text = $bashir_rased_header_btn['bashir-rased-header-btn-link']['text'];
-
-if (isset($bashir_rased_header_btn_text) && !empty($bashir_rased_header_btn_text)) :
+if (!empty($bashir_rased_header_btn_text)) :
 ?>
 
 <div class="bashir-rased-btn">
     <a href="<?php
-    if(isset($bashir_rased_header_btn_link) && !empty($bashir_rased_header_btn_link)){
-        echo esc_url($bashir_rased_header_btn_link);
-    }    
-    else {
-        echo esc_url('#');
+    if(!empty($bashir_rased_header_btn_link)){
+        echo esc_url($bashir_rased_header_btn_link['url']);
     }
     ?>" target="<?php
-    if(isset($bashir_rased_header_btn_target) && !empty($bashir_rased_header_btn_target)){
-        echo esc_attr($bashir_rased_header_btn_target);
-    }    
-    else {
-        echo esc_attr('_self');
+    if(!empty($bashir_rased_header_btn_link)){
+        echo esc_attr($bashir_rased_header_btn_link['target']);
     }
     ?>">
         <?php
-        if(isset($bashir_rased_header_btn_text) && !empty($bashir_rased_header_btn_text)){
+        if(isset($bashir_rased_header_btn_link) && !empty($bashir_rased_header_btn_link)){
             printf(
 				/* translators: %s: Name of header buttons link text */
 				'%s',
-				esc_html($bashir_rased_header_btn_text,'bashir-rased')
+				esc_html($bashir_rased_header_btn_link['text'],'bashir-rased')
 			);
-        }
-        
-        else {
-            esc_html_e('contact me','bashir-rased');
         }
         ?>
     </a>
 </div>
 
-<?php else : ?>
-
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('contact me','bashir-rased'); ?>
-    </a>
-</div>
-
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('hire me','bashir-rased'); ?>
-    </a>
-</div>
-
 <?php endif; ?>
 
-<?php
-    endforeach;
-    else : 
-?>
-
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('contact me','bashir-rased'); ?>
-    </a>
-</div>
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('hire me','bashir-rased'); ?>
-    </a>
-</div>
-
-<?php endif; ?>
-
-<?php else : ?>
-
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('contact me','bashir-rased'); ?>
-    </a>
-</div>
-<div class="bashir-rased-btn">
-    <a href="#bashir-rased-contact-me" target="_self">
-        <?php esc_html_e('hire me','bashir-rased'); ?>
-    </a>
-</div>
-
-<?php endif; ?>
+<?php endforeach; ?>

@@ -2,20 +2,21 @@
 /**
  * The template for displaying frontpage resume section
  *
- * Part of resume section certificate subsection item else
+ * Part of resume section certificate subsection item
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
  
-global $bashir_rased_data;
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
 
-if ($bashir_rased_data) :
-
-$bashir_rased_certifications = $bashir_rased_data['bashir-rased-certification-item'];
+if ($bashir_rased_data) {
+    $bashir_rased_certifications = $bashir_rased_data['bashir-rased-certification-item'];
+}
     
-if (isset($bashir_rased_certifications) && !empty($bashir_rased_certifications)) :
+if (!empty($bashir_rased_certifications)) :
 
 foreach ($bashir_rased_certifications as $bashir_rased_certification) :
 
@@ -38,9 +39,6 @@ $bashir_rased_certification_desc = $bashir_rased_certification['bashir-rased-cer
 				esc_html($bashir_rased_certification_title,'bashir-rased')
 				);
             }
-            else{
-                esc_html_e('Add Certificate Name','bashir-rased');
-            }
             ?>
         </h5>
     </div>
@@ -52,9 +50,6 @@ $bashir_rased_certification_desc = $bashir_rased_certification['bashir-rased-cer
 			'%s',
 			esc_html($bashir_rased_certification_by,'bashir-rased')
 			);
-        }        
-        else{
-            esc_html_e('Add Certificate From','bashir-rased');
         }
         ?>
     </div>
@@ -68,9 +63,6 @@ $bashir_rased_certification_desc = $bashir_rased_certification['bashir-rased-cer
 				esc_html($bashir_rased_certification_desc,'bashir-rased')
 				);
             }
-            else{
-                esc_html_e('Add Certificate Description','bashir-rased');
-            }
             ?>
         </p>
     </div>
@@ -79,12 +71,4 @@ $bashir_rased_certification_desc = $bashir_rased_certification['bashir-rased-cer
 <?php
     endforeach;
 
-else : 
-get_template_part('homepage-sections/resume/resume-certificate-item','else'); 
-
-endif;
-
-else : 
-    get_template_part('homepage-sections/resume/resume-certificate-item','else'); 
-        
 endif;

@@ -2,11 +2,32 @@
 /**
  * The template for displaying frontpage About Me Section
  *
- * @package WordPress
- * @subpackage bashir_rased
- * @since Bashir Rased 1.1.2
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
+$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
+
+if ($bashir_rased_data) {
+    
+    $bashir_rased_about_header_title_black = $bashir_rased_data['bashir-rased-about-header-title-black'];
+
+    $bashir_rased_about_header_title_theme_color = $bashir_rased_data['bashir-rased-about-header-title-theme-color'];
+    
+    $bashir_rased_about_img_url = $bashir_rased_data['bashir-rased-about-img'];
+    
+    $bashir_rased_about_me_btns = $bashir_rased_data['bashir-rased-about-btns'];
+    
+    $bashir_rased_about_desc = $bashir_rased_data['bashir-rased-about-desc']; 
+    
+    $bashir_rased_about_infos = $bashir_rased_data['bashir-rased-about-info'];
+}
+
+if ( empty($bashir_rased_about_header_title_black) && empty($bashir_rased_about_header_title_theme_color) && empty($bashir_rased_about_img_url['url']) && empty($bashir_rased_about_me_btns) && empty($bashir_rased_about_desc) && empty($bashir_rased_about_infos) ):
+
+else:
 ?>
 
 <!--=================================== 
@@ -71,3 +92,5 @@
 <!--================================= 
 ===== About Me Section End Here =====
 ==================================-->
+
+<?php endif; ?>
