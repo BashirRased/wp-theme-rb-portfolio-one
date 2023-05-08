@@ -1,10 +1,10 @@
-=== RB Portfolio One ===
+=== Bashir Rased ===
 
 Contributors: bashirrased
 Requires at least: 5.3
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.1.4
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,25 +22,26 @@ Tags: one-column, blog, custom-logo, custom-menu, featured-images, right-sidebar
 
 == Copyright ==
 
-RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
-RB Portfolio One is distributed under the terms of the GNU GPL.
+Bashir Rased WordPress Theme, (C) 2022 Bashir Rased.
+Bashir Rased is distributed under the terms of the GNU GPL.
 
 == Resources ==
 
-= Font Awesome Free 6.3.0 =
+= Font Awesome Free 6.2.0 =
   - Author: @fontawesome
   - License: (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
   - License URL: https://fontawesome.com/license/free
   - Source: https://fontawesome.com
-  - Copyright 2023 Fonticons, Inc.
+  - Copyright 2022 Fonticons, Inc.
 
-= Bootstrap v5.3.0-alpha1 =
+= Bootstrap v5.2.0 =
   - License: MIT
   - License URL: https://github.com/twbs/bootstrap/blob/main/LICENSE
   - Source: https://getbootstrap.com/
   - Copyright 2011-2022 The Bootstrap Authors.
+  - Copyright 2011-2022 Twitter, Inc.
 
-= @popperjs/core v2.11.6 =
+= @popperjs/core v2.11.5 =
     - License: MIT
 
 = HTML5 Shiv 3.7.3 =

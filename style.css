@@ -1,105 +1,50 @@
 @charset "UTF-8";
 
 /*
-Theme Name: RB Portfolio One
-Text Domain: rb-portfolio-one
-Version: 1.1.4
+Theme Name: Bashir Rased
+Text Domain: bashir-rased
+Version: 1.1.3
 Requires at least: 5.3
 Tested up to: 6.0
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Author: Bashir Rased
 Author URI: https://profiles.wordpress.org/bashirrased2017/
-Theme URI: https://github.com/BashirRased/wp-theme-rb-portfolio-one
+Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, translation-ready
 
-RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
-RB Portfolio One is distributed under the terms of the GNU GPL.
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
 */
-
-/* =WordPress Core
--------------------------------------------------------------- */
-.bypostauthor,
-.gallery-caption {
-    display: block;
+.wp-caption{
+    opacity: 1;
 }
-
-.alignnone {
-    margin: 5px 20px 20px 0;
+.wp-caption-text{
+    opacity: 1;
 }
-
-.aligncenter,
-div.aligncenter {
-    display: block;
-    margin: 5px auto 5px auto;
+.sticky{
+    opacity: 1;
 }
-
-.alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+.gallery-caption{
+    opacity: 1;
 }
-
-.alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
+.bypostauthor{
+    opacity: 1;
 }
-
-a img.alignright {
-    float: right;
-    margin: 5px 0 20px 20px;
+.alignright{
+    opacity: 1;
 }
-
-a img.alignnone {
-    margin: 5px 20px 20px 0;
+.alignleft{
+    opacity: 1;
 }
-
-a img.alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
-}
-
-a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wp-caption {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
-}
-
-.wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignright {
-    margin: 5px 0 20px 20px;
-}
-
-.wp-caption img {
-    border: 0 none;
-    height: auto;
-    margin: 0;
-    max-width: 98.5%;
-    padding: 0;
-    width: auto;
-}
-
-.wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
+.aligncenter{
+    opacity: 1;
 }
 
 /* Text meant only for screen readers. */
@@ -116,7 +61,7 @@ a img.aligncenter {
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
-.screen-reader-text:focus {
+.skip-link:focus {
 	background-color: #eee;
 	clip: auto !important;
 	clip-path: none;
@@ -133,25 +78,7 @@ a img.aligncenter {
 	z-index: 100000;
 }
 
-/* Skip Link --------------------------------- */
 
-.skip-link {
-	left: -9999rem;
-	top: 2.5rem;
-	z-index: 999999999;
-	text-decoration: underline;
+#bashir-rased-page-content[tabindex="-1"]:focus {
+	outline: 0;
 }
-
-.skip-link:focus {
-	display: block;
-	left: 6px;
-	top: 7px;
-	font-size: 14px;
-	font-weight: 600;
-	text-decoration: none;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	z-index: 100000;
-	right: auto;
-}
-/* ends */

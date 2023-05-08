@@ -2,9 +2,10 @@
 /**
  * The template for displaying website preloader
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.4
- * @since RB Portfolio One 1.1.4
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>

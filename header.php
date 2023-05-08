@@ -6,9 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.4
- * @since RB Portfolio One 1.1.4
+ * @package RB Free Theme
+ * @subpackage Bashir Rased
+ * @version Bashir Rased 1.1.3
+ * @since Bashir Rased 1.1.3
  */
 
 ?>
@@ -21,12 +22,7 @@
 </head>
 <body <?php body_class();?>>
 <?php wp_body_open(); ?>
-<a class="skip-link screen-reader-text" href="#page-content">
-    <?php esc_html_e('Skip to content', 'rb-portfolio-one'); ?>
+<a class="skip-link screen-reader-text" href="#bashir-rased-page-content">
+    <?php esc_html_e('Skip to content', 'bashir-rased'); ?>
 </a>
 
-<?php
-do_action ( 'rbpo_theme_option_preloader' );
-do_action ( 'rbpo_theme_option_header_top' );
-get_template_part('template-parts/header-menu');
-do_action ( 'rbpo_theme_option_breadcrumbs' );
