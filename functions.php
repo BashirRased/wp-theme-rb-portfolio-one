@@ -4,30 +4,34 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.5
+ * @since RB Portfolio One 1.1.5
  */
 
 // Theme Setup
-if(file_exists(dirname(__FILE__).'/inc/bashir-rased-theme-setup.php')) {
-	require_once(dirname(__FILE__).'/inc/bashir-rased-theme-setup.php');
+if(file_exists(dirname(__FILE__).'/inc/after-theme-setup.php')) {
+	require_once(dirname(__FILE__).'/inc/after-theme-setup.php');
 }
 
 // Theme Assets
-if(file_exists(dirname(__FILE__).'/inc/bashir-rased-assets.php')) {
-	require_once(dirname(__FILE__).'/inc/bashir-rased-assets.php');
+if( file_exists( dirname( __FILE__ ) . '/inc/third-party-assets.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/inc/third-party-assets.php' );
+}
+
+// Theme Assets
+if(file_exists(dirname(__FILE__).'/inc/theme-assets.php')) {
+	require_once(dirname(__FILE__).'/inc/theme-assets.php');
 }
 
 // Theme Widgets
-if(file_exists(dirname(__FILE__).'/inc/bashir-rased-widgets.php')) {
-	require_once(dirname(__FILE__).'/inc/bashir-rased-widgets.php');
+if(file_exists(dirname(__FILE__).'/inc/widget-register.php')) {
+	require_once(dirname(__FILE__).'/inc/widget-register.php');
 }
 
 // Skip Focus Link
-if(file_exists(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php')) {
-	require_once(dirname(__FILE__).'/inc/bashir-rased-skip-focus-links.php');
+if(file_exists(dirname(__FILE__).'/inc/common-functions.php')) {
+	require_once(dirname(__FILE__).'/inc/common-functions.php');
 }
 
 // Breadcrumbs
@@ -45,7 +49,12 @@ if(file_exists(dirname(__FILE__).'/inc/tgm-plugin-customization.php')) {
 	require_once(dirname(__FILE__).'/inc/tgm-plugin-customization.php');
 }
 
-// Codestar Framework Customization
-if(file_exists(dirname(__FILE__).'/inc/codestar-framework-customization.php')) {
-	require_once(dirname(__FILE__).'/inc/codestar-framework-customization.php');
+// Theme Basic Functions
+if( file_exists ( dirname( __FILE__ ) . '/customizer/kirki-customizer.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/customizer/kirki-customizer.php' );
+} 
+
+// TGM Plugin Customization
+if(file_exists(dirname(__FILE__).'/inc/theme-helper.php')) {
+	require_once(dirname(__FILE__).'/inc/theme-helper.php');
 }

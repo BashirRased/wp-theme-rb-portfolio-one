@@ -7,10 +7,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.5
+ * @since RB Portfolio One 1.1.5
  */
  
 /*
@@ -24,41 +23,46 @@ if ( post_password_required() ) {
 ?>
 
 <?php if (have_comments()) : ?>
-<div class="bashir-rased-single-post-total-comment">
-	<h3 class="comments-title">
-		<?php
-		$bashir_rased_comment_count = get_comments_number();
-		if (1 === $bashir_rased_comment_count) {
-			/* translators: %s: Post title. */
-			printf( _x('1 comment on %s', 'comments title', 'bashir-rased'), get_the_title());
-		}
-		else {
-			printf(
-				/* translators: 1: Number of comments, 2: Post title. */
-				_nx(
-					'%1$s comment on &ldquo;%2$s&rdquo;',
-					'%1$s comments on &ldquo;%2$s&rdquo;',
-					$bashir_rased_comment_count,
-					'comments title',
-					'bashir-rased'
-				),
-				number_format_i18n( $bashir_rased_comment_count ),
-				get_the_title()
-			);
-		}
-		?>
-	</h3><!-- .comments-title -->
-</div>
+<h3 class="total-comments">
+	<?php
+	$rbpo_comment_count = get_comments_number();
+	if (1 === $rbpo_comment_count) {
+		/* translators: %s: Post title. */
+		printf( _x('1 comment on %s', 'comments title', 'rb-portfolio-one'), get_the_title());
+	}
+	else {
+		printf(
+			/* translators: 1: Number of comments, 2: Post title. */
+			_nx(
+				'<span class="comment-count">%1$s</span> comment on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
+				'<span class="comment-count">%1$s</span> comments on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
+				$rbpo_comment_count,
+				'comments title',
+				'rb-portfolio-one'
+			),
+			number_format_i18n( $rbpo_comment_count ),
+			get_the_title()
+		);
+	}
+	?>
+</h3><!-- .comments-title -->
 <?php endif; ?>
 
-<div class="bashir-rased-single-post-comment-form">
+<div class="comments-form">
 	<?php comment_form(); ?>
 </div>
 
-<div class="bashir-rased-single-post-comment-list">
-	<?php wp_list_comments(); ?>
+<div class="comments-list">
+	<?php
+		wp_list_comments( [
+			'style'       => 'ul',
+			'callback'    => 'rbpo_comment_list',
+			'avatar_size' => 90,
+			'short_ping'  => true,
+		] );
+	?>
 </div>
 
-<div class="bashir-rased-single-post-comment-pagination">
+<div class="comments-pagination">
 	<?php the_comments_pagination(); ?>
 </div>

@@ -6,10 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.5
+ * @since RB Portfolio One 1.1.5
  */
 
 ?>
@@ -17,48 +16,37 @@
 <!--============================== 
 ===== Footer Area Strat Here =====
 ===============================-->
-<footer id="bashir-rased-footer">
+<footer id="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="bashir-rased-footer-text-left">
+                <div class="copyright-text">
                     <p>
-                        <?php esc_html_e('Copyright © By ','bashir-rased'); ?>
-                        <a href="<?php echo esc_url('https://profiles.wordpress.org/bashirrased2017/'); ?>">
-                            <?php esc_html_e('Bashir Rased','bashir-rased'); ?>
-                        </a>
-                        <?php esc_html_e(' 2022 | All Rights Reserved.','bashir-rased'); ?>
+                        <?php $rbpo_copyright_text = get_theme_mod( 'rbpo_copyright_text' );
+                        echo esc_html( $rbpo_copyright_text ); ?>
                     </p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="bashir-rased-footer-text-right float-end">
+                <div class="powerby-text float-end">
                     <p>
-                        <?php esc_html_e('Powered By ','bashir-rased'); ?>
-                        <a href="<?php echo esc_url('https://profiles.wordpress.org/bashirrased2017/'); ?>">
-                            <?php esc_html_e('Bashir Rased.','bashir-rased'); ?>
-                        </a>
+                    <?php $rbpo_powerby_text = get_theme_mod( 'rbpo_poweredby_text' );
+                    echo esc_html( $rbpo_powerby_text );
+                    ?>
                     </p>
                 </div>
             </div>
-        </div><!-- row end -->
-    </div><!-- container end -->
+        </div><!-- .row -->
+    </div><!-- .container -->
 </footer>
 <!--============================ 
 ===== Footer Area End Here =====
 =============================-->
 
-<!--===================================== 
-===== Scroll to Top Area Strat Here =====
-======================================-->
-<button class="bashir-rased-scroll-to-top-area">
-    <i class="fa-solid fa-angles-up"></i>
-</button>
-<!--=================================== 
-===== Scroll to Top Area End Here =====
-====================================-->
-
-<?php wp_footer(); ?>
+<?php 
+    do_action( 'rbpo_theme_option_scroll_to_top' );
+    wp_footer();
+?>
 </body>
 
 </html>

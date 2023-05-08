@@ -1,1552 +1,684 @@
 /*
-Theme Name: Bashir Rased
-Text Domain: bashir-rased
-Version: 1.1.3
-Requires at least: 5.3
-Tested up to: 6.0
+Theme Name: RB Portfolio One
+Text Domain: rb-portfolio-one
+Version: 1.1.5
+Requires at least: 6.1
+Tested up to: 6.2
 Requires PHP: 5.6
 Description: This theme is onepage portfolio theme.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Author: Bashir Rased
 Author URI: https://profiles.wordpress.org/bashirrased2017/
-Theme URI: https://github.com/BashirRased/wp-theme-bashir-rased
+Theme URI: https://github.com/BashirRased/wp-theme-rb-portfolio-one
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, translation-ready
 
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
+RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
+RB Portfolio One is distributed under the terms of the GNU GPL.
 */
 
-/*=============================
-Table of CSS Content Start Here
-===============================
-	01. Default CSS
-	02. Font Awesome Icon Edit
-	03. Common Classes
-	04. Preloader CSS
-	05. Hire Me Modal CSS
-	06. Section Title
-	07.	Header Area
-		7.1. Header Top Area
-		7.2. Header Menu Area
-		7.3. Header Menu Toggle Area
-		7.4. Header Content Area		
-	08. About Me Section
-	09. Hire Me Section
-	10. My Skills Section
-	11. My Resume Section
-	12. Services Section
-	13. Portfolio Section
-	14. Subscribe Me Section
-	15. Contact Me Section
-	16. Footer Area
-	17. Scroll to Top Area
-=============================
-Table of CSS Content End Here
-===========================*/
 
-/*========================
-01.	Default CSS Start Here
-========================*/
-html {
-  scroll-behavior: smooth;
+/*======================================
+===== 01. Preloader CSS Start Here =====
+======================================*/
+.loader-con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-bg);
+    -webkit-transition: all 1s cubic-bezier(.7, 0, .3, 1), opacity .75s ease-in-out;
+    -o-transition: all 1s cubic-bezier(.7, 0, .3, 1), opacity .75s ease-in-out;
+    -moz-transition: all 1s cubic-bezier(.7, 0, .3, 1), opacity .75s ease-in-out;
+    transition: all 1s cubic-bezier(.7, 0, .3, 1), opacity .75s ease-in-out;
+    z-index: 999999;
+	background: #f0f0f0;
 }
-body {
-	margin: 0;
-	padding: 0;
-	outline: 0;
-	font-family: 'Roboto', sans-serif;
-	color: #333333;
+.loaded .loader-con {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
-h1,h2,h3,h4,h5,h6 {
-	font-weight: 700;
+.preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    display: block;
+    width: 3.75em;
+    height: 4.25em;
+    margin-left: -1.875em;
+    margin-top: -2.125em;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotateY(180deg) rotateZ(-60deg);
+    -moz-transform: rotateY(180deg) rotateZ(-60deg);
+    transform: rotateY(180deg) rotateZ(-60deg);
+    -webkit-animation: 2s preload-flip steps(2) infinite both;
+    -moz-animation: 2s preload-flip steps(2) infinite both;
+    animation: 2s preload-flip steps(2) infinite both;
 }
-h1 {
-	font-size: 40px;
+.preloader .slice {
+    border-top: 1.125em solid transparent;
+    border-right: none;
+    border-bottom: 1em solid transparent;
+    border-left: 1.875em solid var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
 }
-h2 {
-	font-size: 35px;
+.preloader .slice:nth-child(1) {
+    -webkit-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-1 linear infinite both;
+    -moz-animation: 2s preload-cycle-1 linear infinite both;
+    animation: 2s preload-cycle-1 linear infinite both;
 }
-h3 {
-	font-size: 30px;
+.preloader .slice:nth-child(2) {
+    -webkit-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-2 linear infinite both;
+    -moz-animation: 2s preload-cycle-2 linear infinite both;
+    animation: 2s preload-cycle-2 linear infinite both;
 }
-h4 {
-	font-size: 25px;
+.preloader .slice:nth-child(3) {
+    -webkit-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-3 linear infinite both;
+    -moz-animation: 2s preload-cycle-3 linear infinite both;
+    animation: 2s preload-cycle-3 linear infinite both;
 }
-h5 {
-	font-size: 22px;
-}
-h6 {
-	font-size: 20px;
-}
-a {
-	text-decoration: none;
-	display: inline-block;
-}
-a:hover,
-a:focus {
-	color: #007bff;
-	text-decoration: 1px solid underline;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-p {
-	text-align: justify;
-}
-input[type="text"],
-input[type="email"],
-textarea {
-	width: 100%;
-	padding: 10px;
-	border: 1px solid #007bff;
-	margin-bottom: 20px;
-}
-input[type="submit"] {
-	padding: 10px;
-	border: 1px solid #007bff;
-	color: #007bff;
-	background-color: transparent;
-	cursor: pointer;
-}
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-	color: #ffffff;
-	background-color: #007bff;
-}
-/*======================
-01.	Default CSS End Here
-======================*/
 
-/*===============================
-03. Common Classes CSS Start Here
-===============================*/
-.bashir-rased-btn {
-	display: inline-block;
+.preloader .slice:nth-child(4) {
+    -webkit-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-4 linear infinite both;
+    -moz-animation: 2s preload-cycle-4 linear infinite both;
+    animation: 2s preload-cycle-4 linear infinite both;
 }
-.bashir-rased-btn a {
-	text-transform: capitalize;
-	padding: 10px 30px;
-	color: #007bff;
-	border: 1px solid #007bff;
-	margin: 10px;
-	cursor: pointer;
-	display: block;
+.preloader .slice:nth-child(5) {
+    -webkit-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-5 linear infinite both;
+    -moz-animation: 2s preload-cycle-5 linear infinite both;
+    animation: 2s preload-cycle-5 linear infinite both;
 }
-.bashir-rased-btn a:hover,
-.bashir-rased-btn a:focus {
-	color: #ffffff;
-	background-color: #007bff;
+.preloader .slice:nth-child(6) {
+    -webkit-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+    -moz-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+    transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+    -webkit-animation: 2s preload-cycle-6 linear infinite both;
+    -moz-animation: 2s preload-cycle-6 linear infinite both;
+    animation: 2s preload-cycle-6 linear infinite both;
 }
-.mb-30 {
-	margin-bottom: 30px;
+@-webkit-keyframes preload-cycle-1 {
+    100%,
+    5%,
+    80% {
+        -webkit-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    10%,
+    75% {
+        -webkit-transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
 }
-.mt-30 {
-	margin-top: 30px;
+@-moz-keyframes preload-cycle-1 {
+    100%,
+    5%,
+    80% {
+        -webkit-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    10%,
+    75% {
+        -webkit-transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
 }
-.bashir-rased-error-massage {
-	text-transform: capitalize;
+@keyframes preload-cycle-1 {
+    100%,
+    5%,
+    80% {
+        -webkit-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(60deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    10%,
+    75% {
+        -webkit-transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        transform: rotateZ(60deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
 }
-/*===============================
-03. Common Classes CSS End Here
-===============================*/
-.loading-end {
-	display: none;
+@-webkit-keyframes preload-cycle-2 {
+    10%,
+    100%,
+    75% {
+        -webkit-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    15%,
+    70% {
+        -webkit-transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
 }
-/*==========================
-04. Preloader CSS Start Here
-==========================*/
+@-moz-keyframes preload-cycle-2 {
+    10%,
+    100%,
+    75% {
+        -webkit-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    15%,
+    70% {
+        -webkit-transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@keyframes preload-cycle-2 {
+    10%,
+    100%,
+    75% {
+        -webkit-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(120deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    15%,
+    70% {
+        -webkit-transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        transform: rotateZ(120deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-webkit-keyframes preload-cycle-3 {
+    100%,
+    15%,
+    70% {
+        -webkit-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    20%,
+    65% {
+        -webkit-transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-moz-keyframes preload-cycle-3 {
+    100%,
+    15%,
+    70% {
+        -webkit-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    20%,
+    65% {
+        -webkit-transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@keyframes preload-cycle-3 {
+    100%,
+    15%,
+    70% {
+        -webkit-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(180deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    20%,
+    65% {
+        -webkit-transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        transform: rotateZ(180deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-webkit-keyframes preload-cycle-4 {
+    100%,
+    20%,
+    65% {
+        -webkit-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    25%,
+    60% {
+        -webkit-transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-moz-keyframes preload-cycle-4 {
+    100%,
+    20%,
+    65% {
+        -webkit-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    25%,
+    60% {
+        -webkit-transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@keyframes preload-cycle-4 {
+    100%,
+    20%,
+    65% {
+        -webkit-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(240deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    25%,
+    60% {
+        -webkit-transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        transform: rotateZ(240deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-webkit-keyframes preload-cycle-5 {
+    100%,
+    25%,
+    60% {
+        -webkit-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    30%,
+    55% {
+        -webkit-transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-moz-keyframes preload-cycle-5 {
+    100%,
+    25%,
+    60% {
+        -webkit-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    30%,
+    55% {
+        -webkit-transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@keyframes preload-cycle-5 {
+    100%,
+    25%,
+    60% {
+        -webkit-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(300deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    30%,
+    55% {
+        -webkit-transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        transform: rotateZ(300deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-webkit-keyframes preload-cycle-6 {
+    100%,
+    30%,
+    55% {
+        -webkit-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    35%,
+    50% {
+        -webkit-transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-moz-keyframes preload-cycle-6 {
+    100%,
+    30%,
+    55% {
+        -webkit-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    35%,
+    50% {
+        -webkit-transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@keyframes preload-cycle-6 {
+    100%,
+    30%,
+    55% {
+        -webkit-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        -moz-transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        transform: rotateZ(360deg) rotateY(90deg) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+    35%,
+    50% {
+        -webkit-transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        -moz-transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        transform: rotateZ(360deg) rotateY(0) rotateX(0);
+        border-left-color: var(--primary-color);
+    }
+}
+@-webkit-keyframes preload-flip {
+    0% {
+        -webkit-transform: rotateY(0) rotateZ(-60deg);
+        transform: rotateY(0) rotateZ(-60deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg) rotateZ(-60deg);
+        transform: rotateY(360deg) rotateZ(-60deg);
+    }
+}
+@-moz-keyframes preload-flip {
+    0% {
+        -webkit-transform: rotateY(0) rotateZ(-60deg);
+        -moz-transform: rotateY(0) rotateZ(-60deg);
+        transform: rotateY(0) rotateZ(-60deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg) rotateZ(-60deg);
+        -moz-transform: rotateY(360deg) rotateZ(-60deg);
+        transform: rotateY(360deg) rotateZ(-60deg);
+    }
+}
+@keyframes preload-flip {
+    0% {
+        -webkit-transform: rotateY(0) rotateZ(-60deg);
+        -moz-transform: rotateY(0) rotateZ(-60deg);
+        transform: rotateY(0) rotateZ(-60deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg) rotateZ(-60deg);
+        -moz-transform: rotateY(360deg) rotateZ(-60deg);
+        transform: rotateY(360deg) rotateZ(-60deg);
+    }
+}
+/*======================================
+===== 01. Preloader CSS Start Here =====
+======================================*/
 
-/*========================
-04. Preloader CSS End Here
-========================*/
-
-/*==============================
-05. Hire Me Modal CSS Start Here
-==============================*/
-.modal-header .close {
-	opacity: 1;
-	font-size: 33px;
-	color: #ffffff;
-}
-.modal-title {
-	text-transform: capitalize;
-}
-.modal-body label {
-	display: block;
-}
-.modal-body input,
-.modal-body select,
-.modal-body textarea {
-	width: 100%;
-	padding: 10px;
-}
-#job-request {
-	cursor: pointer;
-	color: #ffffff;
-	margin: 0;
-}
-/*============================
-05. Hire Me Modal CSS End Here
-============================*/
-
-/*==============================
-06. Section Title CSS Start Here
-==============================*/
-section {
-	padding: 70px 0;
-}
-.bashir-rased-section-title {
-	padding: 50px 0;
-	text-align: center;
-	text-transform: capitalize;
-}
-.bashir-rased-section-title h2 {
-	display: inline-block;
-	position: relative;
-}
-.bashir-rased-section-title h2:before{
-	content: "";
-	position: absolute;
-	bottom: -15px;
-	right: 0;
-	width: 100%;
-	height: 2px;
-	background: #333333;
-}
-.bashir-rased-section-title h2:after{
-	content: "";
-	position: absolute;
-	bottom: -24px;
-	right: 50%;
-	transform: translateX(-50%) rotate(45deg);
-	width: 20px;
-	height: 20px;
-	margin-right: -20px;
-}
-/*============================
-06. Section Title CSS End Here
-============================*/
-
-/*============================
-07.	Header Area CSS Start Here
-============================*/
-/* 7.1. Header Top Area Start Here */
-.bashir-rased-header-top {
-	color: #ffffff;
+/*===============================================
+===== 02. Header Topbar Area CSS Start Here =====
+===============================================*/
+.header-top-area {
 	padding: 10px 0;
+	color: #ffffff;
+	background-color: var(--primary-color);
 }
-.bashir-rased-header-top span:first-child {
+.header-top-area span:first-child {
 	margin-right: 10px;
 }
-/* 7.1. Header Top Area End Here */
+/*=============================================
+===== 02. Header Topbar Area CSS End Here =====
+=============================================*/
 
-/* 7.2. Header Menu Area Start Here */
-.bashir-rased-header-menu-area {
-	background: #ffffff;
-	border-bottom: 2px solid #ccc;
+/*=============================================
+===== 02. Header Menu Area CSS Start Here =====
+=============================================*/
+.header-menu-area.header-fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
 }
-.bashir-rased-header-fixed {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
+
+.header-menu-area.header-position {
+    position: absolute;
+    width: 100%;
+}
+
+.header-menu-area {
+    position: relative;
+    box-shadow: var(--light-shadow);
+    background-color: var(--white-color);
+    z-index: 9;
+}
+
+.header-menu {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+
+.header-menu ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.header-menu ul li {
+    position: relative;
+    display: inline-block;	
+	padding: 20px;
+}
+
+.header-menu ul li:last-child {
+	padding-right: 0;
+}
+
+.header-menu ul li a {
+	display: block;
+	position: relative;
+	color: var(--black-color);
+	text-decoration: none;
+}
+
+.header-menu ul li.page_item_has_children > a::after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+}
+
+.header-menu a:hover,
+.header-menu a:focus {
+	color: var(--primary-color);
+}
+
+.header-menu ul li.menu-item-has-children > a,
+.header-menu ul li.page_item_has_children > a {
+    position: relative;
+}
+
+.header-menu ul li.menu-item-has-children > a::after,
+.header-menu ul li.page_item_has_children > a::after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+}
+
+.header-menu ul li .children,
+.header-menu ul li .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: -99999px;
+    min-width: 230px;
+    background-color: var(--white-color);  
+    -webkit-box-shadow: var(--light-shadow);
+    -moz-box-shadow: var(--light-shadow);
+    -ms-box-shadow: var(--light-shadow);
+    -o-box-shadow: var(--light-shadow);
+    box-shadow: var(--light-shadow);
 	z-index: 99;
 }
-.admin-bar .bashir-rased-header-fixed {
-	top: 32px;
-}
-.bashir-rased-header-logo {
-	float: left;
-}
-.bashir-rased-mobile-menu {
-	display: none;
-}
-.bashir-rased-desktop-menu {
-	float: right;
-}
-.bashir-rased-desktop-menu nav ul {
-	padding: 0;
-	margin: 0;
-}
-.bashir-rased-desktop-menu nav ul li {
-	float: left;
-	padding: 40px 10px;
-	text-transform: capitalize;
-	font-size: 18px;
-	position: relative;
-	list-style: none;
-}
-.bashir-rased-desktop-menu nav ul li a {
-	display: block;
-	color: #333333;
-	position: relative;
-}
-.bashir-rased-desktop-menu nav ul li:hover > a,
-.bashir-rased-desktop-menu nav ul li > a:focus {
-	color: #007bff;
-}
-.bashir-rased-desktop-menu i {
-	margin-left: 5px;
-}
 
-.bashir-rased-dropdown-menu i {
-	margin-right: 5px;
-	margin-left: 0;
-}
-/* 7.2. Header Menu Area End Here */
-
-.bashir-rased-desktop-menu nav ul li ul {
-	position: absolute;
-	top: 100%;
-	left: -999999px;
-	width: 100%;
-	min-width: 250px;
-	z-index: 99999;
-	background-color: #ccc;
-}
-
-.bashir-rased-desktop-menu nav ul li ul li {
-	float: none;
-	padding: 20px;
-	border-bottom: 1px solid #fff;
-}
-
-.bashir-rased-desktop-menu nav ul li ul li:last-child {
-	border-bottom: none;
-}
-
-.bashir-rased-desktop-menu nav ul li ul li {
-	border-right: 1px solid #fff;
-}
-
-.bashir-rased-desktop-menu nav ul ul ul {
-	left: -100%;
-	top: -999999px;
-}
-
-/* 7.4. Header Content Area Start Here */
-.bashir-rased-header-area {
-	background-color: #f0f0f0;
-}
-.bashir-rased-content-area-left {
-	vertical-align: middle;
-	display: table-cell;
-}
-.bashir-rased-header-title {
-	text-transform: capitalize;
-}
-.bashir-rased-header-title h4 {
-	line-height: 40px;
-}
-.bashir-rased-header-social-icons li {
-	display: inline-block;
-	margin: 25px 16px;
-	width: 50px;
-	height: 50px;
-	font-size: 20px;
-	cursor: pointer;
-	transform: rotate(-35deg) skew(25deg);
-	position: relative;
-}
-.bashir-rased-header-social-icons li a {
-	color: #ffffff;
-}
-.bashir-rased-header-social-icons li span {
-	position: absolute;
-	top: 0;
+.header-menu ul > li:hover .children,
+.header-menu ul > li:focus-within .children,
+.header-menu ul > li:hover .sub-menu,
+.header-menu ul > li:focus-within .sub-menu {
 	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex !important;
-	justify-content: center;
-	align-items: center;
-	transition: .5s;
-	color: #ffffff;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(5),
-.bashir-rased-header-social-icons li:focus span:nth-child(5) {
-	transform: translate(40px,-40px);
+
+.header-menu ul li .children li,
+.header-menu ul li .sub-menu li {
+	display: block;
+}
+
+.header-menu ul li .children li a,
+.header-menu ul li .sub-menu li a {
+	position: relative;
+}
+
+.header-menu ul li .children li a:hover,
+.header-menu ul li .children li a:focus,
+.header-menu ul li .sub-menu li a:hover,
+.header-menu ul li .sub-menu li a:focus {
+	padding-left: 25px;
+}
+
+.header-menu ul li .children li a::before,
+.header-menu ul li .sub-menu li a::before {
+	opacity: 0;
+    position: absolute;
+    content: "\f178";
+    font-family: "FontAwesome";
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.header-menu ul li .children li a:hover::before,
+.header-menu ul li .children li a:focus::before,
+.header-menu ul li .sub-menu li a:hover::before,
+.header-menu ul li .sub-menu li a:focus::before  {
 	opacity: 1;
 }
-.bashir-rased-header-social-icons li:hover span:nth-child(4),
-.bashir-rased-header-social-icons li:focus span:nth-child(4) {
-	transform: translate(30px,-30px);
-	opacity: .8;
-}
-.bashir-rased-header-social-icons li:hover span:nth-child(3),
-.bashir-rased-header-social-icons li:focus span:nth-child(3) {
-	transform: translate(20px,-20px);
-	opacity: .6;
-}
-.bashir-rased-header-social-icons li:hover span:nth-child(2),
-.bashir-rased-header-social-icons li:focus span:nth-child(2) {
-	transform: translate(10px,-10px);
-	opacity: .4;
-}
-.bashir-rased-header-social-icons li:hover span:nth-child(1),
-.bashir-rased-header-social-icons li:focus span:nth-child(1) {
-	transform: translate(0,0);
-	opacity: .2;
-}
-.bashir-rased-header-social-icons li.bashir-rased-facebook-link a span {
-	background: #3b5998;
-}
-.bashir-rased-header-social-icons li.bashir-rased-twitter-link a span {
-	background: #1da1f2;
-}
-.bashir-rased-header-social-icons li.bashir-rased-linkedin-link a span {
-	background: #007bb5;
-}
-.bashir-rased-header-social-icons li.bashir-rased-instagram-link a span {
-	background: #bd081c;
-}
-.bashir-rased-header-social-icons li.bashir-rased-pinterest-link a span {
-	background: #c32aa3;
-}
-.bashir-rased-header-social-icons li.bashir-rased-behance-link a span {
-	background: #053eff;
-}
-.bashir-rased-header-social-icons li.bashir-rased-dribbble-link a span {
-	background: #ea4c89;
-}
-.bashir-rased-header-social-icons li.bashir-rased-github-link a span {
-	background: #171515;
-}
-.bashir-rased-header-social-icons li.bashir-rased-youtube-link a span {
-	background: #FF0000;
-}
-.bashir-rased-header-social-icons li.bashir-rased-blogger-link a span {
-	background: #fc4f08;
-}
-.bashir-rased-header-social-icons li.bashir-rased-wordpress-link a span {
-	background: #21759b;
-}
-.bashir-rased-header-social-icons li.bashir-rased-codepen-link a span {
-	background:#000000;
-}
-.bashir-rased-header-social-icons li.bashir-rased-skype-link span {
-	background:#00aff0;
-}
-.bashir-rased-content-area-right {
-	position: relative;
-	right: 0;
-	bottom: 0;
-}
-/* 7.4. Header Content Area End Here */
 
-/*==========================
-07.	Header Area CSS End Here
-==========================*/
+.header-menu ul li .children li.page_item_has_children > a::after,
+.header-menu ul li .sub-menu li.menu-item-has-children > a::after {
+    content: "\f105";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+}
 
-/*=================================
-08. About Me Section CSS Start Here
-=================================*/
-.bashir-rased-about-me-section-img {
-	padding: 10px;
-	border-radius: 10px;
+.header-menu ul li .children .children,
+.header-menu ul li .sub-menu .sub-menu {
+	top: -99999px;
+	left: 100%;
 }
-.bashir-rased-about-me-btns {
-	margin: 20px;
-}
-.bashir-rased-about-me-separator {
-	width: 100%;
-	height: 1px;
-	margin: 20px 0;
-}
-.bashir-rased-about-me-information {
-	font-size: 18px;
-	margin: 10px 0;
-}
-.bashir-rased-about-me-information li {
-	display: block;
-	width: 100%;
-	margin: 10px;
-}
-.bashir-rased-about-me-info-title {
-	font-weight: 700;
-}
-/*===============================
-08. About Me Section CSS End Here
-===============================*/
 
-/*========================
-09. Hire Me CSS Start Here
-========================*/
-#bashir-rased-hire-me {
-	color: #ffffff;
-	text-align: center;
-	text-transform: capitalize;
-	position: relative;
-	z-index: 9;
-}
-#bashir-rased-hire-me::before{
-	content: '';
-	position: absolute;
+.header-menu ul li .children > li:hover .children,
+.header-menu ul li .children > li:focus-within .children,
+.header-menu ul li .sub-menu > li:hover .sub-menu,
+.header-menu ul li .sub-menu > li:focus-within .sub-menu {
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,.8);
-	z-index: -1;
 }
-/*======================
-09. Hire Me CSS End Here
-======================*/
+/*===========================================
+===== 02. Header Menu Area CSS End Here =====
+===========================================*/
 
-/*==================================
-10. My Skills Section CSS Start Here
-==================================*/
-#bashir-rased-my-skills {
-	background: #f0f0f0;	
-}
-.bashir-rased-skills-bar-area {
-	margin-bottom: 80px;
-}
-.bashir-rased-skills-title h3 {
-	text-transform: capitalize;
-	display: inline-block;
-	position: relative;
-	margin-bottom: 35px;
-}
-.bashir-rased-skills-title h3:after {
-	position: absolute;
-	content: "";
-	bottom: -12px;
-	left: 0;
-	width: 50%;
-	height: 5px;
-}
-.bashir-rased-skills-bar-text-area {
-	overflow: hidden;
-	font-size: 20px;
-}
-.bashir-rased-skills-bar {
-	width: 100%;
-	height: 6px;
-	position: relative;
-	background: #333333;
-	margin-bottom: 20px;
-}
-.bashir-rased-skills-bar-animation {
-	width: 0;
-	height: 6px;
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translateY(-50%);
-}
-.bashir-rased-skills-bar-title-area {
-	text-transform: capitalize;
-}
-/*================================
-10. My Skills Section CSS End Here
-================================*/
-
-/*==================================
-11. My Resume Section CSS Start Here
-==================================*/
-.bashir-rased-resume-sub-title h3 {
-	text-transform: capitalize;
-	display: inline-block;
-	position: relative;
-	margin-bottom: 35px;
-}
-.bashir-rased-resume-sub-title h3:after {
-	position: absolute;
-	content: "";
-	bottom: -12px;
-	left: 0;
-	width: 50%;
-	height: 5px;
-}
-.bashir-rased-resume-single-item {
-	padding: 10px;
-	cursor: pointer;
-	transition: 1s;
-	margin-bottom: 20px;
-}
-.bashir-rased-resume-single-item:hover,
-.bashir-rased-resume-single-item:focus {
-	color: #ffffff;
-}
-.bashir-rased-resume-single-item-details {
-	font-weight: 700;
-	margin-bottom: 30px;
-}
-/*================================
-11. My Resume Section CSS End Here
-================================*/
-
-/*=================================
-12. Services Section CSS Start Here
-=================================*/
-#bashir-rased-my-services {
-	background: #f0f0f0;	
-}
-#bashir-rased-my-services .col-lg-4 {
-	margin-bottom: 20px;
-}
-.bashir-rased-services-single-item {
-	padding: 20px;
-	height: 100%;
-	position: relative;
-	cursor: pointer;
-	transition: 1s;
-	min-height: 400px;
-}
-.bashir-rased-services-single-item:hover .bashir-rased-services-single-area-hover,
-.bashir-rased-services-single-item:focus .bashir-rased-services-single-area-hover {
-	display: block;
-}
-.bashir-rased-services-single-item:hover .bashir-rased-services-single-area,
-.bashir-rased-services-single-item:focus .bashir-rased-services-single-area {
-	display: none;
-}
-.bashir-rased-services-single-area-hover {
-	display: none;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	color: #ffffff;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	padding: 20px;
-}
-.bashir-rased-services-hover-icons i {
-	font-size: 50px;
-	background: #ffffff;
-	padding: 15px;
-	border-radius: 50%;
-}
-.bashir-rased-services-hover-title {
-	text-transform: capitalize;
-	margin-top: 30px;
-}
-.bashir-rased-services-single-area {
-	text-align: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-}
-.bashir-rased-services-icons i {
-	padding: 30px;
-	font-size: 90px;
-	border-radius: 50%;
-}
-.bashir-rased-services-title {
-	text-transform: capitalize;
-	margin-top: 30px;
-}
-/*===============================
-12. Services Section CSS End Here
-===============================*/
-
-/*==================================
-13. Portfolio Section CSS Start Here
-==================================*/
-.bashir-rased-portfolio-btn-area{
-	margin: 20px auto;
-	overflow: hidden;
-}
-.bashir-rased-portfolio-btn-area li {
-	float: left;
-	text-transform: capitalize;
-	padding: 10px 30px;
-	cursor: pointer;
-	margin: 0 10px 10px 0;
-	display: block;
-}
-.bashir-rased-portfolio-active {
-	color: #ffffff !important;
-}
-.bashir-rased-portfolio-signle-item-area {
-	padding: 10px;
-	cursor: pointer;
-	position: relative;
-	margin-bottom: 20px;
-}
-.bashir-rased-portfolio-signle-item-area:hover .bashir-rased-portfolio-signle-item-hover-area,
-.bashir-rased-portfolio-signle-item-area:focus .bashir-rased-portfolio-signle-item-hover-area {
-	display: block;
-}
-.bashir-rased-portfolio-signle-item-hover-area {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #ffffff;
-	width: 100%;
-	padding: 15px;
-	display: none;
-}
-.bashir-rased-portfolio-signle-item-hover a {
-	color: #ffffff;
-}
-.bashir-rased-portfolio-signle-title {
-	text-transform: capitalize;
-}
-.bashir-rased-portfolio-signle-sub-category {
-	text-transform: capitalize;
-}
-/*================================
-13. Portfolio Section CSS End Here
-================================*/
-
-/*=====================================
-14. Subscribe Me Section CSS Start Here
-=====================================*/
-#bashir-rased-subscribe {
-	color: #ffffff;
-	text-align: center;
-	text-transform: capitalize;
-	position: relative;
-	z-index: 1;
-}
-#bashir-rased-subscribe::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,.8);
-	z-index: -1;
-}
-.bashir-rased-subscribe-form form {
-	width: 100%;
-	max-width: 700px;
-	margin: 0 auto;
-}
-.bashir-rased-subscribe-form form p {
-	text-align: center;
-}
-.bashir-rased-subscribe-text-box {
-	width: 90%;
-	max-width: 500px;
-	display: block;
-	margin: 20px auto;
-	padding: 10px;
-	background: none;
-	color: #ffffff;
-}
-.bashir-rased-subscribe-submit-btn {
-	padding: 10px 30px;
-	color: #ffffff;
-	cursor: pointer;
-	text-transform: capitalize;
-	display: block;
-	margin: 0 auto;
-}
-/*===================================
-14. Subscribe Me Section CSS End Here
-===================================*/
-
-/*===================================
-15. Contact Me Section CSS Start Here
-===================================*/
-#bashir-rased-contact-me {
-	background: #f0f0f0;	
-}
-.bashir-rased-contact-me-sub-title {
-	text-transform: capitalize;
-}
-.bashir-rased-contact-me-sub-title h3 {
-	display: inline-block;
-	position: relative;
-	margin-bottom: 35px;
-}
-.bashir-rased-contact-me-sub-title h3:after {
-	position: absolute;
-	content: "";
-	bottom: -12px;
-	left: 0;
-	width: 50%;
-	height: 5px;
-}
-.bashir-rased-contact-info-area {
-	font-size: 20px;
-}
-.bashir-rased-contact-info-highlight {
-	text-transform: capitalize;
-}
-.bashir-rased-contact-info-social-icons  li {
-	margin: 4px;
-	float: left;
-	position: relative;	
-}
-.bashir-rased-contact-info-social-icons  li a {
-	width: 40px;
-	height: 40px;
-	display: block;
-	color: #ffffff;
-}
-.bashir-rased-contact-info-social-icons  li span {
-	width: 40px;
-	height: 40px;
-	display: block;
-	color: #ffffff;
-	position: relative;
-}
-.bashir-rased-contact-info-social-icons  li span:before,
-.bashir-rased-contact-info-social-icons  li span:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	line-height: 40px;
-}
-.bashir-rased-contact-info-social-icons  li span:before {
-	transform-origin: top;
-	transition: transform 0.5s;
-}
-.bashir-rased-contact-info-social-icons  li:hover span:before,
-.bashir-rased-contact-info-social-icons  li:focus span:before {
-	transform: rotateX(90deg) translateY(-50%);
-}
-.bashir-rased-contact-info-social-icons  li span:after {
-	transform-origin: bottom;
-	transition: transform 0.5s;
-	transform: rotateX(90deg) translateY(50%);
-}
-.bashir-rased-contact-info-social-icons  li:hover span:after,
-.bashir-rased-contact-info-social-icons  li:focus span:after {
-	transform: rotateX(0deg) translateY(0);
-}
-.bashir-rased-contact-info-social-icons  li.bashir-rased-facebook-link a span:before,
-.bashir-rased-contact-info-social-icons  li.bashir-rased-facebook-link a span:after {
-	content: "\f39e";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons  li.bashir-rased-facebook-link a span:after {
-	background: #3b5998;
-}
-.bashir-rased-contact-info-social-icons  li.bashir-rased-twitter-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-twitter-link a span:after {
-	content: "\f099";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-twitter-link a span:after {
-	background: #1da1f2;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-linkedin-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-linkedin-link a span:after {
-	content: "\f0e1";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-linkedin-link a span:after {
-	background: #007bb5;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-instagram-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-instagram-link a span:after {
-	content: "\f231";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-instagram-link a span:after {
-	background: #bd081c;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-pinterest-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-pinterest-link a span:after {
-	content: "\f16d";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-pinterest-link a span:after {
-	background: #c32aa3;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-behance-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-behance-link a span:after {
-	content: "\f1b4";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-behance-link a span:after {
-	background: #053eff;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-dribbble-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-dribbble-link a span:after {
-	content: "\f17d";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-dribbble-link a span:after {
-	background: #ea4c89;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-github-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-github-link a span:after {
-	content: "\f09b";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-github-link a span:after {
-	background: #171515;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-youtube-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-youtube-link a span:after {
-	content: "\f167";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-youtube-link a span:after {
-	background: #FF0000;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-blogger-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-blogger-link a span:after {
-	content: "\f37d";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-blogger-link a span:after {
-	background: #fc4f08;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-wordpress-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-wordpress-link a span:after {
-	content: "\f19a";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-wordpress-link a span:after {
-	background: #21759b;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-codepen-link a span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-codepen-link a span:after {
-	content: "\f1cb";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-codepen-link a span:after {
-	background: #000000;
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-skype-link span:before,
-.bashir-rased-contact-info-social-icons li.bashir-rased-skype-link span:after {
-	content: "\f17e";	
-	font-family: "Font Awesome 5 Brands";
-}
-.bashir-rased-contact-info-social-icons li.bashir-rased-skype-link span:after {
-	background: #00aff0;
-}
-/*=================================
-15. Contact Me Section CSS End Here
-=================================*/
-
-/*====================================
-16. Footer Area Section CSS Start Here
-====================================*/
-#bashir-rased-footer {
-	background: #1c1c1c;
-	padding: 10px 0;
-	color: #ffffff;
-}
-#bashir-rased-footer p {
-	margin: 0;
-}
-/*==================================
-16. Footer Area Section CSS End Here
-==================================*/
-
-/*===================================
-17. Scroll to Top Area CSS Start Here
-===================================*/
-.bashir-rased-scroll-to-top-area {
-	position: fixed;
-	bottom: 25px;
-	right: 25px;
-	width: 50px;
-	height: 50px;	
-	color: #ffffff;
-	font-size: 25px;
-	cursor: pointer;
-	border: 1px solid #fff;
-}
-.bashir-rased-scroll-to-top-area:focus {
-	border: 1px solid #007bff;
-	color: #007bff;
-	background-color: #fff;
-}
-.bashir-rased-scroll-to-top-area i {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-}
-/*=================================
-17. Scroll to Top Area CSS End Here
-=================================*/
-
-#bashir-rased-content {
-	padding: 70px 0;
-}
-
-/* Comment Area */
-.bashir-rased-singl-post-comment-area {
-	padding: 20px 0;
-	border-top: 1px solid #007bff;
-}
-
-/* Comment Form */
-.comment-form-comment label,
-.comment-form-author label,
-.comment-form-email label,
-.comment-form-url label {
-	display: block;
-}
-
-.comment-form-author input,
-.comment-form-email input,
-.comment-form-url input {
-	width: 100%;
-	padding: 10px;
-	border-color: #007bff;
-}
-
-.comment-form-comment textarea {
-	display: block;
-	width: 100%;
-	border-color: #007bff;
-}
-
-.form-submit .submit {
-	padding: 10px 20px;
-	background: none;
-	color: #007bff;
-	border-color: #007bff;
-	cursor: pointer;
-}
-
-.form-submit .submit:hover,
-.form-submit .submit:focus {
-	background-color: #007bff;
-	color: #fff;
-}
-
-/* Comment List */
-
-/* Sidebar Area */
-.bashir-rased-widget {
-	margin-bottom: 30px;
-	padding: 20px;
-	background-color: #eee;
-}
-
-.wp-block-search .wp-block-search__button {
-	background:#007bff;
-	border:1px solid #007bff;
-	color: #fff;
-}
-
-.wp-block-search .wp-block-search__input {
-	border-color: #007bff;
-}
-
-/* WP Pages List*/
-.bashir-rased-single-post-pages-list {
-	margin: 30px 0;
-}
-
-.post-page-numbers {
-	display: inline-block;
-	border: 1px solid #007bff;
-	color: #007bff;
-	padding: 10px 15px;
-	margin: 0 2px;
-}
-
-.post-page-numbers:hover, .post-page-numbers:focus, .post-page-numbers.current {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-/* Pagination */
-.navigation.pagination {
-	margin: 30px 0;
-}
-
-.page-numbers {
-	display: inline-block;
-	border: 1px solid #007bff;
-	color: #007bff;
-	margin: 0 5px;
-	padding: 5px 10px;
-}
-
-.page-numbers.current,
-.page-numbers:hover,
-.page-numbers:focus {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-/* Comments */
-.bashir-rased-single-post-total-comment {
-	padding: 20px;
-	margin-bottom: 20px;
-	background-color: #eee;
-}
-.bashir-rased-single-post-comment-list {
-	padding: 20px 0;
-}
-
-.bashir-rased-single-post-comment-form {
-	margin-bottom: 20px;
-	background-color: #eee;
-}
-
-.comment {
-	list-style: none;
-}
-
-.comment.parent .children {
-	padding-left: 30px;
-}
-
-.comment-author.vcard {
-	display: block;
-	margin: 20px 0;
-}
-
-.comment-author.vcard .avatar.photo {
-	width: 80px;
-	height: 80px;
-	border: 1px solid #007bff;
-	padding: 5px;
-}
-
-.comment-respond {
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #eee;
-}
-
-.comment-body {
-	margin-bottom: 20px;
-	padding: 20px;	
-	background-color: #eee;
-}
-
-.reply {
-	overflow: hidden;
-}
-
-.comment-reply-link {
-	border: 1px solid #007bff;
-	color: #007bff;
-	float: right;
-	padding: 5px 15px;
-}
-
-.comment-reply-link:hover,
-.comment-reply-link:focus {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-#cancel-comment-reply-link {
-	float: right;
-    font-size: 16px;
-    text-transform: capitalize;
-    border: 1px solid #007bff;
-    padding: 5px 15px;
-}
-
-#cancel-comment-reply-link:hover,
-#cancel-comment-reply-link:focus {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-.comment-metadata {
-	margin: 10px 0;
-	padding: 10px 0;
-	border-top: 1px solid #007bff;
-	border-bottom: 1px solid #007bff;
-}
-
-/* Post Meta */
-.bashir-rased-blog-area {
-	margin-top: 30px;
-}
-.bashir-rased-post-item {
-	margin-bottom: 20px;
-}
-.bashir-rased-single-post {
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #eee;
-}
-.bashir-rased-post-meta {
-	margin: 10px 0;
-	padding: 10px 0;
-	border-top: 1px solid #007bff;
-	border-bottom: 1px solid #007bff;
-}
-
-.bashir-rased-post-meta-author,
-.bashir-rased-post-meta-time,
-.bashir-rased-post-meta-comments-count,
-.bashir-rased-post-meta-category,
-.bashir-rased-post-meta-tag,
-.bashir-rased-post-meta-post-edit {
-	display: inline-block;
-	margin-right: 10px;
-}
-
-/* Widget Tag List */
-.tag-cloud-link {
-	font-size: 14px;
-	padding: 5px 10px;
-	margin: 5px;
-	border: 1px solid #007bff;
-	color: #007bff;
-}
-
-.tag-cloud-link:hover,
-.tag-cloud-link:focus {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-/* Widget Page List */
-.wp-block-pages-list__item,
-.wp-block-latest-posts li,
-.wp-block-categories-list .cat-item,
-.widget_meta li,
-.wp-block-archives-list li {
-	border-bottom: 1px solid #007bff;
-	padding: 10px 0;
-}
-
-.wp-block-pages-list__item:last-child,
-.wp-block-latest-posts li:last-child,
-.wp-block-categories-list .cat-item:last-child,
-.widget_meta li:last-child,
-.wp-block-archives-list li:last-child {
-	border-bottom: none;
-}
-
-/* Widget Calendar */
-.wp-block-calendar table th {
-	background-color: #007bff;
-	color: #ffffff;
-}
-.wp-block-calendar table caption {
-	color: #007bff;
-}
-.wp-block-calendar #today {
-	background-color: #007bff;
-	color: #ffffff;
-}
-.wp-block-calendar #today a {
-	color: #ffffff;
-}
-
-/* Widget Recent Comments */
-.bashir-rased-widget .wp-block-latest-comments {
-	padding: 0;
-}
-.bashir-rased-widget .wp-block-latest-comments__comment-date {
-	padding: 5px 0;
-	border-top: 1px solid #007bff;
-	border-bottom: 1px solid #007bff;
-}
-
-/** 404 Page */
-.error-404-page {
-	margin-top: 30px;
-}
-
-.error-404-page-content {
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #eee;
-	text-align: center;
-}
-
-.error-page-header-title {
-	font-size: 250px;
-	color: #007bff;
-	margin: 0;
-	word-break: break-all;
-}
-
-.error-page-header-subtitle {
-	font-size: 50px;
-	text-transform: uppercase;
-}
-
-.error-btn {
-	border: 1px solid #007bff;
-	color: #007bff;
-	padding: 10px 15px;
-	border-radius: 5px;
-}
-
-.error-btn:hover,
-.error-btn:focus {
-	background-color: #007bff;
-	color: #fff;
-}
-
-/** search page */
-.page-title {
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #eee;
-}
-
-.search-page-header-title span,
-.archive-page-header-title span {
-	color: #007bff;
-}
-
-/** breadcrumbs area */
+/*==================================================
+===== 02. Header Breadcrumbs Area CSS End Here =====
+==================================================*/
 .header-breadcrumbs-area {
-	position: relative;
-	z-index: 2;
-}
-
-.header-breadcrumbs-area::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 3;
-	background-color: rgba(0,0,0,0.8);
-}
-
-.header-breadcrumbs {
-	position: relative;
-	color: #fff;
-	text-align: center;
-	z-index: 5;
-}
-
-.header-breadcrumbs-nav ul li {
-	display: inline-block;
-	margin: 5px;
-}
-
-/** Unit Test CSS */
-.bashir-rased-post-content {
-	overflow: hidden;
-}
-
-.wp-block-button {
-	margin-bottom: 20px;
-}
-
-.blocks-gallery-caption {
-	margin-bottom: 20px;
-}
-
-blockquote,
-blockquote.wp-block-quote {
-	background-color: #fff;
-	padding: 20px;
-	box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-	border-color: #007bff;
-}
-
-blockquote.wp-block-quote.is-style-large {
-	padding: 15px;
-}
-
-blockquote.wp-block-quote.has-text-align-right {
-	padding: 20px 25px 20px 10px;
-	border-color: #007bff;
-}
-
-.wp-block-pullquote {
-	background-color: #fff;
-	padding: 60px 20px;
-	box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-	overflow: hidden;
-}
-
-.wp-block-quote cite,
-.wp-block-pullquote cite {
-	color: #007bff;
-	float: right;
-}
-
-.wp-block-file a.wp-block-file__button {
-	background-color: transparent;
-	border: 1px solid #007bff;
-	color: #007bff;
-	transition: all 0.3s ease-in-out;
-}
-
-.wp-block-file a.wp-block-file__button:hover {
-	background-color: #007bff;
-	color: #fff;
-}
-
-.wp-block-archives-dropdown select,
-.bashir-rased-post-content select.postform {
-	width: 100%;
-	margin: 20px 0;
-	padding: 10px;
-}
-
-.wp-block-calendar {
-	margin: 20px 0;
-}
-
-.wp-block-latest-comments {
-	padding: 0;
-}
-
-.wp-block-search {
-	margin-bottom: 20px;
-}
-
-.wp-block-rss__item {
-	margin-bottom: 20px;
-}
-
-.sticky .bashir-rased-single-post {
-	background-color: #007bff;
-	color: #fff;
-}
-
-.sticky .bashir-rased-single-post a {
-	color: #fff;
-}
-
-.sticky .bashir-rased-post-meta {
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-}
-
-body{
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-	min-height: 1000px;
-}
-
-.format-chat .bashir-rased-post-content p {
-	background-color: #007bff;
-	color: #fff;
-	padding: 5px 10px;
-	border-radius: 20px;
-}
-
-.format-chat .bashir-rased-post-content p:nth-child(even){
-	background-color: #007bff;
-	color: #fff;
-	text-align: right;
-}
-
-.format-chat .bashir-rased-post-content p:nth-child(odd){
-	background-color: #fff;
-	color: #007bff;
-	text-align: left;
-}
-
-iframe {
-	max-width: 100%;
-	margin: 10px 0;
-}
-
-.gallery-columns-2,
-.gallery-columns-3,
-.gallery-columns-4,
-.gallery-columns-5,
-.gallery-columns-6,
-.gallery-columns-7,
-.gallery-columns-8,
-.gallery-columns-9,
-.gallery-columns-10,
-.gallery-columns-11,
-.gallery-columns-12 {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.gallery-columns-2 .gallery-item {
-	width: 50%;
-	padding: 15px;
-}
-
-.gallery-columns-3 .gallery-item {
-	width: 33.33%;
-	padding: 15px;
-}
-
-.gallery-columns-4 .gallery-item {
-	width: 25%;
-	padding: 15px;
-}
-
-.gallery-columns-5 .gallery-item {
-	width: 20%;
-	padding: 15px;
-}
-
-.gallery-columns-6 .gallery-item {
-	width: 16.66%;
-	padding: 15px;
-}
-
-.gallery-columns-7 .gallery-item {
-	width: 14.28%;
-	padding: 15px;
-}
-
-.gallery-columns-8 .gallery-item {
-	width: 12.5%;
-	padding: 15px;
-}
-
-.gallery-columns-9 .gallery-item {
-	width: 11.11%;
-	padding: 15px;
-}
-
-.gallery-columns-10 .gallery-item {
-	width: 10%;
-	padding: 15px;
-}
-
-.gallery-columns-11 .gallery-item {
-	width: 9.09%;
-	padding: 15px;
-}
-
-.gallery-columns-12 .gallery-item {
-	width: 8.33%;
-	padding: 15px;
-}
-
-.bashir-rased-single-post-comment-list li {
-	list-style: none;
-}
-
-table {
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-th,td {
-	border: 1px solid #007bff;
-	padding: 5px;
-}
-
-dl {
-	padding-left: 16px;
+	padding: 115px 0;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .header-breadcrumbs-title {
-	text-transform: capitalize;
+	text-align: center;
+    color: var(--white-color);
+	margin-bottom: 30px;
+    text-transform: capitalize;
 }
 
-blockquote {
-	border-left: .25em solid;
-	overflow: hidden;
+.header-breadcrumbs-nav {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.7);
 }
 
-blockquote cite {
-	float: right;
+.header-breadcrumbs-nav span {
+	display: inline-block;
 }
+
+.header-breadcrumbs-nav a {
+	color: var(--white-color);
+}
+
+.header-breadcrumbs-nav a:hover,
+.header-breadcrumbs-nav a:focus {
+	color: var(--primary-color);
+}
+
+
+.header-breadcrumbs-nav > span:last-child {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header-breadcrumbs-description {
+    color: var(--white-color);
+    text-align: center;
+}
+/*==================================================
+===== 02. Header Breadcrumbs Area CSS End Here =====
+==================================================*/
