@@ -1,0 +1,1493 @@
+/*
+Theme Name: RB Portfolio One
+Text Domain: rb-portfolio-one
+Version: 1.1.4
+Requires at least: 5.3
+Tested up to: 6.0
+Requires PHP: 5.6
+Description: This theme is onepage portfolio theme.
+Author: Bashir Rased
+Author URI: https://profiles.wordpress.org/bashirrased2017/
+Theme URI: https://github.com/BashirRased/wp-theme-rb-portfolio-one
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, translation-ready
+
+RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
+RB Portfolio One is distributed under the terms of the GNU GPL.
+*/
+
+/*=========================================
+===== Table of CSS Content Start Here =====
+===========================================
+	01. Default HTML CSS
+	02. WordPress Widget CSS
+	03. WordPress Block CSS
+=========================================
+===== Table of CSS Content End Here =====
+=======================================*/
+
+/*=========================================
+===== 01. Default HTML CSS Start Here =====
+=========================================*/
+:root {
+    --primary-color: #007bff;
+    --black-color: #000000;
+	--light-text: #525258;
+    --white-color: #ffffff;
+	--transition: all 0.3s ease-out 0s;
+	--light-bg: #D4D4DD;
+	--light-shadow: 0px 1px 3px rgba(3, 4, 28, 0.06);
+		
+}
+
+body {
+	font-family: 'Roboto';
+	font-weight: 400;
+	word-break: break-all;
+	scroll-behavior: smooth;
+    background-color: var(--light-bg);
+	outline: 0;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+}
+
+a {
+	color: var(--primary-color);
+	opacity: 0.85;
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+	color: var(--primary-color);
+	opacity: 1;
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+caption,
+figcaption {
+	font-family: 'Roboto';
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 25px;
+}
+
+h5 {
+	font-size: 22px;
+}
+
+h6 {
+	font-size: 20px;
+}
+
+select {
+    width: 100%;
+}
+
+option {
+	width: 100%;
+}
+
+table {
+	caption-side: top;
+	width: 100%;
+}
+
+form {
+	min-height: 42px;
+}
+
+input {
+	outline: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+textarea {
+	padding: 15px;
+    width: 100%;
+    border: 1px solid var(--black-color);
+    box-shadow: var(--light-shadow);
+	outline: 0;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus,
+input[type="url"]:hover,
+input[type="url"]:focus,
+textarea:hover,
+textarea:focus {
+	border: 1px solid var(--primary-color);
+}
+
+figcaption {
+    padding: 10px;
+    margin: 10px 0;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+figcaption a {
+    color: var(--white-color);
+}
+
+figcaption a:hover,
+figcaption a:focus {
+    color: var(--white-color);
+}
+
+strong,
+b,
+em,
+cite,
+pre,
+code {
+	color: var(--primary-color);
+}
+
+kbd {
+	background-color: var(--primary-color);
+}
+
+pre {
+	padding: 30px;
+	background-color: var(--light-bg);
+}
+
+blockquote {
+    text-align: center;
+    box-shadow: var(--light-shadow);
+    padding: 30px;
+    background-color: var(--light-bg);
+    border-color: var(--primary-color);
+    color: var(--black-color);
+}
+
+blockquote::before {
+    content: "\f10e";
+    font-family: "FontAwesome";
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    display: block;
+}
+
+div {
+	clear: both;
+}
+
+hr {
+	color: var(--primary-color);
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+	border-color: var(--primary-color);
+}
+/*=======================================
+===== 01. Default HTML CSS End Here =====
+=======================================*/
+
+/*===========================================
+===== 01. Common Classes CSS Start Here =====
+===========================================*/
+.rbpo-btn {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.rbpo-btn:hover,
+.rbpo-btn:focus {
+	color: var(--white-color);
+	background-color: var(--black-color);
+	text-decoration: none;
+}
+/*=========================================
+===== 01. Common Classes CSS End Here =====
+=========================================*/
+
+/*==================================================
+===== 02. Nice Select Customize CSS Start Here =====
+==================================================*/
+.nice-select {
+    border: 1px solid var(--primary-color);
+    width: 100%;
+	margin-bottom: 50px;
+}
+
+.nice-select:after {
+    width: 10px;
+    height: 10px;
+	margin-top: -7px;
+	right: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+}
+
+.nice-select:hover,
+.nice-select:focus {
+    border-color: var(--primary-color);
+}
+
+.nice-select .current {
+	display: block;
+	overflow: hidden;
+}
+
+.nice-select .list {
+	width: 100%;
+}
+
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+	background-color: var(--primary-color);
+}
+
+div.nice-select .option:hover,
+div.nice-select .option:focus {
+	color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.widget_archive .list li {
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+}
+/*================================================
+===== 02. Nice Select Customize CSS End Here =====
+================================================*/
+
+/*============================================
+===== 02. WordPress Block CSS Start Here =====
+============================================*/
+/** Image Block */
+.wp-block-image figcaption {
+	color: var(--white-color);
+}
+
+/** Button Block */
+.wp-block-button__link {
+    background-color: var(--primary-color);
+	transition: var(--transition);
+	margin-bottom: 10px;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	color: var(--white-color);
+	text-decoration: none;
+	background-color: var(--black-color);
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color),
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color) {
+    color: var(--primary-color);
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color):hover,
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color):focus,
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color):hover,
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color):focus {
+	color: var(--black-color);
+}
+
+.wp-block-file__button {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.wp-block-file__button:hover,
+.wp-block-file__button:focus {
+	color: var(--white-color);
+	background-color: var(--black-color);
+	text-decoration: none;
+}
+
+
+/***/
+.wp-block-cover .has-background-dim:not([class*=-background-color]),
+.wp-block-cover-image .has-background-dim:not([class*=-background-color]),
+.wp-block-cover-image.has-background-dim:not([class*=-background-color]),
+.wp-block-cover.has-background-dim:not([class*=-background-color]),
+.wp-block-cover.has-left-content .wp-block-cover-text {
+	color: var(--white-color);
+}
+
+/** Gallery Block */
+.gallery-columns-2,
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9,
+.gallery-columns-10,
+.gallery-columns-11,
+.gallery-columns-12 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+	padding: 15px;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33.33%;
+	padding: 15px;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+	padding: 15px;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+	padding: 15px;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.66%;
+	padding: 15px;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.28%;
+	padding: 15px;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+	padding: 15px;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.11%;
+	padding: 15px;
+}
+
+.gallery-columns-10 .gallery-item {
+	width: 10%;
+	padding: 15px;
+}
+
+.gallery-columns-11 .gallery-item {
+	width: 9.09%;
+	padding: 15px;
+}
+
+.gallery-columns-12 .gallery-item {
+	width: 8.33%;
+	padding: 15px;
+}
+
+.blocks-gallery-caption {
+	color: var(--white-color);
+}
+
+.blocks-gallery-grid:not(.has-nested-images),
+.wp-block-gallery:not(.has-nested-images) {
+	margin-bottom: 10px;
+}
+
+.blocks-gallery-grid:not(.has-nested-images):last-child,
+.wp-block-gallery:not(.has-nested-images):last-child {
+	margin-bottom: 0;
+}
+/** Blockquote Block */
+.wp-block-quote {
+	border-color: var(--primary-color);
+}
+
+.wp-block-quote cite,
+.wp-block-quote footer {
+	color: var(--primary-color);
+}
+
+.wp-block-pullquote {
+	border-color: var(--primary-color);
+}
+
+.wp-block-quote.has-text-align-right {
+	border-color: var(--primary-color);
+}
+
+/** Video Block */
+.wp-block-video figcaption {
+	color: var(--white-color);
+}
+
+/** Video Block */
+.wp-block-embed figcaption {
+	color: var(--white-color);
+}
+
+/** Code Block */
+.wp-block-code {
+	border-color: var(--primary-color);
+	background-color: var(--primary-color);
+}
+
+.wp-block-code code {
+	color: var(--white-color);
+	background-color: transparent;
+}
+
+code {
+	background-color: var(--light-bg);
+}
+
+/** Preformatted Block */
+.wp-block-preformatted,
+.wp-block-verse {
+	background-color: var(--light-bg);
+	padding: 30px;
+}
+
+/** Table Block */
+.wp-block-table td,
+.wp-block-table th {
+	border-color: var(--primary-color);
+}
+
+.post-password-form input[type="password"] {
+	padding: 15px;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--light-shadow);
+	transition: var(--transition);
+}
+
+.post-password-form input[type="password"]:hover,
+.post-password-form input[type="password"]:focus {
+	border: 1px solid var(--black-color);
+}
+
+.post-password-form input[type="submit"] {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.post-password-form input[type="submit"]:hover,
+.post-password-form input[type="submit"]:focus {
+	background-color: var(--black-color);
+}
+
+/*==========================================
+===== 02. WordPress Block CSS End Here =====
+==========================================*/
+
+/*=============================================
+===== 02. WordPress Widget CSS Start Here =====
+=============================================*/
+/** 01. Archive Widget List Format */
+.widget_archive ul,
+.wp-block-archives-list {
+    padding-left: 0;
+}
+
+.widget_archive ul li,
+.wp-block-archives-list li {    
+    list-style: none;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);    
+    transition: var(--transition);
+}
+
+.wp-block-archives-list li {
+	background-color: var(--light-bg);
+}
+
+.widget_archive ul li:hover,
+.widget_archive ul li:focus,
+.wp-block-archives-list li:hover,
+.wp-block-archives-list li:focus {	
+	color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.widget_archive ul li a,
+.wp-block-archives-list li a {
+	position: relative;
+	display: inline-block;
+    width: 85%;
+    text-decoration: none;
+	color: var(--black-color);
+    padding-left: 38px;
+}
+
+.widget_archive ul li a::before,
+.wp-block-archives-list li a::before {
+	position: absolute;
+	content: "\f07c";
+    font-family: "FontAwesome";
+	top: 50%;
+	left: 18px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: var(--primary-color);
+}
+
+.widget_archive ul li:hover a::before,
+.widget_archive ul li:focus a::before,
+.wp-block-archives-list li:hover a::before,
+.wp-block-archives-list li:focus a::before {
+	color: var(--white-color);
+}
+
+.widget_archive ul li:hover a,
+.widget_archive ul li:focus a,
+.wp-block-archives-list li:hover a,
+.wp-block-archives-list li:focus a {
+    color: var(--white-color);
+}
+
+/** 02. Archive Widget Dropdown Format */
+.wp-block-archives__label {
+    display: block;
+    font-size: 22px;
+	font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.widget_archive .wp-block-archives-dropdown li {
+    list-style: none;
+    padding: 0 0 0 18px;
+    margin: 0;
+    box-shadow: none;
+    background-color: var(--white-color);
+    transition: var(--transition);
+}
+
+/** 03. Calendar Widget */
+.wp-block-calendar,
+.calendar_wrap {
+    list-style: none;
+	padding: 18px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.wp-block-calendar table caption,
+.calendar_wrap table caption {
+	text-align: center;
+	margin-bottom: 10px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+.wp-block-calendar table,
+.calendar_wrap table {
+	width: 100%;
+	text-align: center;
+}
+
+.wp-block-calendar table th,
+.calendar_wrap table th {
+	padding: .25em;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+}
+
+.wp-block-calendar tbody td,
+.calendar_wrap tbody td {
+	padding: .25em;
+	border: 1px solid var(--primary-color);
+}
+
+.wp-block-calendar tbody td#today,
+.calendar_wrap tbody td#today {
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.wp-block-calendar tbody td#today:hover,
+.calendar_wrap tbody td#today:focus {
+	background-color: var(--black-color);
+}
+
+.wp-block-calendar tbody td#today a,
+.calendar_wrap tbody td#today a {
+	color: var(--white-color);
+}
+
+.wp-block-calendar a,
+.calendar_wrap a {
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+.wp-block-calendar a:hover,
+.wp-block-calendar a:focus,
+.calendar_wrap a:hover,
+.calendar_wrap a:focus {
+	text-decoration: underline;
+}
+
+.wp-calendar-nav {
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.wp-calendar-nav-prev {
+	float: left;
+}
+
+.wp-calendar-nav-next {
+	float: right;
+}
+
+/** 04. Categroy Widget List Format */
+.wp-block-categories-list,
+.widget_categories nav > ul {
+    padding-left: 0;
+}
+
+.widget_categories ul li {    
+    list-style: none;
+}
+
+.widget_categories ul li a {
+	position: relative;
+	display: inline-block;
+    width: 85%;
+	padding: 10px 10px 10px 40px;
+	margin-bottom: 10px;
+    text-decoration: none;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+    transition: var(--transition);
+}
+
+.widget_categories ul li a::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 23px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 7px;
+	height: 7px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+}
+
+.widget_categories ul li a:hover::before,
+.widget_categories ul li a:focus::before {
+	background-color: var(--white-color);
+}
+
+.widget_categories ul li a:hover,
+.widget_categories ul li a:focus {
+    color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+.widget_categories ul li .children .children .children {
+	padding-left: 0;
+}
+
+/** 05. Lastest Comments Widget */
+ol.wp-block-latest-comments,
+.widget_recent_comments nav > ul {
+	padding-left: 0;
+}
+
+.wp-block-latest-comments__comment,
+.recentcomments {
+	list-style: none;
+	padding: 18px;
+	margin-bottom: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+/** 06. Lastest Post Widget */
+.widget_recent_entries ul {
+	padding-left: 0;
+}
+
+.wp-block-latest-posts.wp-block-latest-posts__list li,
+.widget_recent_entries li {
+	list-style: none;
+	padding: 18px;
+	margin-bottom: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+/** 07. Page List Widget */
+.wp-block-page-list,
+.widget_pages nav > ul {
+    padding-left: 0;
+}
+
+.wp-block-page-list li,
+.widget_pages ul li {    
+    list-style: none;
+}
+
+.wp-block-page-list li a,
+.widget_pages li a {
+	position: relative;
+	display: block;
+	padding: 10px 10px 10px 48px;
+	margin-bottom: 10px;
+    text-decoration: none;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+    transition: var(--transition);
+}
+
+.wp-block-page-list li a::before,
+.widget_pages li a::before {
+	position: absolute;
+	content: "\e494";
+    font-family: "FontAwesome";
+	top: 50%;
+	left: 28px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: var(--primary-color);
+}
+
+.wp-block-page-list li a:hover::before,
+.wp-block-page-list li a:focus::before,
+.widget_pages li a:hover::before,
+.widget_pages li a:focus::before {
+	color: var(--white-color);
+}
+
+.wp-block-page-list li a:hover,
+.wp-block-page-list li a:focus,
+.widget_pages li a:hover,
+.widget_pages li a:focus {
+    color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+.wp-block-page-list li .children .children .children,
+.widget_pages li .children .children .children {
+	padding-left: 0;
+}
+
+/** 08. RSS Widget */
+.widget_rss ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-rss__item,
+.widget_rss ul li {
+	padding: 18px;
+	margin-bottom: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+/** 09. Search Widget */
+.wp-block-search__label {
+	display: block;
+    font-size: 22px;
+	font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.wp-block-search__input {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--light-shadow);
+}
+
+.widget_search input[type="text"] {
+	padding: 15px;
+	width: 71%;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--light-shadow);
+}
+
+.wp-block-search__input:hover,
+.wp-block-search__input:focus,
+.widget_search input[type="text"]:hover,
+.widget_search input[type="text"]:focus {
+	border: 1px solid var(--black-color);
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+	border: 1px solid var(--primary-color);
+}
+
+.wp-block-search__button,
+#searchsubmit {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.wp-block-search__button:hover,
+.wp-block-search__button:focus,
+#searchsubmit:hover,
+#searchsubmit:focus {
+	background-color: var(--black-color);
+}
+
+/** 10. Social Links Widget */
+.wp-block-social-links {
+	padding: 18px;
+	margin-bottom: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+/** 11. Tag Widget */
+.widget_tag_cloud a,
+.wp-block-tag-cloud a {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+    padding: 15px;
+	margin-bottom: 5px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.widget_tag_cloud a:hover,
+.widget_tag_cloud a:focus,
+.wp-block-tag-cloud a:hover,
+.wp-block-tag-cloud a:focus {
+	background-color: var(--black-color);
+}
+
+/** 12. Meta Widget */
+.widget_meta ul {
+    padding-left: 0;
+}
+
+.widget_meta ul li {    
+    list-style: none;
+}
+
+.widget_meta ul li a {
+	position: relative;
+	display: inline-block;
+    width: 85%;
+	padding: 10px 10px 10px 35px;
+	margin-bottom: 10px;
+    text-decoration: none;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+    transition: var(--transition);
+}
+
+.widget_meta ul li a::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 18px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 7px;
+	height: 7px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+}
+
+.widget_meta ul li a:hover::before,
+.widget_meta ul li a:focus::before {
+	background-color: var(--white-color);
+}
+
+.widget_meta ul li a:hover,
+.widget_meta ul li a:focus {
+    color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+/** 13. Nav Menu Widget */
+.widget_nav_menu nav > ul {
+    padding-left: 0;
+}
+
+.widget_nav_menu ul li {    
+    list-style: none;
+}
+
+.widget_nav_menu ul li a {
+	position: relative;
+	display: block;
+	padding: 10px 10px 10px 35px;
+	margin-bottom: 10px;
+    text-decoration: none;
+	color: var(--black-color);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+    transition: var(--transition);
+}
+
+.widget_nav_menu ul li a::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 18px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 7px;
+	height: 7px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+}
+
+.widget_nav_menu ul li a:hover::before,
+.widget_nav_menu ul li a:focus::before {
+	background-color: var(--white-color);
+}
+
+.widget_nav_menu ul li a:hover,
+.widget_nav_menu ul li a:focus {
+    color: var(--white-color);
+	background-color: var(--primary-color);
+}
+
+.widget_nav_menu ul ul ul ul {
+	padding-left: 0;
+}
+
+/** 14. WordPress LogInOut Button */
+.wp-block-loginout {
+	padding: 18px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.wp-block-loginout a,
+.wp-block-loginout #wp-submit {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 12px 26px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.wp-block-loginout a:hover,
+.wp-block-loginout a:focus,
+.wp-block-loginout #wp-submit:hover,
+.wp-block-loginout #wp-submit:focus {
+	background-color: var(--black-color);
+}
+
+.wp-block-loginout label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.wp-block-loginout .input {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid var(--black-color);
+    box-shadow: var(--light-shadow);
+}
+
+.wp-block-loginout .input:hover,
+.wp-block-loginout .input:focus {
+	border: 1px solid var(--primary-color);
+}
+
+/** 15. Text Widget */
+.widget_text {
+	padding: 18px;
+	margin-bottom: 10px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+/*===========================================
+===== 02. WordPress Widget CSS End Here =====
+===========================================*/
+
+/*==============================================
+===== 02. Page Content Area CSS Start Here =====
+==============================================*/
+.page-content {
+	margin-top: 120px;
+}
+/*============================================
+===== 02. Page Content Area CSS End Here =====
+============================================*/
+
+/*===========================================
+===== 02. Blog List Area CSS Start Here =====
+===========================================*/
+.general-post {
+	margin-bottom: 50px;
+	color: var(--light-text);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.general-post.sticky {
+	border: 1px solid var(--primary-color);
+}
+
+.post-thumbnail img {
+	width: 100%;
+}
+
+.post-content {
+	padding: 50px;
+	overflow: hidden;
+}
+
+.post-content figure {
+	margin-bottom: 10px;
+}
+
+.post-content figure:last-child {
+	margin-bottom: 0;
+}
+
+.post-content .wp-block-calendar {
+	background-color: var(--light-bg);
+}
+
+.post-content .wp-block-latest-comments__comment,
+.post-content .recentcomments {
+	background-color: var(--light-bg);
+}
+
+.post-content .wp-block-latest-posts.wp-block-latest-posts__list li,
+.post-content .widget_recent_entries li {
+	background-color: var(--light-bg);
+}
+
+.post-content .wp-block-rss__item,
+.post-content .widget_rss ul li {
+	background-color: var(--light-bg);
+}
+
+.post-meta {
+	margin-bottom: 7px;
+}
+
+.post-meta span {
+    font-size: 14px;
+    color: var(--light-text);
+    margin-right: 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.post-meta span i {
+    color: var(--primary-color);
+	margin-right: 5px;
+}
+
+.post-meta span a {
+	color: var(--light-text);
+	transition: var(--transition);
+}
+
+.post-meta span a:hover,
+.post-meta span a:focus {
+	color: var(--primary-color);
+}
+
+.post-title a {
+	color: var(--black-color);
+	transition: var(--transition);
+}
+
+.post-title a:hover,
+.post-title a:focus {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+/*=========================================
+===== 02. Blog List Area CSS End Here =====
+=========================================*/
+
+/*============================================
+===== 02. Pagination Area CSS Start Here =====
+============================================*/
+.navigation.pagination {
+	margin-bottom: 50px;
+}
+
+.page-numbers,
+.post-page-numbers {
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+	margin: 0 2px 5px 0;
+	color: var(--light-text);
+	background-color: var(--white-color);
+	transition: var(--transition);
+}
+
+.post-page-numbers {
+	border: 1px solid var(--primary-color);
+	color: var(--primary-color);
+}
+
+.page-numbers.current,
+.page-numbers:hover,
+.page-numbers:focus,
+.post-page-numbers.current,
+.post-page-numbers:hover,
+.post-page-numbers:focus {
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	text-decoration: none;
+}
+/*==========================================
+===== 02. Pagination Area CSS End Here =====
+==========================================*/
+
+/** Widget Area */
+.widget {
+    margin-bottom: 50px;
+	clear: both;
+}
+
+.widget-title {
+	display: block;
+    font-size: 22px;
+	font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+
+/** */
+#footer {
+	padding: 18px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+#footer p {
+	margin: 0;
+}
+
+.scroll-top-btn {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+    padding: 15px;
+	margin-bottom: 5px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+	border: none;
+}
+
+.scroll-top-btn:hover,
+.scroll-top-btn:focus {
+	background-color: var(--black-color);
+}
+
+/* Pagination */
+
+/** Total Comments */
+.total-comments {
+	padding: 50px;
+	margin-bottom: 50px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.total-comments .comment-title,
+.total-comments .comment-count {
+	color: var(--primary-color);
+}
+
+/** Comments Form */
+.comments-form textarea {
+    height: 180px;
+    resize: none;
+}
+
+.form-submit input[type="submit"] {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.form-submit input[type="submit"]:hover,
+.form-submit input[type="submit"]:focus {
+	background-color: var(--black-color);
+}
+
+/** Comments List */
+.comments-list .comment-item {
+	list-style: none;
+	margin-bottom: 50px;
+}
+
+.comments-box {
+	padding: 50px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.comments-avatar {
+	float: left;
+}
+
+.comments-avatar img {
+	margin-right: 15px;
+}
+
+.comments-text {
+	overflow: hidden;
+	clear: none;
+}
+
+.avatar-name {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.avatar-name span {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.comment-reply-link,
+#cancel-comment-reply-link {
+	display: inline-block;
+	text-decoration: none;
+    text-transform: capitalize;
+	border: none;
+    padding: 15px;
+	color: var(--white-color);
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+#cancel-comment-reply-link:hover,
+#cancel-comment-reply-link:focus {
+	color: var(--white-color);
+	background-color: var(--black-color);
+	text-decoration: none;
+}
+
+#cancel-comment-reply-link {
+	margin-left: 15px;
+}
+
+.comment-respond {
+	padding: 50px;
+	margin-bottom: 50px;
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+
+.comments-list .children .comment-item {
+	margin-top: 50px;
+}
+
+/** 404 Page */
+.error-404-page-content {
+	margin-bottom: 50px;
+	padding-bottom: 50px;
+	color: var(--light-text);
+	background-color: var(--white-color);
+	box-shadow: var(--light-shadow);
+}
+.error-page-header-title {
+	text-align: center;
+	font-size: 170px;
+	margin: 0;
+	color: var(--primary-color);
+}
+
+.error-page-header-subtitle {
+	text-align: center;
+}
+
+.error-page-content {
+	text-align: center;
+}
+
+/** Mean Menu */
+.mean-container .mean-bar {
+	margin-bottom: 20px;
+	padding: 0;
+	min-height: 0;
+}
+
+.mean-container .mean-nav ul li {
+	padding: 0;
+}
+
+.mean-container a.meanmenu-reveal {
+	height: 20px;
+	top: -44px;
+	background-color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.mean-container a.meanmenu-reveal:hover,
+.mean-container a.meanmenu-reveal:focus {
+	background-color: var(--black-color);
+}
+
+.mean-container a.meanmenu-reveal.meanclose {
+	color: var(--white-color);
+}
+
+.mean-container .mean-nav {
+	background-color: var(--primary-color);
+	margin-top: 0;
+}
+
+.header-menu.mean-container ul li.page_item_has_children > a::after {
+    content: "";
+}
+
+.header-menu.mean-container ul li .children {
+	position: static;
+	background-color: var(--primary-color);
+}
+
+.header-menu.mean-container ul li .children li a::before {
+	color: var(--white-color);
+}
+
+.header-menu.mean-container ul li .children li a.mean-expand::before {
+	content: "";
+}
+
+.header-menu.mean-container ul li .children li.page_item_has_children > a::after {
+	content: "";
+}
+
+.header-menu.mean-container ul li .children > li:hover .children,
+.header-menu.mean-container ul li .children > li:focus .children {
+	position: relative;
+	top: 100%;
+	left: 0;
+}
+
+.header-menu.mean-container ul li .children li a:hover,
+.header-menu.mean-container ul li .children li a:focus {
+	padding-left: 70px;
+}
+
+.header-menu.mean-container ul li .children .children li a:hover,
+.header-menu.mean-container ul li .children .children li a:focus {
+	padding-left: 105px;
+}
+
+.header-menu.mean-container ul li .children li a::before {
+	left: 36px;
+}
+
+.header-menu.mean-container ul li .children .children li a::before {
+	left: 70px;
+}

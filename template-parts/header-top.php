@@ -2,133 +2,82 @@
 /**
  * The template for displaying frontpage header top
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.4
+ * @since RB Portfolio One 1.1.4
  */
 
-$bashir_rased_data = get_option( 'bashir_rased_theme_option' );
-
-if ($bashir_rased_data) {
-	$bashir_rased_phone_1 = $bashir_rased_data['bashir-rased-phone-number-1'];
-	$bashir_rased_phone_2 = $bashir_rased_data['bashir-rased-phone-number-2'];
-	$bashir_rased_email_1 = $bashir_rased_data['bashir-rased-email-address-1'];
-	$bashir_rased_email_2 = $bashir_rased_data['bashir-rased-email-address-2'];
-}
-	
-if( empty($bashir_rased_phone_1) && empty($bashir_rased_phone_2) && empty($bashir_rased_email_1) && empty($bashir_rased_email_2) ):
-		
-	return;
-
-	elseif( empty($bashir_rased_email_1) && empty($bashir_rased_email_2) ):
-
-	get_template_part('homepage-sections/header/header-top','left');
-
-elseif( empty($bashir_rased_phone_1) && empty($bashir_rased_phone_2) ):
-
-	get_template_part('homepage-sections/header/header-top','right');
-
-else:
+$rbpo_phone_1 = get_theme_mod( 'rbpo_phone_1', __( '123 456 789', 'rb-portfolio-one' ) );
+$rbpo_phone_2 = get_theme_mod( 'rbpo_phone_2', __( '123 456 789', 'rb-portfolio-one' ) );
+$rbpo_email_1 = get_theme_mod( 'rbpo_email_1', __( 'email1@domain.extension', 'rb-portfolio-one' ) );
+$rbpo_email_2 = get_theme_mod( 'rbpo_email_2', __( 'email2@domain.extension', 'rb-portfolio-one' ) );
 
 ?>
 
 <!--===== Header Top Area Strat Here =====-->
-<div class="bashir-rased-header-top">
+<div class="header-top-area">
 	<div class="container">
 		<div class="row">
 
+			<?php if ( isset ( $rbpo_phone_1 ) && !empty ( $rbpo_phone_1 ) ) : 
+				if ( empty ( $rbpo_email_1 ) ) {
+					$col_class = 'col-lg-12';
+				}
+				else {
+					$col_class = 'col-lg-6';
+				}
+			?>
 			<!-- Header Top Left Area Strat Here -->
-			<div class="col-lg-6">
-				<div class="bashir-rased-header-top-left">
+			<div class="<?php echo esc_attr( $col_class ) ?>">
+				<div class="header-top-left">
 					<span><i class="fa-solid fa-phone"></i></span>
 					<span>
 						<?php
-						if ( !empty($bashir_rased_phone_1) && empty($bashir_rased_phone_2) ) {
-							printf(
-								/* translators:
-								%s: phone number 1
-								*/
-								'%s',
-								esc_html($bashir_rased_phone_1,'bashir-rased')
-							);
-						}
-						elseif ( empty($bashir_rased_phone_1) && !empty($bashir_rased_phone_2) ) {
-							printf(
-								/* translators:
-								%s: phone number 2
-								*/
-								'%s',
-								esc_html($bashir_rased_phone_2,'bashir-rased')
-							);
-						}
-						elseif ( !empty($bashir_rased_phone_1) && !empty($bashir_rased_phone_2) ) {
-							printf(
-								/* translators:
-								%1$s: phone number 1
-								%2$s: , 
-								%$3s: phone number 2
-								*/
-								'%1$s %2$s %3$s',
-								esc_html($bashir_rased_phone_1,'bashir-rased'),
-								esc_html(', ','bashir-rased'),
-								esc_html($bashir_rased_phone_2,'bashir-rased')
-							);
-						}
+						echo esc_html ( $rbpo_phone_1 );
+						if ( 'multi-number' == get_theme_mod( 'rbpo_phone_choice') ) {
+							if ( isset ( $rbpo_phone_2 ) && !empty ( $rbpo_phone_2 ) ) {
+								echo esc_html ( ', ', 'rb-portfolio-one' );
+								echo esc_html ( $rbpo_phone_2 );
+							}
+						}						
 						?>
 					</span>
 				</div>
 			</div>
-			<!-- Header Top Left Area End Here -->			
+			<!-- Header Top Left Area End Here -->
+			<?php endif; ?>
 			
+			<?php if ( isset ( $rbpo_email_1 ) && !empty ( $rbpo_email_1 ) ) : 
+				if ( empty ( $rbpo_email_1 ) ) {
+					$col_class = 'col-lg-12';
+				}
+				else {
+					$col_class = 'col-lg-6';
+				}
+			?>
 			<!-- Header Top Right Area Strat Here -->
-			<div class="col-lg-6">
-				<div class="bashir-rased-header-top-right float-end">
+			<div class="<?php echo esc_attr( $col_class ) ?>">
+				<div class="header-top-right float-lg-end float-none">
 					<span><i class="fa-solid fa-envelope"></i></span>
 					<span>
-						<?php 
-						if ( !empty($bashir_rased_email_1) && empty($bashir_rased_email_2) ) {
-							printf(
-								/* translators:
-								%s: email address 1
-								*/
-								'%s',
-								esc_html($bashir_rased_email_1,'bashir-rased')
-							);
+						<?php
+						if ( isset ( $rbpo_email_1 ) && !empty ( $rbpo_email_1 ) ) {
+							echo sanitize_email ( $rbpo_email_1 );
 						}
-						elseif ( empty($bashir_rased_email_1) && !empty($bashir_rased_email_2) ) {
-							printf(
-								/* translators:
-								%s: email address 2
-								*/
-								'%s',
-								esc_html($bashir_rased_email_2,'bashir-rased')
-							);
-						}
-						elseif ( !empty($bashir_rased_email_1) && !empty($bashir_rased_email_2) ) {
-							printf(
-								/* translators:
-								%1$s: email address 1
-								%2$s: , 
-								%$3s: email address 2
-								*/
-								'%1$s %2$s %3$s',
-								esc_html($bashir_rased_email_1,'bashir-rased'),
-								esc_html(', ','bashir-rased'),
-								esc_html($bashir_rased_email_2,'bashir-rased')
-							);
-						}
+						if ( 'multi-email' == get_theme_mod( 'rbpo_email_choice') ) {
+							if ( isset ( $rbpo_email_2 ) && !empty ( $rbpo_email_2 ) ) {
+								echo esc_html ( ', ', 'rb-portfolio-one' );
+								echo sanitize_email ( $rbpo_email_2 );
+							}
+						}						
 						?>
 					</span>
 				</div>
 			</div>
 			<!-- Header Top Right Area End Here -->
+			<?php endif; ?>
 			
-		</div><!-- row end -->
-	</div><!-- container end -->
+		</div><!-- .row -->
+	</div><!-- .container -->
 </div>
 <!--===== Header Top Area End Here =====-->
-
-<?php
-
-endif;

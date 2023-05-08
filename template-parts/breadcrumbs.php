@@ -2,31 +2,29 @@
 /**
  * The template for displaying website breadcrumbs
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.4
+ * @since RB Portfolio One 1.1.4
  */
-
 ?>
 <!--========================================== 
 ===== Header Breadcrumbs Area Strat Here =====
 ===========================================-->
-<div class="header-breadcrumbs-area" style="background-image: url(<?php header_image(); ?>);">
+<section class="header-breadcrumbs-area" style="background-image: url(<?php header_image(); ?>);">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
 
-                <section class="header-breadcrumbs">
+                <div class="header-breadcrumbs">
 
-                    <?php do_action ( 'bashir_rased_breadcrumbs' ); ?>
+                    <?php do_action ( 'rbpo_breadcrumbs' ); ?>
 
-                </section><!-- .header-breadcrumbs -->
+                </div><!-- .header-breadcrumbs -->
 
             </div>
-        </div><!-- row end -->
-    </div><!-- container end -->
-</div><!-- .header-breadcrumbs-area -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!-- .header-breadcrumbs-area -->
 <!--======================================== 
 ===== Header Breadcrumbs Area End Here =====
 =========================================-->

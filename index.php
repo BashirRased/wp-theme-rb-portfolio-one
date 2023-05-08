@@ -9,31 +9,20 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package RB Free Theme
- * @subpackage Bashir Rased
- * @version Bashir Rased 1.1.3
- * @since Bashir Rased 1.1.3
+ * @package RB Portfolio One
+ * @version RB Portfolio One 1.1.4
+ * @since RB Portfolio One 1.1.4
  */
 
 get_header();
-get_template_part('template-parts/preloader');
-get_template_part('template-parts/header-top');
-get_template_part('template-parts/header-menu');
-get_template_part('template-parts/breadcrumbs');
 ?>
 
-<div id="bashir-rased-page-content" class="bashir-rased-blog-area">
+<div id="page-content" class="page-content">
     <div class="container">
         <div class="row">            
-            <?php
-            get_template_part('template-parts/blog-content');
-
-            if (is_active_sidebar('bashir-rased-sidebar-right')){
-                get_sidebar();
-            }
-            ?>
-        </div><!-- row end -->
-    </div><!-- container end -->
+            <?php do_action ( 'rbpo_theme_option_sidebar' ); ?>
+        </div><!-- .row -->
+    </div><!-- .container -->
 </div>
 
 <?php get_footer(); ?>
