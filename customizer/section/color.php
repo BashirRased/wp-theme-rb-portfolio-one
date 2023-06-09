@@ -6,8 +6,8 @@
  * @link https://kirki.org/docs/controls/color/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.8
- * @since RB Portfolio One 1.1.8
+ * @version RB Portfolio One 1.1.9
+ * @since RB Portfolio One 1.1.9
  */
 
 // rb_portfolio_one_theme_color

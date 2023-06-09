@@ -3,8 +3,8 @@
  * Custom template breadcrumbs for this theme
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.8
- * @since RB Portfolio One 1.1.8
+ * @version RB Portfolio One 1.1.9
+ * @since RB Portfolio One 1.1.9
  */
 
 function rb_portfolio_one_archive_description( $before = '<div class="header-breadcrumbs-description">', $after = '</div>' ) {

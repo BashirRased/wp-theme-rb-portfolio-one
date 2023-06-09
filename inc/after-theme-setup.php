@@ -3,8 +3,8 @@
  * The template for after theme setup function.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.8
- * @since RB Portfolio One 1.1.8
+ * @version RB Portfolio One 1.1.9
+ * @since RB Portfolio One 1.1.9
  */
 
 if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
@@ -15,7 +15,7 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since RB Portfolio One 1.1.8
+	 * @since RB Portfolio One 1.1.9
 	 *
 	 * @return void
 	 */

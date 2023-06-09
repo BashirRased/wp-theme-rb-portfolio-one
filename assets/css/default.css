@@ -1,7 +1,7 @@
 /*
 Theme Name: RB Portfolio One
 Text Domain: rb-portfolio-one
-Version: 1.1.8
+Version: 1.1.9
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -66,7 +66,6 @@ img {
 a {
 	color: var(--primary-color);
 	opacity: 0.85;
-	text-decoration: none;
 	transition: var(--transition);
 }
 
