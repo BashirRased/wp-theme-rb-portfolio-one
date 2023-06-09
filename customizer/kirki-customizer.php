@@ -5,8 +5,8 @@
  * @link https://kirki.org/docs/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.7
- * @since RB Portfolio One 1.1.7
+ * @version RB Portfolio One 1.1.8
+ * @since RB Portfolio One 1.1.8
  */
 
 // Exit if accessed directly

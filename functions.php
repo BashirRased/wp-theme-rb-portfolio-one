@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.7
- * @since RB Portfolio One 1.1.7
+ * @version RB Portfolio One 1.1.8
+ * @since RB Portfolio One 1.1.8
  */
 
 // Theme Setup

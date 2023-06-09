@@ -3,8 +3,8 @@
  * The template for displaying all single post content.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.7
- * @since RB Portfolio One 1.1.7
+ * @version RB Portfolio One 1.1.8
+ * @since RB Portfolio One 1.1.8
  */
 
  $rb_portfolio_one_page_sidebar = function_exists( 'get_field' ) ? get_field( 'main_sidebar' ) : 'no_sidebar ';
