@@ -5,8 +5,8 @@
  * @link https://kirki.org/docs/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 // Exit if accessed directly
@@ -15,9 +15,9 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 if ( class_exists( 'Kirki' ) ) {
-	// rbpo_customizer
+	// rb_portfolio_one_customizer
 	new \Kirki\Panel(
-		'rbpo_customizer',
+		'rb_portfolio_one_customizer',
 		[
 			'priority'    => 10,
 			'title'       => esc_html__( 'RB Portfolio One Theme Options', 'rb-portfolio-one' )

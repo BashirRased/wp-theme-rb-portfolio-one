@@ -3,12 +3,12 @@
  * The template for sidebar function.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
  
 // widget register
-function rbpo_widget_area(){
+function rb_portfolio_one_widget_area(){
 	register_sidebar(array(
 		'name' 			=> __('Sidebar 1', 'rb-portfolio-one'),
 		'description' 	=> __('Add your widgets in sidebar 1', 'rb-portfolio-one'),
@@ -23,4 +23,4 @@ function rbpo_widget_area(){
 	)); 
     
 }
-add_action('widgets_init', 'rbpo_widget_area');
+add_action('widgets_init', 'rb_portfolio_one_widget_area');

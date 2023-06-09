@@ -9,29 +9,29 @@
  * @link https://kirki.org/docs/arguments/active_callback/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 /*********************************
 ***** Breadcrumbs Start Here *****
 *********************************/
-// rbpo_breadcrumbs
+// rb_portfolio_one_breadcrumbs
 new \Kirki\Section(
-	'rbpo_breadcrumbs',
+	'rb_portfolio_one_breadcrumbs',
 	[
 		'title'       => esc_html__( 'Breadcrumbs On/Off', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
+		'panel'       => 'rb_portfolio_one_customizer',
 		'priority'    => 160,
 	]
 );
 
-// rbpo_breadcrumbs_switch
+// rb_portfolio_one_breadcrumbs_switch
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_breadcrumbs_switch',
+		'settings'    => 'rb_portfolio_one_breadcrumbs_switch',
 		'label'       => esc_html__( 'Breadcrumbs On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_breadcrumbs',
+		'section'     => 'rb_portfolio_one_breadcrumbs',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -40,16 +40,16 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-// rbpo_breadcrumbs_color
+// rb_portfolio_one_breadcrumbs_color
 new \Kirki\Field\Color(
 	[
-		'settings'    => 'rbpo_breadcrumbs_color',
+		'settings'    => 'rb_portfolio_one_breadcrumbs_color',
 		'label'       => __( 'Blog Page Background', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_breadcrumbs',
+		'section'     => 'rb_portfolio_one_breadcrumbs',
 		'default'     => '#007bff',
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_breadcrumbs_switch',
+                'setting'  => 'rb_portfolio_one_breadcrumbs_switch',
                 'operator' => '===',
                 'value'    => true,
             ],

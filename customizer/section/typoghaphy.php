@@ -5,26 +5,26 @@
  * @link https://kirki.org/docs/controls/typography/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
-// rbpo_typography
+// rb_portfolio_one_typography
 new \Kirki\Section(
-	'rbpo_typography',
+	'rb_portfolio_one_typography',
 	[
 		'title'       => esc_html__( 'Typography', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
+		'panel'       => 'rb_portfolio_one_customizer',
 		'priority'    => 160,
 	]
 );
 
-// rbpo_body_text
+// rb_portfolio_one_body_text
 new \Kirki\Field\Typography(
 	[
-		'settings'    => 'rbpo_body_text',
+		'settings'    => 'rb_portfolio_one_body_text',
 		'label'       => __( 'Body Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -56,7 +56,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h1_text',
 		'label'       => __( 'H1 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -87,7 +87,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h2_text',
 		'label'       => __( 'H2 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -118,7 +118,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h3_text',
 		'label'       => __( 'H3 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -149,7 +149,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h4_text',
 		'label'       => __( 'H4 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -180,7 +180,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h5_text',
 		'label'       => __( 'H5 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],
@@ -211,7 +211,7 @@ new \Kirki\Field\Typography(
 	[
 		'settings'    => 'rb_h6_text',
 		'label'       => __( 'H6 Text', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_typography',
+		'section'     => 'rb_portfolio_one_typography',
         'choices' => [
             'fonts' => [
                 'google'   => [ 'popularity', 50 ],

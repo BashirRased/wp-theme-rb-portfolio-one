@@ -3,8 +3,8 @@
  * The template for displaying website breadcrumbs
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 ?>
 <!--========================================== 
@@ -17,7 +17,7 @@
 
                 <div class="header-breadcrumbs">
 
-                    <?php do_action ( 'rbpo_breadcrumbs' ); ?>
+                    <?php do_action ( 'rb_portfolio_one_breadcrumbs' ); ?>
 
                 </div><!-- .header-breadcrumbs -->
 

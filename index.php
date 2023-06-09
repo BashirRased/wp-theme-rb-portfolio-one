@@ -10,8 +10,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 get_header();
@@ -20,7 +20,7 @@ get_header();
 <div id="page-content" class="page-content">
     <div class="container">
         <div class="row">            
-            <?php do_action ( 'rbpo_theme_option_sidebar' ); ?>
+            <?php do_action ( 'rb_portfolio_one_theme_option_sidebar' ); ?>
         </div><!-- .row -->
     </div><!-- .container -->
 </div>

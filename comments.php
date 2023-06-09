@@ -8,8 +8,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
  
 /*
@@ -25,8 +25,8 @@ if ( post_password_required() ) {
 <?php if (have_comments()) : ?>
 <h3 class="total-comments">
 	<?php
-	$rbpo_comment_count = get_comments_number();
-	if (1 === $rbpo_comment_count) {
+	$rb_portfolio_one_comment_count = get_comments_number();
+	if (1 === $rb_portfolio_one_comment_count) {
 		/* translators: %s: Post title. */
 		printf( _x('1 comment on %s', 'comments title', 'rb-portfolio-one'), get_the_title());
 	}
@@ -36,11 +36,11 @@ if ( post_password_required() ) {
 			_nx(
 				'<span class="comment-count">%1$s</span> comment on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
 				'<span class="comment-count">%1$s</span> comments on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
-				$rbpo_comment_count,
+				$rb_portfolio_one_comment_count,
 				'comments title',
 				'rb-portfolio-one'
 			),
-			number_format_i18n( $rbpo_comment_count ),
+			number_format_i18n( $rb_portfolio_one_comment_count ),
 			get_the_title()
 		);
 	}
@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 	<?php
 		wp_list_comments( [
 			'style'       => 'ul',
-			'callback'    => 'rbpo_comment_list',
+			'callback'    => 'rb_portfolio_one_comment_list',
 			'avatar_size' => 90,
 			'short_ping'  => true,
 		] );

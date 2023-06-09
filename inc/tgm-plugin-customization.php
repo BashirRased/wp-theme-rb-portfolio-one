@@ -3,11 +3,11 @@
  * The template for tgm all required & recommander plugin list.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
  
-function rbpo_required_plugins() {
+function rb_portfolio_one_required_plugins() {
 
 	$plugins = array(
 
@@ -50,4 +50,4 @@ function rbpo_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-add_action('tgmpa_register','rbpo_required_plugins');
+add_action('tgmpa_register','rb_portfolio_one_required_plugins');

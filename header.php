@@ -7,8 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 ?>
@@ -26,7 +26,7 @@
 </a>
 
 <?php
-do_action ( 'rbpo_theme_option_preloader' );
-do_action ( 'rbpo_theme_option_header_top' );
+do_action ( 'rb_portfolio_one_theme_option_preloader' );
+do_action ( 'rb_portfolio_one_theme_option_header_top' );
 get_template_part('template-parts/header-menu');
-do_action ( 'rbpo_theme_option_breadcrumbs' );
+do_action ( 'rb_portfolio_one_theme_option_breadcrumbs' );

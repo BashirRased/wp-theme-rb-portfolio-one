@@ -9,26 +9,26 @@
  * @link https://kirki.org/docs/arguments/active_callback/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
-// rbpo_header
+// rb_portfolio_one_header
 new \Kirki\Section(
-	'rbpo_header',
+	'rb_portfolio_one_header',
 	[
 		'title'       => esc_html__( 'Header', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
+		'panel'       => 'rb_portfolio_one_customizer',
 		'priority'    => 160,
 	]
 );
 
-// rbpo_header_topbar_switch
+// rb_portfolio_one_header_topbar_switch
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_header_topbar_switch',
+		'settings'    => 'rb_portfolio_one_header_topbar_switch',
 		'label'       => esc_html__( 'Header Topbar On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_header',
+		'section'     => 'rb_portfolio_one_header',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -37,12 +37,12 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-// rbpo_phone_choice
+// rb_portfolio_one_phone_choice
 new \Kirki\Field\Select(
 	[
-		'settings'    => 'rbpo_phone_choice',
+		'settings'    => 'rb_portfolio_one_phone_choice',
 		'label'       => esc_html__( 'Phone Number Choice', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_header',
+		'section'     => 'rb_portfolio_one_header',
 		'default'     => 'single-number',
 		'choices'     => [
 			'single-number' => esc_html__( 'Single Number', 'rb-portfolio-one' ),
@@ -50,7 +50,7 @@ new \Kirki\Field\Select(
 		],
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_header_topbar_switch',
+                'setting'  => 'rb_portfolio_one_header_topbar_switch',
                 'operator' => '===',
                 'value'    => true,
             ],
@@ -58,17 +58,17 @@ new \Kirki\Field\Select(
 	]
 );
 
-// rbpo_phone_1
+// rb_portfolio_one_phone_1
 new \Kirki\Field\Text(
 	[
-		'settings' => 'rbpo_phone_1',
+		'settings' => 'rb_portfolio_one_phone_1',
 		'label'    => esc_html__( 'Phone Number 1', 'rb-portfolio-one' ),
-		'section'  => 'rbpo_header',
+		'section'  => 'rb_portfolio_one_header',
 		'default'  => esc_html__( '123 456 789', 'rb-portfolio-one' ),
 		'priority' => 10,
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_header_topbar_switch',
+                'setting'  => 'rb_portfolio_one_header_topbar_switch',
                 'operator' => '===',
                 'value'    => true,
             ],
@@ -76,17 +76,17 @@ new \Kirki\Field\Text(
 	]
 );
 
-// rbpo_phone_2
+// rb_portfolio_one_phone_2
 new \Kirki\Field\Text(
 	[
-		'settings' => 'rbpo_phone_2',
+		'settings' => 'rb_portfolio_one_phone_2',
 		'label'    => esc_html__( 'Phone Number 2', 'rb-portfolio-one' ),
-		'section'  => 'rbpo_header',
+		'section'  => 'rb_portfolio_one_header',
 		'default'  => esc_html__( '123 456 789', 'rb-portfolio-one' ),
 		'priority' => 10,
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_phone_choice',
+                'setting'  => 'rb_portfolio_one_phone_choice',
                 'operator' => '===',
                 'value'    => 'multi-number',
             ],
@@ -94,12 +94,12 @@ new \Kirki\Field\Text(
 	]
 );
 
-// rbpo_email_choice
+// rb_portfolio_one_email_choice
 new \Kirki\Field\Select(
 	[
-		'settings'    => 'rbpo_email_choice',
+		'settings'    => 'rb_portfolio_one_email_choice',
 		'label'       => esc_html__( 'E-mail Choice', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_header',
+		'section'     => 'rb_portfolio_one_header',
 		'default'     => 'single-email',
 		'choices'     => [
 			'single-email' => esc_html__( 'Single E-mail', 'rb-portfolio-one' ),
@@ -107,7 +107,7 @@ new \Kirki\Field\Select(
 		],
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_header_topbar_switch',
+                'setting'  => 'rb_portfolio_one_header_topbar_switch',
                 'operator' => '===',
                 'value'    => true,
             ],
@@ -115,17 +115,17 @@ new \Kirki\Field\Select(
 	]
 );
 
-// rbpo_email_1
+// rb_portfolio_one_email_1
 new \Kirki\Field\Text(
 	[
-		'settings' => 'rbpo_email_1',
+		'settings' => 'rb_portfolio_one_email_1',
 		'label'    => esc_html__( 'E-mail Address 1', 'rb-portfolio-one' ),
-		'section'  => 'rbpo_header',
+		'section'  => 'rb_portfolio_one_header',
 		'default'  => esc_html__( 'email1@domain.extension', 'rb-portfolio-one' ),
 		'priority' => 10,
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_header_topbar_switch',
+                'setting'  => 'rb_portfolio_one_header_topbar_switch',
                 'operator' => '===',
                 'value'    => true,
             ],
@@ -133,17 +133,17 @@ new \Kirki\Field\Text(
 	]
 );
 
-// rbpo_email_2
+// rb_portfolio_one_email_2
 new \Kirki\Field\Text(
 	[
-		'settings' => 'rbpo_email_2',
+		'settings' => 'rb_portfolio_one_email_2',
 		'label'    => esc_html__( 'E-mail Address 2', 'rb-portfolio-one' ),
-		'section'  => 'rbpo_header',
+		'section'  => 'rb_portfolio_one_header',
 		'default'  => esc_html__( 'email2@domain.extension', 'rb-portfolio-one' ),
 		'priority' => 10,
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_email_choice',
+                'setting'  => 'rb_portfolio_one_email_choice',
                 'operator' => '===',
                 'value'    => 'multi-email',
             ],
@@ -151,12 +151,12 @@ new \Kirki\Field\Text(
 	]
 );
 
-// rbpo_header_transparent
+// rb_portfolio_one_header_transparent
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_header_transparent',
+		'settings'    => 'rb_portfolio_one_header_transparent',
 		'label'       => esc_html__( 'Header Transparent On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_header',
+		'section'     => 'rb_portfolio_one_header',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -165,12 +165,12 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-// rbpo_header_fixed
+// rb_portfolio_one_header_fixed
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_header_fixed',
+		'settings'    => 'rb_portfolio_one_header_fixed',
 		'label'       => esc_html__( 'Header Fixed On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_header',
+		'section'     => 'rb_portfolio_one_header',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),

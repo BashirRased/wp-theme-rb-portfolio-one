@@ -3,35 +3,35 @@
  * Custom template breadcrumbs for this theme
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
-function rbpo_archive_description( $before = '<div class="header-breadcrumbs-description">', $after = '</div>' ) {
+function rb_portfolio_one_archive_description( $before = '<div class="header-breadcrumbs-description">', $after = '</div>' ) {
     $description = get_the_archive_description();
     if ( $description ) {
         echo wp_kses_post( $before . $description . $after );
     }
 }
 
-if ( !function_exists( 'rbpo_breadcrumbs_img' ) ) {
-    function rbpo_breadcrumbs_img() {
+if ( !function_exists( 'rb_portfolio_one_breadcrumbs_img' ) ) {
+    function rb_portfolio_one_breadcrumbs_img() {
     ?>
         <style>
             .header-breadcrumbs-area {
-                background-color: <?php echo sanitize_hex_color( get_theme_mod( 'rbpo_breadcrumbs_color', '#007bff' ) ); ?>;
+                background-color: <?php echo sanitize_hex_color( get_theme_mod( 'rb_portfolio_one_breadcrumbs_color', '#007bff' ) ); ?>;
             }
         </style>
     <?php                
     }
-    add_action('wp_head', 'rbpo_breadcrumbs_img');
+    add_action('wp_head', 'rb_portfolio_one_breadcrumbs_img');
 }
 
-if ( !function_exists( 'rbpo_breadcrumbs_details' ) ) {
+if ( !function_exists( 'rb_portfolio_one_breadcrumbs_details' ) ) {
 
-	function rbpo_breadcrumbs_details() {  
+	function rb_portfolio_one_breadcrumbs_details() {  
         
-        $rbpo_breadcrumbs_img = get_theme_mod( 'rbpo_breadcrumbs_image' );        
+        $rb_portfolio_one_breadcrumbs_img = get_theme_mod( 'rb_portfolio_one_breadcrumbs_image' );        
                 
         // Front Page
         if( is_front_page() && is_home() ): ?>
@@ -72,7 +72,7 @@ if ( !function_exists( 'rbpo_breadcrumbs_details' ) ) {
                 <?php echo esc_html( 'Author Page', 'rb-portfolio-one' ); ?>
             </h2>
 
-            <?php rbpo_archive_description(); ?>
+            <?php rb_portfolio_one_archive_description(); ?>
 
         <!-- Year Archive -->
         <?php elseif( is_year() ): ?>
@@ -112,7 +112,7 @@ if ( !function_exists( 'rbpo_breadcrumbs_details' ) ) {
                 <?php echo esc_html( 'Tag Page', 'rb-portfolio-one' ); ?>
             </h2>
             
-            <?php rbpo_archive_description(); ?>
+            <?php rb_portfolio_one_archive_description(); ?>
             
 
         <!-- Category Page -->
@@ -122,7 +122,7 @@ if ( !function_exists( 'rbpo_breadcrumbs_details' ) ) {
                 <?php echo esc_html( 'Category Page', 'rb-portfolio-one' ); ?>
             </h2>
             
-            <?php rbpo_archive_description(); ?>
+            <?php rb_portfolio_one_archive_description(); ?>
 
         <!-- Custom Taxonomy Page -->
         <?php elseif( is_tax() ): ?>
@@ -131,18 +131,18 @@ if ( !function_exists( 'rbpo_breadcrumbs_details' ) ) {
                 <?php echo esc_html('Custom Taxonomy page','rb-portfolio-one'); ?>
             </h2>
 
-            <?php rbpo_archive_description(); ?>
+            <?php rb_portfolio_one_archive_description(); ?>
 
         <?php endif;
 
 	}
-    add_action ( 'rbpo_breadcrumbs', 'rbpo_breadcrumbs_details');
+    add_action ( 'rb_portfolio_one_breadcrumbs', 'rb_portfolio_one_breadcrumbs_details');
 }
 
 
-if ( !function_exists( 'rbpo_breadcrumbs_menu' ) ) {
+if ( !function_exists( 'rb_portfolio_one_breadcrumbs_menu' ) ) {
 
-	function rbpo_breadcrumbs_menu() { ?>    
+	function rb_portfolio_one_breadcrumbs_menu() { ?>    
                 
         <div class="header-breadcrumbs-nav">
             <?php if( function_exists( 'bcn_display' ) ) {
@@ -153,5 +153,5 @@ if ( !function_exists( 'rbpo_breadcrumbs_menu' ) ) {
         <?php 
 
 	}
-    add_action ( 'rbpo_breadcrumbs', 'rbpo_breadcrumbs_menu');
+    add_action ( 'rb_portfolio_one_breadcrumbs', 'rb_portfolio_one_breadcrumbs_menu');
 }

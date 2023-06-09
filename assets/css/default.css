@@ -1,7 +1,7 @@
 /*
 Theme Name: RB Portfolio One
 Text Domain: rb-portfolio-one
-Version: 1.1.6
+Version: 1.1.7
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -32,7 +32,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 =========================================*/
 :root {
     --primary-color: #007bff;
-    --black-color: #000000;
+    --black-color: #333333;
 	--light-text: #525258;
     --white-color: #ffffff;
 	--transition: all 0.3s ease-out 0s;
@@ -236,7 +236,11 @@ tr {
 /*===========================================
 ===== 01. Common Classes CSS Start Here =====
 ===========================================*/
-.rbpo-btn {
+.rb-portfolio-one-theme-color {
+	color: var(--primary-color);
+}
+
+.rb-portfolio-one-btn {
 	display: inline-block;
 	text-decoration: none;
     text-transform: capitalize;
@@ -247,8 +251,8 @@ tr {
 	transition: var(--transition);
 }
 
-.rbpo-btn:hover,
-.rbpo-btn:focus {
+.rb-portfolio-one-btn:hover,
+.rb-portfolio-one-btn:focus {
 	color: var(--white-color);
 	background-color: var(--black-color);
 	text-decoration: none;
@@ -1199,7 +1203,6 @@ ol.wp-block-latest-comments,
 .post-title a:hover,
 .post-title a:focus {
 	color: var(--primary-color);
-	text-decoration: none;
 }
 /*=========================================
 ===== 02. Blog List Area CSS End Here =====

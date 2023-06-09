@@ -4,7 +4,7 @@ Contributors: bashirrased
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,21 +27,31 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 
 == Resources ==
 
-= Font Awesome Free 6.3.0 =
+= Font Awesome Free 6.4.0 =
   - Author: @fontawesome
   - License: (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
   - License URL: https://fontawesome.com/license/free
   - Source: https://fontawesome.com
-  - Copyright 2023 Fonticons, Inc.
+  - Copyright: 2023 Fonticons, Inc.
 
-= Bootstrap v5.3.0-alpha1 =
+= Bootstrap v5.3.0-alpha3 =
   - License: MIT
   - License URL: https://github.com/twbs/bootstrap/blob/main/LICENSE
   - Source: https://getbootstrap.com/
-  - Copyright 2011-2022 The Bootstrap Authors.
+  - Copyright: 2011-2023 The Bootstrap Authors
 
-= @popperjs/core v2.11.6 =
+= @popperjs/core v2.11.7 =
     - License: MIT
+
+= jQuery Nice Select - v1.1.0 =
+  - License: MIT
+  - Source: https://github.com/meanthemes/meanMenu
+  - Made by Hernán Sartorio
+
+= jQuery meanMenu v2.0.8 =
+  - License: MIT
+  - Source: http://www.meanthemes.com/plugins/meanmenu/
+  - Copyright: 2012-2014 Chris Wharton
 
 = HTML5 Shiv 3.7.3 =
   - @afarkas @jdalton @jon_neal @rem
@@ -56,9 +66,11 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
   - License: MIT
   - Source: github.com/necolas/normalize.css
 
-= Modernizr 2.8.3 (Custom Build) =
+= Modernizr v2.8.3 =
   - License: MIT & BSD
-  - Source: http://modernizr.com/download/
+  - License URL: www.modernizr.com/license/
+  - Source: www.modernizr.com
+  - Copyright: Faruk Ates, Paul Irish, Alex Sexton
 
 = TGM Plugin Activation =
   [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/TGMPA/TGM-Plugin-Activation/develop/LICENSE.md)

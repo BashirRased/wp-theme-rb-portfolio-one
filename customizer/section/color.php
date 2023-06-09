@@ -6,32 +6,32 @@
  * @link https://kirki.org/docs/controls/color/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
-// rbpo_theme_color
+// rb_portfolio_one_theme_color
 new \Kirki\Section(
-	'rbpo_theme_color',
+	'rb_portfolio_one_theme_color',
 	[
 		'title'       => esc_html__( 'Theme Color', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
+		'panel'       => 'rb_portfolio_one_customizer',
 		'priority'    => 160,
 	]
 );
 
-// rbpo_primary_color
+// rb_portfolio_one_primary_color
 new \Kirki\Field\Color(
 	[
-		'settings'    => 'rbpo_primary_color',
+		'settings'    => 'rb_portfolio_one_primary_color',
 		'label'       => __( 'Primary Color', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_theme_color',
+		'section'     => 'rb_portfolio_one_theme_color',
 		'default'     => '#007bff',
 	]
 );
 
-if ( !function_exists( 'rbpo_kirki_color' ) ) {
-    function rbpo_kirki_color() {
+if ( !function_exists( 'rb_portfolio_one_kirki_color' ) ) {
+    function rb_portfolio_one_kirki_color() {
         ?>
             <style>
                 :root {
@@ -40,5 +40,5 @@ if ( !function_exists( 'rbpo_kirki_color' ) ) {
             </style>
         <?php
     }
-    add_action('wp_head', 'rbpo_kirki_color');
+    add_action('wp_head', 'rb_portfolio_one_kirki_color');
 }

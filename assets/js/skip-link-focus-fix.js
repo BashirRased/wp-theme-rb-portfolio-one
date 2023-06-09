@@ -3,11 +3,11 @@
  *
  * Helps with accessibility for keyboard only users.
  *
- * This is the source file for what is minified in the rbpo_skip_link_focus_fix() PHP function.
+ * This is the source file for what is minified in the rb_portfolio_one_skip_link_focus_fix() PHP function.
  *
  * Learn more: https://git.io/vWdr2
  *
- * @since Bashir Rased 1.1.6
+ * @since Bashir Rased 1.1.7
  */
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );

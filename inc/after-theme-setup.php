@@ -3,8 +3,8 @@
  * The template for after theme setup function.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
@@ -15,7 +15,7 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
@@ -67,13 +67,13 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
         register_nav_menu('header_menu', __('Header Menu','rb-portfolio-one'));
 
 		// Set content-width.
-        $GLOBALS['content_width'] = apply_filters( 'rbpo_content_width', 1076 );
+        $GLOBALS['content_width'] = apply_filters( 'rb_portfolio_one_content_width', 1076 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		$rbpo_html5 = array(
+		$rb_portfolio_one_html5 = array(
             'comment-form',
             'comment-list',
             'gallery',
@@ -82,7 +82,7 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
             'script',
             'navigation-widgets'
         );
-        add_theme_support('html5', $rbpo_html5); 
+        add_theme_support('html5', $rb_portfolio_one_html5); 
 
         /*
 		 * Add support for core custom logo.
@@ -92,23 +92,23 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
 		$logo_width  = 300;
 		$logo_height = 100;
 
-		$rbpo_custom_logo = array(
+		$rb_portfolio_one_custom_logo = array(
 			'height'               => $logo_height,
 			'width'                => $logo_width,
 			'flex-width'           => true,
 			'flex-height'          => true,
 			'unlink-homepage-logo' => true,
 		);
-		add_theme_support('custom-logo', $rbpo_custom_logo);
+		add_theme_support('custom-logo', $rb_portfolio_one_custom_logo);
 
 		// Custom header.
-        $rbpo_custom_header = array(
+        $rb_portfolio_one_custom_header = array(
             'width'              => 1000,
             'height'             => 250,
             'flex-width'         => true,
             'flex-height'        => true,
         );
-        add_theme_support('custom-header', $rbpo_custom_header);
+        add_theme_support('custom-header', $rb_portfolio_one_custom_header);
 
 		// Add support for Block Styles.
 		add_theme_support('wp-block-styles');
@@ -117,10 +117,10 @@ if ( ! function_exists( 'rb_portfolio_one_theme_setup' ) ) {
 		add_theme_support('align-wide');
 
         // Custom background color.		
-		$rbpo_custom_bg = array(
+		$rb_portfolio_one_custom_bg = array(
 			'default-color' => 'd1e4dd',
 		);
-		add_theme_support('custom-background', $rbpo_custom_bg); 
+		add_theme_support('custom-background', $rb_portfolio_one_custom_bg); 
 
 		// Add support for responsive embedded content.
 		add_theme_support('responsive-embeds');

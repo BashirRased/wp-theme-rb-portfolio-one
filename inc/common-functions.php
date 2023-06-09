@@ -3,36 +3,36 @@
 /**************************************************
 ***** Post Thumbnail Display Permission Check *****
 **************************************************/
-function rbpo_can_show_post_thumbnail() {
+function rb_portfolio_one_can_show_post_thumbnail() {
 	/**
 	 * Filters whether post thumbnail can be displayed.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
 	 */
 
 	return apply_filters(
-		'rbpo_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail()
+		'rb_portfolio_one_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail()
 	);
 }
 
 /*********************************
 ***** Post Thumbnail Display *****
 *********************************/
-if ( !function_exists( 'rbpo_custom_post_thumbnail' ) ) {
+if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-	function rbpo_custom_post_thumbnail() {
-		if ( !rbpo_can_show_post_thumbnail() ) {
+	function rb_portfolio_one_custom_post_thumbnail() {
+		if ( !rb_portfolio_one_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>
@@ -58,62 +58,62 @@ if ( !function_exists( 'rbpo_custom_post_thumbnail' ) ) {
 
 		<?php
 	}
-	add_action( 'rbpo_post_thumbnail', 'rbpo_custom_post_thumbnail');
+	add_action( 'rb_portfolio_one_post_thumbnail', 'rb_portfolio_one_custom_post_thumbnail');
 }
 
 /*************************************
 ***** Post Category Meta Display *****
 *************************************/
-if ( ! function_exists( 'rbpo_category_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_category_meta' ) ) {
     /**
 	 * Current post categories.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-    function rbpo_category_meta() {	 
+    function rb_portfolio_one_category_meta() {	 
 		if ( has_category() ) { ?>
 			<span class="cat-meta"><i class="fa-regular fa-folder-open"></i> <?php the_category( ', ' ); ?>
 			</span>
 		<?php }
     }
-    add_action( "rbpo_post_meta", "rbpo_category_meta" );
+    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_category_meta" );
 }
 
 /***********************************
 ***** Post Author Meta Display *****
 ***********************************/
-if ( ! function_exists( 'rbpo_author_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_author_meta' ) ) {
     /**
 	 * Current post author.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-    function rbpo_author_meta() {
+    function rb_portfolio_one_author_meta() {
         printf(
 			/* translators: %s: Author name. */
 			'<span class="author-meta"><i class="fa-regular fa-user"></i> %s</span>',
 			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author(), 'rb-portfolio-one' ) . '</a>'
 		);
     }
-    add_action( "rbpo_post_meta", "rbpo_author_meta" );
+    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_author_meta" );
 }
 
 /*********************************
 ***** Post Date Meta Display *****
 *********************************/
-if ( ! function_exists( 'rbpo_date_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_date_meta' ) ) {
     /**
 	 * Current post date.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-    function rbpo_date_meta() {
+    function rb_portfolio_one_date_meta() {
         $archive_year  = get_the_time('Y');
 		$archive_month = get_the_time('m');
 		$archive_date = get_the_time('d');	
@@ -129,21 +129,21 @@ if ( ! function_exists( 'rbpo_date_meta' ) ) {
 		);
 
     }
-    add_action( "rbpo_post_meta", "rbpo_date_meta" );
+    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_date_meta" );
 }
 
 /*************************************
 ***** Post Comments Meta Display *****
 *************************************/
-if ( ! function_exists( 'rbpo_comments_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_comments_meta' ) ) {
     /**
 	 * Current post comments.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-    function rbpo_comments_meta() {
+    function rb_portfolio_one_comments_meta() {
         echo '<span class="comments-meta"><i class="fa-regular fa-comments"></i>';
 		comments_popup_link(
 			__('No Comments','rb-portfolio-one'),
@@ -154,21 +154,21 @@ if ( ! function_exists( 'rbpo_comments_meta' ) ) {
 		);
 		echo '</span>';
     }
-    add_action( "rbpo_post_meta", "rbpo_comments_meta" );
+    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_comments_meta" );
 }
 
 /*********************************
 ***** Post Tag Meta Display *****
 *********************************/
-if ( ! function_exists( 'rbpo_tag_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_tag_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current tags.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-	function rbpo_tag_meta() {
+	function rb_portfolio_one_tag_meta() {
 
 		if ( has_tag() ) {
 			$tags_list = get_the_tag_list( '', ', ' );
@@ -181,21 +181,21 @@ if ( ! function_exists( 'rbpo_tag_meta' ) ) {
 			}
 		}
 	}
-	add_action( 'rbpo_post_meta', 'rbpo_tag_meta' );
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_tag_meta' );
 }
 
 /*********************************
 ***** Post Edit Meta Display *****
 *********************************/
-if ( ! function_exists( 'rbpo_edit_meta' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_edit_meta' ) ) {
     /**
 	 * Current post edit.
 	 *
-	 * @since RB Portfolio One 1.1.6
+	 * @since RB Portfolio One 1.1.7
 	 *
 	 * @return void
 	 */
-    function rbpo_edit_meta() {
+    function rb_portfolio_one_edit_meta() {
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Post title. Only visible to screen readers. */
@@ -205,37 +205,37 @@ if ( ! function_exists( 'rbpo_edit_meta' ) ) {
 			'</span>'
 		);
     }
-    add_action( "rbpo_post_meta", "rbpo_edit_meta" );
+    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_edit_meta" );
 }
 
 /***********************************
 ***** Read More Button Display *****
 ***********************************/
-if( !function_exists( 'rbpo_custom_read_btn' ) ) {
+if( !function_exists( 'rb_portfolio_one_custom_read_btn' ) ) {
 
-	function rbpo_custom_read_btn() {
-		$rbpo_read_more_btn = get_theme_mod( 'rbpo_read_more_btn_switch' );
+	function rb_portfolio_one_custom_read_btn() {
+		$rb_portfolio_one_read_more_btn = get_theme_mod( 'rb_portfolio_one_read_more_btn_switch' );
 
-		if ( !empty ( get_the_content() ) && true == $rbpo_read_more_btn ){
+		if ( !empty ( get_the_content() ) && true == $rb_portfolio_one_read_more_btn ){
 			printf(
 				/* translators:
 				%1$s: Slug of current post.
 				%2$s: Button text.
 				*/
-				'<a class="rbpo-btn" href="%1$s">%2$s <i class="fa-solid fa-arrow-right"></i></a>',
+				'<a class="rb-portfolio-one-btn" href="%1$s">%2$s <i class="fa-solid fa-arrow-right"></i></a>',
 				esc_url( get_permalink() ),
 				esc_html__( 'read more', 'rb-portfolio-one' )
 			);
 		}	
 	}
-	add_action( 'rbpo_read_btn', 'rbpo_custom_read_btn' );
+	add_action( 'rb_portfolio_one_read_btn', 'rb_portfolio_one_custom_read_btn' );
 
 }
 
 /************************
 ***** Comment Form *****
 ************************/
-function rbpo_custom_comment_form( $fields ) {
+function rb_portfolio_one_custom_comment_form( $fields ) {
     // What fields you want to control.
     $comment_field_author = $fields['author'];
     $comment_field_email = $fields['email'];
@@ -260,13 +260,13 @@ function rbpo_custom_comment_form( $fields ) {
 
     return $fields;
 }
-add_filter( 'comment_form_fields', 'rbpo_custom_comment_form' );
+add_filter( 'comment_form_fields', 'rb_portfolio_one_custom_comment_form' );
 
 /***********************
 ***** Comment List *****
 ***********************/
-if ( ! function_exists( 'rbpo_comment_list' ) ) {
-    function rbpo_comment_list( $comment, $args, $depth ) {
+if ( ! function_exists( 'rb_portfolio_one_comment_list' ) ) {
+    function rb_portfolio_one_comment_list( $comment, $args, $depth ) {
         $GLOBAL['comment'] = $comment;
         $args['reply_text'] = 'Reply';
         $replayClass = 'comment-depth-' . esc_attr( $depth );
@@ -296,8 +296,8 @@ if ( ! function_exists( 'rbpo_comment_list' ) ) {
 /**************************
 ***** Skip Link Focus *****
 **************************/
-if (! function_exists( 'rbpo_focus_fix' ) ){
-    function rbpo_focus_fix() {
+if (! function_exists( 'rb_portfolio_one_focus_fix' ) ){
+    function rb_portfolio_one_focus_fix() {
 
         // If SCRIPT_DEBUG is defined and true, print the unminified file.
         if ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) {
@@ -313,14 +313,18 @@ if (! function_exists( 'rbpo_focus_fix' ) ){
         </script>
         <?php
     }
-    add_action('wp_print_footer_scripts', 'rbpo_focus_fix');
+    add_action('wp_print_footer_scripts', 'rb_portfolio_one_focus_fix');
 }
 
 // post excerpt words setup
-if ( !function_exists('rbpo_custom_excerpt_length') ) {
-    function rbpo_custom_excerpt_length( $rbpo_length ) {
-		$rbpo_length = get_theme_mod( 'rbpo_excerpt_word', 30 );
-        return $rbpo_length;
+if ( !function_exists('rb_portfolio_one_custom_excerpt_length') ) {
+    function rb_portfolio_one_custom_excerpt_length( $length ) {
+		if ( is_admin() ) {
+			return absint( $length );
+		} else {
+			$length = get_theme_mod( 'rb_portfolio_one_excerpt_word', 30 );
+			return absint( $length );
+		}
     }
 }
-add_filter( 'excerpt_length', 'rbpo_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'rb_portfolio_one_custom_excerpt_length', 999 );

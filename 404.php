@@ -5,8 +5,8 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 get_header();
@@ -34,7 +34,7 @@ get_header();
                         <p>
                             <?php esc_html_e('Whoops, this is embarassing. Looks like the page you were looking for was not found.', 'rb-portfolio-one'); ?>
                         </p>
-                        <a class="rbpo-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <a class="rb-portfolio-one-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <?php esc_html_e('Back To Home', 'rb-portfolio-one'); ?>
                         </a>
                     </div><!-- .error-page-body -->

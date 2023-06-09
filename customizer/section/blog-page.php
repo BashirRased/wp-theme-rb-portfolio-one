@@ -9,26 +9,26 @@
  * @link https://kirki.org/docs/arguments/active_callback/
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
-// rbpo_blog_page
+// rb_portfolio_one_blog_page
 new \Kirki\Section(
-	'rbpo_blog_page',
+	'rb_portfolio_one_blog_page',
 	[
 		'title'       => esc_html__( 'Blog Page', 'rb-portfolio-one' ),
-		'panel'       => 'rbpo_customizer',
+		'panel'       => 'rb_portfolio_one_customizer',
 		'priority'    => 160,
 	]
 );
 
-// rbpo_blog_page_thumbnail_switch
+// rb_portfolio_one_blog_page_thumbnail_switch
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_blog_page_thumbnail_switch',
+		'settings'    => 'rb_portfolio_one_blog_page_thumbnail_switch',
 		'label'       => esc_html__( 'Post Thumbnail On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_blog_page',
+		'section'     => 'rb_portfolio_one_blog_page',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -37,12 +37,12 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-// rbpo_excerpt_switch
+// rb_portfolio_one_excerpt_switch
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_excerpt_switch',
+		'settings'    => 'rb_portfolio_one_excerpt_switch',
 		'label'       => esc_html__( 'Post Excerpt On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_blog_page',
+		'section'     => 'rb_portfolio_one_blog_page',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),
@@ -51,12 +51,12 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-// rbpo_excerpt_word
+// rb_portfolio_one_excerpt_word
 new \Kirki\Field\Number(
 	[
-		'settings' => 'rbpo_excerpt_word',
+		'settings' => 'rb_portfolio_one_excerpt_word',
 		'label'    => esc_html__( 'Post Excerpt Words', 'rb-portfolio-one' ),
-		'section'  => 'rbpo_blog_page',
+		'section'  => 'rb_portfolio_one_blog_page',
 		'default'  => 30,
 		'choices'  => [
 			'min'  => 10,
@@ -65,7 +65,7 @@ new \Kirki\Field\Number(
 		],
         'active_callback'  => [
             [
-                'setting'  => 'rbpo_excerpt_switch',
+                'setting'  => 'rb_portfolio_one_excerpt_switch',
                 'operator' => '===',
                 'value'    => true,
             ],
@@ -73,12 +73,12 @@ new \Kirki\Field\Number(
 	]
 );
 
-// rbpo_read_more_btn_switch
+// rb_portfolio_one_read_more_btn_switch
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'rbpo_read_more_btn_switch',
+		'settings'    => 'rb_portfolio_one_read_more_btn_switch',
 		'label'       => esc_html__( 'Read More Button On/Off', 'rb-portfolio-one' ),
-		'section'     => 'rbpo_blog_page',
+		'section'     => 'rb_portfolio_one_blog_page',
 		'default'     => 'off',
 		'choices'     => [
 			'on'  => esc_html__( 'Enable', 'rb-portfolio-one' ),

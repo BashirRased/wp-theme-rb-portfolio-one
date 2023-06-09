@@ -7,8 +7,8 @@
  * The template loading under functions.php.
  *
  * @package RB Portfolio One
- * @version RB Portfolio One 1.1.6
- * @since RB Portfolio One 1.1.6
+ * @version RB Portfolio One 1.1.7
+ * @since RB Portfolio One 1.1.7
  */
 
 /*==================================
@@ -59,60 +59,60 @@ define( 'RESPOND_JS', THEME_ROOT . '/third-party/respond/' );
 =================================================*/
 
 /*============================================
-===== 02. Font Awesome v6.3.0 Start Here =====
+===== 02. Font Awesome v6.4.0 Start Here =====
 ============================================*/
-function my_theme_fontawesome_css() {    
-	wp_enqueue_style( 'font-awesome', FONT_AWESOME_CSS .'font-awesome.min.css', '', '6.3.0', 'all' );
+function rb_portfolio_one_fontawesome_css() {    
+	wp_enqueue_style( 'font-awesome', FONT_AWESOME_CSS .'font-awesome.css', '', '6.4.0', 'all' );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_fontawesome_css' );
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_fontawesome_css' );
 /*==========================================
-===== 02. Font Awesome v6.3.0 End Here =====
+===== 02. Font Awesome v6.4.0 End Here =====
 ==========================================*/
 
 /*=========================================
 ===== 03. Bootstrap v5.3.0 Start Here =====
 =========================================*/
-function my_theme_bootstrap_assets() {    
+function rb_portfolio_one_bootstrap_assets() {    
     // Bootstrap CSS v5.3.0
-	wp_enqueue_style( 'bootstrap', BOOTSTRAP_ASSETS . 'bootstrap.min.css', '', '5.3.0', 'all' );
+	wp_enqueue_style( 'bootstrap', BOOTSTRAP_ASSETS . 'bootstrap.css', '', '5.3.0', 'all' );
 
-    // Popper JS v2.11.6
-    wp_enqueue_script( 'popper', BOOTSTRAP_ASSETS . 'popper.min.js', array( 'jquery' ), '2.11.6', true);
+    // Popper JS v2.11.7
+    wp_enqueue_script( 'popper', BOOTSTRAP_ASSETS . 'popper.js', array( 'jquery' ), '2.11.7', true);
     
     // Bootstrap JS v5.3.0
-    wp_enqueue_script('bootstrap', BOOTSTRAP_ASSETS . 'bootstrap.min.js', array( 'jquery', 'popper' ), '5.3.0', true);
+    wp_enqueue_script( 'bootstrap', BOOTSTRAP_ASSETS . 'bootstrap.js', array( 'jquery', 'popper' ), '5.3.0', true);
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_bootstrap_assets' );
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_bootstrap_assets' );
 /*=======================================
 ===== 03. Bootstrap v5.3.0 End Here =====
 =======================================*/
 
-/*================================================
-===== 04. jQuery Nice Select v1.0 Start Here =====
-================================================*/
-function my_theme_nice_select_assets() {    
-    // Nice Select v1.0
-	wp_enqueue_style( 'jquery-nice-select', NICE_SELECT_ASSETS . 'jquery.nice-select.min.css', '', '1.0', 'all');
+/*==================================================
+===== 04. jQuery Nice Select v1.1.0 Start Here =====
+==================================================*/
+function rb_portfolio_one_nice_select_assets() {    
+    // Nice Select CSS v1.1.0
+	wp_enqueue_style( 'nice-select', NICE_SELECT_ASSETS . 'nice-select.css', '', '1.1.0', 'all');
 
-    // Nice Select v1.0
-    wp_enqueue_script( 'jquery-nice-select', NICE_SELECT_ASSETS . 'jquery.nice-select.min.js', array( 'jquery' ), '1.0', true );
+    // Nice Select JS v1.1.0
+    wp_enqueue_script( 'jquery-nice-select', NICE_SELECT_ASSETS . 'jquery.nice-select.js', array( 'jquery' ), '1.1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_nice_select_assets' );
-/*==============================================
-===== 04. jQuery Nice Select v1.0 End Here =====
-==============================================*/
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_nice_select_assets' );
+/*================================================
+===== 04. jQuery Nice Select v1.1.0 End Here =====
+================================================*/
 
 /*===============================================
 ===== 05. jQuery meanMenu v2.0.8 Start Here =====
 ===============================================*/
-function my_theme_mean_menu_assets() {    
+function rb_portfolio_one_mean_menu_assets() {    
     // Mean Menu v2.0.7
-	wp_enqueue_style( 'jquery-mean-menu', MEAN_MENU_ASSETS . 'jquery.mean-menu.min.css', '', '2.0.7', 'all');
+	wp_enqueue_style( 'meanmenu', MEAN_MENU_ASSETS . 'meanmenu.css', '', '2.0.7', 'all');
 
     // Mean Menu v2.0.8
-    wp_enqueue_script( 'jquery-mean-menu', MEAN_MENU_ASSETS . 'jquery.mean-menu.min.js', array( 'jquery' ), '2.0.8', true );
+    wp_enqueue_script( 'jquery-meanmenu', MEAN_MENU_ASSETS . 'jquery.meanmenu.js', array( 'jquery' ), '2.0.8', true );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_mean_menu_assets' );
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_mean_menu_assets' );
 /*=============================================
 ===== 05. jQuery meanMenu v2.0.8 End Here =====
 =============================================*/
@@ -120,14 +120,14 @@ add_action( 'wp_enqueue_scripts', 'my_theme_mean_menu_assets' );
 /*==============================================
 ===== 06. Browser Config Assets Start Here =====
 ==============================================*/
-function my_theme_browser_config_assets() {
+function rb_portfolio_one_browser_config_assets() {
     // Normalize v8.0.1
-	wp_enqueue_style( 'normalize', NORMALIZE_CSS . 'normalize.min.css', '', '8.0.1', 'all' );
+	wp_enqueue_style( 'normalize', NORMALIZE_CSS . 'normalize.css', '', '8.0.1', 'all' );
 
     // Modernizr v2.8.3
-	wp_enqueue_script( 'modernizr', MODERNIZR_JS . 'modernizr.min.js', array( 'jquery' ), '2.8.3', true );
+	wp_enqueue_script( 'modernizr', MODERNIZR_JS . 'modernizr.js', array( 'jquery' ), '2.8.3', true );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_browser_config_assets' );
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_browser_config_assets' );
 /*============================================
 ===== 06. Browser Config Assets End Here =====
 ============================================*/
@@ -135,16 +135,16 @@ add_action( 'wp_enqueue_scripts', 'my_theme_browser_config_assets' );
 /*=======================================
 ===== 07. Conditional JS Start Here =====
 =======================================*/
-function my_theme_conditional_assets() {
+function rb_portfolio_one_conditional_assets() {
     // html5shim Conditional JS v3.7.3
-	wp_enqueue_script('html5shim-printshiv', HTML5SHIV_PRINTSHIV_JS . 'html5shiv-printshiv.min.js', array(), '3.7.3', false);
+	wp_enqueue_script('html5shim-printshiv', HTML5SHIV_PRINTSHIV_JS . 'html5shiv-printshiv.js', '', '3.7.3', false);
 	wp_script_add_data( 'html5shim-printshiv', 'conditional', 'lt IE 11' );
 	
     // respond Conditional JS v1.4.2
-	wp_enqueue_script( 'respond', RESPOND_JS . 'respond.min.js', array(), '1.4.2', false );
+	wp_enqueue_script( 'respond', RESPOND_JS . 'respond.js', '', '1.4.2', false );
 	wp_script_add_data( 'respond', 'conditional', 'lt IE 11' );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_conditional_assets' );
+add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_conditional_assets' );
 /*=====================================
 ===== 07. Conditional JS End Here =====
 =====================================*/
