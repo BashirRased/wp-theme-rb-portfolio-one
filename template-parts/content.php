@@ -2,9 +2,7 @@
 /**
  * The template for displaying all archive post content.
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
 
@@ -82,8 +80,8 @@ else {
 
     <?php the_posts_pagination(array(
         'mid_size'  => 2,
-        'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
-        'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
+        'prev_text' => '<i class="rb-icon rb-icon-left-1"></i>',
+        'next_text' => '<i class="rb-icon rb-icon-right-1"></i>',
     )); ?>
 
 </main>

@@ -7,7 +7,7 @@ function rb_portfolio_one_can_show_post_thumbnail() {
 	/**
 	 * Filters whether post thumbnail can be displayed.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
 	 */
@@ -27,7 +27,7 @@ if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
@@ -68,13 +68,13 @@ if ( ! function_exists( 'rb_portfolio_one_category_meta' ) ) {
     /**
 	 * Current post categories.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
     function rb_portfolio_one_category_meta() {	 
 		if ( has_category() ) { ?>
-			<span class="cat-meta"><i class="fa-regular fa-folder-open"></i> <?php the_category( ', ' ); ?>
+			<span class="cat-meta"><i class="rb-icon rb-icon-folder-open-1"></i> <?php the_category( ', ' ); ?>
 			</span>
 		<?php }
     }
@@ -88,14 +88,12 @@ if ( ! function_exists( 'rb_portfolio_one_author_meta' ) ) {
     /**
 	 * Current post author.
 	 *
-	 * @since RB Portfolio One 1.1.9
-	 *
 	 * @return void
 	 */
     function rb_portfolio_one_author_meta() {
         printf(
 			/* translators: %s: Author name. */
-			'<span class="author-meta"><i class="fa-regular fa-user"></i> %s</span>',
+			'<span class="author-meta"><i class="rb-icon rb-icon-user-1"></i> %s</span>',
 			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author(), 'rb-portfolio-one' ) . '</a>'
 		);
     }
@@ -109,7 +107,7 @@ if ( ! function_exists( 'rb_portfolio_one_date_meta' ) ) {
     /**
 	 * Current post date.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
@@ -123,7 +121,7 @@ if ( ! function_exists( 'rb_portfolio_one_date_meta' ) ) {
 			 %1$s: Publish date url.
 			 %2$s: Publish date. 
 			 */
-			'<span class="date-meta"><i class="fa-regular fa-clock"></i><a href="%1$s">%2$s</a></span>',
+			'<span class="date-meta"><i class="rb-icon rb-icon-calender-1"></i><a href="%1$s">%2$s</a></span>',
 			esc_url( get_day_link( $archive_year, $archive_month, $archive_date ) ),
 			esc_html( get_the_time( get_option( 'date_format' ) ) )
 		);
@@ -139,18 +137,18 @@ if ( ! function_exists( 'rb_portfolio_one_comments_meta' ) ) {
     /**
 	 * Current post comments.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
     function rb_portfolio_one_comments_meta() {
-        echo '<span class="comments-meta"><i class="fa-regular fa-comments"></i>';
+        echo '<span class="comments-meta"><i class="rb-icon rb-icon-comments-1"></i>';
 		comments_popup_link(
-			__('No Comments','rb-portfolio-one'),
-			__('1 Comment','rb-portfolio-one'),
-			__('% Comments','rb-portfolio-one'),
+			esc_html__('No Comments','rb-portfolio-one'),
+			esc_html__('1 Comment','rb-portfolio-one'),
+			esc_html__('% Comments','rb-portfolio-one'),
 			'',
-			__('Comments Off','rb-portfolio-one')
+			esc_html__('Comments Off','rb-portfolio-one')
 		);
 		echo '</span>';
     }
@@ -164,7 +162,7 @@ if ( ! function_exists( 'rb_portfolio_one_tag_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current tags.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
@@ -175,7 +173,7 @@ if ( ! function_exists( 'rb_portfolio_one_tag_meta' ) ) {
 			if ( $tags_list ) {
 				printf(
 					/* translators: %s: List of tags. */
-					'<span class="tags-link"><i class="fa-solid fa-tags"></i>' . esc_html__( '%s', 'rb-portfolio-one' ) . '</span>',
+					'<span class="tags-link"><i class="rb-icon rb-icon-tag-1"></i>' . esc_html__( '%s', 'rb-portfolio-one' ) . '</span>',
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
 				);				
 			}
@@ -191,7 +189,7 @@ if ( ! function_exists( 'rb_portfolio_one_edit_meta' ) ) {
     /**
 	 * Current post edit.
 	 *
-	 * @since RB Portfolio One 1.1.9
+	 * @since RB Portfolio One 1.2.0
 	 *
 	 * @return void
 	 */
@@ -201,7 +199,7 @@ if ( ! function_exists( 'rb_portfolio_one_edit_meta' ) ) {
 				/* translators: %s: Post title. Only visible to screen readers. */
 				esc_html__( 'Edit', 'rb-portfolio-one' )
 			),
-			'<span class="entry-meta-edit"><i class="fa-solid fa-user-pen"></i> ',
+			'<span class="entry-meta-edit"><i class="rb-icon rb-icon-edit-1"></i> ',
 			'</span>'
 		);
     }
@@ -222,7 +220,7 @@ if( !function_exists( 'rb_portfolio_one_custom_read_btn' ) ) {
 				%1$s: Slug of current post.
 				%2$s: Button text.
 				*/
-				'<a class="rb-portfolio-one-btn" href="%1$s">%2$s <i class="fa-solid fa-arrow-right"></i></a>',
+				'<a class="rb-portfolio-one-btn" href="%1$s">%2$s <i class="rb-iconrb-icon-right-1"></i></a>',
 				esc_url( get_permalink() ),
 				esc_html__( 'read more', 'rb-portfolio-one' )
 			);

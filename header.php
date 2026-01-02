@@ -6,9 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
 ?>
@@ -26,7 +24,7 @@
 </a>
 
 <?php
-do_action ( 'rb_portfolio_one_theme_option_preloader' );
-do_action ( 'rb_portfolio_one_theme_option_header_top' );
-get_template_part('template-parts/header-menu');
-do_action ( 'rb_portfolio_one_theme_option_breadcrumbs' );
+do_action( 'rbth_preloader' );
+do_action ( 'rbth_header_top' );
+do_action ( 'rb_portfolio_one_header_site_branding' );
+do_action ( 'rbth_breadcrumbs' );

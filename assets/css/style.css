@@ -1,7 +1,7 @@
 /*
 Theme Name: RB Portfolio One
 Text Domain: rb-portfolio-one
-Version: 1.1.9
+Version: 1.2.0
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -17,6 +17,17 @@ RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
 RB Portfolio One is distributed under the terms of the GNU GPL.
 */
 
+.mean-container .mean-nav ul li a.mean-expand {
+	height: 27px;
+}
+
+/*===========================================
+===== 01. Common Classes CSS Start Here =====
+===========================================*/
+
+/*=========================================
+===== 01. Common Classes CSS End Here =====
+=========================================*/
 
 /*======================================
 ===== 01. Preloader CSS Start Here =====
@@ -463,13 +474,10 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 /*===============================================
 ===== 02. Header Topbar Area CSS Start Here =====
 ===============================================*/
-.header-top-area {
+.header-top-wrap {
 	padding: 10px 0;
 	color: #ffffff;
 	background-color: var(--primary-color);
-}
-.header-top-area span:first-child {
-	margin-right: 10px;
 }
 /*=============================================
 ===== 02. Header Topbar Area CSS End Here =====
@@ -478,6 +486,29 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 /*=============================================
 ===== 02. Header Menu Area CSS Start Here =====
 =============================================*/
+.header-site-branding-wrap {
+	padding: 10px 0;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	position: relative;
+    box-shadow: var(--light-shadow);
+    background-color: var(--white-color);
+    z-index: 9;
+}
+.header-site-title > a.header-site-title-link{
+	font-weight: 700;
+  	font-family: "Roboto", Sans-serif;
+	text-decoration: none;
+	color: var(--black-color);
+}
+
+.header-site-title:hover a.header-site-title-link,
+.header-site-title:focus a.header-site-title-link {
+	font-weight: 700;
+  	font-family: "Roboto", Sans-serif;
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
 .header-menu-area.header-fixed {
     position: fixed;
     left: 0;
@@ -489,13 +520,6 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 .header-menu-area.header-position {
     position: absolute;
     width: 100%;
-}
-
-.header-menu-area {
-    position: relative;
-    box-shadow: var(--light-shadow);
-    background-color: var(--white-color);
-    z-index: 9;
 }
 
 .header-menu {
@@ -564,6 +588,8 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
     -o-box-shadow: var(--light-shadow);
     box-shadow: var(--light-shadow);
 	z-index: 99;
+	min-width: 280px;
+	text-align: left;
 }
 
 .header-menu ul > li:hover .children,
@@ -640,7 +666,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 /*==================================================
 ===== 02. Header Breadcrumbs Area CSS End Here =====
 ==================================================*/
-.header-breadcrumbs-area {
+.header-breadcrumbs-wrap {
 	padding: 115px 0;
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -652,29 +678,6 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
     text-transform: capitalize;
 }
 
-.header-breadcrumbs-nav {
-	text-align: center;
-	color: rgba(255, 255, 255, 0.7);
-}
-
-.header-breadcrumbs-nav span {
-	display: inline-block;
-}
-
-.header-breadcrumbs-nav a {
-	color: var(--white-color);
-}
-
-.header-breadcrumbs-nav a:hover,
-.header-breadcrumbs-nav a:focus {
-	color: var(--primary-color);
-}
-
-
-.header-breadcrumbs-nav > span:last-child {
-    color: rgba(255, 255, 255, 0.7);
-}
-
 .header-breadcrumbs-description {
     color: var(--white-color);
     text-align: center;
@@ -684,6 +687,60 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 .header-breadcrumbs-description p {
     margin-bottom: 0;
 }
+
+.header-breadcrumbs-menu {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+	gap: 10px;
+	position: relative;
+	justify-content: center;
+}
+
+.header-breadcrumbs-item {
+	position: relative;
+}
+
+.header-breadcrumbs-item,
+.header-breadcrumbs-item a {
+	color: var(--white-color);
+	text-decoration: none;
+}
+
+.header-breadcrumbs-item:hover a,
+.header-breadcrumbs-item:focus a {
+	color: var(--primary-color);
+}
+
+.header-breadcrumbs-home-icon,
+.header-breadcrumbs-separator,
+.header-breadcrumbs-item.current {
+	color: #777;
+}
 /*==================================================
 ===== 02. Header Breadcrumbs Area CSS End Here =====
 ==================================================*/
+
+/*====================================
+15. Footer Area Section CSS Start Here
+====================================*/
+.footer-wrap {
+	background-color: var(--primary-color);
+	padding: 10px 0;
+	color: var(--white-color);
+}
+.footer-wrap a {
+	color: var(--light-grey-text);
+}
+.footer-wrap a:hover,
+.footer-wrap a:focus {
+	color: var(--white-color);
+}
+.footer-wrap p {
+	margin: 0;
+}
+/*==================================
+15. Footer Area Section CSS End Here
+==================================*/

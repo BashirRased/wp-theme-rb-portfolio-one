@@ -2,9 +2,7 @@
 /**
  * The template for displaying website preloader
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
 ?>

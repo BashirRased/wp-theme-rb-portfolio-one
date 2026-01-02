@@ -2,9 +2,7 @@
 /**
  * The template for displaying all single post content.
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
  $rb_portfolio_one_page_sidebar = function_exists( 'get_field' ) ? get_field( 'main_sidebar' ) : 'no_sidebar ';

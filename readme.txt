@@ -1,10 +1,10 @@
 === RB Portfolio One ===
 
-Contributors: bashirrased
+Contributors: bashirrased2017
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,3 +82,19 @@ Image for theme screenshot, Credit Bashir Rased
 Source:  Self Created
 License:  Creative Commons Zero (CC0) license.
 License Url: http://www.gnu.org/licenses/gpl.html
+
+== Changelog ==
+= 1.2.0 =
+* Change version
+* Change screenshot
+* Change contributors name
+* Change tgm file name and location
+
+* Remove multi kirki functions (load by only rb theme helper plugin)
+
+* Edit default.css
+* Edit style.css
+* Edit functions.php
+
+* Slove font awesome icon issue
+* add @package RB_Themes

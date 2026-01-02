@@ -4,9 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
 // Theme Setup
@@ -29,7 +27,7 @@ if(file_exists(dirname(__FILE__).'/inc/widget-register.php')) {
 	require_once(dirname(__FILE__).'/inc/widget-register.php');
 }
 
-// Skip Focus Link
+// Common Functions
 if(file_exists(dirname(__FILE__).'/inc/common-functions.php')) {
 	require_once(dirname(__FILE__).'/inc/common-functions.php');
 }
@@ -40,21 +38,25 @@ if(file_exists(dirname(__FILE__).'/inc/breadcrumbs.php')) {
 }
 
 // TGM Plugin Activation
-if(file_exists(dirname(__FILE__).'/lib/TGM-Plugin-Activation-2.6.1/class-tgm-plugin-activation.php')) {
-	require_once(dirname(__FILE__).'/lib/TGM-Plugin-Activation-2.6.1/class-tgm-plugin-activation.php');
+if(file_exists(dirname(__FILE__).'/lib/tgm-plugin.php')) {
+	require_once(dirname(__FILE__).'/lib/tgm-plugin.php');
+	require_once(dirname(__FILE__).'/inc/recommended-plugin.php');
 }
 
-// TGM Plugin Customization
-if(file_exists(dirname(__FILE__).'/inc/tgm-plugin-customization.php')) {
-	require_once(dirname(__FILE__).'/inc/tgm-plugin-customization.php');
+// Action Hooks
+if(file_exists(dirname(__FILE__).'/inc/action-hooks.php')) {
+	require_once(dirname(__FILE__).'/inc/action-hooks.php');
 }
 
-// Theme Basic Functions
-if( file_exists ( dirname( __FILE__ ) . '/customizer/kirki-customizer.php' ) ) {
-	require_once( dirname( __FILE__ ) . '/customizer/kirki-customizer.php' );
-} 
-
-// TGM Plugin Customization
-if(file_exists(dirname(__FILE__).'/inc/theme-helper.php')) {
-	require_once(dirname(__FILE__).'/inc/theme-helper.php');
+// Font Awesome support after install elementor
+function rb_portfolio_one_font_awesome_7() {
+    // Latest FA7 from CDN
+    wp_enqueue_style(
+        'font-awesome-7',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css',
+        [],
+        '7.0.0'
+    );
 }
+add_action('wp_enqueue_scripts', 'rb_portfolio_one_font_awesome_7');
+add_action('elementor/editor/after_enqueue_styles', 'rb_portfolio_one_font_awesome_7');

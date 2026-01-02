@@ -1,7 +1,7 @@
 /*
 Theme Name: RB Portfolio One
 Text Domain: rb-portfolio-one
-Version: 1.1.9
+Version: 1.2.0
 Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -35,9 +35,10 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
     --black-color: #333333;
 	--light-text: #525258;
     --white-color: #ffffff;
+	--light-grey-text: #eeeeee;
 	--transition: all 0.3s ease-out 0s;
 	--light-bg: #D4D4DD;
-	--light-shadow: 0px 1px 3px rgba(3, 4, 28, 0.06);
+	--light-shadow: 0 2px 5px rgba(0,0,0,.2);
 		
 }
 
@@ -73,7 +74,6 @@ a:hover,
 a:focus {
 	color: var(--primary-color);
 	opacity: 1;
-	text-decoration: underline;
 }
 
 h1,
@@ -88,6 +88,7 @@ caption,
 figcaption {
 	font-family: 'Roboto';
 	font-weight: 700;
+	line-height: 1.2;
 }
 
 h1 {
@@ -95,23 +96,23 @@ h1 {
 }
 
 h2 {
-	font-size: 35px;
+	font-size: 32px;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 28px;
 }
 
 h4 {
-	font-size: 25px;
+	font-size: 24px;
 }
 
 h5 {
-	font-size: 22px;
+	font-size: 20px;
 }
 
 h6 {
-	font-size: 20px;
+	font-size: 16px;
 }
 
 select {
@@ -142,22 +143,7 @@ input[type="url"],
 textarea {
 	padding: 15px;
     width: 100%;
-    border: 1px solid var(--black-color);
-    box-shadow: var(--light-shadow);
 	outline: 0;
-}
-
-input[type="text"]:hover,
-input[type="text"]:focus,
-input[type="email"]:hover,
-input[type="email"]:focus,
-input[type="password"]:hover,
-input[type="password"]:focus,
-input[type="url"]:hover,
-input[type="url"]:focus,
-textarea:hover,
-textarea:focus {
-	border: 1px solid var(--primary-color);
 }
 
 figcaption {
@@ -1174,19 +1160,21 @@ ol.wp-block-latest-comments,
     font-size: 14px;
     color: var(--light-text);
     margin-right: 30px;
-    display: inline-block;
     margin-bottom: 5px;
     text-transform: capitalize;
+    display: inline-flex;
+	align-items: center;
 }
 
-.post-meta span i {
-    color: var(--primary-color);
+.post-meta span i::before {
+    background-color: var(--primary-color);
 	margin-right: 5px;
 }
 
 .post-meta span a {
 	color: var(--light-text);
 	transition: var(--transition);
+	text-decoration: none;
 }
 
 .post-meta span a:hover,
@@ -1197,11 +1185,19 @@ ol.wp-block-latest-comments,
 .post-title a {
 	color: var(--black-color);
 	transition: var(--transition);
+	text-decoration: none;
+	margin: 20px 0;
+	display: block;
 }
 
 .post-title a:hover,
 .post-title a:focus {
 	color: var(--primary-color);
+}
+
+.post-content {
+	margin-bottom: 0;
+	line-height: 30px;
 }
 /*=========================================
 ===== 02. Blog List Area CSS End Here =====
@@ -1226,6 +1222,24 @@ ol.wp-block-latest-comments,
 	color: var(--light-text);
 	background-color: var(--white-color);
 	transition: var(--transition);
+}
+
+.page-numbers i.rb-icon {
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+}
+
+.page-numbers i::before,
+.post-page-numbers i::before {
+	background-color: var(--primary-color);
+}
+
+.page-numbers i:hover::before,
+.post-page-numbers i:hover::before,
+.page-numbers i:focus::before,
+.post-page-numbers i:focus::before {
+	background-color: var(--white-color);
 }
 
 .post-page-numbers {
@@ -1277,20 +1291,25 @@ ol.wp-block-latest-comments,
 	position: fixed;
 	bottom: 25px;
 	right: 25px;
-	display: inline-block;
+	display: inline-flex;
 	text-decoration: none;
     text-transform: capitalize;
-    padding: 15px;
-	margin-bottom: 5px;
 	color: var(--white-color);
 	background-color: var(--primary-color);
 	transition: var(--transition);
 	border: none;
-}
+	width: 40px;
+	height: 40px;
+	align-items: center;
+}	
 
 .scroll-top-btn:hover,
 .scroll-top-btn:focus {
 	background-color: var(--black-color);
+}
+
+.scroll-top-btn i::before {
+	background-color: #fff; 
 }
 
 /* Pagination */
@@ -1403,9 +1422,7 @@ ol.wp-block-latest-comments,
 }
 
 /** 404 Page */
-.error-404-page-content {
-	margin-bottom: 50px;
-	padding-bottom: 50px;
+.error-page-container {
 	color: var(--light-text);
 	background-color: var(--white-color);
 	box-shadow: var(--light-shadow);
@@ -1438,7 +1455,7 @@ ol.wp-block-latest-comments,
 
 .mean-container a.meanmenu-reveal {
 	height: 20px;
-	top: -44px;
+	top: -90px;
 	background-color: var(--primary-color);
 	transition: var(--transition);
 }

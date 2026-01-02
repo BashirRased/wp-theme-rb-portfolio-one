@@ -2,15 +2,13 @@
 /**
  * The template for displaying website breadcrumbs
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 ?>
 <!--========================================== 
 ===== Header Breadcrumbs Area Strat Here =====
 ===========================================-->
-<section class="header-breadcrumbs-area" style="background-image: url(<?php header_image(); ?>);">
+<section class="header-breadcrumbs-wrap" style="background-image: url(<?php header_image(); ?>);">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

@@ -2,15 +2,14 @@
 /**
  * The template for loading all css & js files.
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
  
 // Bashir Rased With File Directory
-define('rb_portfolio_one_URL',get_template_directory_uri());
-define('rb_portfolio_one_CSS',rb_portfolio_one_URL.'/assets/css/');
-define('rb_portfolio_one_JS',rb_portfolio_one_URL.'/assets/js/');
+define('RB_PORTFOLIO_ONE_URL',get_template_directory_uri());
+define('RB_PORTFOLIO_ONE_CSS',RB_PORTFOLIO_ONE_URL.'/assets/css/');
+define('RB_PORTFOLIO_ONE_JS',RB_PORTFOLIO_ONE_URL.'/assets/js/');
+define('RB_PORTFOLIO_ONE_LIB',RB_PORTFOLIO_ONE_URL.'/lib/rb-wp-lib/');
 
 add_editor_style( array(rb_portfolio_one_google_fonts() ) );
 /**
@@ -34,19 +33,21 @@ function rb_portfolio_one_google_font_css(){
 }
 add_action('wp_enqueue_scripts','rb_portfolio_one_google_font_css');
 
-
 function rb_portfolio_one_theme_custom_assets(){
+	// Theme Style CSS
+    wp_enqueue_style( 'rb-portfolio-one-rb-wp-lib', RB_PORTFOLIO_ONE_LIB . 'rb-wp-lib.css', '', time(), 'all' );
+
     // Default CSS
-    wp_enqueue_style( 'rb-portfolio-one-default', rb_portfolio_one_CSS . 'default.css','', time(), 'all' );
+    wp_enqueue_style( 'rb-portfolio-one-default', RB_PORTFOLIO_ONE_CSS . 'default.css','', time(), 'all' );
 
     // Theme Style CSS
-    wp_enqueue_style( 'rb-portfolio-one-style', rb_portfolio_one_CSS . 'style.css', '', time(), 'all' );
+    wp_enqueue_style( 'rb-portfolio-one-style', RB_PORTFOLIO_ONE_CSS . 'style.css', '', time(), 'all' );
 
     // Responsive CSS
-    wp_enqueue_style( 'rb-portfolio-one-responsive', rb_portfolio_one_CSS . 'responsive.css', '', time(), 'all' );	
+    wp_enqueue_style( 'rb-portfolio-one-responsive', RB_PORTFOLIO_ONE_CSS . 'responsive.css', '', time(), 'all' );	
 
     // Theme Custom JS
-    wp_enqueue_script( 'rb-portfolio-one-custom', rb_portfolio_one_JS . 'custom.js',array( 'jquery' ), time(), true );
+    wp_enqueue_script( 'rb-portfolio-one-custom', RB_PORTFOLIO_ONE_JS . 'custom.js',array( 'jquery' ), time(), true );
 }
 add_action('wp_enqueue_scripts','rb_portfolio_one_theme_custom_assets');
 

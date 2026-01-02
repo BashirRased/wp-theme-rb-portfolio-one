@@ -6,9 +6,7 @@
  * 
  * The template loading under functions.php.
  *
- * @package RB Portfolio One
- * @version RB Portfolio One 1.1.9
- * @since RB Portfolio One 1.1.9
+ * @package RB_Themes
  */
 
 /*==================================
