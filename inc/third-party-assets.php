@@ -85,21 +85,6 @@ add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_bootstrap_assets' );
 ===== 03. Bootstrap v5.3.0 End Here =====
 =======================================*/
 
-/*==================================================
-===== 04. jQuery Nice Select v1.1.0 Start Here =====
-==================================================*/
-function rb_portfolio_one_nice_select_assets() {    
-    // Nice Select CSS v1.1.0
-	wp_enqueue_style( 'nice-select', NICE_SELECT_ASSETS . 'nice-select.css', '', '1.1.0', 'all');
-
-    // Nice Select JS v1.1.0
-    wp_enqueue_script( 'jquery-nice-select', NICE_SELECT_ASSETS . 'jquery.nice-select.js', array( 'jquery' ), '1.1.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_nice_select_assets' );
-/*================================================
-===== 04. jQuery Nice Select v1.1.0 End Here =====
-================================================*/
-
 /*===============================================
 ===== 05. jQuery meanMenu v2.0.8 Start Here =====
 ===============================================*/
@@ -114,35 +99,3 @@ add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_mean_menu_assets' );
 /*=============================================
 ===== 05. jQuery meanMenu v2.0.8 End Here =====
 =============================================*/
-
-/*==============================================
-===== 06. Browser Config Assets Start Here =====
-==============================================*/
-function rb_portfolio_one_browser_config_assets() {
-    // Normalize v8.0.1
-	wp_enqueue_style( 'normalize', NORMALIZE_CSS . 'normalize.css', '', '8.0.1', 'all' );
-
-    // Modernizr v2.8.3
-	wp_enqueue_script( 'modernizr', MODERNIZR_JS . 'modernizr.js', array( 'jquery' ), '2.8.3', true );
-}
-add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_browser_config_assets' );
-/*============================================
-===== 06. Browser Config Assets End Here =====
-============================================*/
-
-/*=======================================
-===== 07. Conditional JS Start Here =====
-=======================================*/
-function rb_portfolio_one_conditional_assets() {
-    // html5shim Conditional JS v3.7.3
-	wp_enqueue_script('html5shim-printshiv', HTML5SHIV_PRINTSHIV_JS . 'html5shiv-printshiv.js', '', '3.7.3', false);
-	wp_script_add_data( 'html5shim-printshiv', 'conditional', 'lt IE 11' );
-	
-    // respond Conditional JS v1.4.2
-	wp_enqueue_script( 'respond', RESPOND_JS . 'respond.js', '', '1.4.2', false );
-	wp_script_add_data( 'respond', 'conditional', 'lt IE 11' );
-}
-add_action( 'wp_enqueue_scripts', 'rb_portfolio_one_conditional_assets' );
-/*=====================================
-===== 07. Conditional JS End Here =====
-=====================================*/

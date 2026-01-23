@@ -75,8 +75,6 @@ Table of JS Content End Here
 			meanMenuOpen: '<span></span><span></span><span></span>',
 		});
 
-		$('select').niceSelect();
-
 		/*========================================
 		06. Scroll To Top Button jQuery Start Here
 		========================================*/
