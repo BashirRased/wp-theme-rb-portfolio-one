@@ -9,7 +9,6 @@
 define('RB_PORTFOLIO_ONE_URL',get_template_directory_uri());
 define('RB_PORTFOLIO_ONE_CSS',RB_PORTFOLIO_ONE_URL.'/assets/css/');
 define('RB_PORTFOLIO_ONE_JS',RB_PORTFOLIO_ONE_URL.'/assets/js/');
-define('RB_PORTFOLIO_ONE_LIB',RB_PORTFOLIO_ONE_URL.'/lib/rb-wp-lib/');
 
 add_editor_style( array(rb_portfolio_one_google_fonts() ) );
 /**
@@ -34,9 +33,6 @@ function rb_portfolio_one_google_font_css(){
 add_action('wp_enqueue_scripts','rb_portfolio_one_google_font_css');
 
 function rb_portfolio_one_theme_custom_assets(){
-	// Theme Style CSS
-    wp_enqueue_style( 'rb-portfolio-one-rb-wp-lib', RB_PORTFOLIO_ONE_LIB . 'rb-wp-lib.css', '', time(), 'all' );
-
     // Default CSS
     wp_enqueue_style( 'rb-portfolio-one-default', RB_PORTFOLIO_ONE_CSS . 'default.css','', time(), 'all' );
 

@@ -191,7 +191,7 @@ blockquote {
 
 blockquote::before {
     content: "\f10e";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
     font-size: 32px;
     color: var(--primary-color);
     margin-bottom: 18px;
@@ -579,7 +579,7 @@ code {
 .wp-block-archives-list li a::before {
 	position: absolute;
 	content: "\f07c";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
 	top: 50%;
 	left: 18px;
 	-webkit-transform: translate(-50%, -50%);
@@ -812,7 +812,7 @@ ol.wp-block-latest-comments,
 .widget_pages li a::before {
 	position: absolute;
 	content: "\e494";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
 	top: 50%;
 	left: 28px;
 	-webkit-transform: translate(-50%, -50%);

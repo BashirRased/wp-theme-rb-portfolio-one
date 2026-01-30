@@ -554,7 +554,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 
 .header-menu ul li.page_item_has_children > a::after {
     content: "\f107";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
     margin-left: 5px;
 }
 
@@ -571,7 +571,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 .header-menu ul li.menu-item-has-children > a::after,
 .header-menu ul li.page_item_has_children > a::after {
     content: "\f107";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
     margin-left: 5px;
 }
 
@@ -621,7 +621,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 	opacity: 0;
     position: absolute;
     content: "\f178";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
     left: 0;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -643,7 +643,7 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
 .header-menu ul li .children li.page_item_has_children > a::after,
 .header-menu ul li .sub-menu li.menu-item-has-children > a::after {
     content: "\f105";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
     margin-left: 5px;
 }
 

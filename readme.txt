@@ -1,10 +1,11 @@
 === RB Portfolio One ===
 
-Contributors: bashirrased2017
-Requires at least: 6.1
-Tested up to: 6.2
-Requires PHP: 5.6
+Contributors: bashirrased
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 7.0
 Stable tag: 1.2.0
+Author URI: https://bashir-rased.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,17 +23,17 @@ Tags: one-column, blog, custom-logo, custom-menu, featured-images, right-sidebar
 
 == Copyright ==
 
-RB Portfolio One WordPress Theme, (C) 2023 Bashir Rased.
+RB Portfolio One WordPress Theme, (C) 2023 - 2026 Bashir Rased.
 RB Portfolio One is distributed under the terms of the GNU GPL.
 
 == Resources ==
 
-= Font Awesome Free 6.4.0 =
+= Font Awesome Free 7.1.0 =
   - Author: @fontawesome
   - License: (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
   - License URL: https://fontawesome.com/license/free
   - Source: https://fontawesome.com
-  - Copyright: 2023 Fonticons, Inc.
+  - Copyright: 2025 Fonticons, Inc.
 
 = Bootstrap v5.3.0-alpha3 =
   - License: MIT
@@ -40,37 +41,10 @@ RB Portfolio One is distributed under the terms of the GNU GPL.
   - Source: https://getbootstrap.com/
   - Copyright: 2011-2023 The Bootstrap Authors
 
-= @popperjs/core v2.11.7 =
-    - License: MIT
-
-= jQuery Nice Select - v1.1.0 =
-  - License: MIT
-  - Source: https://github.com/meanthemes/meanMenu
-  - Made by Hernán Sartorio
-
 = jQuery meanMenu v2.0.8 =
   - License: MIT
   - Source: http://www.meanthemes.com/plugins/meanmenu/
   - Copyright: 2012-2014 Chris Wharton
-
-= HTML5 Shiv 3.7.3 =
-  - @afarkas @jdalton @jon_neal @rem
-  - License: MIT/GPL2
-
-= Respond.js v1.4.2 =
-  - min/max-width media query polyfilll
-  - License: MIT
-  - License URL: https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
-
-= normalize.css v8.0.1 =
-  - License: MIT
-  - Source: github.com/necolas/normalize.css
-
-= Modernizr v2.8.3 =
-  - License: MIT & BSD
-  - License URL: www.modernizr.com/license/
-  - Source: www.modernizr.com
-  - Copyright: Faruk Ates, Paul Irish, Alex Sexton
 
 = TGM Plugin Activation =
   [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/TGMPA/TGM-Plugin-Activation/develop/LICENSE.md)
