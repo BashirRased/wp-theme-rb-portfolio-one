@@ -1,0 +1,21 @@
+== Changelog ==
+
+= 1.2.2 =
+- Improved code quality with PHPCS and WPCS compliance fixes
+- Enhanced theme performance and stability
+- WordPress 6.7 compatibility verified
+
+= 1.2.1 =
+- Fixed required plugins activation errors
+- Improved plugin dependency handling
+
+= 1.2.0 =
+- **Major Update:** Version refresh
+- Updated theme screenshot
+- Updated contributor credits
+- Relocated and renamed TGM files for better organization
+- Removed multiple Kirki functions (now loaded via RB Theme Helper plugin only)
+- Fixed Font Awesome icon display issues
+- Added @package RB_Themes for better code organization
+- Updated default.css and style.css
+- Enhanced functions.php functionality

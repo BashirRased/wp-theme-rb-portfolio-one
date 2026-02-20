@@ -1,38 +1,45 @@
 <?php
+/**
+ * Common functions.
+ *
+ * @package RB_Themes
+ * @subpackage RB_Portfolio_One
+ */
 
-/**************************************************
-***** Post Thumbnail Display Permission Check *****
-**************************************************/
-function rb_portfolio_one_can_show_post_thumbnail() {
-	/**
-	 * Filters whether post thumbnail can be displayed.
-	 *
-	 * @since RB Portfolio One 1.2.1
-	 *
-	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
-	 */
-
-	return apply_filters(
-		'rb_portfolio_one_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail()
-	);
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-/*********************************
-***** Post Thumbnail Display *****
-*********************************/
-if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
+/**
+ * Post Thumbnail Display
+ */
+if ( ! function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
+	/**
+	 * Post Thumbnail Display Permission Check
+	 */
+	function rb_portfolio_one_can_show_post_thumbnail() {
+		/**
+		 * Filters whether post thumbnail can be displayed.
+		 *
+		 * @param bool $show_post_thumbnail Whether to show post thumbnail.
+		 */
+		return apply_filters(
+			'rb_portfolio_one_can_show_post_thumbnail',
+			! post_password_required() && ! is_attachment() && has_post_thumbnail()
+		);
+	}
+
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 *
-	 * @since RB Portfolio One 1.2.1
-	 *
 	 * @return void
 	 */
 	function rb_portfolio_one_custom_post_thumbnail() {
-		if ( !rb_portfolio_one_can_show_post_thumbnail() ) {
+		if ( ! rb_portfolio_one_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>
@@ -43,13 +50,14 @@ if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
 			the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
 			?>
 
-			<?php 
-			if ( is_singular( 'attachment') ) :
-				if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+			<?php
+			if ( is_singular( 'attachment' ) ) :
+				if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) :
+					?>
 					<figcaption class="wp-caption-text">
-						<?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() )); ?>
+						<?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?>
 					</figcaption>
-				<?php
+					<?php
 				endif;
 			endif;
 			?>
@@ -58,271 +66,283 @@ if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
 
 		<?php
 	}
-	add_action( 'rb_portfolio_one_post_thumbnail', 'rb_portfolio_one_custom_post_thumbnail');
+	add_action( 'rb_portfolio_one_post_thumbnail', 'rb_portfolio_one_custom_post_thumbnail' );
 }
 
-/*************************************
-***** Post Category Meta Display *****
-*************************************/
+/**
+ * Post Category Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_category_meta' ) ) {
-    /**
+	/**
 	 * Current post categories.
-	 *
-	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
-    function rb_portfolio_one_category_meta() {	 
-		if ( has_category() ) { ?>
+	function rb_portfolio_one_category_meta() {
+		if ( has_category() ) {
+			?>
 			<span class="cat-meta"><i class="rb-icon rb-icon-folder-open-1"></i> <?php the_category( ', ' ); ?>
 			</span>
-		<?php }
-    }
-    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_category_meta" );
+			<?php
+		}
+	}
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_category_meta' );
 }
 
-/***********************************
-***** Post Author Meta Display *****
-***********************************/
+/**
+ * Post Author Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_author_meta' ) ) {
-    /**
+	/**
 	 * Current post author.
 	 *
 	 * @return void
 	 */
-    function rb_portfolio_one_author_meta() {
-        printf(
+	function rb_portfolio_one_author_meta() {
+		printf(
 			/* translators: %s: Author name. */
-			'<span class="author-meta"><i class="rb-icon rb-icon-user-1"></i> %s</span>',
-			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author(), 'rb-portfolio-one' ) . '</a>'
+			'<span class="author-meta"><i class="fa-solid fa-user"></i> %s</span>',
+			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a>'
 		);
-    }
-    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_author_meta" );
+	}
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_author_meta' );
 }
 
-/*********************************
-***** Post Date Meta Display *****
-*********************************/
+/**
+ * Post Date Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_date_meta' ) ) {
-    /**
+	/**
 	 * Current post date.
-	 *
-	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
-    function rb_portfolio_one_date_meta() {
-        $archive_year  = get_the_time('Y');
-		$archive_month = get_the_time('m');
-		$archive_date = get_the_time('d');	
+	function rb_portfolio_one_date_meta() {
+		$archive_year  = get_the_time( 'Y' );
+		$archive_month = get_the_time( 'm' );
+		$archive_date  = get_the_time( 'd' );
 
 		printf(
-			/* translators:
-			 %1$s: Publish date url.
-			 %2$s: Publish date. 
-			 */
-			'<span class="date-meta"><i class="rb-icon rb-icon-calender-1"></i><a href="%1$s">%2$s</a></span>',
+			/* translators: %1$s: Publish date url. %2$s: Publish date. */
+			'<span class="date-meta"><i class="fa-solid fa-clock"></i><a href="%1$s">%2$s</a></span>',
 			esc_url( get_day_link( $archive_year, $archive_month, $archive_date ) ),
 			esc_html( get_the_time( get_option( 'date_format' ) ) )
 		);
-
-    }
-    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_date_meta" );
+	}
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_date_meta' );
 }
 
-/*************************************
-***** Post Comments Meta Display *****
-*************************************/
+/**
+ * Post Comments Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_comments_meta' ) ) {
-    /**
+	/**
 	 * Current post comments.
-	 *
-	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
-    function rb_portfolio_one_comments_meta() {
-        echo '<span class="comments-meta"><i class="rb-icon rb-icon-comments-1"></i>';
+	function rb_portfolio_one_comments_meta() {
+		echo '<span class="comments-meta"><i class="fa-solid fa-comment"></i>';
 		comments_popup_link(
-			esc_html__('No Comments','rb-portfolio-one'),
-			esc_html__('1 Comment','rb-portfolio-one'),
-			esc_html__('% Comments','rb-portfolio-one'),
+			esc_html__( 'No Comments', 'rb-portfolio-one' ),
+			esc_html__( '1 Comment', 'rb-portfolio-one' ),
+			esc_html__( '% Comments', 'rb-portfolio-one' ),
 			'',
-			esc_html__('Comments Off','rb-portfolio-one')
+			esc_html__( 'Comments Off', 'rb-portfolio-one' )
 		);
 		echo '</span>';
-    }
-    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_comments_meta" );
+	}
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_comments_meta' );
 }
 
-/*********************************
-***** Post Tag Meta Display *****
-*********************************/
+/**
+ * Post Tag Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_tag_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current tags.
 	 *
-	 * @since RB Portfolio One 1.2.1
-	 *
 	 * @return void
 	 */
 	function rb_portfolio_one_tag_meta() {
-
 		if ( has_tag() ) {
 			$tags_list = get_the_tag_list( '', ', ' );
 			if ( $tags_list ) {
+				// translators: %s: List of tags.
 				printf(
-					/* translators: %s: List of tags. */
-					'<span class="tags-link"><i class="rb-icon rb-icon-tag-1"></i>' . esc_html__( '%s', 'rb-portfolio-one' ) . '</span>',
-					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
-				);				
+					'<span class="tags-link"><i class="fa-solid fa-tag"></i>%s</span>',
+					wp_kses_post( $tags_list )
+				);
 			}
 		}
 	}
 	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_tag_meta' );
 }
 
-/*********************************
-***** Post Edit Meta Display *****
-*********************************/
+/**
+ * Post Edit Meta Display
+ */
 if ( ! function_exists( 'rb_portfolio_one_edit_meta' ) ) {
-    /**
+	/**
 	 * Current post edit.
-	 *
-	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
-    function rb_portfolio_one_edit_meta() {
+	function rb_portfolio_one_edit_meta() {
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Post title. Only visible to screen readers. */
 				esc_html__( 'Edit', 'rb-portfolio-one' )
 			),
-			'<span class="entry-meta-edit"><i class="rb-icon rb-icon-edit-1"></i> ',
+			'<span class="entry-meta-edit"><i class="fa-regular fa-pen-to-square"></i> ',
 			'</span>'
 		);
-    }
-    add_action( "rb_portfolio_one_post_meta", "rb_portfolio_one_edit_meta" );
+	}
+	add_action( 'rb_portfolio_one_post_meta', 'rb_portfolio_one_edit_meta' );
 }
 
-/***********************************
-***** Read More Button Display *****
-***********************************/
-if( !function_exists( 'rb_portfolio_one_custom_read_btn' ) ) {
-
+if ( ! function_exists( 'rb_portfolio_one_custom_read_btn' ) ) {
+	/**
+	 * Read More Button Display
+	 */
 	function rb_portfolio_one_custom_read_btn() {
 		$rb_portfolio_one_read_more_btn = get_theme_mod( 'rb_portfolio_one_read_more_btn_switch' );
 
-		if ( !empty ( get_the_content() ) && true == $rb_portfolio_one_read_more_btn ){
+		if ( ! empty( get_the_content() ) && true === $rb_portfolio_one_read_more_btn ) {
 			printf(
-				/* translators:
-				%1$s: Slug of current post.
-				%2$s: Button text.
-				*/
-				'<a class="rb-portfolio-one-btn" href="%1$s">%2$s <i class="rb-iconrb-icon-right-1"></i></a>',
+				/* translators: %1$s: Slug of current post. %2$s: Button text. */
+				'<a class="rb-portfolio-one-btn" href="%1$s">%2$s</a>',
 				esc_url( get_permalink() ),
 				esc_html__( 'read more', 'rb-portfolio-one' )
 			);
-		}	
+		}
 	}
 	add_action( 'rb_portfolio_one_read_btn', 'rb_portfolio_one_custom_read_btn' );
-
 }
 
-/************************
-***** Comment Form *****
-************************/
+/**
+ * Customize the order and display of comment form fields.
+ *
+ * @param array $fields An array of comment form fields.
+ * @return array Modified comment form fields.
+ */
 function rb_portfolio_one_custom_comment_form( $fields ) {
-    // What fields you want to control.
-    $comment_field_author = $fields['author'];
-    $comment_field_email = $fields['email'];
-	$comment_field_url = $fields['url'];
-    $comment_field_massage = $fields['comment'];
-    $comment_field_cookies = $fields['cookies'];
+	// What fields you want to control.
+	$comment_field_author  = $fields['author'];
+	$comment_field_email   = $fields['email'];
+	$comment_field_url     = $fields['url'];
+	$comment_field_massage = $fields['comment'];
+	$comment_field_cookies = $fields['cookies'];
 
-     // The fields you want to unset (remove).
-    unset($fields['author']);
-    unset($fields['email']);
-    unset($fields['url']);
-    unset($fields['comment']);
-    unset($fields['cookies']);
+	// The fields you want to unset (remove).
+	unset( $fields['author'] );
+	unset( $fields['email'] );
+	unset( $fields['url'] );
+	unset( $fields['comment'] );
+	unset( $fields['cookies'] );
 
 	// Display the fields to your own taste.
-    // The order in which you place them will determine in what order they are displayed.
-    $fields['author'] = $comment_field_author;
-    $fields['email'] = $comment_field_email;
-    $fields['url'] = $comment_field_url;
-	$fields['comment'] = $comment_field_massage;	
-    $fields['cookies'] = $comment_field_cookies;
+	// The order in which you place them will determine in what order they are displayed.
+	$fields['author']  = $comment_field_author;
+	$fields['email']   = $comment_field_email;
+	$fields['url']     = $comment_field_url;
+	$fields['comment'] = $comment_field_massage;
+	$fields['cookies'] = $comment_field_cookies;
 
-    return $fields;
+	return $fields;
 }
 add_filter( 'comment_form_fields', 'rb_portfolio_one_custom_comment_form' );
 
-/***********************
-***** Comment List *****
-***********************/
 if ( ! function_exists( 'rb_portfolio_one_comment_list' ) ) {
-    function rb_portfolio_one_comment_list( $comment, $args, $depth ) {
-        $GLOBAL['comment'] = $comment;
-        $args['reply_text'] = 'Reply';
-        $replayClass = 'comment-depth-' . esc_attr( $depth );
-        ?>
-            <li id="comment-<?php comment_ID();?>" class="comment-item">
-                <div class="comments-box">
-                    <div class="comments-avatar">
-                        <?php echo get_avatar( $comment, '90' );?>
-                    </div>
-                    <div class="comments-text">
-                        <div class="avatar-name">
-                            <h5><?php print get_comment_author_link();?></h5>
-                            <span><?php comment_time( get_option( 'date_format' ) );?></span>
-                        </div>
-                        <?php comment_text();?>
+	/**
+	 * Output a single comment in the comment list.
+	 *
+	 * @param WP_Comment $comment Comment object.
+	 * @param array      $args    Arguments for displaying the comment.
+	 * @param int        $depth   Depth of the comment in thread hierarchy.
+	 */
+	function rb_portfolio_one_comment_list( $comment, $args, $depth ) {
 
-                        <div class="comments-replay">
-                            <?php comment_reply_link( array_merge( $args, [ 'depth' => $depth, 'max_depth' => $args['max_depth'] ] ) );?>
-                        </div>
+		// Ensure reply text is translatable.
+		$args['reply_text'] = esc_html__( 'Reply', 'rb-portfolio-one' );
 
-                    </div>
-                </div>
-        <?php
-    }
+		$reply_class = 'comment-depth-' . absint( $depth );
+
+		?>
+		<li id="comment-<?php comment_ID(); ?>" class="comment-item <?php echo esc_attr( $reply_class ); ?>">
+			<div class="comments-box">
+				<div class="comments-avatar">
+					<?php echo get_avatar( $comment, 90 ); ?>
+				</div>
+				<div class="comments-text">
+					<div class="avatar-name">
+						<h5><?php echo get_comment_author_link( $comment ); ?></h5>
+						<span><?php comment_time( get_option( 'date_format' ), $comment ); ?></span>
+					</div>
+
+					<div class="comment-content">
+						<?php comment_text( '', '', $comment ); ?>
+					</div>
+
+					<div class="comments-reply">
+						<?php
+						comment_reply_link(
+							array_merge(
+								$args,
+								array(
+									'depth'     => $depth,
+									'max_depth' => $args['max_depth'],
+									'add_below' => 'comment',
+								)
+							),
+							$comment
+						);
+						?>
+					</div>
+				</div>
+			</div>
+		</li>
+		<?php
+	}
 }
 
-/**************************
-***** Skip Link Focus *****
-**************************/
-if (! function_exists( 'rb_portfolio_one_focus_fix' ) ){
-    function rb_portfolio_one_focus_fix() {
+if ( ! function_exists( 'rb_portfolio_one_focus_fix' ) ) {
+	/**
+	 * Skip Link Focus
+	 */
+	function rb_portfolio_one_focus_fix() {
 
-        // If SCRIPT_DEBUG is defined and true, print the unminified file.
-        if ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) {
-            echo '<script>';
-            include get_template_directory().'/assets/js/skip-link-focus-fix.js';
-            echo '</script>';
-        }
-    
-        // The following is minified via `npx terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
-        ?>
-        <script>
-        /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
-        </script>
-        <?php
-    }
-    add_action('wp_print_footer_scripts', 'rb_portfolio_one_focus_fix');
+		// If SCRIPT_DEBUG is defined and true, print the unminified file.
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			echo '<script>';
+			include get_template_directory() . '/assets/js/skip-link-focus-fix.js';
+			echo '</script>';
+		}
+
+		// The following is minified via `npx terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
+		?>
+		<script>
+		/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+		</script>
+		<?php
+	}
+	add_action( 'wp_print_footer_scripts', 'rb_portfolio_one_focus_fix' );
 }
 
-// post excerpt words setup
-if ( !function_exists('rb_portfolio_one_custom_excerpt_length') ) {
-    function rb_portfolio_one_custom_excerpt_length( $length ) {
+if ( ! function_exists( 'rb_portfolio_one_custom_excerpt_length' ) ) {
+	/**
+	 * Set custom excerpt length for posts.
+	 *
+	 * @param int $length The default number of words for the excerpt.
+	 * @return int Modified excerpt length.
+	 */
+	function rb_portfolio_one_custom_excerpt_length( $length ) {
 		if ( is_admin() ) {
 			return absint( $length );
 		} else {
 			$length = get_theme_mod( 'rb_portfolio_one_excerpt_word', 30 );
 			return absint( $length );
 		}
-    }
+	}
 }
 add_filter( 'excerpt_length', 'rb_portfolio_one_custom_excerpt_length', 999 );

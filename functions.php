@@ -54,24 +54,26 @@ foreach ( $file_libs as $file ) {
 	}
 }
 
-// Theme Assets
+// Theme Assets.
 if ( file_exists( __DIR__ . '/inc/third-party-assets.php' ) ) {
 	require_once __DIR__ . '/inc/third-party-assets.php';
 }
 
-// Common Functions
+// Common Functions.
 if ( file_exists( __DIR__ . '/inc/common-functions.php' ) ) {
 	require_once __DIR__ . '/inc/common-functions.php';
 }
 
-// Action Hooks
+// Action Hooks.
 if ( file_exists( __DIR__ . '/inc/action-hooks.php' ) ) {
 	require_once __DIR__ . '/inc/action-hooks.php';
 }
 
-// Font Awesome support after install elementor
+/**
+ * Font Awesome support after install elementor.
+ */
 function rb_portfolio_one_font_awesome_7() {
-	// Latest FA7 from CDN
+	// Latest FA7 from CDN.
 	wp_enqueue_style(
 		'font-awesome-7',
 		get_template_directory_uri() . '/assets/lib/css/font-awesome.css',

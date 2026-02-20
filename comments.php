@@ -8,8 +8,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package RB_Themes
+ * @subpackage RB_Portfolio_One
  */
- 
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password,
@@ -20,26 +26,30 @@ if ( post_password_required() ) {
 }
 ?>
 
-<?php if (have_comments()) : ?>
+<?php if ( have_comments() ) : ?>
 <h3 class="total-comments">
 	<?php
 	$rb_portfolio_one_comment_count = get_comments_number();
-	if (1 === $rb_portfolio_one_comment_count) {
-		/* translators: %s: Post title. */
-		printf( _x('1 comment on %s', 'comments title', 'rb-portfolio-one'), get_the_title());
-	}
-	else {
+	if ( 1 === $rb_portfolio_one_comment_count ) {
 		printf(
-			/* translators: 1: Number of comments, 2: Post title. */
-			_nx(
-				'<span class="comment-count">%1$s</span> comment on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
-				'<span class="comment-count">%1$s</span> comments on <span class="comment-title">&ldquo;%2$s&rdquo;</span>',
-				$rb_portfolio_one_comment_count,
-				'comments title',
-				'rb-portfolio-one'
+			/* translators: %s: Post title. */
+			esc_html_x( '1 comment on %s', 'comments title', 'rb-portfolio-one' ),
+			esc_html( get_the_title() )
+		);
+	} else {
+		printf(
+			esc_html(
+				/* translators: 1: Number of comments, 2: Post title. */
+				_nx(
+					'%1$s comment on %2$s',
+					'%1$s comments on %2$s',
+					$rb_portfolio_one_comment_count,
+					'comments title',
+					'rb-portfolio-one'
+				)
 			),
-			number_format_i18n( $rb_portfolio_one_comment_count ),
-			get_the_title()
+			esc_html( number_format_i18n( $rb_portfolio_one_comment_count ) ),
+			esc_html( get_the_title() )
 		);
 	}
 	?>
@@ -52,13 +62,15 @@ if ( post_password_required() ) {
 
 <div class="comments-list">
 	<?php
-		wp_list_comments( [
-			'style'       => 'ul',
-			'callback'    => 'rb_portfolio_one_comment_list',
-			'avatar_size' => 90,
-			'short_ping'  => true,
-		] );
-	?>
+		wp_list_comments(
+			array(
+				'style'       => 'ul',
+				'callback'    => 'rb_portfolio_one_comment_list',
+				'avatar_size' => 90,
+				'short_ping'  => true,
+			)
+		);
+		?>
 </div>
 
 <div class="comments-pagination">

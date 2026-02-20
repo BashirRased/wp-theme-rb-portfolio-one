@@ -10,17 +10,23 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package RB_Themes
+ * @subpackage RB_Portfolio_One
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 get_header();
 ?>
 
 <div id="page-content" class="page-content">
-    <div class="container">
-        <div class="row">            
-            <?php do_action ( 'rb_portfolio_one_theme_option_sidebar' ); ?>
-        </div><!-- .row -->
-    </div><!-- .container -->
+	<div class="container">
+		<div class="row">            
+			<?php do_action( 'rb_portfolio_one_theme_option_sidebar' ); ?>
+		</div><!-- .row -->
+	</div><!-- .container -->
 </div>
 
 <?php get_footer(); ?>
