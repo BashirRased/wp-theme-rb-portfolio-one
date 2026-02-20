@@ -7,7 +7,7 @@ function rb_portfolio_one_can_show_post_thumbnail() {
 	/**
 	 * Filters whether post thumbnail can be displayed.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
 	 */
@@ -27,7 +27,7 @@ if ( !function_exists( 'rb_portfolio_one_custom_post_thumbnail' ) ) {
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
@@ -68,7 +68,7 @@ if ( ! function_exists( 'rb_portfolio_one_category_meta' ) ) {
     /**
 	 * Current post categories.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
@@ -107,7 +107,7 @@ if ( ! function_exists( 'rb_portfolio_one_date_meta' ) ) {
     /**
 	 * Current post date.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
@@ -137,7 +137,7 @@ if ( ! function_exists( 'rb_portfolio_one_comments_meta' ) ) {
     /**
 	 * Current post comments.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
@@ -162,7 +162,7 @@ if ( ! function_exists( 'rb_portfolio_one_tag_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current tags.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */
@@ -189,7 +189,7 @@ if ( ! function_exists( 'rb_portfolio_one_edit_meta' ) ) {
     /**
 	 * Current post edit.
 	 *
-	 * @since RB Portfolio One 1.2.0
+	 * @since RB Portfolio One 1.2.1
 	 *
 	 * @return void
 	 */

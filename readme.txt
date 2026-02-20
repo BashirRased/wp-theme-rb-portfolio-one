@@ -4,7 +4,7 @@ Contributors: bashirrased
 Requires at least: 6.4
 Tested up to: 6.4
 Requires PHP: 7.0
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Author URI: https://bashir-rased.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -58,6 +58,9 @@ License:  Creative Commons Zero (CC0) license.
 License Url: http://www.gnu.org/licenses/gpl.html
 
 == Changelog ==
+= 1.2.1 =
+* required plugins error
+
 = 1.2.0 =
 * Change version
 * Change screenshot

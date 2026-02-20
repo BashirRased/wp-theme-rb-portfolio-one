@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'rb_blog_one_required_and_recommended_plugins' ) ) {
+if ( ! function_exists( 'rb_portfolio_one_required_and_recommended_plugins' ) ) {
 	/**
 	 * Register required and recommended plugins.
 	 *
 	 * @return void
 	 */
-	function rb_blog_one_required_and_recommended_plugins() {
+	function rb_portfolio_one_required_and_recommended_plugins() {
 		$plugins = array(
 			// Use this plugin for your custom page design.
 			array(
